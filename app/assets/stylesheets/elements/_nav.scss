@@ -1,0 +1,20 @@
+body nav {
+    @extend %clearfix;
+    background: rgba($white, 0.9);
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+
+    a {
+        display: inline-block;
+        float: left;
+        line-height: 4em;
+        padding: 0 1em;
+    }
+
+    a:hover {
+        background: $gray3;
+    }
+}

@@ -1,0 +1,207 @@
+section {
+    @extend %clearfix;
+    float: left;
+    padding: 3em 0;
+    width: 100%;
+
+    &.-border-bottom{
+        border-bottom: 1px solid $gray0;
+    }
+
+    &.-border-top{
+        border-top: 1px solid $gray0;
+    }
+
+    &.-sp {
+        padding: 0;
+    }
+
+    &.-sp-top {
+        padding-top: 0;
+    }
+
+    &.-sp-bottom {
+        padding-bottom: 0;
+    }
+
+    @media only screen and (max-width: $normal) {
+        padding: 2em 1.5em;
+    }
+}
+
+.row {
+    --padding: 10%;
+
+    @extend %clearfix;
+
+    display: inline-block;
+    padding: 0 var(--padding);
+    width: 100%;
+
+    &.-sp {
+        padding: 0;
+    }
+
+    &.-size-8 {
+        max-width: 100% / (12 / 8);
+
+        @media only screen and (max-width: $small) {
+            padding: 0 1em !important;
+        }
+    }
+
+    &.-size-4 {
+        max-width: 100% / (12 / 4);
+    }
+
+    &.-left, &.-right {
+        float: left;
+    }
+
+    &.-left {
+        padding-right: 0;
+    }
+
+    &.-right {
+        padding-left: 0;
+    }
+
+    @media only screen and (max-width: $small) {
+        max-width: 100% !important;
+    }
+}
+
+.rel {
+    position: relative;
+}
+
+
+
+@media only screen and (max-width: $small) {
+    .row {
+        --padding: 0;
+    }
+}
+
+@media only screen and (min-width: $large) {
+    .row {
+        --padding: 17%;
+    }
+}
+
+@media only screen and (min-width: $xlarge) {
+    .row {
+        --padding: 21%;
+    }
+}
+
+@media only screen and (min-width: $xxlarge) {
+    .row {
+        --padding: 25%;
+    }
+}
+
+[class^="col-"] {
+    @extend %clearfix;
+
+    float: left;
+    text-align: left;
+    padding: $gutter;
+    width: 100%;
+
+    &.-sp {
+        padding: 0;
+    }
+
+    &.-wp-left {
+        padding-left: $gutter;
+    }
+
+    &.-wp-right {
+        padding-right: $gutter;
+    }
+
+    &.-wp-bottom {
+        padding-bottom: $gutter;
+    }
+
+    &.-wp-top {
+        padding-top: $gutter;
+    }
+
+    &.-wm {
+        margin: $gutter;
+    }
+
+    &.-big-gutter {
+        --gutter: 3em;
+    }
+
+    &.-centered {
+        float: none;
+        margin: 0 auto;
+    }
+
+    &.-gradient-border-right {
+        border-right: 1px solid;
+        border-image: linear-gradient(180deg, transparent, $gray0) 30 30;
+    }
+
+    @media only screen and (max-width: $small) {
+        border: none !important;
+        padding: 0 0 1em !important;
+
+        &.-big-gutter {
+            padding: 1.5em !important;
+        }
+    }
+}
+
+@media only screen and (min-width: $small) {
+    .col-2 { width: (100% / 6) }
+    .col-3 { width: (100% / 4) }
+    .col-4 { width: (100% / 3) }
+    .col-6 { width: (100% / 2) }
+    .col-8 { width: (100% / (12 / 8)) }
+    .col-9 { width: (100% / (12 / 9)) }
+    .col-10 { width: (100% / (12 / 10)) }
+    .col-12 { width: 100% }
+
+    .col-3.-sm { width: calc(#{(100% / 4)} - #{($gutter)}) }
+    .col-4.-sm { width: calc(#{(100% / 3)} - #{($gutter)}) }
+    .col-6.-sm { width: calc(#{(100% / 2)} - #{($gutter)}) }
+    .col-8.-sm { width: calc(#{(100% / (12 / 8))} - #{($gutter)}) }
+    .col-9.-sm { width: calc(#{(100% / (12 / 9))} - #{($gutter)}) }
+    .col-10.-sm { width: calc(#{(100% / (12 / 10))} - #{($gutter)}) }
+    .col-12.-sm { width: calc(100% - #{($gutter)}) }
+}
+
+.align {
+    &.-center {
+        text-align: center;
+    }
+
+    &.-right {
+        text-align: right;
+    }
+
+    @media only screen and (max-width: $small) {
+        &.-max-small-center {
+            text-align: center;
+        }
+
+        &.-max-small-right {
+            text-align: right;
+        }
+    }
+
+    @media only screen and (min-width: $small) {
+        &.-min-small-center {
+            text-align: center;
+        }
+
+        &.-min-small-right {
+            text-align: right;
+        }
+    }
+}

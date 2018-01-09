@@ -1,0 +1,34 @@
+section {
+    &.darker {
+        background: rgba($gray0, .25);
+    }
+
+    &.head {
+        padding-top: 5em;
+
+        &::before, &::after {
+            z-index: -1;
+            height: 400px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            content: "";
+            position: absolute;
+            background-image: linear-gradient(125deg,
+                mix($cyan, $purple, 0%) 0%,
+                mix($cyan, $purple, 19%) 19%,
+                mix($cyan, $purple, 34%) 34%,
+                mix($cyan, $purple, 47%) 47%,
+                mix($cyan, $purple, 56.5%) 56.5%,
+                mix($cyan, $purple, 65%) 65%,
+                mix($cyan, $purple, 73%) 73%,
+                mix($cyan, $purple, 80.2%) 80.2%,
+                mix($cyan, $purple, 86.1%) 86.1%,
+                mix($cyan, $purple, 91%) 91%,
+                mix($cyan, $purple, 95.2%) 95.2%,
+                mix($cyan, $purple, 98.2%) 98.2%,
+                mix($cyan, $purple, 100%) 100%
+            );
+        }
+    }
+}

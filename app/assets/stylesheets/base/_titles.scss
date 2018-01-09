@@ -1,0 +1,12 @@
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Quattrocento', 'Arial', Tahoma, Geneva, serif;
+}
+
+@for $i from 1 to 7 {
+    h#{$i} {
+        font-size: 1em + (0.2em * (7 - $i - 1));
+    }
+}

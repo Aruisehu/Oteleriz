@@ -1,0 +1,20 @@
+// Grid
+:root {
+    --gutter: 1em;
+}
+
+$gutter: var(--gutter);
+
+
+// Screen Sizes
+$xsmall: 720px;
+$small: 1000px;
+$normal: 1280px;
+$large: 1624px;
+$xlarge: 2000px;
+$xxlarge: 2400px;
+$xxxlarge: 2800px;
+
+// Font Sizes
+$default-font-size: 1.2em;
+$default-line-height: 1.2;
