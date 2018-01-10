@@ -1,0 +1,3 @@
+class Dessert < ApplicationRecord
+
+end

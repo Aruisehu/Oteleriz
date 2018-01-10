@@ -1,0 +1,3 @@
+class Starter < ApplicationRecord
+
+end
