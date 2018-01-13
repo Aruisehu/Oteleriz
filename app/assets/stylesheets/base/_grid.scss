@@ -35,6 +35,7 @@ section {
     @extend %clearfix;
 
     display: inline-block;
+    float: left;
     padding: 0 var(--padding);
     width: 100%;
 

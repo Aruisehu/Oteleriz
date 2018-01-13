@@ -1,20 +1,42 @@
-body nav {
-    @extend %clearfix;
-    background: rgba($white, 0.9);
+#main-menu {
+    background: $white;
+    box-shadow: 0 3em 6em rgba($black, .3);
     left: 0;
     top: 0;
     position: fixed;
     width: 100%;
     z-index: 10000;
 
-    a {
+    a, label {
+        color: $text;
         display: inline-block;
-        float: left;
         line-height: 4em;
-        padding: 0 1em;
+        padding: 0 0.875em;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;;
+
+        &:hover {
+            color: $accent1;
+            background: $gray0;
+        }
     }
 
-    a:hover {
-        background: $gray3;
+    .active {
+        box-shadow: inset 0 0.125em $accent1;
+    }
+
+    .toggle {
+        display: none;
+        float: left;
+        width: 4em;
+        text-align: center;
+    }
+
+    .switch:checked ~ .toggle .fa::before {
+        content: "\f060"; // change "bars" to "arrow-left"
+    }
+
+    ul {
+        display: inline-block;
     }
 }

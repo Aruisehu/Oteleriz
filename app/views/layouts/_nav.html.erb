@@ -1,5 +1,11 @@
-<nav>
-    <a id="logo" href="<%= root_path %>">Oteleriz</a>
-    <a href="#">La Carte</a>
-    <a href="#">Mon Menu</a>
+<nav id="main-menu">
+    <div class="row">
+        <a id="logo" href="<%= root_path %>">Oteleriz</a>
+        <input class="switch" id="menu-switch" type="checkbox">
+        <ul>
+            <a href="#">La Carte</a>
+            <a href="#">Mon Menu</a>
+        </ul>
+        <label class="toggle" for="menu-switch"><%= fa_icon "bars" %></label>
+    </div>
 </nav>

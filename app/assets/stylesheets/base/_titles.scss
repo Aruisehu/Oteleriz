@@ -1,8 +1,10 @@
 h1, h2, h3, h4, h5, h6 {
+    color: $accent1;
     font-weight: normal;
     margin: 0;
     text-transform: uppercase;
     font-family: 'Quattrocento', 'Arial', Tahoma, Geneva, serif;
+    letter-spacing: 0.125em;
 }
 
 @for $i from 1 to 7 {

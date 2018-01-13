@@ -2,9 +2,6 @@
  * Reset CSS
  *= require normalize-rails
  *
- * Icon pack
- *= require font-awesome
- *
  *= require_self
  *
  */
@@ -15,6 +12,8 @@
 @import "dependencies/functions";
 @import "dependencies/mixins";
 
+@import 'font-awesome';
+
 @import "base/base";
 @import "base/grid";
 @import "base/grid_flex";
@@ -22,10 +21,13 @@
 
 @import "elements/button";
 @import "elements/clearfix";
-@import "elements/hide";
+@import "elements/footer";
+@import "elements/hidden";
 @import "elements/nav";
+@import "elements/nav.mobile";
 @import "elements/page";
 @import "elements/section";
+@import "elements/switch";
 @import "elements/title";
 @import "elements/zone";
 

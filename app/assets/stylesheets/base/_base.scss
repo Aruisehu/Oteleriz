@@ -38,6 +38,10 @@ html, body {
     min-height: 100%;
 }
 
+html {
+    margin-top: 3em;
+}
+
 * {
     // Prevent highlight tap effet in webkit mobile browsers
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
