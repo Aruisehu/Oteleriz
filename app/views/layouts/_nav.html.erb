@@ -3,8 +3,8 @@
         <a id="logo" href="<%= root_path %>">Oteleriz</a>
         <input class="switch" id="menu-switch" type="checkbox">
         <ul>
-            <a href="#">La Carte</a>
-            <a href="#">Mon Menu</a>
+            <%= nav_path("La Carte", static_path("menu")) %>
+            <%= nav_path("L'Équipe", static_path("team")) %>
         </ul>
         <label class="toggle" for="menu-switch"><%= fa_icon "bars" %></label>
     </div>

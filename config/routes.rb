@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
+  get ':page' => "static_pages#show", as: "static_page"
+
 end
