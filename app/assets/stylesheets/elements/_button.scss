@@ -2,10 +2,10 @@
 .btn, a.btn {
     appearance: none;
     background: $accent1;
+    border: 2px solid $accent1;
     border-radius: 4px;
-    border: none;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    color: $white !important;
+    box-shadow: none;
+    color: $white;
     fill: $white !important;
     cursor: pointer;
     display: inline-block;
@@ -16,80 +16,32 @@
     margin: 0 1em 1.5em 0;
     opacity: 1 !important;
     outline: none !important;
-    padding: 0.25em 0.9em;
+    padding: 0.25em 0 0.15em 0.9em;
     text-align: left !important;
     text-decoration: none;
     text-transform: uppercase;
     text-shadow: none !important;
     transform: translateY(0);
-    transition: all 170ms ease-in-out;
+    transition: none, transform box-shadow 170ms ease-in-out;
 
-    &.-full {
-        width: 100%;
-    }
-
-    &.-icon {
-        padding: 0;
-
-        .fa {
-            margin: 0;
-            width: 2.1em;
-            text-align: center;
-        }
-    }
-
-    .fa, svg {
-        float: left;
-        margin-right: 0.8em;
-        line-height: 2.1em;
-        text-shadow: none !important;
-    }
-
-    @media only screen and (max-width: $xsmall) {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-
-        &.-icon {
-            min-width: auto;
-        }
-    }
-
-    svg {
-        height: 2.1em;
-        max-width: 16px;
-    }
-
-    &:focus {
-        outline: 2px solid $accent1;
+    .fa {
+        float: right;
+        line-height: 2.0em;
+        text-align: center;
+        width: 2.1em;
     }
 
     &:hover {
-        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-        transform: translateY(-2px);
-        filter: brightness(1.1);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     }
 
     &:active {
-        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-        transform: translateY(1px);
-        filter: brightness(0.9);
+        transform: translateY(1px) scale(0.985);
     }
 
-    &.-accent2 {
-        background: $blue;
-
-        &.-white {
-            color: $blue !important;
-            fill: $blue !important;
-            outline: 2px solid $blue;
-        }
-    }
-
-    &.-white {
-        background: $true-white !important;
-        color: $blue !important;
-        fill: $blue !important;
-        outline: 2px solid $accent1;
+    &.-alt {
+        color: $accent1;
+        background: none;
     }
 }

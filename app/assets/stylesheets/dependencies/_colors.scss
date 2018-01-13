@@ -25,22 +25,25 @@ $purple: #6340f3;
 $red: #9e1d3e;
 .red { color: $red; }
 
-$accent1: $red;
-$accent2: $pink;
-$text: #525285;
-
+$metal: #c4be9c;
+.metal { color: $metal}
 // Gray palette
 // ====================================================================
 $true-white: #FFF;
-$white: #FBFBFD;
-$gray0: #F0F0F9;
-$gray1: #BFBFD4;
-$gray2: #8989AA;
-$gray3: #636384;
-$gray4: #4B4B65;
-$gray5: #333350;
-$gray6: #1B1B2A;
-$black: #001;
+$white: #FBFBFE;
+$gray0: #F0F0F5;
+$gray1: #BFBFD0;
+$gray2: #898992;
+$gray3: #63636B;
+$gray4: #4B4B53;
+$gray5: #33333B;
+$gray6: #1B1B20;
+$black: #000;
+
+$accent1: $red;
+$accent2: $pink;
+$text: #525285;
+$text2: $gray1;
 
 // Social Colors
 // ====================================================================

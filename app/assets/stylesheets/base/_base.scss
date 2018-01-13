@@ -6,12 +6,12 @@
 
 /* Global default custom styles */
 html {
-    background: darken($white, 3%);
+    background: $white;
     box-sizing: border-box;
     color: $text;
     font-family: 'Open Sans', 'Arial', Tahoma, Geneva, sans-serif;
     font-size: $default-font-size;
-    line-height: 1.6;
+    line-height: 1.3;
     overflow-x: hidden;
     overflow-y: scroll;
     text-rendering : geometricPrecision;

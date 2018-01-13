@@ -1,0 +1,50 @@
+.product {
+    background: linear-gradient($gray0, darken($gray0, 5%));
+    border-radius: 0.4em;
+    float: left;
+    margin: 0 1em 2em;
+    padding: 1em;
+    width: calc(50% - 2em);
+    box-shadow: 0 0 1em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .17);
+
+
+    .content {
+        width: calc(100% - 12em);
+        padding: 0.5em 0 1em 1em;
+        float: left;
+    }
+
+    .info {
+        float: left;
+        width: 12em;
+        margin-bottom: 1em;
+    }
+
+    .title {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .add {
+        box-shadow: 0 0 1.5em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .17);
+        border-radius: 0.25em;
+        padding: 0.5em;
+        clear: both;
+        line-height: 3em;
+    }
+
+    .img {
+        box-shadow: 0 0 1em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($metal, .17);
+        width: 100%;
+        max-height: 8rem;
+    }
+
+    .price {
+        margin: 0 0.5em;
+    }
+
+    .btn {
+        float: right;
+        margin: 0.2em;
+    }
+}
