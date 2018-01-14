@@ -43,4 +43,8 @@ section {
             $gray0 50%
         );
     }
+
+    &.border-bottom {
+        border-bottom: 0.2em solid $gray0;
+    }
 }
