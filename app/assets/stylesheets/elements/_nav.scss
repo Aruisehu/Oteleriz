@@ -1,6 +1,6 @@
 #main-menu {
     background: $white;
-    box-shadow: 0 3em 6em rgba($black, .3);
+    box-shadow: 0 -6em 6em 6em rgba($black, .3);
     left: 0;
     top: 0;
     position: fixed;
@@ -14,6 +14,7 @@
         padding: 0 0.875em;
         letter-spacing: 0.125em;
         text-transform: uppercase;;
+        transition: color background 170ms ease-in-out;
 
         &:hover {
             color: $accent1;

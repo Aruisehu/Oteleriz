@@ -1,8 +1,8 @@
 
 .btn, a.btn {
     appearance: none;
-    background: $accent1;
-    border: 2px solid $accent1;
+    background: $accent2;
+    border: 2px solid $accent2;
     border-radius: 4px;
     box-shadow: none;
     color: $white;
@@ -41,7 +41,7 @@
     }
 
     &.-alt {
-        color: $accent1;
+        color: $accent2;
         background: none;
     }
 }

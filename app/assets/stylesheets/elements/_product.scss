@@ -1,23 +1,26 @@
 .product {
-    background: linear-gradient($gray0, darken($gray0, 5%));
-    border-radius: 0.4em;
+    background: $gray0;
+    border-radius: 0.25em;
     float: left;
     margin: 0 1em 2em;
     padding: 1em;
     width: calc(50% - 2em);
-    box-shadow: 0 0 1em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .17);
-
 
     .content {
         width: calc(100% - 12em);
-        padding: 0.5em 0 1em 1em;
-        float: left;
+        padding: 0.5em 0 0 1em;
+        float: right;
     }
 
     .info {
         float: left;
-        width: 12em;
         margin-bottom: 1em;
+
+        .img {
+            box-shadow: 0 0 1em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .17);
+            max-height: 8rem;
+            width: 12em;
+        }
     }
 
     .title {
@@ -26,17 +29,10 @@
     }
 
     .add {
-        box-shadow: 0 0 1.5em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .17);
         border-radius: 0.25em;
-        padding: 0.5em;
         clear: both;
         line-height: 3em;
-    }
-
-    .img {
-        box-shadow: 0 0 1em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($metal, .17);
-        width: 100%;
-        max-height: 8rem;
+        text-align: right;
     }
 
     .price {
@@ -44,7 +40,56 @@
     }
 
     .btn {
-        float: right;
         margin: 0.2em;
+    }
+
+    &.-tiny {
+        width: calc(25% - 2em);
+
+        .img {
+            width: 100%;
+            max-width: auto;
+        }
+
+        .title {
+            margin-top: .5em;
+            text-align: center;
+        }
+    }
+
+    &.-menu {
+        width: calc(100% - 2em);
+
+        .img {
+            width: 18em;
+            float: left;
+            max-height: none;
+        }
+
+        .content {
+            width: calc(100% - 18em);
+        }
+
+        .list {
+            margin: 1em 0;
+        }
+    }
+
+    .menu-item {
+        display: inline-block;
+        width: 100%;
+        margin: 0.25em 0 0;
+        overflow: hidden;
+        line-height: 2em;
+
+        .img {
+            float: left;
+            width: 3em;
+            height: 2em;
+            margin-right: 1em;
+        }
+
+        h6 {
+        }
     }
 }

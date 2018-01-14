@@ -1,9 +1,11 @@
 @media only screen and (max-width: $small) {
     #main-menu {
+        box-shadow: 0;
         z-index: 1;
 
         ul {
             background: $white;
+            box-shadow: 0 -6em 6em 6em rgba($black, .3);
             left: 0;
             padding-left: 4em;
             position: absolute;
@@ -19,6 +21,11 @@
 
         a {
             width: calc(100% - 4em);
+            background: $white;
+        }
+
+        a:hover, label:hover {
+            color: $text;
             background: $white;
         }
 

@@ -4,4 +4,12 @@ class ProductCell < Cell::ViewModel
     def show
         render
     end
+
+    def tiny
+        render
+    end
+
+    def menu
+        render
+    end
 end

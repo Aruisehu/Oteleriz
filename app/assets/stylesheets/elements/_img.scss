@@ -1,8 +1,12 @@
 .img {
-    overflow: hidden;
-    display: inline-block;
     border-radius: 0.25em;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
 
     img {
+        position: relative;
+        top: -25%;
+        width: 100%;
     }
 }

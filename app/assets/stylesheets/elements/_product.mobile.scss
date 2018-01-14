@@ -1,5 +1,20 @@
 @media only screen and (max-width: $small) {
     .product {
-        width: 100%;
+        width: calc(100% - 2em);
+        margin: 1em;
+
+        .info .img {
+            max-width: none;
+            width: 100%;
+        }
+
+        .content, &.-menu .content {
+            width: 100%;
+        }
+
+        &.-tiny {
+            width: calc(50% - 2em);
+            margin: 1em;
+        }
     }
 }
