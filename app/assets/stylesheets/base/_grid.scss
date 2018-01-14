@@ -176,33 +176,3 @@ section {
     .col-10.-sm { width: calc(#{(100% / (12 / 10))} - #{($gutter)}) }
     .col-12.-sm { width: calc(100% - #{($gutter)}) }
 }
-
-.align {
-    &.-center {
-        text-align: center;
-    }
-
-    &.-right {
-        text-align: right;
-    }
-
-    @media only screen and (max-width: $small) {
-        &.-max-small-center {
-            text-align: center;
-        }
-
-        &.-max-small-right {
-            text-align: right;
-        }
-    }
-
-    @media only screen and (min-width: $small) {
-        &.-min-small-center {
-            text-align: center;
-        }
-
-        &.-min-small-right {
-            text-align: right;
-        }
-    }
-}
