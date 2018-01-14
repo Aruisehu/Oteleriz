@@ -1,0 +1,16 @@
+#fb-page {
+    .fb-page {
+        float: right;
+        border-radius: 4px;
+        box-shadow: 0 0 0 0.2em $gray1;
+        overflow: hidden;
+        width: 18em;
+        height: 18em;
+    }
+
+    .fb-content {
+        float: left;
+        padding: 1em 4em 1em 0;
+        width: 50%;
+    }
+}

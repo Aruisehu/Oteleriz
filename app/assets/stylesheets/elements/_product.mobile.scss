@@ -1,7 +1,7 @@
 @media only screen and (max-width: $small) {
     .product {
-        width: calc(100% - 2em);
         margin: 1em;
+        width: calc(100% - 2em);
 
         .info .img {
             max-width: none;
@@ -13,8 +13,8 @@
         }
 
         &.-tiny {
-            width: calc(50% - 2em);
             margin: 1em;
+            width: calc(50% - 2em);
         }
     }
 }

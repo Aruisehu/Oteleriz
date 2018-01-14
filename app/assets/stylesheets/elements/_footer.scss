@@ -1,10 +1,9 @@
 #global-footer {
     @extend %clearfix;
-
-    line-height: 1.6;
-    color: $gray4;
-    border-top: 1px solid $gray1;
     background-color: $gray0;
+    border-top: 1px solid $gray1;
+    color: $gray4;
+    line-height: 1.6;
     padding: 4em 0;
 
     a {
@@ -23,12 +22,12 @@
 
         .fa {
             background: $accent1;
-            color: $white;
-            line-height: 2em;
-            font-size: 1.5em;
-            width: 2em;
             border-radius: 1em;
+            color: $white;
+            font-size: 1.5em;
+            line-height: 2em;
             margin-bottom: 1em;
+            width: 2em;
         }
 
         a {

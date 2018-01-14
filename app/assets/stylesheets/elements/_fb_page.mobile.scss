@@ -1,0 +1,13 @@
+@media only screen and (max-width: $xsmall) {
+    #fb-page {
+        .fb-page {
+            display: block;
+            margin: auto;
+            float: none;
+        }
+
+        .fb-content {
+            width: 100%;
+        }
+    }
+}
