@@ -1,20 +1,25 @@
 <footer id="global-footer">
     <div class="row">
+        <div id="social" class="col-12 align -center">
+            <a href="https://www.facebook.com/StartUpcookmeup/"><%= fa_icon "facebook" %></a>
+            <p>Venez nous rejoindre sur notre <a href="https://www.facebook.com/StartUpcookmeup/">page facebook</a></p>
+        </div>
+        <div class="col-6">
+            <h4>A propos</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
         <div class="col-6">
             <h4>Navigation</h4>
-            <nav class="col-3 -sp">
-                <a href="">La Carte</a>
-                <a href="">A Propos</a>
-                <a href="">L'Équipe</a>
+            <nav class="col-6 -sp">
+                <%= link_to "Accueil", root_path %>
+                <%= link_to "La Carte", static_page_path("menu") %>
+                <%= link_to "L'Équipe", static_page_path("team") %>
             </nav>
-            <nav class="col-3 -sp">
+            <nav class="col-6 -sp">
                 <a href="">Mentions Légales</a>
                 <a href="">Cookies</a>
                 <a href="">CGV</a>
             </nav>
-        </div>
-        <div class="col-6">
-            <h4>Navigation</h4>
         </div>
     </div>
 </footer>
