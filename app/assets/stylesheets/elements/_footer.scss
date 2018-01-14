@@ -6,9 +6,6 @@
     line-height: 1.6;
     padding: 4em 0;
 
-    a {
-    }
-
     nav a {
         display: block;
     }
@@ -21,13 +18,19 @@
         margin-bottom: 2em;
 
         .fa {
-            background: $accent1;
+            background: rgba($accent2, .5);
             border-radius: 1em;
-            color: $white;
+            color: $accent1;
             font-size: 1.5em;
             line-height: 2em;
-            margin-bottom: 1em;
+            margin: 0 0.5em 1em;
             width: 2em;
+            transition: background-color color 170ms ease-in-out;
+        }
+
+        a:hover .fa {
+            background: $accent2;
+            color: $white;
         }
 
         a {

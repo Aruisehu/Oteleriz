@@ -19,7 +19,8 @@
             }
         }
 
-        a {
+        #logo, a {
+            float: none;
             width: calc(100% - 4em);
             background: $white;
         }
