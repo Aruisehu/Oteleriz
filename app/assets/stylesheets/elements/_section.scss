@@ -7,7 +7,6 @@ section {
         text-shadow: 0 2px 0.2em rgba($black, .5);
 
         .title {
-            margin: 1em 0 0;
             color: $white;
         }
 
@@ -49,6 +48,13 @@ section {
         background-image: linear-gradient(102deg,
             $white 49.99%,
             $gray0 50%
+        );
+    }
+
+    &.-gradient-alt {
+        background-image: linear-gradient(102deg,
+            $gray0 49.99%,
+            $white 50%
         );
     }
 

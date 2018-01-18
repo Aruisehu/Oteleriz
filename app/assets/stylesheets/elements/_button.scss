@@ -40,6 +40,16 @@
         transform: translateY(1px) scale(0.985);
     }
 
+    &.-white {
+        background: $white;
+        border-color: $white;
+        color: $accent2;
+
+        &.-alt {
+            color: $white;
+        }
+    }
+    
     &.-alt {
         color: $accent2;
         background: none;
