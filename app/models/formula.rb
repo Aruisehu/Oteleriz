@@ -4,8 +4,7 @@ class Formula < ApplicationRecord
     belongs_to :dish, optional: true
     belongs_to :dessert, optional: true
 
-    alias_method :has_starter, :starter?
-    alias_method :has_dish, :dish?
-    alias_method :has_dessert, :dessert?
-
+    alias_method :has_starter?, :starter
+    alias_method :has_dish?, :dish
+    alias_method :has_dessert?, :dessert
 end
