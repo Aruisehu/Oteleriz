@@ -1,0 +1,4 @@
+body > .page {
+    @extend %clearfix;
+    position: relative;
+}

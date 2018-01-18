@@ -1,0 +1,38 @@
+.row-flex {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+@media only screen and (min-width: $large) {
+    .row-flex {
+        max-width: 1600px;
+    }
+}
+
+@media only screen and (min-width: $xlarge) {
+    .row-flex {
+        max-width: 1800px;
+    }
+}
+
+@media only screen and (min-width: $xxlarge) {
+    .row-flex {
+        max-width: 2200px;
+    }
+}
+
+.row-flex .col-1 { flex: 1; }
+.row-flex .col-2 { flex: 2; }
+.row-flex .col-3 { flex: 3; }
+
+@media only screen and (max-width: $xsmall) {
+    .flex {
+        display: block;
+    }
+}

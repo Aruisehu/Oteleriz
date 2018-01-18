@@ -1,0 +1,52 @@
+.zone {
+    @extend %clearfix;
+    background: $true-white;
+    border-radius: .25em;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    margin-bottom: 2em;
+    overflow: hidden;
+    padding: 1em;
+    position: relative;
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    .buttons {
+        margin-top: 0.5em;
+        float: left;
+    }
+
+    &.-sp {
+        padding: 0;
+    }
+
+    &.-background {
+        background-size: cover;
+        background-position: center;
+        color: $white;
+
+        .title {
+            color: $white;
+        }
+
+        .container {
+            padding: 2em !important;
+            z-index: 1;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                width: 120%;
+                top: -50%;
+                left: -10%;
+                z-index: -1;
+                height: 200%;
+                content: "";
+                display: block;
+                background: rgba($accent1, .76);
+                transform: rotate(12deg);
+            }
+        }
+    }
+}

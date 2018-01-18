@@ -1,0 +1,15 @@
+@media only screen and (max-width: $small) {
+    .align {
+        &.-m-center {
+            text-align: center;
+        }
+
+        &.-m-right {
+            text-align: right;
+        }
+
+        &.-m-left {
+            text-align: left;
+        }
+    }
+}

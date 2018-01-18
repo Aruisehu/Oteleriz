@@ -1,0 +1,134 @@
+/* Browser Styling */
+::selection {
+    background-color: rgba($accent1, .75) !important;
+    color: $white !important;
+}
+
+/* Global default custom styles */
+html {
+    background: $white;
+    box-sizing: border-box;
+    color: $text;
+    font-family: 'Open Sans', 'Arial', Tahoma, Geneva, sans-serif;
+    font-size: $default-font-size;
+    line-height: 1.3;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering : geometricPrecision;
+    -webkit-font-smoothing: antialiased !important;
+
+    @media only screen and (max-width: $xsmall) {
+        font-size: $default-font-size * 0.9;
+    }
+
+    @media only screen and (min-width: $large) {
+        font-size: $default-font-size * 1.04;
+    }
+
+    @media only screen and (min-width: $xlarge) {
+        font-size: $default-font-size * 1.08;
+    }
+
+    @media only screen and (min-width: $xxlarge) {
+        font-size: $default-font-size * 1.12;
+    }
+}
+
+html, body {
+    min-height: 100%;
+}
+
+html {
+    margin-top: 3em;
+}
+
+* {
+    // Prevent highlight tap effet in webkit mobile browsers
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+    @media only screen and (max-width: $small) {
+        cursor: default;
+    }
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+a {
+    color: $accent1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 100ms linear;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a * {
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 200px;
+    width: 100%;
+    resize: vertical;
+}
+
+input, textarea {
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        opacity: 0;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        opacity: 0;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        opacity: 0;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        opacity: 0;
+    }
+}
+
+img {
+    max-width: 100%;
+    float: left;
+}
+
+p {
+    margin: 0;
+}
+
+.para {
+    margin: 15px 0;
+}
+
+.float {
+    &.-r {
+        float: right;
+    }
+
+    &.-l {
+        float: left;
+    }
+}

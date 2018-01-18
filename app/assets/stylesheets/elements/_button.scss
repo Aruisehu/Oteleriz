@@ -1,0 +1,57 @@
+
+.btn, a.btn {
+    appearance: none;
+    background: $accent2;
+    border: 2px solid $accent2;
+    border-radius: 4px;
+    box-shadow: none;
+    color: $white;
+    fill: $white !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.125em;
+    line-height: 2.1em;
+    margin: 0 1em 1.5em 0;
+    opacity: 1 !important;
+    outline: none !important;
+    padding: 0.25em 0 0.15em 0.9em;
+    text-align: left !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: none !important;
+    transform: translateY(0);
+    transition: none, transform box-shadow 170ms ease-in-out;
+
+    .fa {
+        float: right;
+        line-height: 2.0em;
+        text-align: center;
+        width: 2.1em;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    }
+
+    &:active {
+        transform: translateY(1px) scale(0.985);
+    }
+
+    &.-white {
+        background: $white;
+        border-color: $white;
+        color: $accent2;
+
+        &.-alt {
+            color: $white;
+        }
+    }
+    
+    &.-alt {
+        color: $accent2;
+        background: none;
+    }
+}

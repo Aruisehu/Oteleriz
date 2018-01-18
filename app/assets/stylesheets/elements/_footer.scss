@@ -1,0 +1,45 @@
+#global-footer {
+    @extend %clearfix;
+    background-color: $gray0;
+    border-top: 1px solid $gray1;
+    color: $gray4;
+    line-height: 1.6;
+    padding: 4em 0;
+
+    nav a {
+        display: block;
+    }
+
+    h4 {
+        margin-bottom: 1em;
+    }
+
+    #social {
+        margin-bottom: 2em;
+
+        .fa {
+            background: rgba($accent2, .5);
+            border-radius: 1em;
+            color: $accent1;
+            font-size: 1.5em;
+            line-height: 2em;
+            margin: 0 0.5em 1em;
+            width: 2em;
+            transition: background-color color 170ms ease-in-out;
+        }
+
+        a:hover .fa {
+            background: $accent2;
+            color: $white;
+        }
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+    }
+}
