@@ -8,6 +8,10 @@
     height: 4em;
     z-index: 10000;
 
+    // Fix flicker by isolation with GPU rendering
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
     .row {
         height: 4em;
     }
