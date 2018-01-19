@@ -4,7 +4,8 @@ class CreateDishes < ActiveRecord::Migration[5.1]
             t.string :name
             t.text :description
             t.string :baking # Wok / Papillotes/ Fusio
-            t.string :roasting # For Beef
+            t.string :roasting
+            t.boolean :ask_roasting
         end
 
         create_join_table :orders, :dishes
