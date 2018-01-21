@@ -30,75 +30,45 @@ section {
 }
 
 .row {
-    --padding: 10%;
-
     @extend %clearfix;
 
-    display: inline-block;
-    float: left;
-    padding: 0 var(--padding);
+    display: block;
+    padding: 0 1em;
+    margin: 0 auto;
     width: 100%;
-
-    &.-sp {
-        padding: 0;
-    }
-
-    &.-size-8 {
-        max-width: 100% / (12 / 8);
-
-        @media only screen and (max-width: $small) {
-            padding: 0 1em !important;
-        }
-    }
-
-    &.-size-4 {
-        max-width: 100% / (12 / 4);
-    }
-
-    &.-left, &.-right {
-        float: left;
-    }
-
-    &.-left {
-        padding-right: 0;
-    }
-
-    &.-right {
-        padding-left: 0;
-    }
-
-    @media only screen and (max-width: $small) {
-        max-width: 100% !important;
-    }
 }
 
 .rel {
     position: relative;
 }
 
-
-
 @media only screen and (max-width: $small) {
     .row {
-        --padding: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: $normal) {
+    .row {
+        width: 80%;
     }
 }
 
 @media only screen and (min-width: $large) {
     .row {
-        --padding: 17%;
+        width: 66%;
     }
 }
 
 @media only screen and (min-width: $xlarge) {
     .row {
-        --padding: 21%;
+        width: 58%;
     }
 }
 
 @media only screen and (min-width: $xxlarge) {
     .row {
-        --padding: 25%;
+        width: 50%;
     }
 }
 

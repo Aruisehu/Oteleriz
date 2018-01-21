@@ -1,18 +1,28 @@
 <nav id="main-menu">
     <div class="row">
-        <a id="logo" href="<%= root_path %>">
-            <img src="http://reactorkc.com/wp-content/uploads/2017/06/Atlanta_Hawks_logo.svg_.png">
-            Cook Me Up
-        </a>
-        <input class="switch" id="menu-switch" type="checkbox">
-        <ul>
-            <%= nav_path("La Carte", static_page_path("menu")) %>
-            <%= nav_path("L'Équipe", static_page_path("team")) %>
-            <div id="lang-switcher">
-                <a class="<%= I18n.locale == :fr ? 'active' : '' %>" href="?locale=fr"><%= inline_svg "fr.svg" %></a>
-                <a class="<%= I18n.locale == :en ? 'active' : '' %>" href="?locale=en"><%= inline_svg "gb.svg" %></a>
+        <div class="menu">
+            <input class="switch" id="menu-switch" type="checkbox">
+            <label class="toggle" for="menu-switch"><%= fa_icon "bars" %></label>
+            <a id="logo" href="<%= root_path %>">
+                <img src="http://reactorkc.com/wp-content/uploads/2017/06/Atlanta_Hawks_logo.svg_.png">
+                Cook Me Up
+            </a>
+            <div id="submenu">
+                <%= nav_link("La Carte", static_page_path("menu")) %>
+                <%= nav_link("L'Équipe", static_page_path("team")) %>
+
+                <div id="lang-switcher">
+                    <a class="<%= I18n.locale == :fr ? 'active' : '' %>" href="?locale=fr"><%= inline_svg "fr.svg" %></a>
+                    <a class="<%= I18n.locale == :en ? 'active' : '' %>" href="?locale=en"><%= inline_svg "gb.svg" %></a>
+                </div>
             </div>
-        </ul>
-        <label class="toggle" for="menu-switch"><%= fa_icon "bars" %></label>
+        </div>
+        <div class="action">
+            <% unless nav_active(static_page_path("menu")) %>
+                <%= link_to static_page_path("menu"), class: "btn" do %>
+                    Click & Sit <%= fa_icon "shopping-bag" %>
+                <% end %>
+            <% end %>
+        </div>
     </div>
 </nav>

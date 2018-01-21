@@ -1,56 +1,56 @@
 @media only screen and (max-width: $small) {
     #main-menu {
+        box-shadow: none;
+        height: auto;
+        transition: height 170ms ease-out;
         z-index: 1;
 
-        ul {
+        .row {
             background: $white;
-            box-shadow: 0 -6em 1em 6em rgba($black, .3);
-            left: 0;
-            padding-left: 4em;
-            position: absolute;
-            transform: translateY(-200%);
-            transition: box-shadow 170ms ease-in-out, transform 170ms ease-out;
-            width: 100%;
-            z-index: -1;
-
-            a {
-                display: block;
-            }
-        }
-
-        #logo, a {
-            background: $white;
-            float: none;
-            width: calc(100% - 4em);
-        }
-
-        a, label, a:hover, label:hover {
-            background: $white;
-            color: $text;
-        }
-
-        .active {
-            box-shadow: inset 0 0 4em $gray0;
         }
 
         .toggle {
             display: inline-block;
         }
 
-        .switch:checked + ul {
-            box-shadow: 0 -6em 1em 6em rgba($black, .3), 0 0 1em 200vh rgba($black, .5);
-            transform: translateY(0%);
+        .menu #logo {
+            width: auto;
+
+            img {
+                margin-right: 1em
+            }
+        }
+
+
+        #submenu {
+            background: $white;
+            box-shadow: 0 -6em 1em 6em rgba($black, .3);
+            position: absolute;
+            padding: 0 4em;
+            top: -200%;
+            left: 0;
+            transition: top 170ms ease-out, box-shadow 170ms ease-in;
+            width: 100%;
+            z-index: -1;
+
+            a {
+                display: block;
+                float: none;
+            }
         }
 
         #lang-switcher {
-            float: none;
-            padding-right: 4em;
             text-align: center;
+            width: 100%;
 
             a {
                 display: inline-block;
-                width: 4em;
             }
+        }
+
+        .switch:checked ~ #submenu  {
+            box-shadow: 0 -6em 1em 6em rgba($black, .3), 0 0 100vw 100vw rgba($black, .5);
+            top: 100%;
         }
     }
 }
