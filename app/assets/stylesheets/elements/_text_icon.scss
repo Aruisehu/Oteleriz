@@ -1,0 +1,23 @@
+.text-icon {
+    padding: 0 0 0 3em;
+    padding-left: 4em;
+    position: relative;
+
+    .fa {
+        color: $accent2;
+        left: 0;
+        top: 0;
+        font-size: 1.5em;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2em;
+        background: rgba($accent2, .4);
+        position: absolute;
+
+        &::before {
+            letter-spacing: 0;
+        }
+    }
+}

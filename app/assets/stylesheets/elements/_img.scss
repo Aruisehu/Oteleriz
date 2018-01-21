@@ -11,4 +11,8 @@
         position: relative;
         top: -25%;
     }
+
+    &.-shadow {
+        box-shadow: 0 1em 2em rgba($shadow, .17), 0 0.3em 1em rgba($black, .12);
+    }
 }
