@@ -30,6 +30,10 @@
             width: 100%;
             z-index: -1;
 
+            // Test speed increase
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+
             a {
                 display: block;
                 float: none;
