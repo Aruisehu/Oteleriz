@@ -52,6 +52,10 @@
         text-transform: uppercase;
     }
 
+    #submenu a.current {
+        box-shadow: inset 0 -0.2em 0 $accent2;
+    }
+
     .toggle {
         display: none;
         float: left;
@@ -77,6 +81,10 @@
     }
 
     #lang-switcher {
+        a {
+            text-align: center;
+        }
+
         .active svg {
             background: $gray0;
             border-radius: 4px;
