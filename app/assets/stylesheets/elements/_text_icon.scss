@@ -3,7 +3,7 @@
     padding-left: 4em;
     position: relative;
 
-    .fa {
+    & > .fa {
         color: $accent2;
         left: 0;
         top: 0;

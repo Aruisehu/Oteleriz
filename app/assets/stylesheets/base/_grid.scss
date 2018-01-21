@@ -125,10 +125,10 @@ section {
         &.-big-gutter {
             padding: 1.5em !important;
         }
-    }
 
-    &.-f-right {
-        float: right;
+        &.-separator {
+            box-shadow: inset -1px 0 $gray0, 1px 0 $gray0;
+        }
     }
 }
 
