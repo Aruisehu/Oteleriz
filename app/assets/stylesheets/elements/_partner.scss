@@ -1,0 +1,32 @@
+.partners {
+    padding: 3em 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.partner {
+    display: flex;
+    flex-grow: 1;
+    margin: 2em;
+    width: 12em;
+    align-items: center;
+    justify-content: center;
+
+    &.-tiny {
+        img {
+            max-height: 8em;
+        }
+    }
+
+    img {
+        filter: grayscale(1);
+        float: none;
+        max-height: 12em;
+        max-width: 16em;
+        transition: filter 100ms ease-in-out;
+    }
+
+    &:hover img {
+        filter: grayscale(0);
+    }
+}
