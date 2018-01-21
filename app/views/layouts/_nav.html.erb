@@ -5,11 +5,14 @@
             <label class="toggle" for="menu-switch"><%= fa_icon "bars" %></label>
             <a id="logo" href="<%= root_path %>">
                 <img src="http://reactorkc.com/wp-content/uploads/2017/06/Atlanta_Hawks_logo.svg_.png">
-                <%= site_name %>
+                <h1><%= site_name %></h1>
             </a>
             <div id="submenu">
-                <%= nav_link("La Carte", static_page_path("menu")) %>
-                <%= nav_link("L'Équipe", static_page_path("team")) %>
+                <%= link_to "Histoire", "#history" %>
+                <%= link_to "Concept", "#concept" %>
+                <%= link_to "Participez", "#participate" %>
+                <%= link_to "Équipe", "#team" %>
+                <%= link_to "Partenaires", "#partners" %>
 
                 <div id="lang-switcher">
                     <a class="<%= I18n.locale == :fr ? 'active' : '' %>" href="?locale=fr"><%= inline_svg "fr.svg" %></a>

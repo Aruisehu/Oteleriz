@@ -1,0 +1,9 @@
+@media only screen and (max-width: $small) {
+    .partner {
+        width: 5em;
+
+        img {
+            filter: none;
+        }
+    }
+}
