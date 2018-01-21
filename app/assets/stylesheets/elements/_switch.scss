@@ -20,8 +20,4 @@
 
 .switch {
     display: none;
-
-    &:checked + * {
-        display: initial !important;
-    }
 }

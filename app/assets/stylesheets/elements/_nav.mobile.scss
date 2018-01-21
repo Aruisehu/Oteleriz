@@ -24,7 +24,7 @@
             box-shadow: 0 -6em 1em 6em rgba($black, .3);
             position: absolute;
             padding: 0 4em;
-            top: -200%;
+            top: -500%;
             left: 0;
             transition: top 170ms ease-out, box-shadow 170ms ease-in;
             width: 100%;
@@ -33,6 +33,12 @@
             a {
                 display: block;
                 float: none;
+                border-radius: .25em;
+            }
+
+            a.current {
+                background: $gray0;
+                box-shadow: none;
             }
         }
 
