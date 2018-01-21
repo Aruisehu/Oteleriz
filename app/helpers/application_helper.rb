@@ -1,6 +1,6 @@
 module ApplicationHelper
 
     def site_name
-        "Oteleriz"
+        "Cook Me Up"
     end
 end
