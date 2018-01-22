@@ -1,7 +1,9 @@
 .fb-page {
-    margin-top: 1em;
     border-radius: 4px;
     box-shadow: 0 0 0 .2em $gray1;
+    margin-top: 1em;
+    margin: 1em auto;
+    max-width: 100%;
     overflow: hidden;
     width: 22em;
 }

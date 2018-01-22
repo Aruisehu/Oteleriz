@@ -26,9 +26,13 @@
             padding: 0 4em;
             top: -500%;
             left: 0;
-            transition: top 170ms ease-out, box-shadow 170ms ease-in;
+            transition: top 170ms ease-out;
             width: 100%;
             z-index: -1;
+
+            // Test speed increase
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
 
             a {
                 display: block;
@@ -52,7 +56,7 @@
         }
 
         .switch:checked ~ #submenu  {
-            box-shadow: 0 -6em 1em 6em rgba($black, .3), 0 0 100vw 100vw rgba($black, .5);
+            box-shadow: 0 -6em 1em 6em rgba($black, .3), 0 0 0 100vh rgba($black, .5);
             top: 100%;
         }
     }
