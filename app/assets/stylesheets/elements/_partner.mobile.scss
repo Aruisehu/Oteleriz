@@ -1,8 +1,9 @@
 @media only screen and (max-width: $small) {
     .partner {
-        width: 5em;
+        width: 6em;
 
         img {
+            max-width: 100%;
             filter: none;
         }
     }
