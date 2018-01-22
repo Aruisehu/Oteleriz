@@ -81,6 +81,21 @@
     </div>
 </section>
 <section class="-border-bottom">
+    <a id="menu" class="anchor"></a>
+    <div class="row">
+        <h2 class="title align -center">Notre Carte</h2>
+        <h3 class="subtitle align -center">Découvrez notre carte en attendant le salon Égast</h3>
+        <div class="faded-zone">
+            <%= cell(:product, "test") %>
+            <%= cell(:product, "test") %>
+        </div>
+        <div class="col-12 align -center">
+            <a class="btn" href="<%= static_page_path("menu") %>">notre carte<%= fa_icon "book" %></a>
+            <a class="btn -alt" href="<%= static_page_path("menu") %>">nos formules<%= fa_icon "edit" %></a>
+        </div>
+    </div>
+</section>
+<section class="-border-bottom">
     <a id="participate" class="anchor"></a>
     <div class="row">
         <h2 class="title align -center">Prenez part à l'aventure</h2>

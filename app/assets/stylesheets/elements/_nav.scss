@@ -77,7 +77,7 @@
     }
 
     .switch:checked ~ .toggle .fa::before {
-        content: "\f060"; // change "bars" to "arrow-left"
+        content: "\f00d"; // change "bars" icon  to "close" icon
     }
 
     #lang-switcher {
