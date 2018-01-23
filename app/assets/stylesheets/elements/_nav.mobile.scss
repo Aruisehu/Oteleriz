@@ -20,13 +20,16 @@
         }
 
         #submenu {
+            --main-menu-links-number: 6;
+            --main-menu-decal: calc(var(--main-menu-links-number) * -100%) ;
             background: $white;
             box-shadow: 0 -6em 1em 6em rgba($black, .3);
             position: absolute;
             padding: 0 4em;
-            top: -500%;
+            top: -600%;
+            top: var(--main-menu-decal);
             left: 0;
-            transition: top 170ms ease-out;
+            transition: top 250ms ease-in-out;
             width: 100%;
             z-index: -1;
 
