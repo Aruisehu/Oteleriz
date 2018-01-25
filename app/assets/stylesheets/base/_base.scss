@@ -38,6 +38,10 @@ html, body {
     min-height: 100%;
 }
 
+html.stop-scroll {
+    overflow: hidden;
+}
+
 html {
     margin-top: 3em;
 }

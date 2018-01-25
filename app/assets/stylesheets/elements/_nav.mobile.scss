@@ -20,15 +20,16 @@
         }
 
         #submenu {
-            --main-menu-links-number: 6;
-            --main-menu-decal: calc(var(--main-menu-links-number) * -100%) ;
             background: $white;
+            border-top: 2px solid $gray1;
             box-shadow: 0 -6em 1em 6em rgba($black, .3);
-            position: absolute;
-            padding: 0 4em;
-            top: -600%;
-            top: var(--main-menu-decal);
             left: 0;
+            max-height: calc(100vh - 100%);
+            overflow: hidden;
+            overflow-y: auto;
+            padding: 1em 4em 0;
+            position: absolute;
+            top: calc(-100vh - 100%);
             transition: top 250ms ease-in-out;
             width: 100%;
             z-index: -1;
@@ -59,7 +60,7 @@
         }
 
         .switch:checked ~ #submenu  {
-            box-shadow: 0 -6em 1em 6em rgba($black, .3), 0 0 0 100vh rgba($black, .5);
+            box-shadow: 0 -6em 1em 6em rgba($black, .3), 0 0 0 200vh rgba($black, .5);
             top: 100%;
         }
     }

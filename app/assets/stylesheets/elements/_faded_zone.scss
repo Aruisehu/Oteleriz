@@ -1,12 +1,12 @@
 .faded-zone {
     overflow: hidden;
-    padding: 2em 0 0;
-    margin-bottom: 2em;
+    padding: 1em 0 0;
     position: relative;
+    z-index: -1;
 
     &::after {
         content: "";
-        background: linear-gradient(0deg, $white 25%, transparent);
+        background: linear-gradient(0deg, $white 0%, rgba($white, .75) 50%, transparent);
         display: block;
         position: absolute;
         width: 100%;
