@@ -12,4 +12,12 @@ class ProductCell < Cell::ViewModel
     def menu
         render
     end
+
+    def price
+        unless options[:presentation]
+            render
+        else
+            return ""
+        end
+    end
 end

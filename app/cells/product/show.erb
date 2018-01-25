@@ -8,8 +8,5 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </div>
-    <div class="add">
-        <span class="price">10.39€</span>
-        <a class="btn -alt" href="#">Ajouter <%= fa_icon "plus" %></a>
-    </div>
+    <%= cell(:product, "test", presentation: options[:presentation]).(:price) %>
 </div>
