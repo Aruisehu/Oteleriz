@@ -1,0 +1,14 @@
+footer nav {
+    a {
+        padding: .3em .5em;
+        opacity: .8;
+        border-radius: .25em;
+        position: relative;
+        left: -.5em;
+    }
+
+    a:hover {
+        opacity: 1;
+        background: rgba($accent2, .1);
+    }
+}

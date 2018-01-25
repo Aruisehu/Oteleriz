@@ -3,4 +3,10 @@
     text-transform: none;
     font-weight: normal;
     margin-bottom: 0.5em;
+
+    &.-img {
+        img {
+            margin: 1em;
+        }
+    }
 }
