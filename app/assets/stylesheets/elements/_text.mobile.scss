@@ -1,0 +1,7 @@
+@media only screen and (max-width: $small) {
+    .text {
+        &.-padded p {
+            padding: 0;
+        }
+    }
+}
