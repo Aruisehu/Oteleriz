@@ -1,15 +1,45 @@
+<% content_for :main_nav do %>
+    <h3 class="title">Click & Sit</h3>
+    <%= link_to "Plats", "#main" %>
+    <%= link_to "Entrés", "#starter" %>
+    <%= link_to "Desserts", "#dessert" %>
+    <%= link_to "Formules", "#course" %>
+    <%= link_to "Boissons", "#drink" %>
+<% end %>
 <section>
     <div class="row">
-        <%= cell(:product, "test") %>
+        <a id="main" class="anchor"></a>
+        <h3 class="title align -center">Plats</h3>
         <%= cell(:product, "test") %>
         <%= cell(:product, "test").(:menu) %>
         <%= cell(:product, "test").(:tiny) %>
+    </div>
+    <div class="row">
+        <a id="starter" class="anchor"></a>
+        <h3 class="title align -center">Entrés</h3>
+        <%= cell(:product, "test") %>
+        <%= cell(:product, "test").(:menu) %>
         <%= cell(:product, "test").(:tiny) %>
+    </div>
+    <div class="row">
+        <a id="dessert" class="anchor"></a>
+        <h3 class="title align -center">Desserts</h3>
+        <%= cell(:product, "test") %>
+        <%= cell(:product, "test").(:menu) %>
         <%= cell(:product, "test").(:tiny) %>
+    </div>
+    <div class="row">
+        <a id="course" class="anchor"></a>
+        <h3 class="title align -center">Formules</h3>
+        <%= cell(:product, "test") %>
+        <%= cell(:product, "test").(:menu) %>
         <%= cell(:product, "test").(:tiny) %>
+    </div>
+    <div class="row">
+        <a id="drink" class="anchor"></a>
+        <h3 class="title align -center">Boissons</h3>
         <%= cell(:product, "test") %>
-        <%= cell(:product, "test") %>
-        <%= cell(:product, "test") %>
-        <%= cell(:product, "test") %>
+        <%= cell(:product, "test").(:menu) %>
+        <%= cell(:product, "test").(:tiny) %>
     </div>
 </section>

@@ -8,12 +8,7 @@
                 <h1><%= site_name %></h1>
             </a>
             <div id="submenu">
-                <%= link_to "Histoire", "#history" %>
-                <%= link_to "Concept", "#concept" %>
-                <%= link_to "Carte", "#menu" %>
-                <%= link_to "Participez", "#participate" %>
-                <%= link_to "Équipe", "#team" %>
-                <%= link_to "Partenaires", "#partners" %>
+                <%= yield(:main_nav) %>
 
                 <div id="lang-switcher">
                     <a class="<%= I18n.locale == :fr ? 'active' : '' %>" href="?locale=fr"><%= inline_svg "fr.svg" %></a>

@@ -47,9 +47,20 @@
         float: left;
         line-height: 4em;
         min-width: 4em;
-        padding: 0 0.8em;
+        padding: 0 .8em;
         color: $text;
+        font-weight: bold;
         text-transform: uppercase;
+    }
+
+    .title {
+        color: rgba($text, .5);
+        font-size: 1em;
+        display: inline-block;
+        float: left;
+        line-height: 4em;
+        padding: 0 .8em;
+        margin: 0;
     }
 
     #submenu a.current {
@@ -81,6 +92,7 @@
     }
 
     #lang-switcher {
+        float: right;
         a {
             text-align: center;
         }

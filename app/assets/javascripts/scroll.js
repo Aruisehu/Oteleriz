@@ -11,28 +11,31 @@ ScrollMenu = {
             if (item.length) { return item; }
         });
 
+        // Load set
+        ScrollMenu.setScrollItem();
+
         // Bind to scroll
-        $(window).scroll(function(){
-            // Get container scroll position
-            var fromTop = $(this).scrollTop() + ScrollMenu.height;
+        $(window).scroll(function() { ScrollMenu.setScrollItem() });
+    },
+    setScrollItem: function() {
+        // Get container scroll position
+        var fromTop = $(window).scrollTop() + ScrollMenu.height;
 
+        // Get id of current scroll item
+        var cur = ScrollMenu.anchorItems.map(function(){
 
-            // Get id of current scroll item
-            var cur = ScrollMenu.anchorItems.map(function(){
-
-                if ($(this).offset().top < fromTop)
-                return this;
-            });
-
-            // Get the id of the current element
-            cur = cur[cur.length-1];
-
-            var id = cur && cur.length ? cur[0].id : "";
-
-            // Set/remove active class
-            ScrollMenu.menuItems.removeClass("current")
-            ScrollMenu.root.find("[href='#" + id + "']").addClass("current");
+            if ($(this).offset().top < fromTop)
+            return this;
         });
+
+        // Get the id of the current element
+        cur = cur[cur.length-1];
+
+        var id = cur && cur.length ? cur[0].id : "";
+
+        // Set/remove active class
+        ScrollMenu.menuItems.removeClass("current")
+        ScrollMenu.root.find("[href='#" + id + "']").addClass("current");
     }
 };
 
