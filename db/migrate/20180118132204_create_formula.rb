@@ -1,6 +1,8 @@
 class CreateFormula < ActiveRecord::Migration[5.1]
     def change
         create_table :formulas do |t|
+            t.string :baking # Wok / Papillotes/ Fusio
+            t.string :roasting
         end
         add_reference :formulas, :starter, {to_table: :starters}
         add_reference :formulas, :dish, {to_table: :dishes}

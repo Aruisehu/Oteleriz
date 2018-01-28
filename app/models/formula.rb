@@ -17,6 +17,34 @@ class Formula < ApplicationRecord
         self.formula_tempate.dessert?
     end
 
+    module Baking
+        def self.all
+            ["wok", "papillotte", "fusio"]
+        end
+
+        self.all.each do |baking|
+            define_method("#{baking}?") do
+                self.baking == baking
+            end
+        end
+    end
+
+    module Roasting
+        def self.all
+            ["rare", "well_done"]
+        end
+
+        self.all.each do |roasting|
+            define_method("#{roasting}?") do
+                self.roasting == roasting
+            end
+        end
+    end
+
+    include Formula::Baking
+    include Formula::Roasting
+
+
     validate :starter, absence: true, unless: :starter?
     validate :starter, presence: true, if: :starter?
 
@@ -25,4 +53,10 @@ class Formula < ApplicationRecord
 
     validate :dessert, absence: true, unless: :dessert?
     validate :dessert, presence: true, if: :dessert?
+
+    validate :baking, inclusion: {in: Formula::Baking.all}, if: :dish?
+    validate :roasting, inclusion: {in: Formula::Roasting.all}, if: :need_roasting?
+
+    def need_roasting?
+        self.dish? && self.dish&.ask_roasting
 end
