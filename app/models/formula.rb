@@ -45,17 +45,17 @@ class Formula < ApplicationRecord
     include Formula::Roasting
 
 
-    validate :starter, absence: true, unless: :starter?
-    validate :starter, presence: true, if: :starter?
+    validates :starter, absence: true, unless: :starter?
+    validates :starter, presence: true, if: :starter?
 
-    validate :dish, absence: true, unless: :dish?
-    validate :dish, presence: true, if: :dish?
+    validates :dish, absence: true, unless: :dish?
+    validates :dish, presence: true, if: :dish?
 
-    validate :dessert, absence: true, unless: :dessert?
-    validate :dessert, presence: true, if: :dessert?
+    validates :dessert, absence: true, unless: :dessert?
+    validates :dessert, presence: true, if: :dessert?
 
-    validate :baking, inclusion: {in: Formula::Baking.all}, if: :dish?
-    validate :roasting, inclusion: {in: Formula::Roasting.all}, if: :need_roasting?
+    validates :baking, inclusion: {in: Formula::Baking.all}, if: :dish?
+    validates :roasting, inclusion: {in: Formula::Roasting.all}, if: :need_roasting?
 
     def need_roasting?
         self.dish? && self.dish&.ask_roasting
