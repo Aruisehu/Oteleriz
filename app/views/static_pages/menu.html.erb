@@ -10,19 +10,19 @@
     <div class="row">
         <a id="starter" class="anchor"></a>
         <h3 class="title align -center">Entrés</h3>
-        <%= cell(:product, "test") %>
-        <%= cell(:product, "test").(:menu) %>
-        <%= cell(:product, "test").(:tiny) %>
+        <%= cell(:product, collection: @starters) %>
     </div>
     <div class="row  align -center">
         <a id="main" class="anchor"></a>
         <h3 class="title">Plats</h3>
-        <h4 class="subtitle">Créer votre plat à votre goût en choisissant la base, le mode de cuisson et la garniture</h4>
+        <h4 class="subtitle">Créer votre plat à votre goût en choisissant vos aliments</h4>
         <a class="btn">Créer mon plat <%= fa_icon "plus" %></a>
         <a class="btn -alt">Surprenez-moi <%= fa_icon "random" %></a>
         <div class="col-12">
             <div class="zone">
-                <h5 class="title align -center">Base</h5>
+                <header>
+                    <h5 class="title align -center">Base</h5>
+                </header>
                 <div class="col-4 align -center">
                     <i class="icon"><%= inline_svg "beef.svg" %></i>
                     <h6 class="title -compact">Boeuf</h6>
@@ -37,7 +37,9 @@
                 </div>
             </div>
             <div class="zone">
-                <h5 class="title align -center">Méthodes de cuisson & Garnitures</h5>
+                <header>
+                    <h5 class="title align -center">Méthodes de cuisson</h5>
+                </header>
                 <div class="col-4 align -center">
                     <i class="icon"><%= inline_svg "papillote.svg" %></i>
                     <h6 class="title -compact">Papillote</h6>
@@ -50,20 +52,35 @@
                     <i class="icon"><%= inline_svg "fusio.svg" %></i>
                     <h6 class="title -compact">Fusio</h6>
                 </div>
-                <div class="col-4 align -center">
-                    <p>légumes cuit sous vide (pomme de terre, carotte, poivron rouge, oignon, céleri branche)</p>
-                </div>
-                <div class="col-4 align -center">
-                    <p>Nouilles chinoise, légumes & sauce soja</p>
-                </div>
-                <div class="col-4 align -center">
-                    <p>Potatoes de pommes de terre, patate douce & céleri, parfumées aux herbes de Provence</p>
-                </div>
             </div>
-            <div class="zone -sp scroll-x -auto">
+            <div class="zone scroll-x -auto">
+                <header>
+                    <h5 class="title align -center">Garnitures</h5>
+                </header>
                 <table>
                     <thead>
-                        <th><h6 class="title -compact">Marinades</h6></th>
+                        <th></th>
+                        <th>Papillote</th>
+                        <th>Fusion</th>
+                        <th>Wok</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Garniture</th>
+                            <td>Légumes cuit sous vide (pomme de terre, carotte, poivron rouge, oignon, céleri branche)</td>
+                            <td>Potatoes de pommes de terre, patate douce & céleri, parfumées aux herbes de Provence</td>
+                            <td>Nouilles chinoise, légumes & sauce soja</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="zone scroll-x -auto">
+                <header>
+                    <h5 class="title align -center">Marinades</h5>
+                </header>
+                <table>
+                    <thead>
+                        <th></th>
                         <th>Boeuf</th>
                         <th>Volaille</th>
                         <th>Gambas</th>
@@ -71,40 +88,28 @@
                     <tbody>
                         <tr>
                             <th>Papillote</th>
-                            <td>marinade sauce saté & paprika</td>
-                            <td>marinade lait de coco & curry</td>
-                            <td>marinade gingembre & citron vert</td>
+                            <td>Marinade sauce saté & paprika</td>
+                            <td>Marinade lait de coco & curry</td>
+                            <td>Marinade gingembre & citron vert</td>
                         </tr>
                         <tr>
                             <th>Fusio</th>
-                            <td>marinade huile d’olive, thym & ail</td>
-                            <td>marinade huile d’olive & jus de citron vert</td>
-                            <td>marinade huile d’olive & Martini rouge</td>
+                            <td>Marinade huile d’olive, thym & ail</td>
+                            <td>Marinade huile d’olive & jus de citron vert</td>
+                            <td>Marinade huile d’olive & Martini rouge</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="col-12 align -center">
+                <a class="btn">Créer mon plat <%= fa_icon "plus" %></a>
+                <a class="btn -alt">Surprenez-moi <%= fa_icon "random" %></a>
             </div>
         </div>
     </div>
     <div class="row">
         <a id="dessert" class="anchor"></a>
         <h3 class="title align -center">Desserts</h3>
-        <%= cell(:product, "test") %>
-        <%= cell(:product, "test").(:menu) %>
-        <%= cell(:product, "test").(:tiny) %>
-    </div>
-    <div class="row">
-        <a id="course" class="anchor"></a>
-        <h3 class="title align -center">Formules</h3>
-        <%= cell(:product, "test") %>
-        <%= cell(:product, "test").(:menu) %>
-        <%= cell(:product, "test").(:tiny) %>
-    </div>
-    <div class="row">
-        <a id="drink" class="anchor"></a>
-        <h3 class="title align -center">Boissons</h3>
-        <%= cell(:product, "test") %>
-        <%= cell(:product, "test").(:menu) %>
-        <%= cell(:product, "test").(:tiny) %>
+        <%= cell(:product, collection: @desserts) %>
     </div>
 </section>

@@ -7,6 +7,6 @@ class CreateFormulaTemplate < ActiveRecord::Migration[5.1]
             t.decimal :price, precision: 9, scale: 2
         end
 
-        add_reference :formulas, :formula_template, {to_table: :formula_templates]
+        add_reference :formulas, :formula_template, {to_table: :formula_templates}
     end
 end

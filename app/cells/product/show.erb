@@ -4,8 +4,8 @@
             <img src="http://blog.ac-versailles.fr/lebonjournal/public/.hamburger_m.jpg" alt="name">
         </div>
         <div class="content">
-            <h5 class="title">Hamburger Frite</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h5 class="title"><%= model.name %></h5>
+            <p><%= model.description %></p>
         </div>
     </div>
     <%= cell(:product, "test", presentation: options[:presentation]).(:price) %>

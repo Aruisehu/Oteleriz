@@ -1,5 +1,6 @@
 .product {
     background: $gray0;
+    box-shadow: 0 1em 2em rgba($shadow, .1), 0 0.3em 1em rgba($black, .07), 0 0 0.1em 0.1em rgba($black, .05);
     border-radius: 0.25em;
     float: left;
     margin: 0 1em 2em;
@@ -17,7 +18,6 @@
         margin-bottom: 1em;
 
         .img {
-            box-shadow: 0 0 1em 0.1em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .17);
             max-height: 8rem;
             width: 12em;
         }
@@ -45,6 +45,7 @@
 
     &.-tiny {
         width: calc(25% - 2em);
+        text-align: center;
 
         .img {
             width: 100%;
@@ -53,7 +54,6 @@
 
         .title {
             margin-top: .5em;
-            text-align: center;
         }
     }
 

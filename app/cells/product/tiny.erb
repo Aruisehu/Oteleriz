@@ -3,7 +3,8 @@
         <div class="img">
             <img src="http://blog.ac-versailles.fr/lebonjournal/public/.hamburger_m.jpg" alt="name">
         </div>
-        <h5 class="title">Hamburger Frite</h5>
+        <h5 class="title"><%= model.name %></h5>
+        <p><%= model.description %></p>
     </div>
     <%= cell(:product, "test", presentation: options[:presentation]).(:price) %>
 </div>

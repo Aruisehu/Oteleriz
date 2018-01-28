@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118132204) do
+ActiveRecord::Schema.define(version: 20180118213211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,33 +20,29 @@ ActiveRecord::Schema.define(version: 20180118132204) do
     t.text "description"
   end
 
-  create_table "desserts_orders", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "dessert_id", null: false
-  end
-
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "baking"
-    t.string "roasting"
+    t.boolean "ask_roasting"
   end
 
-  create_table "dishes_orders", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "dish_id", null: false
-  end
-
-  create_table "formulas", force: :cascade do |t|
+  create_table "formula_templates", force: :cascade do |t|
     t.boolean "has_starter"
     t.boolean "has_dish"
     t.boolean "has_dessert"
     t.decimal "price", precision: 9, scale: 2
+  end
+
+  create_table "formulas", force: :cascade do |t|
+    t.string "baking"
+    t.string "roasting"
     t.bigint "starter_id"
     t.bigint "dish_id"
     t.bigint "dessert_id"
+    t.bigint "formula_template_id"
     t.index ["dessert_id"], name: "index_formulas_on_dessert_id"
     t.index ["dish_id"], name: "index_formulas_on_dish_id"
+    t.index ["formula_template_id"], name: "index_formulas_on_formula_template_id"
     t.index ["starter_id"], name: "index_formulas_on_starter_id"
   end
 
@@ -69,11 +65,6 @@ ActiveRecord::Schema.define(version: 20180118132204) do
     t.integer "number_persons"
     t.bigint "meal_id"
     t.index ["meal_id"], name: "index_orders_on_meal_id"
-  end
-
-  create_table "orders_starters", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "starter_id", null: false
   end
 
   create_table "starters", force: :cascade do |t|
