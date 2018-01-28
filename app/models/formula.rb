@@ -59,4 +59,5 @@ class Formula < ApplicationRecord
 
     def need_roasting?
         self.dish? && self.dish&.ask_roasting
+    end
 end
