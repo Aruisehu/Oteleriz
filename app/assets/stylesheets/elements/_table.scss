@@ -1,0 +1,35 @@
+table {
+    font-size: 112.5%;
+    max-width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+        padding: 1em;
+        max-width: 25%;
+        min-width: 10em;
+    }
+
+    th {
+        text-transform: uppercase;
+        letter-spacing: 0.125em;
+    }
+
+    tr {
+        border-bottom: 1px solid $gray0;
+    }
+
+    th:first-child {
+        min-width: auto;
+        text-align: right;
+    }
+
+    th:nth-child(even), td:nth-child(even) {
+        background: rgba($gray0, .5);
+        border-right: 1px solid $gray0;
+        border-left: 1px solid $gray0;
+    }
+
+    .title {
+        margin: 0 !important;
+    }
+}

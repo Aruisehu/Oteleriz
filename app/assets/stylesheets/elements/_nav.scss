@@ -37,8 +37,7 @@
             overflow: hidden;
 
             img {
-                height: 3em;
-                margin: 0.5em;
+                height: 4em;
             }
         }
     }
@@ -54,7 +53,8 @@
     }
 
     .title {
-        color: rgba($text, .5);
+        color: $text;
+        font-weight: normal;
         font-size: 1em;
         display: inline-block;
         float: left;
