@@ -97,10 +97,7 @@
         <h2 class="title align -center">Notre Carte</h2>
         <h3 class="subtitle align -center">Découvrez notre carte en attendant le salon Égast</h3>
         <div class="faded-zone">
-            <%= cell(:product, "test", presentation: true).(:tiny) %>
-            <%= cell(:product, "test", presentation: true).(:tiny) %>
-            <%= cell(:product, "test", presentation: true).(:tiny) %>
-            <%= cell(:product, "test", presentation: true).(:tiny) %>
+            <%= cell(:product, collection: @starters, presentation: true).(:tiny) %>
         </div>
         <div class="align -center">
             <a class="btn" href="<%= static_page_path("menu") %>">notre carte<%= fa_icon "book" %></a>
