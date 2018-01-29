@@ -2,10 +2,30 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 # Entrées
-Starter.create(name: "Tataki de thon", description: "Tataki de thon, salade d’algues, julienne de pommes & confit de citron")
-Starter.create(name: "Tarte fine de canard", description: "Gésier, magret fumé, foie gras mi-cuit, accompagnés de ses purées de légumes & pickles")
-Starter.create(name: "Bouillon Thaï", description: "Bouillon & dés de saumon mariné à la sauce soja")
-Starter.create(name: "Poke Bowl", description: "Poke Bowl végétarien")
+Starter.create(
+    name_en: "Tataki de thon",
+    name_fr: "Tataki de thon",
+    description_en: "Tataki de thon, salade d’algues, julienne de pommes & confit de citron",
+    description_fr: "Tataki de thon, salade d’algues, julienne de pommes & confit de citron"
+)
+Starter.create(
+    name_en: "Tarte fine de canard",
+    name_fr: "Tarte fine de canard",
+    description_en: "Gésier, magret fumé, foie gras mi-cuit, accompagnés de ses purées de légumes & pickles",
+    description_fr: "Gésier, magret fumé, foie gras mi-cuit, accompagnés de ses purées de légumes & pickles"
+)
+Starter.create(
+    name_en: "Bouillon Thaï",
+    name_fr: "Bouillon Thaï",
+    description_en: "Bouillon & dés de saumon mariné à la sauce soja",
+    description_fr: "Bouillon & dés de saumon mariné à la sauce soja"
+)
+Starter.create(
+    name_en: "Poke Bowl",
+    name_fr: "Poke Bowl",
+    description_en: "Poke Bowl végétarien",
+    description_fr: "Poke Bowl végétarien"
+)
 
 # Plats
 boeuf = Dish.create(

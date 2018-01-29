@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 20180129000756) do
   end
 
   create_table "starters", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
   end
 
   add_foreign_key "orders", "meals"
