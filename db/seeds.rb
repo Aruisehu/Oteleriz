@@ -115,7 +115,30 @@ Marinade.create(
 )
 
 # Desserts
-Dessert.create(name: "Verrine Coco", description: "noix de coco, ananas & patate douce")
-Dessert.create(name: "Crème Brulée", description: "panais & cerfeuil tubéreux")
-Dessert.create(name: "Mille Feuille", description: "vanille, banane & poivrons")
-Dessert.create(name: "Tartelette carotte", description: "carotte")
+Dessert.create(
+    name_en: "Verrine Coco",
+    name_fr: "Verrine Coco",
+    description_en: "noix de coco, ananas & patate douce",
+    description_fr: "noix de coco, ananas & patate douce"
+)
+
+Dessert.create(
+    name_en: "Crème Brulée",
+    name_fr: "Crème Brulée",
+    description_en: "panais & cerfeuil tubéreux",
+    description_fr: "panais & cerfeuil tubéreux"
+)
+
+Dessert.create(
+    name_en: "Mille Feuille",
+    name_fr: "Mille Feuille",
+    description_en: "vanille, banane & poivrons",
+    description_fr: "vanille, banane & poivrons"
+)
+
+Dessert.create(
+    name_en: "Tartelette carotte",
+    name_fr: "Tartelette carotte",
+    description_en: "carotte",
+    description_fr: "carotte"
+)
