@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180129000756) do
   create_table "bakings", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.text "ingredient"
   end
 
   create_table "desserts", force: :cascade do |t|

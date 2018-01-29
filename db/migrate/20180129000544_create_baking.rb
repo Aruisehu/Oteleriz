@@ -3,6 +3,7 @@ class CreateBaking < ActiveRecord::Migration[5.1]
         create_table :bakings do |t|
             t.string :name
             t.text :description
+            t.text :ingredient
         end
         add_reference :formulas, :baking, {to_table: :bakings}
     end

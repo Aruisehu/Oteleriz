@@ -23,83 +23,73 @@
                 <header>
                     <h5 class="title align -center">Base</h5>
                 </header>
-                <div class="col-4 align -center">
-                    <i class="icon"><%= inline_svg "beef.svg" %></i>
-                    <h6 class="title -compact">Boeuf</h6>
-                </div>
-                <div class="col-4 align -center">
-                    <i class="icon"><%= inline_svg "poultry.svg" %></i>
-                    <h6 class="title -compact">Volaille</h6>
-                </div>
-                <div class="col-4 align -center">
-                    <i class="icon"><%= inline_svg "shrimp.svg" %></i>
-                    <h6 class="title -compact">Gambas</h6>
-                </div>
+                <% @dishes.each do |d| %>
+                    <div class="col-4 align -center">
+                        <i class="icon"><%= inline_svg d.name.downcase + ".svg" %></i>
+                        <h6 class="title -compact"><%= d.name %></h6>
+                    </div>
+                <% end %>
             </div>
             <div class="zone">
                 <header>
                     <h5 class="title align -center">Méthodes de cuisson</h5>
                 </header>
-                <div class="col-4 align -center">
-                    <i class="icon"><%= inline_svg "papillote.svg" %></i>
-                    <h6 class="title -compact">Papillote</h6>
-                </div>
-                <div class="col-4 align -center">
-                    <i class="icon"><%= inline_svg "wok.svg" %></i>
-                    <h6 class="title -compact">Wok</h6>
-                </div>
-                <div class="col-4 align -center">
-                    <i class="icon"><%= inline_svg "fusio.svg" %></i>
-                    <h6 class="title -compact">Fusio</h6>
-                </div>
+                <% @bakings.each do |b| %>
+                    <div class="col-4 align -center">
+                        <i class="icon"><%= inline_svg b.name.downcase + ".svg" %></i>
+                        <h6 class="title -compact"><%= b.name %></h6>
+                    </div>
+                <% end %>
             </div>
-            <div class="zone scroll-x -auto">
+            <div class="zone">
                 <header>
                     <h5 class="title align -center">Garnitures</h5>
                 </header>
-                <table>
-                    <thead>
-                        <th></th>
-                        <th>Papillote</th>
-                        <th>Fusion</th>
-                        <th>Wok</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Garniture</th>
-                            <td>Légumes cuit sous vide (pomme de terre, carotte, poivron rouge, oignon, céleri branche)</td>
-                            <td>Potatoes de pommes de terre, patate douce & céleri, parfumées aux herbes de Provence</td>
-                            <td>Nouilles chinoise, légumes & sauce soja</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="scroll-x -auto">
+                    <table>
+                        <thead>
+                            <th></th>
+                            <% @bakings.each do |b| %>
+                                <th><%= b.name %></th>
+                            <% end %>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Garniture</th>
+                                <% @bakings.each do |b| %>
+                                    <td><%= b.ingredient %></td>
+                                <% end %>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="zone scroll-x -auto">
+            <div class="zone">
                 <header>
                     <h5 class="title align -center">Marinades</h5>
                 </header>
-                <table>
-                    <thead>
-                        <th></th>
-                        <th>Boeuf</th>
-                        <th>Volaille</th>
-                        <th>Gambas</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Papillote</th>
-                            <td>Marinade sauce saté & paprika</td>
-                            <td>Marinade lait de coco & curry</td>
-                            <td>Marinade gingembre & citron vert</td>
-                        </tr>
-                        <tr>
-                            <th>Fusio</th>
-                            <td>Marinade huile d’olive, thym & ail</td>
-                            <td>Marinade huile d’olive & jus de citron vert</td>
-                            <td>Marinade huile d’olive & Martini rouge</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="scroll-x -auto">
+                    <table>
+                        <thead>
+                            <th></th>
+                            <% @dishes.each do |d| %>
+                                <th><%= d.name %></th>
+                            <% end %>
+                        </thead>
+                        <tbody>
+                            <% @bakings.each do |b| %>
+                                <% unless b.marinades.blank? %>
+                                    <tr>
+                                        <th><%= b.name %></th>
+                                        <% @dishes.each do |d| %>
+                                            <td><%= @marinades.find_by(baking: b, dish: d).description %></td>
+                                        <% end %>
+                                    </tr>
+                                <% end %>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="col-12 align -center">
                 <a class="btn">Créer mon plat <%= fa_icon "plus" %></a>

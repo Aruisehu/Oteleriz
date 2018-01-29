@@ -3,6 +3,8 @@ class StaticPagesController < ApplicationController
         @dishes = Dish.all
         @desserts = Dessert.all
         @starters = Starter.all
+        @bakings = Baking.all
+        @marinades = Marinade.all
     end
 
     def show
