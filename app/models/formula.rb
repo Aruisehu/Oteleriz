@@ -18,6 +18,10 @@ class Formula < ApplicationRecord
         self.formula_tempate.dessert?
     end
 
+    def get_products
+        return {starter: self.starter, dish: self.dish, dessert: self.dessert}.compact
+    end
+
     module Roasting
         def self.all
             ["rare", "well_done"]
