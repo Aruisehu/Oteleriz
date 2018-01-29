@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118213211) do
+ActiveRecord::Schema.define(version: 20180129000756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bakings", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+  end
 
   create_table "desserts", force: :cascade do |t|
     t.string "name"
@@ -34,12 +39,13 @@ ActiveRecord::Schema.define(version: 20180118213211) do
   end
 
   create_table "formulas", force: :cascade do |t|
-    t.string "baking"
     t.string "roasting"
     t.bigint "starter_id"
     t.bigint "dish_id"
     t.bigint "dessert_id"
     t.bigint "formula_template_id"
+    t.bigint "baking_id"
+    t.index ["baking_id"], name: "index_formulas_on_baking_id"
     t.index ["dessert_id"], name: "index_formulas_on_dessert_id"
     t.index ["dish_id"], name: "index_formulas_on_dish_id"
     t.index ["formula_template_id"], name: "index_formulas_on_formula_template_id"
@@ -49,6 +55,15 @@ ActiveRecord::Schema.define(version: 20180118213211) do
   create_table "formulas_orders", id: false, force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "formula_id", null: false
+  end
+
+  create_table "marinades", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "baking_id"
+    t.bigint "dish_id"
+    t.index ["baking_id"], name: "index_marinades_on_baking_id"
+    t.index ["dish_id"], name: "index_marinades_on_dish_id"
   end
 
   create_table "meals", force: :cascade do |t|
