@@ -4,15 +4,21 @@
     </div>
     <h6><%= model.name %></h6>
     <div class="cooking">
-
+        <h6><%= @cooking.name %></h6>
     </div>
-    <div class="roasting">
-
-    </div>
+    <% if @roasting %>
+        <div class="roasting">
+            <h6><%= @roasting %></h6>
+        </div>
+    <% end %>
     <div class="garniture">
-
+        <h6>Garnitures</h6>
+        <%= @cooking.ingredient %>
     </div>
-    <div class="marinade">
-
-    </div>
+    <% if @marinade %>
+        <div class="marinade">
+            <h6>Marinade</h6>
+            <%= @marinade.description %>
+        </div>
+    <% end %>
 </div>
