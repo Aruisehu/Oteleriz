@@ -12,6 +12,8 @@
         <h3 class="title align -center">Entrés</h3>
         <%= cell(:product, collection: @starters) %>
     </div>
+</section>
+<section class="-darker">
     <div class="row  align -center">
         <a id="main" class="anchor"></a>
         <h3 class="title">Plats</h3>
@@ -25,7 +27,7 @@
                 </header>
                 <% @dishes.each do |d| %>
                     <div class="col-4 align -center">
-                        <i class="icon"><%= inline_svg d.name.downcase + ".svg" %></i>
+                        <i class="icon"><%= inline_svg d.name_en.downcase + ".svg" %></i>
                         <h6 class="title -compact"><%= d.name %></h6>
                     </div>
                 <% end %>
@@ -36,7 +38,7 @@
                 </header>
                 <% @bakings.each do |b| %>
                     <div class="col-4 align -center">
-                        <i class="icon"><%= inline_svg b.name.downcase + ".svg" %></i>
+                        <i class="icon"><%= inline_svg b.name_en.downcase + ".svg" %></i>
                         <h6 class="title -compact"><%= b.name %></h6>
                     </div>
                 <% end %>
@@ -97,6 +99,8 @@
             </div>
         </div>
     </div>
+</section>
+<section>
     <div class="row">
         <a id="dessert" class="anchor"></a>
         <h3 class="title align -center">Desserts</h3>

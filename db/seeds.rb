@@ -8,9 +8,27 @@ Starter.create(name: "Bouillon Thaï", description: "Bouillon & dés de saumon m
 Starter.create(name: "Poke Bowl", description: "Poke Bowl végétarien")
 
 # Plats
-boeuf = Dish.create(name: "Boeuf", description: "", ask_roasting: true)
-volaille = Dish.create(name: "Volaille", description: "")
-gambas = Dish.create(name: "Gambas", description: "")
+boeuf = Dish.create(
+    name_en: "Beef",
+    name_fr: "Boeuf",
+    description_en: "",
+    description_fr: "",
+    ask_roasting: true
+)
+
+volaille = Dish.create(
+    name_en: "Poultry",
+    name_fr: "Volaille",
+    description_en: "",
+    description_fr: ""
+)
+
+gambas = Dish.create(
+    name_en: "Shrimp",
+    name_fr: "Gambas",
+    description_en: "",
+    description_fr: ""
+)
 
 # Modes de cuissons
 papillote = Baking.create(

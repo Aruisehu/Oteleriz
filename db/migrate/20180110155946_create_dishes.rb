@@ -1,8 +1,8 @@
 class CreateDishes < ActiveRecord::Migration[5.1]
     def change
         create_table :dishes do |t|
-            t.string :name
-            t.text :description
+            t.column :name_translations, :jsonb
+            t.column :description_translations, :jsonb
             t.boolean :ask_roasting
         end
     end
