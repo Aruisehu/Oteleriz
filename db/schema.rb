@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20180129000756) do
   enable_extension "plpgsql"
 
   create_table "bakings", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.text "ingredient"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
+    t.jsonb "ingredient_translations"
   end
 
   create_table "desserts", force: :cascade do |t|

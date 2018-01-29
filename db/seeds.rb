@@ -13,9 +13,32 @@ volaille = Dish.create(name: "Volaille", description: "")
 gambas = Dish.create(name: "Gambas", description: "")
 
 # Modes de cuissons
-papillote = Baking.create(name: "Papilote", description: "", ingredient: "Légumes cuit sous vide (pomme de terre, carotte, poivron rouge, oignon, céleri branche)")
-fusio = Baking.create(name: "Fusio", description: "", ingredient: "Potatoes de pommes de terre, patate douce & céleri, parfumées aux herbes de Provence")
-wok = Baking.create(name: "Wok", description: "", ingredient: "Nouilles chinoise, légumes & sauce soja")
+papillote = Baking.create(
+    name_en: "Papillote",
+    name_fr: "Papillote",
+    description_en: "",
+    description_fr: "",
+    ingredient_en: "Légumes cuit sous vide (pomme de terre, carotte, poivron rouge, oignon, céleri branche)",
+    ingredient_fr: "Légumes cuit sous vide (pomme de terre, carotte, poivron rouge, oignon, céleri branche)"
+)
+
+fusio = Baking.create(
+    name_en: "Fusio",
+    name_fr: "Fusio",
+    description_en: "",
+    description_fr: "",
+    ingredient_en: "Potatoes de pommes de terre, patate douce & céleri, parfumées aux herbes de Provence",
+    ingredient_fr: "Potatoes de pommes de terre, patate douce & céleri, parfumées aux herbes de Provence"
+)
+
+wok = Baking.create(
+    name_en: "Wok",
+    name_fr: "Wok",
+    description_en: "",
+    description_fr: "",
+    ingredient_en: "Nouilles chinoise, légumes & sauce soja",
+    ingredient_fr: "Nouilles chinoise, légumes & sauce soja"
+)
 
 # Marinades
 Marinade.create(name: "", description: "Marinade sauce saté & paprika", baking: papillote, dish: boeuf )
