@@ -4,6 +4,7 @@ class Formula < ApplicationRecord
     belongs_to :dish, optional: true
     belongs_to :dessert, optional: true
     belongs_to :formula_template
+    belongs_to :baking
 
     def starter?
         self.formula_tempate.starter?
@@ -15,18 +16,6 @@ class Formula < ApplicationRecord
 
     def dessert?
         self.formula_tempate.dessert?
-    end
-
-    module Baking
-        def self.all
-            ["wok", "papillotte", "fusio"]
-        end
-
-        self.all.each do |baking|
-            define_method("#{baking}?") do
-                self.baking == baking
-            end
-        end
     end
 
     module Roasting
@@ -41,21 +30,19 @@ class Formula < ApplicationRecord
         end
     end
 
-    include Formula::Baking
     include Formula::Roasting
 
 
-    validate :starter, absence: true, unless: :starter?
-    validate :starter, presence: true, if: :starter?
+    validates :starter, absence: true, unless: :starter?
+    validates :starter, presence: true, if: :starter?
 
-    validate :dish, absence: true, unless: :dish?
-    validate :dish, presence: true, if: :dish?
+    validates :dish, absence: true, unless: :dish?
+    validates :dish, presence: true, if: :dish?
 
-    validate :dessert, absence: true, unless: :dessert?
-    validate :dessert, presence: true, if: :dessert?
+    validates :dessert, absence: true, unless: :dessert?
+    validates :dessert, presence: true, if: :dessert?
 
-    validate :baking, inclusion: {in: Formula::Baking.all}, if: :dish?
-    validate :roasting, inclusion: {in: Formula::Roasting.all}, if: :need_roasting?
+    validates :roasting, inclusion: {in: Formula::Roasting.all}, if: :need_roasting?
 
     def need_roasting?
         self.dish? && self.dish&.ask_roasting
