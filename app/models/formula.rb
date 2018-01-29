@@ -4,7 +4,7 @@ class Formula < ApplicationRecord
     belongs_to :dish, optional: true
     belongs_to :dessert, optional: true
     belongs_to :formula_template
-    belongs_to :baking
+    belongs_to :baking, optional: true
 
     def starter?
         self.formula_tempate.starter?
