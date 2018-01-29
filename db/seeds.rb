@@ -41,12 +41,60 @@ wok = Baking.create(
 )
 
 # Marinades
-Marinade.create(name: "", description: "Marinade sauce saté & paprika", baking: papillote, dish: boeuf )
-Marinade.create(name: "", description: "Marinade lait de coco & curry", baking: papillote, dish: volaille)
-Marinade.create(name: "", description: "Marinade gingembre & citron vert", baking: papillote, dish: gambas)
-Marinade.create(name: "", description: "Marinade huile d’olive, thym & ail", baking: fusio, dish: boeuf)
-Marinade.create(name: "", description: "Marinade huile d’olive & jus de citron vert", baking: fusio, dish: volaille)
-Marinade.create(name: "", description: "Marinade huile d’olive & Martini rouge", baking: fusio, dish: gambas)
+Marinade.create(
+    name_en: "",
+    name_fr: "",
+    description_en: "Marinade sauce saté & paprika",
+    description_fr: "Marinade sauce saté & paprika",
+    baking: papillote,
+    dish: boeuf
+)
+
+
+Marinade.create(
+    name_en: "",
+    name_fr: "",
+    description_en: "Marinade lait de coco & curry",
+    description_fr: "Marinade lait de coco & curry",
+    baking: papillote,
+    dish: volaille
+)
+
+Marinade.create(
+    name_en: "",
+    name_fr: "",
+    description_en: "Marinade gingembre & citron vert",
+    description_fr: "Marinade gingembre & citron vert",
+    baking: papillote,
+    dish: gambas
+)
+
+Marinade.create(
+    name_en: "",
+    name_fr: "",
+    description_en: "Marinade huile d’olive, thym & ail",
+    description_fr: "Marinade huile d’olive, thym & ail",
+    baking: fusio,
+    dish: boeuf
+)
+
+Marinade.create(
+    name_en: "",
+    name_fr: "",
+    description_en: "Marinade huile d’olive & jus de citron vert",
+    description_fr: "Marinade huile d’olive & jus de citron vert",
+    baking: fusio,
+    dish: volaille
+)
+
+Marinade.create(
+    name_en: "",
+    name_fr: "",
+    description_en: "Marinade huile d’olive & Martini rouge",
+    description_fr: "Marinade huile d’olive & Martini rouge",
+    baking: fusio,
+    dish: gambas
+)
 
 # Desserts
 Dessert.create(name: "Verrine Coco", description: "noix de coco, ananas & patate douce")
