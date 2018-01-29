@@ -33,6 +33,9 @@ gem 'kaminari'
 gem 'cells-rails'
 gem 'cells-erb'
 
+# Translate active record objects using json in postgresql
+gem 'json_translate'
+
 # Font-awesome
 gem "font-awesome-rails"
 # Reset CSS
