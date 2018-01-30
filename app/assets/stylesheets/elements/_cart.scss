@@ -9,6 +9,26 @@
         border: 2px solid $gray0;
         margin: .5em;
         overflow: hidden;
+
+        &.-tiny {
+            p, h6, .item {
+                display: none;
+            }
+
+            .image {
+                max-width: 4em;
+                max-height: 4em;
+
+                img {
+
+                }
+            }
+
+            .title {
+                line-height: 1.5em;
+                margin: 0;
+            }
+        }
     }
 
     .action-bar {
@@ -16,7 +36,7 @@
 
         background: rgba($gray0, .5);
         border-top: 1px solid $gray0;
-        padding: 1em;
+        padding: .5em;
 
         .btn {
             margin: 0;
@@ -25,7 +45,10 @@
     }
 
     .price {
+        padding: 0 0.5em;
         line-height: 2em;
-        float: right;
+        float: left;
+        width: 5em;
+        text-align: center;
     }
 }

@@ -1,6 +1,6 @@
 <div class="cart">
     <% @order.formulas.each do |f| %>
-        <div class="formula">
+        <div class="formula -tiny">
             <% f.get_products.each do |k, v| %>
                 <div class="cart-product <%= k %>">
                     <%= cell(:cart, v, formula: f).(k) %>
@@ -9,6 +9,7 @@
             <div class="action-bar">
                 <a class="btn-subtle" href="">Modifier <%= fa_icon "edit" %></a>
                 <a class="btn-subtle -alt" href="">Supprimer <%= fa_icon "close" %></a>
+                <a class="btn-subtle float -r" href="">Détails <%= fa_icon "angle-down" %></a>
                 <span class="price">
                     <%= 10.32 %>€
                 </span>
