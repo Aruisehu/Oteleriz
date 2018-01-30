@@ -5,30 +5,6 @@ class CartCell < Cell::ViewModel
     def show
         @order = model
 
-        template_all = FormulaTemplate.new(
-            has_starter: true,
-            has_dish: true,
-            has_dessert: true
-        )
-
-        template_starter_false = FormulaTemplate.new(
-            has_starter: false,
-            has_dish: true,
-            has_dessert: true
-        )
-
-        template_dessert_false = FormulaTemplate.new(
-            has_starter: true,
-            has_dish: true,
-            has_dessert: false
-        )
-
-        template_dish_only = FormulaTemplate.new(
-            has_starter: false,
-            has_dish: true,
-            has_dessert: false
-        )
-
         unless @order.formulas.empty?
             render
         else

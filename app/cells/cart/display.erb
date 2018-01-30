@@ -1,5 +1,5 @@
 <label for="display-cart" class="cart-display">
-    <%= fa_icon "shopping-bag" %> Panier <span class="count">2</span>
+    <%= fa_icon "shopping-bag" %> Panier <span class="count"><%= model.formulas.count %></span>
 </label>
 <input id="display-cart" type="checkbox" class="switch">
 <div class="cart-container">
