@@ -1,0 +1,43 @@
+.flashes {
+    bottom: 2em;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+
+    .flash {
+        border-radius: .25em;
+        color: $white;
+        font-weight: bold;
+        margin: 0 auto 1em;
+        max-width: calc(100% - 2em);
+        padding: 1em;
+        text-align: center;
+        transition: opacity 400ms ease-in;
+        width: 30em;
+        
+        box-shadow: 0 1em 2em rgba($shadow, .1), 0 0.3em 1em rgba($black, .07), 0 0 0.1em 0.1em rgba($black, .05);
+        
+        
+        &.-success {
+            background: $cyan;
+        }
+
+        &.-info {
+            background: $blue;
+        }
+        
+        &.-warning {
+            background: $orange;
+        }
+        
+        &.-error {
+            background: $red;
+        }
+        
+        &.disappear {
+            opacity: 0;
+        }
+    }
+    
+}

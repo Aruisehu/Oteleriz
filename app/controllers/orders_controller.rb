@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
             @order.formulas << @formula
 
             if @order.save
-                flash[:succes] = "Produit ajouté au panier"
+                flash[:success] = "Produit ajouté au panier"
             else
                 flash[:error] = "Une erreur c'est produite"
             end
