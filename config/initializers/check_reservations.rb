@@ -1,5 +1,5 @@
-require 'rufus-scheduler'
+# require 'rufus-scheduler'
 
-Rails.configuration.after_initialize do
+# Rails.configuration.after_initialize do
 
-end
+# end
