@@ -21,6 +21,8 @@
                 <%= link_to static_page_path("menu"), class: "btn" do %>
                     Click & Sit <%= fa_icon "shopping-bag" %>
                 <% end %>
+            <% else %>
+                <%= cell(:cart).(:display) %>
             <% end %>
         </div>
     </div>

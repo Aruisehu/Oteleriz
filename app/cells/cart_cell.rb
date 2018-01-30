@@ -46,6 +46,14 @@ class CartCell < Cell::ViewModel
 
         @order = Order.new(formulas: formulas)
 
+        unless @order.formulas.empty?
+            render
+        else
+            render 'empty'
+        end
+    end
+
+    def display
         render
     end
 

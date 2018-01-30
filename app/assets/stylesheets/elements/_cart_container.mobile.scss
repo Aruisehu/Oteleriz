@@ -1,0 +1,19 @@
+@media only screen and (max-width: $small) {
+    .cart-container {
+        border-radius: 0;
+        display: none;
+        height: calc(100vh - 4em);
+        max-height: calc(100vh - 4em);
+        max-width: none;
+        right: 0;
+        top: 100%;
+        width: 100%;
+        background: rgba($gray6, .8);
+
+        .formula {
+            margin: .5em 0;
+            border-radius: 0;
+            border: 0;
+        }
+    }
+}
