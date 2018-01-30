@@ -1,4 +1,4 @@
-# Otelriz / CookMeUp
+# Oteleriz / CookMeUp
 
 ## Install database
 
@@ -12,5 +12,12 @@ Seeds the database
 $ rails db:seed
 ```
 
+## Versions
 
+Ruby 2.4.2
+Rails 5.1.4
+PostgreSQL 10.1
+rbenv 1.1.1
+
+Other API and versions can be found in the Gemfile and the Gemfile.lock
 
