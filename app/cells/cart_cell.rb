@@ -22,7 +22,7 @@ class CartCell < Cell::ViewModel
         )
 
         template_dish_only = FormulaTemplate.new(
-            has_starter: true,
+            has_starter: false,
             has_dish: true,
             has_dessert: false
         )

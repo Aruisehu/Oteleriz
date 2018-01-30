@@ -1,0 +1,31 @@
+.cart {
+    @extend %clearfix;
+
+    .formula {
+        @extend %clearfix;
+
+        background: $white;
+        border-radius: 0.25em;
+        border: 2px solid $gray0;
+        margin: .5em;
+        overflow: hidden;
+    }
+
+    .action-bar {
+        @extend %clearfix;
+
+        background: rgba($gray0, .5);
+        border-top: 1px solid $gray0;
+        padding: 1em;
+
+        .btn {
+            margin: 0;
+            float: left;
+        }
+    }
+
+    .price {
+        line-height: 2em;
+        float: right;
+    }
+}
