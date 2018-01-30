@@ -23,9 +23,12 @@ class ApplicationController < ActionController::Base
         I18n.locale = session[:locale] || I18n.default_locale
     end
 
+    protected
     def set_order
-        unless session[:order]
-            session[:order] = Order.new
+        if session[:order_id].blank?
+            session[:order_id] = Order.create(meal: Meal.new).id
         end
+
+        @order = Order.find(session[:order_id])
     end
 end

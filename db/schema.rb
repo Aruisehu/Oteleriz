@@ -44,18 +44,15 @@ ActiveRecord::Schema.define(version: 20180129000756) do
     t.bigint "starter_id"
     t.bigint "dish_id"
     t.bigint "dessert_id"
+    t.bigint "order_id"
     t.bigint "formula_template_id"
     t.bigint "baking_id"
     t.index ["baking_id"], name: "index_formulas_on_baking_id"
     t.index ["dessert_id"], name: "index_formulas_on_dessert_id"
     t.index ["dish_id"], name: "index_formulas_on_dish_id"
     t.index ["formula_template_id"], name: "index_formulas_on_formula_template_id"
+    t.index ["order_id"], name: "index_formulas_on_order_id"
     t.index ["starter_id"], name: "index_formulas_on_starter_id"
-  end
-
-  create_table "formulas_orders", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "formula_id", null: false
   end
 
   create_table "marinades", force: :cascade do |t|

@@ -17,12 +17,12 @@
             </div>
         </div>
         <div class="action">
-            <% unless nav_active(static_page_path("menu")) %>
-                <%= link_to static_page_path("menu"), class: "btn" do %>
+            <% unless nav_active(orders_path) %>
+                <%= link_to orders_path, class: "btn" do %>
                     Click & Sit <%= fa_icon "shopping-bag" %>
                 <% end %>
             <% else %>
-                <%= cell(:cart).(:display) %>
+                <%= cell(:cart, @order).(:display) %>
             <% end %>
         </div>
     </div>
