@@ -1,5 +1,5 @@
 class Formula < ApplicationRecord
-    has_and_belongs_to_many :orders
+    belongs_to :order
     belongs_to :starter, optional: true
     belongs_to :dish, optional: true
     belongs_to :dessert, optional: true
