@@ -3,19 +3,19 @@ class Formula < ApplicationRecord
     belongs_to :starter, optional: true
     belongs_to :dish, optional: true
     belongs_to :dessert, optional: true
-    belongs_to :formula_template
+    belongs_to :formula_template, optional: true
     belongs_to :baking, optional: true
 
     def starter?
-        self.formula_tempate.starter?
+        self.formula_template.starter?
     end
 
     def dish?
-        self.formula_tempate.dish?
+        self.formula_template.dish?
     end
 
     def dessert?
-        self.formula_tempate.dessert?
+        self.formula_template.dessert?
     end
 
     def get_products
@@ -36,19 +36,9 @@ class Formula < ApplicationRecord
 
     include Formula::Roasting
 
-
-    validates :starter, absence: true, unless: :starter?
-    validates :starter, presence: true, if: :starter?
-
-    validates :dish, absence: true, unless: :dish?
-    validates :dish, presence: true, if: :dish?
-
-    validates :dessert, absence: true, unless: :dessert?
-    validates :dessert, presence: true, if: :dessert?
-
     validates :roasting, inclusion: {in: Formula::Roasting.all}, if: :need_roasting?
 
     def need_roasting?
-        self.dish? && self.dish&.ask_roasting
+        self.dish&.ask_roasting
     end
 end

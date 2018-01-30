@@ -8,5 +8,5 @@
             <p><%= model.description %></p>
         </div>
     </div>
-    <%= cell(:product, "test", presentation: options[:presentation]).(:price) %>
+    <%= cell(:product, model, presentation: options[:presentation]).(:price) %>
 </div>

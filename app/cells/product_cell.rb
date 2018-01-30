@@ -14,6 +14,7 @@ class ProductCell < Cell::ViewModel
     end
 
     def price
+        @formula = Formula.new
         unless options[:presentation]
             render
         else
