@@ -9,25 +9,29 @@
         border: 2px solid $gray0;
         margin: .5em;
         overflow: hidden;
+    }
 
-        &.-tiny {
-            p, h6, .item {
-                display: none;
+    .formula-switch:checked + .formula {
+        p, h6, .item {
+            display: none;
+        }
+
+        .image {
+            max-width: 4em;
+            max-height: 4em;
+
+            img {
+
             }
+        }
 
-            .image {
-                max-width: 4em;
-                max-height: 4em;
+        .title {
+            line-height: 1.5em;
+            margin: 0;
+        }
 
-                img {
-
-                }
-            }
-
-            .title {
-                line-height: 1.5em;
-                margin: 0;
-            }
+        .deploy .fa:before {
+            content: "\f107"
         }
     }
 
