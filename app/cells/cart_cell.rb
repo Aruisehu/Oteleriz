@@ -32,20 +32,30 @@ class CartCell < Cell::ViewModel
                 formula_template: template_all,
                 starter: Starter.all.sample,
                 dish: Dish.all.sample,
-                dessert: Dessert.all.sample
+                dessert: Dessert.all.sample,
+                baking: Baking.all.sample,
+                roasting: ["rare", "well_done"].sample
             ),
             Formula.new(
                 formula_template: template_dish_only,
-                dish: Dish.all.sample
+                dish: Dish.all.sample,
+                baking: Baking.all.sample,
+                roasting: ["rare", "well_done"].sample
             )
         ]
 
-        options[:order] = Order.new(formulas: formulas)
+        @order = Order.new(formulas: formulas)
 
         render
     end
 
     def dish
+        formula = options[:formula]
+
+        @roasting = model.ask_roasting ? formula.roasting : nil
+        @cooking = formula.baking
+        @marinade = Marinade.find_by(baking: formula.baking, dish: model)
+
         render
     end
 

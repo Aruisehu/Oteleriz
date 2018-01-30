@@ -1,8 +1,8 @@
 <div class="cart">
-    <% options[:order].formulas.each do |f| %>
+    <% @order.formulas.each do |f| %>
         <div class="formula">
             <% f.get_products.each do |k, v| %>
-                <%= cell(:cart, v).(k) %>
+                <%= cell(:cart, v, formula: f).(k) %>
             <% end %>
             <div class="price">
                 <%= 10.32 %>€
