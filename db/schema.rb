@@ -16,18 +16,19 @@ ActiveRecord::Schema.define(version: 20180129214450) do
   enable_extension "plpgsql"
 
   create_table "bakings", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
+    t.jsonb "ingredient_translations"
   end
 
   create_table "desserts", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
   end
 
   create_table "dishes", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
     t.boolean "ask_roasting"
   end
 
@@ -58,8 +59,8 @@ ActiveRecord::Schema.define(version: 20180129214450) do
   end
 
   create_table "marinades", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
     t.bigint "baking_id"
     t.bigint "dish_id"
     t.index ["baking_id"], name: "index_marinades_on_baking_id"
@@ -83,8 +84,8 @@ ActiveRecord::Schema.define(version: 20180129214450) do
   end
 
   create_table "starters", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.jsonb "name_translations"
+    t.jsonb "description_translations"
   end
 
   create_table "users", force: :cascade do |t|
