@@ -22,6 +22,18 @@ class Formula < ApplicationRecord
         return {starter: self.starter, dish: self.dish, dessert: self.dessert}.compact
     end
 
+    def destroy_from_order
+        total_price = 1000.00
+        price = 12
+
+
+        # total_price = self.order.price = self.order.price - self.price
+        total_price = total_price - price
+
+        self.destroy
+        return total_price
+    end
+
     module Roasting
         def self.all
             ["rare", "well_done"]

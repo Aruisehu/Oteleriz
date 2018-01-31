@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
-  resources :orders, only: [:update, :index, :edit]
+  resources :orders, only: [:update, :index, :edit, :destroy]
 
   get ':page' => "static_pages#show", as: "static_page"
 

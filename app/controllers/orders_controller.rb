@@ -17,10 +17,22 @@ class OrdersController < ApplicationController
             }.compact
         )
 
-
         add_formula
 
         redirect_to orders_path
+    end
+
+    def destroy
+        @formula = Formula.find(params.require(:formula))
+
+        if @order.formulas.include? @formula
+            @order_price = @formula.destroy_from_order
+        end
+
+        respond_to do |f|
+            f.html { redirect_to orders_path }
+            f.js
+        end
     end
 
     def add_menu
