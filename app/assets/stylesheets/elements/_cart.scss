@@ -1,5 +1,7 @@
 .cart {
     @extend %clearfix;
+    overflow-y: auto;
+    max-height: calc(100vh - 14em);
 
     .formula {
         @extend %clearfix;
@@ -12,8 +14,12 @@
     }
 
     .formula-switch:checked + .formula {
-        p, h6, .item {
+        p, h6, .details .item {
             display: none;
+        }
+
+        .content {
+            width: calc(100% - 4em)
         }
 
         .image {

@@ -11,10 +11,10 @@
     box-shadow: 0 2em 5em rgba($shadow, .25), 0 1em 2em rgba($black, .17), 0 0 0.1em 0.1em rgba($black, .05);
     max-height: calc(100vh - 6em);
     max-width: calc(100% - 2em);
-    overflow-y: auto;
     width: 100%;
+    overflow: hidden;
     position: absolute;
     right: 1em;
     top: calc(100% + 1em);
-    z-index: -2;
+    z-index: 10000;
 }

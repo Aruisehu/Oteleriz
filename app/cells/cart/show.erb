@@ -1,3 +1,6 @@
+<header>
+    <h6 class="title -compact">Mon Panier</h6>
+</header>
 <div class="cart">
     <% @order.formulas.each_with_index do |f, i| %>
         <input type="checkbox" checked class="formula-switch hidden" id="formula-<%= i %>">
@@ -18,3 +21,7 @@
         </div>
     <% end %>
 </div>
+<footer>
+    <h6 class="title -compact">Total: <span class="price">1212.12€</span></h6>
+    <a class="btn">Valider la commande <%= fa_icon "check" %></a>
+</footer>

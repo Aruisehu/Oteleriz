@@ -1,0 +1,18 @@
+.cart-container footer {
+    background: $white;
+    border-top: 2px $gray0 solid;
+    height: 4em;
+    display: inline-block;
+    padding: .5em;
+    width: 100%;
+
+    .btn {
+        float: right;
+        margin: .2em !important;
+    }
+
+    h6 {
+        margin: 1em;
+        float: left;
+    }
+}

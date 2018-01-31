@@ -30,9 +30,14 @@ $img-width: 5em;
     }
 
     h6 {
-        font-size: 90%;
+        font-size: 75%;
         opacity: .37;
         letter-spacing: .125em;
         text-transform: uppercase;
+    }
+
+    p {
+        clear: both;
+        display: block;
     }
 }

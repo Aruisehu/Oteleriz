@@ -1,5 +1,6 @@
 .btn-subtle {
     appearance: none;
+    background: rgba($shadow, .05);
     border-radius: 4px;
     box-shadow: none;
     color: $accent2;
