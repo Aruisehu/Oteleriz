@@ -1,6 +1,17 @@
 .cart-container header {
-    background: $white;
     border-bottom: 2px $gray0 solid;
     height: 4em;
-    padding: 1.5em;
+    display: inline-block;
+    width: 100%;
+    line-height: 4em;
+
+    h6 {
+        float: left;
+        margin: 1.5em;
+    }
+
+    label {
+        margin: 1em;
+        float: right;
+    }
 }

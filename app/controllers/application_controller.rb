@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
             session[:order_id] = Order.create(meal: Meal.new).id
         end
 
-        @order = Order.find(session[:order_id])
+        @order = Order.includes(formulas: :starter).find(session[:order_id])
     end
 end
