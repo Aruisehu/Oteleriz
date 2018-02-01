@@ -1,0 +1,8 @@
+<div class="add-formula dessert">
+    <% @desserts.each do |s| %>
+        <%= @f.radio_button :dessert, s.id %>
+        <%= @f.label :dessert, value: s.id do %>
+            <%= s.name %>
+        <% end %>
+    <% end %>
+</div>

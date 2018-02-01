@@ -1,0 +1,8 @@
+<div class="add-formula starter">
+    <% @starters.each do |s| %>
+        <%= @f.radio_button :starter, s.id %>
+        <%= @f.label :starter, value: s.id do %>
+            <%= s.name %>
+        <% end %>
+    <% end %>
+</div>

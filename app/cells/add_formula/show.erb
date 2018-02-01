@@ -1,0 +1,5 @@
+<%= form_for @formula, url: order_path(id: 1) do |f| %>
+    <%= cell(:add_formula, model, form: f).(:starter) %>
+    <%= cell(:add_formula, model, form: f).(:dish) %>
+    <%= cell(:add_formula, model, form: f).(:dessert) %>
+<% end %>
