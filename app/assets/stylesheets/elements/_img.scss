@@ -6,10 +6,6 @@
 
     img {
         // Fix flicker by isolation with GPU rendering
-        -webkit-transform-style: preserve-3d;
-        -webkit-backface-visibility: hidden;
-        position: relative;
-        top: -25%;
     }
 
     &.-shadow {

@@ -28,4 +28,8 @@
         line-height: 1em;
         margin-bottom: 0.3em;
     }
+
+    &.-faint {
+        color: $text;
+    }
 }

@@ -1,8 +1,17 @@
 <div class="add-formula starter">
-    <% @starters.each do |s| %>
-        <%= @f.radio_button :starter, s.id %>
-        <%= @f.label :starter, value: s.id do %>
-            <%= s.name %>
+    <header>
+        <h5 class="title -compact -faint">Entrée:</h5>
+        <h5 class="choice"><%= @starters.first.name %></h5>
+    </header>
+    <div class="item">
+        <% @starters.each do |s| %>
+            <%= @f.radio_button :starter, s.id, :checked => (s == @starters.first) %>
+            <label for="formula_starter_<%= s.id %>">
+                <div class="img">
+                    <%= image_tag "https://i.ytimg.com/vi/uZSrcVS6EuM/hqdefault.jpg" %>
+                </div>
+                <h6><%= s.name %></h6>
+            </label>
         <% end %>
-    <% end %>
+    </div>
 </div>

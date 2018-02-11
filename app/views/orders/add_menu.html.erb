@@ -1,0 +1,13 @@
+<% content_for :main_nav do %>
+    <% if @formula_template.has_starter? || @formula_template.has_dessert? %>
+        <h3 class="title">Ajouter une formule</h3>
+    <% else %>
+        <h3 class="title">Ajouter une plat</h3>
+    <% end %>
+<% end %>
+
+<section>
+    <div class="row">
+        <%= cell(:add_formula, @formula_template) %>
+    </div>
+</section>

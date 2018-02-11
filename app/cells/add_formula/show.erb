@@ -1,5 +1,6 @@
-<%= form_for @formula, url: order_path(id: 1) do |f| %>
+<%= form_for @formula, url: order_path(session[:order_id]), method: :patch do |f| %>
     <%= cell(:add_formula, model, form: f).(:starter) %>
     <%= cell(:add_formula, model, form: f).(:dish) %>
     <%= cell(:add_formula, model, form: f).(:dessert) %>
+    <%= cell(:add_formula, model, form: f).(:submit) %>
 <% end %>

@@ -5,6 +5,8 @@ class AddFormulaCell < Cell::ViewModel
     def show
         @formula = Formula.new
 
+        @order = Order.find(session[:order_id])
+
         render
     end
 
@@ -21,8 +23,10 @@ class AddFormulaCell < Cell::ViewModel
     def dish
         set_form_context
 
+        @dishes = Dish.all
         @bakings = Baking.all
         @marinades = Marinade.all
+        @roastings = ["rare", "well_done"]
 
         render
     end
@@ -35,6 +39,12 @@ class AddFormulaCell < Cell::ViewModel
 
             render
         end
+    end
+
+    def submit
+        set_form_context
+
+        render
     end
 
     private

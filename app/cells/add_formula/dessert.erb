@@ -1,8 +1,17 @@
 <div class="add-formula dessert">
-    <% @desserts.each do |s| %>
-        <%= @f.radio_button :dessert, s.id %>
-        <%= @f.label :dessert, value: s.id do %>
-            <%= s.name %>
+    <header>
+        <h5 class="title -compact -faint">Dessert:</h5>
+        <h5 class="choice"><%= @desserts.first.name %></h5>
+    </header>
+    <div class="item">
+        <% @desserts.each do |d| %>
+            <%= @f.radio_button :dessert, d.id, :checked => (d == @desserts.first) %>
+            <label for="formula_dessert_<%= d.id %>">
+                <div class="img">
+                    <%= image_tag "https://i.ytimg.com/vi/uZSrcVS6EuM/hqdefault.jpg" %>
+                </div>
+                <h6><%= d.name %></h6>
+            </label>
         <% end %>
-    <% end %>
+    </div>
 </div>

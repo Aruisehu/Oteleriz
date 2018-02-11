@@ -11,10 +11,10 @@ class FormulaTemplate < ApplicationRecord
     end
 
     def dish?
-        false
+        true
     end
 
     def dessert?
-        false
+        true
     end
 end

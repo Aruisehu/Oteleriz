@@ -13,6 +13,8 @@ class OrdersController < ApplicationController
                 starter_id: formula_params[:starter],
                 dish_id: formula_params[:dish],
                 dessert_id: formula_params[:dessert],
+                roasting: formula_params[:roasting],
+                baking_id: formula_params[:baking],
                 order: @order
             }.compact
         )
@@ -36,7 +38,12 @@ class OrdersController < ApplicationController
     end
 
     def add_menu
-
+        # TODO fetch @formula_template using id passed in params
+        @formula_template = FormulaTemplate.new(
+            has_starter: true,
+            has_dish: true,
+            has_dessert: true
+        )
     end
 
     private
@@ -55,6 +62,6 @@ class OrdersController < ApplicationController
     end
 
     def formula_params
-        params.require(:formula).permit(:starter, :dish, :dessert)
+        params.require(:formula).permit(:starter, :dish, :dessert, :baking, :roasting)
     end
 end
