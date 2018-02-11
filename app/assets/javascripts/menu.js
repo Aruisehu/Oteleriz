@@ -5,6 +5,8 @@ Menu = {
         Menu.cartSwitch = Menu.root.find("#display-cart")
         Menu.root.find("#submenu a").click(function() {
             Menu.switch.prop("checked", false);
+            Menu.cartSwitch.prop("checked", false);
+            $("html").removeClass("stop-scroll");
         });
 
         Menu.switch.on("change", function(){

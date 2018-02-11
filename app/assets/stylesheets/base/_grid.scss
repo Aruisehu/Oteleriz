@@ -36,6 +36,12 @@ section {
     padding: 0 1em;
     margin: 0 auto;
     width: 100%;
+
+    @media only screen and (max-width: $normal) {
+        &.-m-no-pad {
+            padding: 0;
+        }
+    }
 }
 
 .rel {

@@ -4,16 +4,6 @@
         <h5 class="choice">Boeuf fusio bien cuit</h5>
     </header>
     <div class="col-12 -sp">
-        <div class="item">
-            <div class="col-6 -sp">
-                <h6 class="subtitle">Garnitures</h6>
-                <p></p>
-            </div>
-            <div class="col-6 -sp">
-                <h6 class="subtitle">Marinades</h6>
-                <p></p>
-            </div>
-        </div>
         <div class="item base">
             <h6 class="title -compact -faint">Base</h6>
             <% @dishes.each do |d| %>
@@ -52,6 +42,24 @@
                     <h6><%= r %></h6>
                 </label>
             <% end %>
+        </div>
+        <div class="item">
+            <div class="col-6">
+                <h6 class="title -compact -faint">Marinades</h6>
+                <% @bakings.each do |b| %>
+                    <% unless b.marinades.blank? %>
+                        <% @dishes.each do |d| %>
+                            <p data-baking="<%= b.id %>" data-dish="d.id"><%= @marinades.find_by(baking: b, dish: d).description %></p>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="col-6">
+                <h6 class="title -compact -faint">Garnitures</h6>
+                <% @bakings.each do |b| %>
+                    <p data-dish="b.id"><%= b.ingredient %></p>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>

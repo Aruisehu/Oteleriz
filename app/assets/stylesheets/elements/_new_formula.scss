@@ -14,13 +14,18 @@
         background: rgba($gray0, .5);
         border-radius: .25em;
         box-shadow: 0 0 0 1px $gray0;
+        cursor: pointer;
         display: inline-block;
         float: left;
         margin: .5em;
         overflow: hidden;
         padding: .5em;
         text-transform: uppercase;
-        transition: transform 150ms ease-in-out;
+        transition: transform 150ms ease-in-out, background 150ms ease-in-out, box-shadow 150ms ease-in-out;
+
+        & * {
+            cursor: pointer;
+        }
     }
 
     header {
@@ -40,9 +45,9 @@
     .item {
         border-top: 2px solid $gray0;
         overflow: hidden;
-        padding: .5em;
+        padding: 1em;
 
-        & h6 {
+        & > h6 {
             padding: 0 .5em;
         }
     }
@@ -83,6 +88,12 @@
     &.dish {
         label {
             width: calc(#{(100% / 3)} - 1em);
+        }
+    }
+
+    &.buttons {
+        .btn {
+            margin: 0;
         }
     }
 }

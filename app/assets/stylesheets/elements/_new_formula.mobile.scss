@@ -1,0 +1,24 @@
+@media only screen and (max-width: $small) {
+    #add_formula  {
+        padding: 1em 0;
+        background: $gray4;
+
+        .add-formula {
+            background: $white;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 0.4em 1em rgba($shadow, .35);
+            margin-bottom: 1em;
+            overflow: hidden;
+
+            label {
+                width: calc(100% - 1em) !important;
+            }
+
+            input:checked + label {
+                box-shadow: 0 0 0 2px $accent2;
+                transform: scale(1);
+            }
+        }
+    }
+}

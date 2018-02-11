@@ -6,8 +6,12 @@
     <% end %>
 <% end %>
 
-<section>
-    <div class="row">
+<% content_for :main_action do %>
+    <button name="button" type="submit" form="add_formula" class="btn">ajouter au panier <i class="fa fa-plus"></i></button>
+<% end %>
+
+<section class="-m-no-pad">
+    <div class="row -m-no-pad">
         <%= cell(:add_formula, @formula_template, random: params[:random]) %>
     </div>
 </section>

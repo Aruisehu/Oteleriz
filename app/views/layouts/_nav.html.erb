@@ -17,13 +17,7 @@
             </div>
         </div>
         <div class="action">
-            <% unless nav_active(orders_path) %>
-                <%= link_to orders_path, class: "btn" do %>
-                    Click & Sit <%= fa_icon "shopping-bag" %>
-                <% end %>
-            <% else %>
-                <%= cell(:cart, @order).(:display) %>
-            <% end %>
+            <%= yield(:main_action) %>
         </div>
     </div>
 </nav>
