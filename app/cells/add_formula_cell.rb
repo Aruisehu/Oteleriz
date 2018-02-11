@@ -7,6 +7,8 @@ class AddFormulaCell < Cell::ViewModel
 
         @order = Order.find(session[:order_id])
 
+        @random = options[:random]
+
         render
     end
 
@@ -15,6 +17,12 @@ class AddFormulaCell < Cell::ViewModel
             set_form_context
 
             @starters = Starter.all
+
+            if options[:random]
+                @starter = @starters.sample
+            else
+                @starter = @starters.first
+            end
 
             render
         end
@@ -25,8 +33,18 @@ class AddFormulaCell < Cell::ViewModel
 
         @dishes = Dish.all
         @bakings = Baking.all
-        @marinades = Marinade.all
         @roastings = ["rare", "well_done"]
+        @marinades = Marinade.all
+
+        if options[:random]
+            @dish = @dishes.sample
+            @baking = @bakings.sample
+            @roasting = @roastings.sample
+        else
+            @dish = @dishes.first
+            @baking = @bakings.first
+            @roasting = @roastings.first
+        end
 
         render
     end
@@ -36,6 +54,12 @@ class AddFormulaCell < Cell::ViewModel
             set_form_context
 
             @desserts = Dessert.all
+
+            if options[:random]
+                @dessert = @desserts.sample
+            else
+                @dessert = @desserts.first
+            end
 
             render
         end

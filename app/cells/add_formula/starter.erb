@@ -5,7 +5,7 @@
     </header>
     <div class="item">
         <% @starters.each do |s| %>
-            <%= @f.radio_button :starter, s.id, :checked => (s == @starters.first) %>
+            <%= @f.radio_button :starter, s.id, :checked => (s == @starter) %>
             <label for="formula_starter_<%= s.id %>">
                 <div class="img">
                     <%= image_tag "https://i.ytimg.com/vi/uZSrcVS6EuM/hqdefault.jpg" %>
