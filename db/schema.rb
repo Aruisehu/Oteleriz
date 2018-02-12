@@ -24,12 +24,16 @@ ActiveRecord::Schema.define(version: 20180129000756) do
   create_table "desserts", force: :cascade do |t|
     t.jsonb "name_translations"
     t.jsonb "description_translations"
+    t.decimal "price"
+    t.string "img_url"
   end
 
   create_table "dishes", force: :cascade do |t|
     t.jsonb "name_translations"
     t.jsonb "description_translations"
     t.boolean "ask_roasting"
+    t.decimal "price"
+    t.string "img_url"
   end
 
   create_table "formula_templates", force: :cascade do |t|
@@ -83,6 +87,8 @@ ActiveRecord::Schema.define(version: 20180129000756) do
   create_table "starters", force: :cascade do |t|
     t.jsonb "name_translations"
     t.jsonb "description_translations"
+    t.decimal "price"
+    t.string "img_url"
   end
 
   add_foreign_key "orders", "meals"
