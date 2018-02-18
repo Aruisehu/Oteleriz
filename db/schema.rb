@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129000756) do
+ActiveRecord::Schema.define(version: 20180218094359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20180129000756) do
     t.boolean "has_dish"
     t.boolean "has_dessert"
     t.decimal "price", precision: 9, scale: 2
+    t.jsonb "name_translations"
+    t.boolean "has_wine"
   end
 
   create_table "formulas", force: :cascade do |t|
@@ -69,7 +71,6 @@ ActiveRecord::Schema.define(version: 20180129000756) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.float "services"
     t.datetime "start_time"
     t.datetime "end_time"
   end
@@ -80,8 +81,17 @@ ActiveRecord::Schema.define(version: 20180129000756) do
     t.boolean "confirmed"
     t.boolean "newsletter"
     t.integer "number_persons"
+    t.bigint "service_id"
+    t.index ["service_id"], name: "index_orders_on_service_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "meal_id"
-    t.index ["meal_id"], name: "index_orders_on_meal_id"
+    t.index ["meal_id"], name: "index_services_on_meal_id"
   end
 
   create_table "starters", force: :cascade do |t|
@@ -91,5 +101,4 @@ ActiveRecord::Schema.define(version: 20180129000756) do
     t.string "img_url"
   end
 
-  add_foreign_key "orders", "meals"
 end

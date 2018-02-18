@@ -184,3 +184,64 @@ Dessert.create(
     price: 10.00,
     img_url: "/pics/carrot.jpg"
 )
+
+FormulaTemplate.create(
+    name_en: "Starter and Dish Formula",
+    name_fr: "Formule Entrée + Plat",
+    has_starter: true,
+    has_dish: true,
+    has_dessert: false,
+    has_wine: false,
+    price: 27.00
+)
+
+FormulaTemplate.create(
+    name_en: "Dish and Dessert Formula",
+    name_fr: "Formule Plat + Dessert",
+    has_starter: false,
+    has_dish: true,
+    has_dessert: true,
+    has_wine: false,
+    price: 27.00
+)
+
+FormulaTemplate.create(
+    name_en: "Starter and Dish with 2 Glass of Wine Formula",
+    name_fr: "Formule Entrée + Plat avec 2 Verres de Vin",
+    has_starter: true,
+    has_dish: true,
+    has_dessert: false,
+    has_wine: true,
+    price: 35.00
+)
+
+FormulaTemplate.create(
+    name_en: "Dish and Dessert with 2 Glass of Wine Formula",
+    name_fr: "Formule Plat + Dessert avec 2 Verres de Vin",
+    has_starter: false,
+    has_dish: true,
+    has_dessert: true,
+    has_wine: true,
+    price: 35.00
+)
+
+FormulaTemplate.create(
+    name_en: "Starter, Dish and Dessert Formula",
+    name_fr: "Formule Entrée + Plat + Dessert",
+    has_starter: true,
+    has_dish: true,
+    has_dessert: true,
+    has_wine: false,
+    price: 33.00
+)
+
+FormulaTemplate.create(
+    name_en: "Starter, Dish and Dessert with 2 Glass of Wine and 1 Cocktail Formula",
+    name_fr: "Formule Entrée + Plat + Dessert avec 2 Verres de Vin et 1 Cocktail",
+    has_starter: true,
+    has_dish: true,
+    has_dessert: true,
+    has_wine: true,
+    price: 45.00
+)
+
