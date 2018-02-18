@@ -1,6 +1,6 @@
 <% content_for :main_nav do %>
     <h3 class="title">Click & Sit</h3>
-    <%= link_to "Entrés", "#starter" %>
+    <%= link_to "Entrées", "#starter" %>
     <%= link_to "Plats", "#main" %>
     <%= link_to "Desserts", "#dessert" %>
     <%= link_to "Formules", "#course" %>
@@ -17,7 +17,7 @@
 <section>
     <div class="row">
         <a id="starter" class="anchor"></a>
-        <h3 class="title align -center">Entrés</h3>
+        <h3 class="title align -center">Entrées</h3>
         <%= cell(:product, presentation: true, collection: @starters) %>
     </div>
 </section>
