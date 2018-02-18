@@ -186,6 +186,30 @@ Dessert.create(
 )
 
 FormulaTemplate.create(
+    # Stand alone starter
+    has_starter: true,
+    has_dish: false,
+    has_dessert: false,
+    has_wine: false
+)
+
+FormulaTemplate.create(
+    # Stand alone dish
+    has_starter: false,
+    has_dish: true,
+    has_dessert: false,
+    has_wine: false
+)
+
+FormulaTemplate.create(
+    # Stand alone dessert
+    has_starter: false,
+    has_dish: false,
+    has_dessert: true,
+    has_wine: false
+)
+
+FormulaTemplate.create(
     name_en: "Starter and Dish Formula",
     name_fr: "Formule Entrée + Plat",
     has_starter: true,

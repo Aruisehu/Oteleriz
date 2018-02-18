@@ -8,14 +8,23 @@ class FormulaTemplate < ApplicationRecord
 =end
 
     def starter?
-        true
+        self.has_starter && !self.has_dish && !self.has_dessert
     end
 
     def dish?
-        true
+        !self.has_starter && self.has_dish && !self.has_dessert
     end
 
     def dessert?
-        true
+        !self.has_starter && !self.has_dish && self.has_dessert
     end
+
+    def hide?
+        dessert? or dish? or starter?
+    end
+
+    def self.displayable
+        FormulaTemplate.all.select do |f| !f.hide? end
+    end
+
 end
