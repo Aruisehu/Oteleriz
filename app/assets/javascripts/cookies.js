@@ -1,13 +1,13 @@
 Cookies = {
     init: function() {
         if(!Cookies.readCookie("cookies_disclaimer_closed")) {
-            $('#cookies_disclaimer').removeClass('hide');
+            $('#cookies_disclaimer').removeClass('hidden');
         }
 
         $('#cookies_close').click(Cookies.closeCookieDisclaimer);
     },
     closeCookieDisclaimer: function() {
-        $('#cookies_disclaimer').addClass('hide');
+        $('#cookies_disclaimer').addClass('hidden');
         Cookies.createCookie("cookies_disclaimer_closed", true, 999);
     },
     createCookie: function(name,value,days) {
@@ -28,9 +28,6 @@ Cookies = {
             if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
         }
         return null;
-    },
-    eraseCookie: function(name) {
-        createCookie(name,"",-1);
     }
 };
 

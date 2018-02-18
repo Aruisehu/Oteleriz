@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
         @starters = Starter.all
         @bakings = Baking.all
         @marinades = Marinade.all
+        @title = "Notre Carte"
     end
 
     def update
