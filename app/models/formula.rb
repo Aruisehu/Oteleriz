@@ -18,6 +18,20 @@ class Formula < ApplicationRecord
         self.formula_template.dessert?
     end
 
+    def get_price
+        if self.dessert?
+            return self.dessert.price
+        end
+        if self.dish?
+            return self.dish.price
+        end
+        if self.starter?
+            return self.starter.price
+        end
+
+        self.formula_template.price
+    end
+
     def get_products
         return {starter: self.starter, dish: self.dish, dessert: self.dessert}.compact
     end
