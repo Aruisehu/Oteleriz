@@ -26,10 +26,14 @@ class ApplicationController < ActionController::Base
     protected
     def set_order
         if session[:order_id].blank?
-            #TEMP
             session[:order_id] = Order.create(service: Service.create(meal: Meal.new)).id
         end
 
-        @order = Order.includes(formulas: :starter).find(session[:order_id])
+        @order = Order.includes(formulas: :starter).find_by_id(session[:order_id])
+
+        if @order.blank?
+            @order = Order.create(service: Service.create(meal: Meal.new))
+            session[:order_id] = @order.id
+        end
     end
 end
