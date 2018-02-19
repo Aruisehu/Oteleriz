@@ -18,11 +18,6 @@
                     <%= link_to "Équipe", root_path + "#team" %>
                     <%= link_to "Partenaires", root_path + "#partners" %>
                 <% end %>
-
-                <div id="lang-switcher">
-                    <a class="<%= I18n.locale == :fr ? 'active' : '' %>" href="?locale=fr"><%= inline_svg "fr.svg" %></a>
-                    <a class="<%= I18n.locale == :en ? 'active' : '' %>" href="?locale=en"><%= inline_svg "gb.svg" %></a>
-                </div>
             </div>
         </div>
         <div class="action">
