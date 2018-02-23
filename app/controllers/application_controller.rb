@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
             session[:order_id] = Order.create(service: Service.create(meal: Meal.new)).id
         end
 
-        @order = Order.includes(formulas: :starter).find_by_id(session[:order_id])
+        @order = Order.find_by_id(session[:order_id])
 
         if @order.blank?
             @order = Order.create(service: Service.create(meal: Meal.new))

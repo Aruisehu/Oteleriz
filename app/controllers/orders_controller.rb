@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
         @dishes = Dish.all
         @desserts = Dessert.all
         @starters = Starter.all
-        @bakings = Baking.all
+        @bakings = Baking.includes(:marinades).all
         @marinades = Marinade.all
         @course_sd = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: false, has_wine: false)
         @course_sdw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: false, has_wine: true)
