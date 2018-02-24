@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
-    belongs_to :meal
+    belongs_to :service
     has_many :formulas
 end

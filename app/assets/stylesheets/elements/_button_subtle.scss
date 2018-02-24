@@ -1,0 +1,46 @@
+.btn-subtle {
+    appearance: none;
+    background: rgba($shadow, .05);
+    border-radius: 4px;
+    box-shadow: none;
+    color: $accent2;
+    fill: $white !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 2em;
+    opacity: 1 !important;
+    outline: none !important;
+    padding: 0 0.5em;
+    text-align: left !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: none !important;
+    transform: translateY(0);
+    transition: background 170ms ease-in-out;
+
+    .fa {
+        float: right;
+        line-height: 2em;
+        text-align: center;
+        margin-left: .5em;
+    }
+
+    &:hover {
+        background: rgba($accent2, .3);
+    }
+
+    &.-alt {
+        color: $text;
+
+        &:hover {
+            background: rgba($text, .3);
+        }
+    }
+
+    &.-icon {
+        .fa {
+            margin: 0;
+        }
+    }
+}

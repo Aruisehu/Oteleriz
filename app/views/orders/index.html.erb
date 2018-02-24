@@ -1,25 +1,38 @@
 <% content_for :main_nav do %>
     <h3 class="title">Click & Sit</h3>
-    <%= link_to "Entrés", "#starter" %>
+    <%= link_to "Entrées", "#starter" %>
     <%= link_to "Plats", "#main" %>
     <%= link_to "Desserts", "#dessert" %>
     <%= link_to "Formules", "#course" %>
-    <%= link_to "Boissons", "#drink" %>
 <% end %>
+
+<% content_for :main_action do %>
+    <%= cell(:cart, @order).(:display) %>
+<% end %>
+
+<section class="-border-bottom">
+    <div class="row align -center">
+        <h1 class="title -icon -center"><%= fa_icon "hourglass" %><br/>Coming Soon !</h1>
+        <p class="subtitle"><strong>Click & Sit</strong> vous permet de commander sur notre site et venir manger votre commande prête, sur place.</p>
+        <p>En attendant le salon d'Égast à strasbourg, vous pouvez dès à present vous familiariser avec notre concept <strong>&#171; 1 Produit, 3 Cuissons, 1000 Saveurs &#187;</strong> qui vous permet de créer votre propre plat en choisissant les différents ingrédients et leurs cuissons.</p>
+        <br/>
+        <p>Suivez nous sur notre <a href="https://www.facebook.com/StartUpcookmeup/" target="_blank">page facebook</a> ou sur <a href="https://www.instagram.com/cookmeup_/">instagram</a></p>
+    </div>
+</section>
 <section>
     <div class="row">
         <a id="starter" class="anchor"></a>
-        <h3 class="title align -center">Entrés</h3>
-        <%= cell(:product, collection: @starters) %>
+        <h3 class="title align -center">Entrées</h3>
+        <%= cell(:product, presentation: true, collection: @starters) %>
     </div>
 </section>
 <section class="-darker">
-    <div class="row  align -center">
+    <div class="row align -center">
         <a id="main" class="anchor"></a>
         <h3 class="title">Plats</h3>
-        <h4 class="subtitle">Créer votre plat à votre goût en choisissant vos aliments</h4>
-        <a class="btn">Créer mon plat <%= fa_icon "plus" %></a>
-        <a class="btn -alt">Surprenez-moi <%= fa_icon "random" %></a>
+        <h4 class="subtitle">Créer votre plat, à votre goût, en choisissant vos aliments.</h4>
+            <!-- <<a class="btn" href="<%= add_menu_to_order_path %>">Créer mon plat <%= fa_icon "plus" %></a>
+            <a class="btn -alt" href="<%= add_menu_to_order_path(random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>-->
         <div class="col-12">
             <div class="zone">
                 <header>
@@ -93,10 +106,10 @@
                     </table>
                 </div>
             </div>
-            <div class="col-12 align -center">
-                <a class="btn">Créer mon plat <%= fa_icon "plus" %></a>
-                <a class="btn -alt">Surprenez-moi <%= fa_icon "random" %></a>
-            </div>
+            <!-- <div class="col-12 align -center">
+                <a class="btn" href="<%= add_menu_to_order_path %>">Créer mon plat <%= fa_icon "plus" %></a>
+                <a class="btn -alt" href="<%= add_menu_to_order_path(random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
+            </div> -->
         </div>
     </div>
 </section>
@@ -104,6 +117,40 @@
     <div class="row">
         <a id="dessert" class="anchor"></a>
         <h3 class="title align -center">Desserts</h3>
-        <%= cell(:product, collection: @desserts) %>
+        <%= cell(:product, presentation: true, collection: @desserts) %>
+    </div>
+</section>
+<section class="-darker">
+    <div class="row align -center">
+        <a id="course" class="anchor"></a>
+        <h3 class="title">Formules</h3>
+        <div class="formula-container">
+            <div class="formula">
+                <h5 class="title">Entrée & Plat <span class="separator">ou</span> Plat & Dessert</h5>
+                <p>Créez votre plat et choisissez une de nos entrées ou un des desserts.</p>
+                <!--<span class="price"><%= number_to_currency(@course_sd.price, locale: :fr) %></span>-->
+            </div>
+            <div class="formula -wine">
+                <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
+                <p>Deux verres de <strong>vin</strong></p>
+                <!--<span class="price"><%= number_to_currency(@course_ddw.price, locale: :fr) %></span>-->
+            </div>
+        </div>
+        <div class="formula-container">
+            <div class="formula">
+                <h5 class="title">Entrée, Plat & Dessert</h5>
+                <p>Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts.</p>
+                <!--<span class="price"><%= number_to_currency(@course_sdd.price, locale: :fr) %></span>-->
+            </div>
+            <div class="formula -wine">
+                <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
+                <p>Deux verres de <strong>vin</strong> et un <strong>cocktail</strong></p>
+                <!--<span class="price"><%= number_to_currency(@course_sddw.price, locale: :fr) %></span>-->
+            </div>
+        </div>
+    </div>
+    <div class="row align -center">
+        <br/>
+        <h5 class="wine">* Notre sommelier vous conseillera sur place ses meilleurs vins pour accompagner vos choix</h5>
     </div>
 </section>

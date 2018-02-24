@@ -5,8 +5,11 @@
 
         <%= render "layouts/nav" %>
         <div class="page">
+            <%= render "layouts/flash" %>
             <%= yield %>
         </div>
         <%= render "layouts/footer" %>
+
+        <%= render "layouts/cookie_disclaimer" %>
     </body>
 </html>

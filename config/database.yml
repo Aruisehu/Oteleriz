@@ -23,13 +23,12 @@ test:
 <% if ENV["HEROKU"] == "true" %>
 production:
   <<: *default
-  database: dbgkmijqfcnkm9
+  database: <%= ENV["DATABASE_NAME"] %>
   username: <%= ENV["DATABASE_USERNAME"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
-  port: 5432
-  url: <%= ENV['DATABASE_URL'] %>
-  host: ec2-54-217-245-66.eu-west-1.compute.amazonaws.com
-  schema_search_path: breitandklein, public
+  port: <%= ENV["DATABASE_PORT"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
 <% else %>
 production:
   <<: *default

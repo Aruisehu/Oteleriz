@@ -21,7 +21,7 @@
     text-transform: uppercase;
     text-shadow: none !important;
     transform: translateY(0);
-    transition: none, transform box-shadow 170ms ease-in-out;
+    transition: box-shadow 170ms ease-in-out, transform 170ms ease-in-out;
 
     .fa {
         float: right;

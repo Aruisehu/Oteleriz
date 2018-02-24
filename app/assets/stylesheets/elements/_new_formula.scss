@@ -1,0 +1,99 @@
+.new_formula .add-formula {
+    @extend %clearfix;
+    border: 2px solid $gray0;
+    border-radius: .25em;
+    margin-bottom: 1em;
+    overflow: hidden;
+
+    input {
+        display: none;
+    }
+
+    label {
+        @extend %clearfix;
+        background: rgba($gray0, .5);
+        border-radius: .25em;
+        box-shadow: 0 0 0 1px $gray0;
+        cursor: pointer;
+        display: inline-block;
+        float: left;
+        margin: .5em;
+        overflow: hidden;
+        padding: .5em;
+        text-transform: uppercase;
+        transition: transform 150ms ease-in-out, background 150ms ease-in-out, box-shadow 150ms ease-in-out;
+
+        & * {
+            cursor: pointer;
+        }
+    }
+
+    header {
+        background: $gray0;
+        padding: 1em;
+
+        h5.-faint {
+            min-width: 5.2em;
+        }
+    }
+
+    h5 {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .item {
+        border-top: 2px solid $gray0;
+        overflow: hidden;
+        padding: 1em;
+
+        & > h6 {
+            padding: 0 .5em;
+        }
+    }
+
+    label h6 {
+        line-height: 3em;
+        margin: 0;
+    }
+
+    .img {
+        height: 3em;
+        margin-right: 1em;
+        width: 4em;
+    }
+
+    .img, label h6 {
+        float: left;
+    }
+
+    input:checked + label {
+        background: $gray0;
+        box-shadow: 0 0 0 1px $accent2, 0 .2em 0.8em rgba($shadow, .25), 0 0 0.1em 0.05em rgba($shadow, .1);
+        color: $accent2;
+        transform: scale(1.03);
+    }
+
+    .choice {
+        color: $accent2;
+        line-height: 1em;
+    }
+
+    &.starter, &.dessert {
+        label {
+            width: calc(50% - 1em);
+        }
+    }
+
+    &.dish {
+        label {
+            width: calc(#{(100% / 3)} - 1em);
+        }
+    }
+
+    &.buttons {
+        .btn {
+            margin: 0;
+        }
+    }
+}

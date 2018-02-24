@@ -1,24 +1,31 @@
-<div class="cart-product dish">
+<div class="image">
     <div class="img">
-        <img src="https://ih1.redbubble.net/image.343720960.4451/flat,800x800,075,f.u1.jpg">
+        <img src="http://hitek.fr/img/actualite/2017/09/26/it-anime-sewer-scene-concept-art-by-mike-anderson-1022961.jpg?unsync">
     </div>
-    <h6><%= model.name %></h6>
-    <div class="cooking">
-        <h6><%= @cooking.name %></h6>
-    </div>
-    <% if @roasting %>
-        <div class="roasting">
-            <h6><%= @roasting %></h6>
+    <h6 class="subtle align -center">Plat</h6>
+</div>
+<div class="content">
+    <h5 class="title -compact"><%= model.name %></h5>
+    <div class="details">
+        <div class="item cooking">
+            <h6>Mode de cuisson</h6>
+            <p><%= @cooking.name %></p>
         </div>
-    <% end %>
-    <div class="garniture">
-        <h6>Garnitures</h6>
-        <%= @cooking.ingredient %>
-    </div>
-    <% if @marinade %>
-        <div class="marinade">
-            <h6>Marinade</h6>
-            <%= @marinade.description %>
+        <% if @roasting %>
+            <div class="item roasting">
+                <p></p>
+                <h6><%= @roasting %></h6>
+            </div>
+        <% end %>
+        <div class="item garniture">
+            <h6>Garnitures</h6>
+            <p><%= @cooking.ingredient %></p>
         </div>
-    <% end %>
+        <% if @marinade %>
+            <div class="item marinade">
+                <h6>Marinade</h6>
+                <p><%= @marinade.description %></p>
+            </div>
+        <% end %>
+    </div>
 </div>

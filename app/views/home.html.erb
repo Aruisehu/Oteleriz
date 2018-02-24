@@ -7,19 +7,16 @@
     <%= link_to "Partenaires", "#partners" %>
 <% end %>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<% content_for :main_action do %>
+    <%= link_to orders_path, class: "btn" do %>
+        Click & Sit <%= fa_icon "shopping-bag" %>
+    <% end %>
+<% end %>
 <section class="head" id="home">
     <div class="row">
         <h1 class="title">Cook Me Up</h1>
         <h5 class="title">1 produit, 3 cuissons, 1000 saveurs</h5>
-        <a class="btn -white" href="#">Click & Sit <%= fa_icon "shopping-basket" %></a>
+        <a class="btn -white" href="<%= orders_path %>">Click & Sit <%= fa_icon "shopping-basket" %></a>
         <a class="btn -white -alt" href="#concept">En Savoir Plus <%= fa_icon "info" %></a>
     </div>
 </section>
@@ -100,8 +97,8 @@
             <%= cell(:product, collection: @starters, presentation: true).(:tiny) %>
         </div>
         <div class="align -center">
-            <a class="btn" href="<%= static_page_path("menu") %>">notre carte<%= fa_icon "book" %></a>
-            <a class="btn -alt" href="<%= static_page_path("menu") %>">nos formules<%= fa_icon "edit" %></a>
+            <a class="btn" href="<%= orders_path %>">notre carte<%= fa_icon "book" %></a>
+            <a class="btn -alt" href="<%= orders_path %>#course">nos formules<%= fa_icon "edit" %></a>
         </div>
     </div>
 </section>
@@ -113,10 +110,27 @@
             <div class="text text-icon">
                 <%= fa_icon "heart" %>
                 <h3 class="title -compact">rendez-vous sur kisskissbankbank</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <p>
+                    Vous aussi souhaitez nous soutenir dans notre projet ? Sachez que c’est possible.
+                </p>
+                <p>
+                    Etant étudiants, notre projet est né de l’initiative et de la motivation de chacun des 19 d’entre nous. Afin de financer tous les besoins que sous-entend la création d’une entreprise, nous avons des partenaires qui nous épaulent en nous prêtant gracieusement leur matériel pour nous permettre de vous accueillir durant le salon.
+                </p>
+                <p>
+                    Mais ce n’est pas tout, nous avons besoin de vous.
+                    Grâce à notre page de collecte <strong>KissKissBankBank</strong>, vous avez la possibilité de nous soutenir financièrement. Vos dons nous permettront de financer l'achat non seulement d'une partie du mobilier du restaurant, mais également les matières premières nécessaires à notre équipe de cuisine et les boissons de notre restaurant.
+                </p>
+                <p>
+                    Bien sûr, vos dons vous rapporteront toujours quelque chose. En effet, il est nécessaire de vous dire que ceux-ci sont déductibles d’impôts, et qu’ils vous permettent d’obtenir des contreparties avantageuses chez <strong>&#171; Cook Me Up &#187;</strong> lors du salon !
+                    Nous tenons également à rappeler que l’ensemble des bénéfices perçus par notre Start’Up sera entièrement reversé à diverses associations de la région.
+                </p>
+                <p>
+                    On se donne rendez-vous sur:
+                </p>
                 <%= inline_svg "kkbb.svg" %>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a class="btn" href="#">Nous soutenir <%= fa_icon "child" %></a>
+                <p></p>
+                <a class="btn" href="https://www.kisskissbankbank.com/cook-me-up-un-restaurant-ephemere-cree-par-des-etudiants-et-bien-plus">Nous soutenir <%= fa_icon "child" %></a>
             </div>
         </div>
         <div class="col-6">
@@ -138,20 +152,20 @@
             <div class="col-12">
                 <div class="col-6">
                     <div class="text-icon text -tiny">
-                        <%= fa_icon "area-chart" %>
-                        <h3 class="title -compact">Finance</h3>
+                        <%= fa_icon "cutlery" %>
+                        <h3 class="title -compact">Cuisine</h3>
                         <p>
-                            Crowdfunding, budget, coûts… ces notions n’ont plus aucun secret pour eux.
-                            Ils sont en charge de la gestion de notre compte en banque, de la vente de nos actions entre autres, mais également de la création de notre site de financement collaboratif!
+                            Ravir les papilles de leurs convives, c’est la mission que s’est donnée l’équipe de cuisine de Cook Me Up.
+                            Leur ligne de conduite ? Vous proposer 1000 saveurs, à l’aide d’un seul produit.
                         </p>
                         <p>
-                            Faites la rencontre d’Armand, notre directeur financier à gauche, et son adjoint Florian.
+                            De gauche à droite, rencontrez : notre Chef de cuisine, Malo ; son Second, Nicolas ainsi que Morgane, Mylène et Axelle.
                         </p>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="img -shadow">
-                        <%= image_tag "team-money.jpg" %>
+                        <%= image_tag "team-cooking.jpg" %>
                     </div>
                 </div>
             </div>
@@ -179,20 +193,144 @@
             <div class="col-12">
                 <div class="col-6">
                     <div class="text-icon text -tiny">
-                        <%= fa_icon "cutlery" %>
-                        <h3 class="title -compact">Cuisine</h3>
+                        <%= fa_icon "glass" %>
+                        <h3 class="title -compact">Bar</h3>
                         <p>
-                            Ravir les papilles de leurs convives, c’est la mission que s’est donnée l’équipe de cuisine de Cook Me Up.
-                            Leur ligne de conduite ? Vous proposer 1000 saveurs, à l’aide d’un seul produit.
+                            Pour la première fois, deux élèves de la Mention Complémentaire Bar du lycée Alexandre Dumas rejoignent l’équipe pour le salon Egast.
+
+                            Faites la rencontre de Mathilde et d’Antoine.
                         </p>
                         <p>
-                            De gauche à droite, rencontrez : notre Chef de cuisine, Malo ; son Second, Nicolas ainsi que Morgane, Mylène et Axelle.
+                            Leur mission ? Vous proposer des cocktails qui sauront vous surprendre tout au long de votre repas.
+                            En apéritif, pour le plat ou encore le dessert, vous pourrez découvrir leurs diverses créations qui sauront vous enchanter.
+                        </p>
+                        <p>
+                            Surtout, ne ratez pas l’occasion de goûter au &#171; Spritz Me Up &#187;, le cocktail signature de notre restaurant éphémère !
                         </p>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="img -shadow">
-                        <%= image_tag "team-cooking.jpg" %>
+                        <%= image_tag "team-bar.jpg" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "coffee" %>
+                        <h3 class="title -compact">Snack</h3>
+                        <p>
+                            Une pause de midi trop juste pour s’installer dans notre restaurant ? Un petit creux qui s’installe pour le goûter ?
+                            Notre équipe du snack a ce qu’il vous faut.
+                        </p>
+                        <p>
+                            Voici Amalia notre responsable à gauche et sa collègue Bénédicte.
+                            En effet, elles ont en stock divers plats proposés dans notre restaurant que vous pourrez emporter, ainsi que des Quick Cakes : de petits gâteaux sucrés avec une même base, mais libre à vous de les garnir selon votre convenance. Nous vous donnons rendez-vous pendant le salon afin de découvrir les diverses possibilités !
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="img -shadow">
+                        <%= image_tag "team-snack.jpg" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "address-card" %>
+                        <h3 class="title -compact">Ressources Humaines</h3>
+                        <p>
+                            Fin janvier, la campagne de recrutement &#171; Cook Me Up &#187; est enfin lancée !
+                            La journée Cadr’hotel ayant lieu au lycée Alexandre Dumas en ce mercredi 31 janvier permet à différentes entreprises de venir se présenter aux élèves, et d’offrir aux plus motivés, des perspectives de carrière.
+                        </p>
+                        <p>
+                            Une occasion pour notre restaurant éphémère de se faire connaitre auprès des élèves et de leur proposer de rejoindre notre équipe aussi bien en salle, en cuisine, qu’à notre stand de vente à emporter.
+                            Albane, notre Directrice des Ressources Humaines à droite et Maïlys son adjointe, responsables du recrutement, étaient présentes sur notre stand dans le hall du lycée afin d’accueillir et répondre à toutes les  questions.
+                        </p>
+                        <p>
+                            Leur passage dans les classes au sein du lycée afin de présenter notre projet et de mobiliser les étudiants a également été effectué, ce qui nous a permis d’atteindre un nombre suffisant de personnel, nous permettant de vous offrir un moment unique dans notre restaurant.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="img -shadow">
+                        <%= image_tag "team-rh.jpg" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "area-chart" %>
+                        <h3 class="title -compact">Finance</h3>
+                        <p>
+                            Crowdfunding, budget, coûts… ces notions n’ont plus aucun secret pour eux.
+                            Ils sont en charge de la gestion de notre compte en banque, de la vente de nos actions entre autres, mais également de la création de notre site de financement collaboratif!
+                        </p>
+                        <p>
+                            Faites la rencontre d’Armand, notre directeur financier à gauche, et son adjoint Florian.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="img -shadow">
+                        <%= image_tag "team-money.jpg" %>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "area-chart" %>
+                        <h3 class="title -compact">Marketing</h3>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="img -shadow">
+                        <%= image_tag "team-money.jpg" %>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "terminal" %>
+                        <h3 class="title -compact">Informatique</h3>
+                        <p>
+                            TODO
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="img -shadow">
+                        <%= image_tag "team-money.jpg" %>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "clipboard" %>
+                        <h3 class="title -compact">Direction Générale</h3>
+                        <p>
+                            Laissez-nous vous présenter les piliers de notre Start’Up.
+                            Il s’agit bien évidemment de la direction générale !
+                        </p>
+                        <p>
+                            Faites la rencontre de Martin à gauche, et son adjoint Derry.
+                            C'est ensemble qu'ils ont décidé de se lancer dans l’aventure, afin de fédérer et représenter l’équipe de &#171; Cook Me Up &#187;. C’est tout naturellement qu’ils ont accepté leurs différentes missions. Animer les réunions, rencontrer les fournisseurs, négocier les contrats…ce rôle leur colle à la peau !
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="img -shadow">
+                        <%= image_tag "team-direction2.jpg" %>
                     </div>
                 </div>
             </div>
@@ -204,10 +342,10 @@
     <div class="row align -center">
         <h2 class="title">Nos Partenaires</h2>
         <div class="partners">
-            <a class="partner"  target="_blank" href="https://www.eberhardt-pro.fr/">
+            <a class="partner" target="_blank" href="https://www.eberhardt-pro.fr/">
                 <%= image_tag "eberhardt.png" %>
             </a>
-            <a class="partner"  target="_blank" href="http://www.ecotel.fr/">
+            <a class="partner" target="_blank" href="http://www.ecotel.fr/">
                 <%= image_tag "ecotel.png" %>
             </a>
             <a class="partner -tiny"  target="_blank" href="http://www.sapam.fr/">
@@ -216,24 +354,51 @@
             <a class="partner" target="_blank" href="https://www.vega-direct.com/">
                 <%= image_tag "vega.png" %>
             </a>
-            <a class="partner"  target="_blank" href="https://www.jobeline.com/">
+            <a class="partner" target="_blank" href="https://www.jobeline.com/">
                 <%= image_tag "jobeline.png" %>
             </a>
-            <a class="partner"  target="_blank" href="https://www.bragard.com/fr/">
-                <%= image_tag "bragard.svg" %>
+            <a class="partner" target="_blank" href="https://www.bragard.com/fr/">
+                <%= inline_svg "bragard.svg" %>
             </a>
-            <a class="partner"  target="_blank" href="http://www.france-boissons.fr/">
+            <a class="partner" target="_blank" href="http://www.france-boissons.fr/">
                 <%= image_tag "france-boissons.png" %>
             </a>
-            <a class="partner"  target="_blank" href="http://lycee-hotelier-adumas.fr/">
+            <a class="partner" target="_blank" href="http://lycee-hotelier-adumas.fr/">
                 <%= image_tag "alexandre-dumas.png" %>
             </a>
-            <a class="partner"  target="_blank" href="http://www.supinfo.com/">
+            <a class="partner" target="_blank" href="http://www.supinfo.com/">
                 <%= image_tag "supinfo-strasbourg.png" %>
             </a>
-            <a class="partner"  target="_blank" href="http://www.panibois.fr/">
+            <a class="partner" target="_blank" href="http://www.panibois.fr/">
                 <%= image_tag "panibois.png" %>
+            </a>
+            <div class="partner -tiny">
+                <%= image_tag "winneck.jpg" %>
+            </div>
+            <a class="partner -tiny" target="_blank" href="http://quatuhore.fr/WP/">
+                <%= image_tag "vega-qu.gif" %>
+            </a>
+            <a class="partner" target="_blank" href="http://www.lyceegutenberg.net/">
+                <%= image_tag "gutenberg.jpg" %>
+            </a>
+            <a class="partner" target="_blank" href="https://www.linkedin.com/company/euroxport-sas">
+                <%= image_tag "euroexport.jpg" %>
+            </a>
+            <a class="partner" target="_blank" href="http://www.huber-verdereau.com">
+                <%= image_tag "huber.jpg" %>
+            </a>
+            <a class="partner" target="_blank" href="http://www.reck.fr">
+                <%= inline_svg "reck.svg" %>
             </a>
         </div>
     </div>
 </section>
+
+<div id="fb-root"></div>
+<script async defer>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

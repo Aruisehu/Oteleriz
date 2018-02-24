@@ -8,20 +8,20 @@
                 <h1><%= site_name %></h1>
             </a>
             <div id="submenu">
-                <%= yield(:main_nav) %>
-
-                <div id="lang-switcher">
-                    <a class="<%= I18n.locale == :fr ? 'active' : '' %>" href="?locale=fr"><%= inline_svg "fr.svg" %></a>
-                    <a class="<%= I18n.locale == :en ? 'active' : '' %>" href="?locale=en"><%= inline_svg "gb.svg" %></a>
-                </div>
+                <% if content_for?(:main_nav) %>
+                    <%= yield(:main_nav) %>
+                <% else %>
+                    <%= link_to "Histoire", root_path + "#history" %>
+                    <%= link_to "Concept", root_path + "#concept" %>
+                    <%= link_to "Carte", root_path + "#menu" %>
+                    <%= link_to "Participez", root_path + "#participate" %>
+                    <%= link_to "Équipe", root_path + "#team" %>
+                    <%= link_to "Partenaires", root_path + "#partners" %>
+                <% end %>
             </div>
         </div>
         <div class="action">
-            <% unless nav_active(static_page_path("menu")) %>
-                <%= link_to static_page_path("menu"), class: "btn" do %>
-                    Click & Sit <%= fa_icon "shopping-bag" %>
-                <% end %>
-            <% end %>
+            <%= yield(:main_action) %>
         </div>
     </div>
 </nav>

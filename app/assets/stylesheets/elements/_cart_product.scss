@@ -1,0 +1,43 @@
+$img-width: 5em;
+
+.cart-product {
+    @extend %clearfix;
+
+    border-bottom: 1px solid $gray0;
+
+    .image {
+        float: left;
+        width: ($img-width + 1em);
+        padding: 0.5em;
+
+        .img {
+            max-width: 6em;
+        }
+    }
+
+    .content {
+        padding: 1em .5em;
+        float: left;
+        width: calc(100% - #{$img-width  + 1em});
+    }
+
+    .item {
+        @extend %clearfix;
+    }
+
+    .details .item {
+        padding: .5em 0;
+    }
+
+    h6 {
+        font-size: 75%;
+        opacity: .37;
+        letter-spacing: .125em;
+        text-transform: uppercase;
+    }
+
+    p {
+        clear: both;
+        display: block;
+    }
+}

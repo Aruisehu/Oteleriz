@@ -22,10 +22,26 @@
                 letter-spacing: 0;
             }
         }
+
+        &.-center {
+            .fa {
+                margin: 1em;
+                position: static;
+            }
+        }
+    }
+
+    .separator {
+        color: rgba($text, .65);
+        text-transform: none;
     }
 
     &.-compact {
         line-height: 1em;
         margin-bottom: 0.3em;
+    }
+
+    &.-faint {
+        color: $text;
     }
 }

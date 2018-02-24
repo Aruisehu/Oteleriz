@@ -1,0 +1,65 @@
+<div class="add-formula dish">
+    <header>
+        <h5 class="title -compact -faint">Plat:</h5>
+        <h5 class="choice">Boeuf fusio bien cuit</h5>
+    </header>
+    <div class="col-12 -sp">
+        <div class="item base">
+            <h6 class="title -compact -faint">Base</h6>
+            <% @dishes.each do |d| %>
+                <%= @f.radio_button :dish, d.id, :checked => (d == @dish) %>
+                <label for="formula_dish_<%= d.id %>">
+                    <div class="img">
+                        <div class="icon <%= d.name_en.downcase %>"></div>
+                    </div>
+                    <h6><%= d.name %></h6>
+                </label>
+            <% end %>
+        </div>
+        <div class="item baking">
+            <h6 class="title -compact -faint">Mode de Cuisson</h6>
+            <% @bakings.each do |b| %>
+                <%= @f.radio_button :baking, b.id, :checked => (b == @baking) %>
+                <label for="formula_baking_<%= b.id %>">
+                    <div class="img">
+                        <div class="icon <%= b.name_en.downcase %>"></div>
+                    </div>
+                    <h6><%= b.name %></h6>
+                </label>
+            <% end %>
+            <div class="ingredients">
+
+            </div>
+        </div>
+        <div class="item roasting">
+            <h6 class="title -compact -faint">Cuisson</h6>
+            <% @roastings.each do |r| %>
+                <%= @f.radio_button :roasting, r, :checked => (r == @roasting) %>
+                <label for="formula_roasting_<%= r %>">
+                    <div class="img">
+                        <div class="icon <%= r.downcase %>"></div>
+                    </div>
+                    <h6><%= r %></h6>
+                </label>
+            <% end %>
+        </div>
+        <div class="item">
+            <div class="col-6">
+                <h6 class="title -compact -faint">Marinades</h6>
+                <% @bakings.each do |b| %>
+                    <% unless b.marinades.blank? %>
+                        <% @dishes.each do |d| %>
+                            <p data-baking="<%= b.id %>" data-dish="d.id"><%= @marinades.find_by(baking: b, dish: d).description %></p>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="col-6">
+                <h6 class="title -compact -faint">Garnitures</h6>
+                <% @bakings.each do |b| %>
+                    <p data-dish="b.id"><%= b.ingredient %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,49 +3,16 @@ class CartCell < Cell::ViewModel
     property :order
 
     def show
-        template_all = FormulaTemplate.new(
-            has_starter: true,
-            has_dish: true,
-            has_dessert: true
-        )
+        @order = model
 
-        template_starter_false = FormulaTemplate.new(
-            has_starter: false,
-            has_dish: true,
-            has_dessert: true
-        )
+        unless @order.formulas.empty?
+            render
+        else
+            render 'empty'
+        end
+    end
 
-        template_dessert_false = FormulaTemplate.new(
-            has_starter: true,
-            has_dish: true,
-            has_dessert: false
-        )
-
-        template_dish_only = FormulaTemplate.new(
-            has_starter: true,
-            has_dish: true,
-            has_dessert: false
-        )
-
-        formulas = [
-            Formula.new(
-                formula_template: template_all,
-                starter: Starter.all.sample,
-                dish: Dish.all.sample,
-                dessert: Dessert.all.sample,
-                baking: Baking.all.sample,
-                roasting: ["rare", "well_done"].sample
-            ),
-            Formula.new(
-                formula_template: template_dish_only,
-                dish: Dish.all.sample,
-                baking: Baking.all.sample,
-                roasting: ["rare", "well_done"].sample
-            )
-        ]
-
-        @order = Order.new(formulas: formulas)
-
+    def display
         render
     end
 

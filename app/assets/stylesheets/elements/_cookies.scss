@@ -1,0 +1,26 @@
+#cookie_parent {
+    display: block;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+#cookies_disclaimer {
+    padding: 1em;
+
+    width: 100%;
+    background: $white;
+    border-top: 1px $gray0 solid;
+    box-shadow: 0 4em 2em 4em rgba($shadow, .24);
+
+    .btn-subtle {
+        float: right;
+    }
+
+    p {
+        float: left;
+        font-size: 100%;
+        line-height: 2;
+    }
+}

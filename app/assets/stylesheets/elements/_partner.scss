@@ -18,7 +18,7 @@
         }
     }
 
-    img {
+    img, svg  {
         filter: grayscale(1);
         float: none;
         max-height: 12em;
@@ -26,7 +26,11 @@
         transition: filter 100ms ease-in-out;
     }
 
-    &:hover img {
+    svg {
+        min-width: 9em;
+    }
+
+    &:hover img, &:hover svg {
         filter: grayscale(0);
     }
 }

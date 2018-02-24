@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
     root 'application#home'
 
-    get '/menu' => "static_pages#menu", as: "menu"
-    get ':page' => "static_pages#show", as: "static_page"
 
     devise_for :users, controllers: {
         sessions: 'admin/sessions'
     }
+    resources :orders, only: [:update, :index, :edit, :destroy]
+    get 'add_menu' => 'orders#add_menu', as: "add_menu_to_order"
+
+    get ':page' => "static_pages#show", as: "static_page"
 
 end

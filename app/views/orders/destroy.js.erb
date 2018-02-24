@@ -1,0 +1,10 @@
+// Set New Total Price
+$('.total.price').text("<%= number_to_currency(@order_price, locale: :fr) %>");
+
+// Remove Formula
+$('#formula-id-<%= @formula.id %>').remove();
+
+// Set Cart Formula Count
+var count = $('.cart-display .count');
+var number = parseInt(count.text(), 10);
+count.text(--number);

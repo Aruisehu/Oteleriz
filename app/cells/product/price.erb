@@ -1,4 +1,8 @@
 <div class="add">
-    <span class="price">10.39€</span>
-    <a class="btn -alt" href="#">Ajouter <%= fa_icon "plus" %></a>
+    <span class="price"><%= number_to_currency(model.price, locale: :fr) %></span>
+    <%= form_for @formula, url: order_path(session[:order_id]), method: :patch do |f| %>
+        <%= f.button name: "formula[#{model.class.name.downcase}]", value: model.id, class: "btn -alt" do %>
+            Ajouter <%= fa_icon "plus" %>
+        <% end %>
+    <% end %>
 </div>

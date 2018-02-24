@@ -10,14 +10,14 @@
 
     &::before {
         content: "";
+        background: $white;
+        box-shadow: 0 .5em 1em rgba(50,50,93,.07), 0 .5em 1em rgba(50,50,93,.07), 0 0.3em 1em rgba(0,0,0,.05);
         display: block;
+        height: 4em;
+        left: -10%;
         position: absolute;
         top: 0;
-        left: -10%;
         width: 120%;
-        background: $white;
-        box-shadow: 0 3em 6em rgba(50,50,93,.1), 0 1em 2em rgba(50,50,93,.15), 0 0.3em 1em rgba(0,0,0,.1);
-        height: 4em;
         z-index: -1;
     }
 
@@ -25,16 +25,17 @@
         display: flex;
         height: 4em;
         padding: 0;
+        position: relative;
     }
 
     .menu {
         flex: 1 1 auto;
 
         #logo {
-            width: 4em;
             height: 4em;
-            padding: 0;
             overflow: hidden;
+            padding: 0;
+            width: 4em;
 
             img {
                 height: 4em;
@@ -42,25 +43,25 @@
         }
     }
 
-    .menu a, label {
+    .menu a, .menu label {
+        color: $text;
         float: left;
+        font-weight: bold;
         line-height: 4em;
         min-width: 4em;
         padding: 0 .8em;
-        color: $text;
-        font-weight: bold;
         text-transform: uppercase;
     }
 
-    .title {
+    .menu .title {
         color: $text;
-        font-weight: normal;
-        font-size: 1em;
         display: inline-block;
         float: left;
+        font-size: 1em;
+        font-weight: normal;
         line-height: 4em;
-        padding: 0 .8em;
         margin: 0;
+        padding: 0 .8em;
     }
 
     #submenu a.current {
@@ -105,9 +106,9 @@
     }
 
     svg {
-        width: 2em;
         height: 1.5em;
         position: relative;
         top: 0.4em;
+        width: 2em;
     }
 }

@@ -1,12 +1,12 @@
 <div class="product">
     <div class="info">
         <div class="img">
-            <img src="http://blog.ac-versailles.fr/lebonjournal/public/.hamburger_m.jpg" alt="name">
+            <img src="<%= model.img_url %>" alt="name">
         </div>
         <div class="content">
             <h5 class="title"><%= model.name %></h5>
             <p><%= model.description %></p>
         </div>
     </div>
-    <%= cell(:product, "test", presentation: options[:presentation]).(:price) %>
+    <%= cell(:product, model, presentation: options[:presentation]).(:price) %>
 </div>

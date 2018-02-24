@@ -1,0 +1,64 @@
+.cart {
+    @extend %clearfix;
+    overflow-y: auto;
+    max-height: calc(100vh - 14em);
+
+    .formula {
+        @extend %clearfix;
+
+        background: $white;
+        border-radius: 0.25em;
+        border: 2px solid $gray0;
+        margin: .5em;
+        overflow: hidden;
+    }
+
+    .formula-switch:checked + .formula {
+        p, h6, .details .item {
+            display: none;
+        }
+
+        .content {
+            width: calc(100% - 4em)
+        }
+
+        .image {
+            max-width: 4em;
+            max-height: 4em;
+
+            img {
+
+            }
+        }
+
+        .title {
+            line-height: 1.5em;
+            margin: 0;
+        }
+
+        .deploy .fa:before {
+            content: "\f107"
+        }
+    }
+
+    .action-bar {
+        @extend %clearfix;
+
+        background: rgba($gray0, .5);
+        border-top: 1px solid $gray0;
+        padding: .5em;
+
+        .btn {
+            margin: 0;
+            float: left;
+        }
+    }
+
+    .price {
+        padding: 0 0.5em;
+        line-height: 2em;
+        float: left;
+        width: 5em;
+        text-align: center;
+    }
+}

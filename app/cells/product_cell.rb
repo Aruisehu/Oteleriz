@@ -1,5 +1,6 @@
 class ProductCell < Cell::ViewModel
     include FontAwesome::Rails::IconHelper
+    include ActionView::Helpers::NumberHelper
 
     def show
         render
@@ -14,6 +15,7 @@ class ProductCell < Cell::ViewModel
     end
 
     def price
+        @formula = Formula.new
         unless options[:presentation]
             render
         else

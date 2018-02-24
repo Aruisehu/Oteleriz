@@ -1,0 +1,6 @@
+<%= form_for @formula, html: {id: "add_formula"}, url: order_path(session[:order_id]), method: :patch do |f| %>
+    <%= cell(:add_formula, model, form: f, random: @random).(:starter) %>
+    <%= cell(:add_formula, model, form: f, random: @random).(:dish) %>
+    <%= cell(:add_formula, model, form: f, random: @random).(:dessert) %>
+    <%= cell(:add_formula, model, form: f).(:submit) %>
+<% end %>
