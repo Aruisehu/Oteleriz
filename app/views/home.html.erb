@@ -14,7 +14,7 @@
 <% end %>
 <section class="head" id="home">
     <div class="row">
-        <h1 class="title">Cook Me Up</h1>
+        <%= image_tag "logo-white.png" %>
         <h5 class="title">1 produit, 3 cuissons, 1000 saveurs</h5>
         <a class="btn -white" href="<%= orders_path %>">Click & Sit <%= fa_icon "shopping-basket" %></a>
         <a class="btn -white -alt" href="#concept">En Savoir Plus <%= fa_icon "info" %></a>
@@ -50,13 +50,22 @@
 </section>
 <section class="-border-bottom">
     <a id="concept" class="anchor"></a>
-    <div class="row align -center">
-        <div class="col-4 -big-gutter align -right -m-center">
-            <div class="img">
-                <%= image_tag "logo.png" %>
-            </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="img -m-hide"><%= image_tag "fusio.jpg" %></div>
         </div>
-        <div class="col-8 -big-gutter">
+        <div class="col-4">
+            <div class="img -m-full"><%= image_tag "papi.jpg" %></div>
+        </div>
+        <div class="col-4">
+            <div class="img -m-hide"><%= image_tag "wok.jpg" %></div>
+        </div>
+    </div>
+    <div class="row align -center">
+        <div class="col-3 -big-gutter align -center">
+            <div class="img"><%= image_tag "logo.png" %></div>
+        </div>
+        <div class="col-9 -big-gutter">
             <h2 class="title">Le Concept</h2>
             <h4 class="subtitle -img">
                 &#171; 1 Produit, 3 Cuissons, 1000 Saveurs &#187;, telle est notre ligne de conduite.
@@ -163,7 +172,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-cooking.jpg" %>
                     </div>
@@ -184,7 +193,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-direction.jpg" %>
                     </div>
@@ -209,7 +218,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-bar.jpg" %>
                     </div>
@@ -230,7 +239,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-snack.jpg" %>
                     </div>
@@ -254,7 +263,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-rh.jpg" %>
                     </div>
@@ -274,7 +283,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-money.jpg" %>
                     </div>
@@ -290,24 +299,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="img -shadow">
-                        <%= image_tag "team-money.jpg" %>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="col-12">
-                <div class="col-6">
-                    <div class="text-icon text -tiny">
-                        <%= fa_icon "terminal" %>
-                        <h3 class="title -compact">Informatique</h3>
-                        <p>
-                            TODO
-                        </p>
-                    </div>
-                </div>
-                <div class="col-6">
+                <div class="col-6 align -m-center">
                     <div class="img -shadow">
                         <%= image_tag "team-money.jpg" %>
                     </div>
@@ -334,6 +326,29 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-12">
+                <div class="col-6">
+                    <div class="text-icon text -tiny">
+                        <%= fa_icon "desktop" %>
+                        <h3 class="title -compact">Informatique</h3>
+                        <p>
+                            Voici de gauche à droite, Gaëtan, Bastien, Yohann et Sébastien. Etudiants de l’école SUPINFO, école de l’informatique et du numérique d’Illkirch, c’est au mois de décembre que ces quatre étudiants ont rejoints notre équipe.
+                        </p>
+                        <p>
+                            Leur mission ? apporter une touche innovante et numérique à la création d’un restaurant éphémère en développant une application internet.
+                        </p>
+                        <p>
+                            Regrouper deux mondes aussi différents que sont le numérique et la restauration est un défi que nous avons souhaité relever avec leur collaboration, ce qui donne souvent lieu à des échanges intéressants… En effet, il est tout aussi compliqué pour notre équipe de parler d’hébergements internet et autres notions numériques que pour eux d’aborder les différentes techniques de cuisine…
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 align -m-center">
+                    <div class="img -shadow">
+                        <%= image_tag "team-info.jpg" %>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -351,11 +366,14 @@
             <a class="partner -tiny"  target="_blank" href="http://www.sapam.fr/">
                 <%= image_tag "sapam.png" %>
             </a>
+            <a class="partner" target="_blank" href="https://www.jobeline.com/">
+                <%= image_tag "jobeline.png" %>
+            </a>
             <a class="partner" target="_blank" href="https://www.vega-direct.com/">
                 <%= image_tag "vega.png" %>
             </a>
-            <a class="partner" target="_blank" href="https://www.jobeline.com/">
-                <%= image_tag "jobeline.png" %>
+            <a class="partner -tiny" target="_blank" href="http://quatuhore.fr/WP/">
+                <%= image_tag "vega-qu.gif" %>
             </a>
             <a class="partner" target="_blank" href="https://www.bragard.com/fr/">
                 <%= inline_svg "bragard.svg" %>
@@ -375,9 +393,6 @@
             <div class="partner -tiny">
                 <%= image_tag "winneck.jpg" %>
             </div>
-            <a class="partner -tiny" target="_blank" href="http://quatuhore.fr/WP/">
-                <%= image_tag "vega-qu.gif" %>
-            </a>
             <a class="partner" target="_blank" href="http://www.lyceegutenberg.net/">
                 <%= image_tag "gutenberg.jpg" %>
             </a>
@@ -389,6 +404,12 @@
             </a>
             <a class="partner" target="_blank" href="http://www.reck.fr">
                 <%= inline_svg "reck.svg" %>
+            </a>
+            <a class="partner -tiny" target="_blank" href="https://www.rentiz.com">
+                <%= image_tag "rentiz.jpg" %>
+            </a>
+            <a class="partner" target="_blank" href="http://www.petitforestier.com/fr/fr_fr">
+                <%= image_tag "petit-forestier.jpg" %>
             </a>
         </div>
     </div>
