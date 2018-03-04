@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  hello: "Hello world"
+  rare: "Saignant"
+  well_done: "A point"

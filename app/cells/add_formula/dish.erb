@@ -39,7 +39,7 @@
                     <div class="img">
                         <div class="icon <%= r.downcase %>"></div>
                     </div>
-                    <h6><%= r %></h6>
+                    <h6><%= I18n.t r %></h6>
                 </label>
             <% end %>
         </div>
@@ -49,7 +49,11 @@
                 <% @bakings.each do |b| %>
                     <% unless b.marinades.blank? %>
                         <% @dishes.each do |d| %>
-                            <p data-baking="<%= b.id %>" data-dish="d.id"><%= @marinades.find_by(baking: b, dish: d).description %></p>
+                            <p class="marinade hidden" data-baking="<%= b.name.downcase %>" data-dish="<%= d.name.downcase %>"><%= @marinades.find_by(baking: b, dish: d).description %></p>
+                        <% end %>
+                    <% else %>
+                        <% @dishes.each do |d| %>
+                            <p class="marinade hidden" data-baking="<%= b.name.downcase %>" data-dish="<%= d.name.downcase %>">La cuisson au wok n'est pas compatible avec les marinades</p>
                         <% end %>
                     <% end %>
                 <% end %>
@@ -57,7 +61,7 @@
             <div class="col-6">
                 <h6 class="title -compact -faint">Garnitures</h6>
                 <% @bakings.each do |b| %>
-                    <p data-dish="b.id"><%= b.ingredient %></p>
+                    <p class="ingredient hidden" data-baking="<%= b.name.downcase %>"><%= b.ingredient %></p>
                 <% end %>
             </div>
         </div>

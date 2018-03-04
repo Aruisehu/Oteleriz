@@ -32,7 +32,7 @@ class AddFormulaCell < Cell::ViewModel
         set_form_context
 
         @dishes = Dish.all
-        @bakings = Baking.all
+        @bakings = Baking.includes(:marinades).all
         @roastings = ["rare", "well_done"]
         @marinades = Marinade.all
 
