@@ -19,6 +19,18 @@ class FormulaTemplate < ApplicationRecord
         !self.has_starter && !self.has_dish && self.has_dessert
     end
 
+    def has_starter?
+        self.has_starter
+    end
+
+    def has_dish?
+        self.has_dish
+    end
+
+    def has_dessert?
+        self.has_dessert
+    end
+
     def hide?
         dessert? or dish? or starter?
     end

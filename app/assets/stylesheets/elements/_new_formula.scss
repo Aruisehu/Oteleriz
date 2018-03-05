@@ -23,6 +23,13 @@
         text-transform: uppercase;
         transition: transform 150ms ease-in-out, background 150ms ease-in-out, box-shadow 150ms ease-in-out;
 
+        h6 {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: calc(100% - 5.5em);
+        }
+
         & * {
             cursor: pointer;
         }
@@ -59,8 +66,8 @@
 
     .img {
         height: 3em;
-        margin-right: 1em;
-        width: 4em;
+        margin-right: .5em;
+        width: 5em;
     }
 
     .img, label h6 {
@@ -77,6 +84,9 @@
     .choice {
         color: $accent2;
         line-height: 1em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 
     &.starter, &.dessert {

@@ -13,7 +13,7 @@ class AddFormulaCell < Cell::ViewModel
     end
 
     def starter
-        if model.starter?
+        if model.has_starter?
             set_form_context
 
             @starters = Starter.all
@@ -50,7 +50,7 @@ class AddFormulaCell < Cell::ViewModel
     end
 
     def dessert
-        if model.dessert?
+        if model.has_dessert?
             set_form_context
 
             @desserts = Dessert.all
