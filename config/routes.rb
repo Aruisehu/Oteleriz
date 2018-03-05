@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'application#home'
 
   resources :orders, only: [:update, :index, :edit, :destroy]
-  get 'add_menu' => 'orders#add_menu', as: "add_menu_to_order"
+  get 'add_menu/:id' => 'orders#add_menu', as: "add_menu_to_order"
 
   get ':page' => "static_pages#show", as: "static_page"
 

@@ -44,6 +44,17 @@
         }
     }
 
+    &.wine {
+        background: rgba($wine, .03);
+        border-color: rgba($wine, .35);
+
+        header {
+            background: rgba($wine, .35);
+
+            h5.title { color: $wine; }
+        }
+    }
+
     h5 {
         display: inline-block;
         margin: 0;

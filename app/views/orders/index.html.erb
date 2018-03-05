@@ -32,8 +32,8 @@
         <h3 class="title">Plats</h3>
         <h4 class="subtitle">Créer votre plat, à votre goût, en choisissant vos aliments.</h4>
         <div class="col-12 align -center">
-            <a class="btn" href="<%= add_menu_to_order_path %>">Créer mon plat <%= fa_icon "plus" %></a>
-            <a class="btn -alt" href="<%= add_menu_to_order_path(random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
+            <a class="btn" href="<%= add_menu_to_order_path(@course_d) %>">Créer mon plat <%= fa_icon "plus" %></a>
+            <a class="btn -alt" href="<%= add_menu_to_order_path(@course_d, random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
         </div>
         <div class="col-12">
             <div class="zone">
@@ -109,8 +109,8 @@
                 </div>
             </div>
             <div class="col-12 align -center">
-                <a class="btn" href="<%= add_menu_to_order_path %>">Créer mon plat <%= fa_icon "plus" %></a>
-                <a class="btn -alt" href="<%= add_menu_to_order_path(random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
+                <a class="btn" href="<%= add_menu_to_order_path(@course_d) %>">Créer mon plat <%= fa_icon "plus" %></a>
+                <a class="btn -alt" href="<%= add_menu_to_order_path(@course_d, random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
             </div>
         </div>
     </div>
@@ -123,31 +123,61 @@
     </div>
 </section>
 <section class="-darker">
-    <div class="row align -center">
+    <div class="row align -center -m-no-pad">
         <a id="course" class="anchor"></a>
         <h3 class="title">Formules</h3>
         <div class="formula-container">
             <div class="formula">
-                <h5 class="title">Entrée & Plat <span class="separator">ou</span> Plat & Dessert</h5>
-                <p>Créez votre plat et choisissez une de nos entrées ou un des desserts.</p>
-                <!--<span class="price"><%= number_to_currency(@course_sd.price, locale: :fr) %></span>-->
+                <h5 class="title">Entrée & Plat</h5>
+                <p>Créez votre plat et choisissez une de nos entrées.</p>
+                <span class="price"><%= number_to_currency(@course_sd.price, locale: :fr) %></span>
+                <%= link_to add_menu_to_order_path(@course_sd), class: "btn-subtle" do %>
+                    Ajouter
+                <% end %>
             </div>
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
                 <p>Deux verres de <strong>vin</strong></p>
-                <!--<span class="price"><%= number_to_currency(@course_ddw.price, locale: :fr) %></span>-->
+                <span class="price"><%= number_to_currency(@course_sdw.price, locale: :fr) %></span>
+                <%= link_to add_menu_to_order_path(@course_sdw), class: "btn-subtle" do %>
+                    Ajouter
+                <% end %>
+            </div>
+        </div>
+        <div class="formula-container">
+            <div class="formula">
+                <h5 class="title">Plat & Dessert</h5>
+                <p>Créez votre plat et choisissez un de nos desserts.</p>
+                <span class="price"><%= number_to_currency(@course_dd.price, locale: :fr) %></span>
+                <%= link_to add_menu_to_order_path(@course_dd), class: "btn-subtle" do %>
+                    Ajouter
+                <% end %>
+            </div>
+            <div class="formula -wine">
+                <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
+                <p>Deux verres de <strong>vin</strong></p>
+                <span class="price"><%= number_to_currency(@course_ddw.price, locale: :fr) %></span>
+                <%= link_to add_menu_to_order_path(@course_ddw), class: "btn-subtle" do %>
+                    Ajouter
+                <% end %>
             </div>
         </div>
         <div class="formula-container">
             <div class="formula">
                 <h5 class="title">Entrée, Plat & Dessert</h5>
                 <p>Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts.</p>
-                <!--<span class="price"><%= number_to_currency(@course_sdd.price, locale: :fr) %></span>-->
+                <span class="price"><%= number_to_currency(@course_sdd.price, locale: :fr) %></span>
+                <%= link_to add_menu_to_order_path(@course_sdd), class: "btn-subtle" do %>
+                    Ajouter
+                <% end %>
             </div>
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
                 <p>Deux verres de <strong>vin</strong> et un <strong>cocktail</strong></p>
-                <!--<span class="price"><%= number_to_currency(@course_sddw.price, locale: :fr) %></span>-->
+                <span class="price"><%= number_to_currency(@course_sddw.price, locale: :fr) %></span>
+                <%= link_to add_menu_to_order_path(@course_sddw), class: "btn-subtle" do %>
+                    Ajouter
+                <% end %>
             </div>
         </div>
     </div>

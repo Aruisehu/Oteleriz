@@ -1,14 +1,14 @@
 .formula-container {
     background: $white;
     box-shadow: 0 1em 2em rgba(50, 50, 93, 0.1), 0 0.3em 1em rgba(0, 0, 0, 0.07), 0 0 0.1em 0.1em rgba(0, 0, 0, 0.05);
-    width: calc(50% - 2em);
-    margin: 1em;
+    width: calc(33.333% - 1em);
+    margin: .5em;
     border-radius: 0.25em;
     float: left;
 
     .formula {
         border: 1px solid $gray1;
-        padding: 2em 1em;
+        padding: 2em 1em 1em;
 
         &.-wine {
             background: rgba($wine, .03);
@@ -18,6 +18,15 @@
             .title {
                 color: $wine;
             }
+
+            p {
+                min-height: 2.1em;
+            }
+        }
+
+        p {
+            min-height: 4.2em;
+            display: block;
         }
 
         &:first-child {
@@ -32,10 +41,10 @@
 
     .price {
         display: inline-block;
-        padding: .2em .4em;
+        padding: .3em .4em;
         border-radius: .25em;
         border: 1px solid $cyan;
-        margin: 1em;
+        margin: .5em;
         text-align: left;
     }
 }

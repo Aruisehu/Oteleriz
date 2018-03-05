@@ -1,4 +1,4 @@
-$img-width: 5em;
+$img-width: 6em;
 
 .cart-product {
     @extend %clearfix;
@@ -7,18 +7,28 @@ $img-width: 5em;
 
     .image {
         float: left;
-        width: ($img-width + 1em);
+        width: $img-width;
         padding: 0.5em;
+        display: table;
 
         .img {
-            max-width: 6em;
+            max-width: $img-width;
+            float: left;
+        }
+
+        .icon {
+            float: left;
+            background-size: 100%;
+            width: 100%;
+            position: relative;
+            top: .5em;
         }
     }
 
     .content {
-        padding: 1em .5em;
+        padding: .5em .5em;
         float: left;
-        width: calc(100% - #{$img-width  + 1em});
+        width: calc(100% - $img-width});
     }
 
     .item {

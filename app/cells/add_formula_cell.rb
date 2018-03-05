@@ -65,6 +65,12 @@ class AddFormulaCell < Cell::ViewModel
         end
     end
 
+    def wine
+        if model.has_wine?
+            render
+        end
+    end
+
     def submit
         set_form_context
 

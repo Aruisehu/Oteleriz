@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
         @starters = Starter.all
         @bakings = Baking.includes(:marinades).all
         @marinades = Marinade.all
+        @course_d = FormulaTemplate.find_by(has_starter: false, has_dish: true, has_dessert: false, has_wine: false)
         @course_sd = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: false, has_wine: false)
         @course_sdw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: false, has_wine: true)
         @course_dd = FormulaTemplate.find_by(has_starter: false, has_dish: true, has_dessert: true, has_wine: false)
@@ -46,12 +47,7 @@ class OrdersController < ApplicationController
     end
 
     def add_menu
-        # TODO fetch @formula_template using id passed in params
-        @formula_template = FormulaTemplate.new(
-            has_starter: true,
-            has_dish: true,
-            has_dessert: true
-        )
+        @formula_template = FormulaTemplate.find(params[:id])
     end
 
     private
