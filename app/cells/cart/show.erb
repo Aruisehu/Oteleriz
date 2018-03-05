@@ -16,15 +16,25 @@
                     10,32€
                 </span>
                 <a class="btn-subtle" href="">Modifier</a>
-                <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-subtle -alt", remote: true do %>
-                    Supprimer
+                <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: "Êtes-vous sûr?"}, title:"Suprimer ce produit du panier", class: "btn-subtle -alt -icon", remote: true do %>
+                    <%= fa_icon "trash" %>
                 <% end %>
                 <label for="formula-<%= i %>" class="deploy btn-subtle float -r" href="">Détails <%= fa_icon "angle-up" %></label>
             </div>
         </div>
     <% end %>
+    <div class="col-12 align -center">
+        <%= link_to add_menu_to_order_path(), class: "btn-subtle" do %>
+            Ajouter un plat
+        <% end %>
+        <%= link_to orders_path() + "#course", class: "btn-subtle" do %>
+            Ajouter une formule
+        <% end %>
+    </div>
 </div>
 <footer>
     <h6 class="title -compact">Total: <span class="total price">1212,12€</span></h6>
-    <a class="btn">Valider la commande <%= fa_icon "check" %></a>
+    <%= link_to validate_order_path(@order), class: "btn", data: {confirm: "Vous ne pourrez plus modifier votre commande aprés cette étape, êtes-vous sûr de vouloir continuer ?"} do %>
+        Valider la commande <%= fa_icon "check" %>
+    <% end %>
 </footer>

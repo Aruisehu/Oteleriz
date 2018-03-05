@@ -136,10 +136,10 @@ p {
 
 .float {
     &.-r {
-        float: right;
+        float: right !important;
     }
 
     &.-l {
-        float: left;
+        float: left !important;
     }
 }

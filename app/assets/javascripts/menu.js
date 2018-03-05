@@ -3,7 +3,8 @@ Menu = {
         Menu.root = $(root);
         Menu.switch = Menu.root.find("#menu-switch")
         Menu.cartSwitch = Menu.root.find("#display-cart")
-        Menu.root.find("#submenu a").click(function() {
+
+        Menu.root.find("a").click(function() {
             Menu.switch.prop("checked", false);
             Menu.cartSwitch.prop("checked", false);
             $("html").removeClass("stop-scroll");

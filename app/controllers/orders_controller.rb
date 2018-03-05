@@ -47,7 +47,26 @@ class OrdersController < ApplicationController
     end
 
     def add_menu
-        @formula_template = FormulaTemplate.find(params[:id])
+        if params[:id]
+            @formula_template = FormulaTemplate.find(params[:id])
+        else
+            @formula_template = FormulaTemplate.find_by(has_dish: true, has_dessert: false, has_starter: false, has_wine: false)
+        end
+    end
+
+    def validate
+        @order.confirmed = true
+
+        if @order.save
+            session.delete(:order_id)
+            flash[:success] = "Votre commande à été validée"
+            redirect_to order_success_path
+        else
+            flash[:error] = "Une erreur c'est produite lors de la validation de votre commande"
+        end
+    end
+
+    def success
     end
 
     private

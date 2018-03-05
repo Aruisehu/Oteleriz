@@ -11,6 +11,14 @@
         border: 2px solid $gray0;
         margin: .5em;
         overflow: hidden;
+
+        .btn-subtle {
+            float: left;
+        }
+    }
+
+    .btn-subtle {
+        margin: 0 .1em;
     }
 
     .formula-switch:checked + .formula {

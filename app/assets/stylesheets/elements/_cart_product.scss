@@ -21,7 +21,13 @@ $img-width: 6em;
             background-size: 100%;
             width: 100%;
             position: relative;
-            top: .5em;
+            top: .3em;
+
+            &.poultry {
+                background-position: center top;
+                top: -.1em;
+                background-size: 75%;
+            }
         }
     }
 
