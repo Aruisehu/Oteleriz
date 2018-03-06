@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
+    before_action :set_order
 
     def lyfpay
-        @order = Order.find(params[:id])
         @payment = Payment.create(status: "ONGOING")
         shop_lyfpay_id = LyfPay::Configuration.client_id
         shop_lyfpay_key = LyfPay::Configuration.client_secret
@@ -48,7 +48,7 @@ class PaymentsController < ApplicationController
 
     end
 
-    private 
+    private
 
     def set_order
         @order = Order.find(params[:id])
