@@ -268,3 +268,26 @@ FormulaTemplate.create(
     has_wine: true,
     price: 45.00
 )
+
+meal_13_mars_2018 = Meal.create(
+    start_time: DateTime.new(2018,3,13,11,30),
+    end_time: DateTime.new(2018,3,13,15,00)
+)
+
+Service.create(
+    start_time: DateTime.new(2018,3,13,11,30),
+    end_time: DateTime.new(2018,3,13,13,00),
+    meal: meal_13_mars_2018
+)
+
+Service.create(
+    start_time: DateTime.new(2018,3,13,13,00),
+    end_time: DateTime.new(2018,3,13,14,30),
+    meal: meal_13_mars_2018
+)
+
+Service.create(
+    start_time: DateTime.new(2018,3,13,14,30),
+    end_time: DateTime.new(2018,3,13,16,00),
+    meal: meal_13_mars_2018
+)
