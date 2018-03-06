@@ -268,3 +268,8 @@ FormulaTemplate.create(
     has_wine: true,
     price: 45.00
 )
+
+User.create(
+    email: "admin@admin.admin",
+    password: "admin"
+)
