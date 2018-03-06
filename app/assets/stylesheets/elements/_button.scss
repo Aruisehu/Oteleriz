@@ -40,6 +40,10 @@
         transform: translateY(1px);
     }
 
+    &.-big {
+        font-size: 1.23em;
+    }
+
     &.-white {
         background: $white;
         border-color: $white;

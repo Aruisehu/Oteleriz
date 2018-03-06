@@ -54,19 +54,48 @@ class OrdersController < ApplicationController
         end
     end
 
-    def validate
-        @order.confirmed = true
-
-        if @order.save
-            session.delete(:order_id)
-            flash[:success] = "Votre commande à été validée"
-            redirect_to order_success_path
+    def booking
+        meal = Meal.where("DATE(start_time) = ?", Date.today)
+        unless meal.empty?
+            @services = meal.first.services
         else
-            flash[:error] = "Une erreur c'est produite lors de la validation de votre commande"
+            redirect_to order_not_available_path
         end
     end
 
+    def validate_booking
+        if params[:grouped?]
+            @order.assign_attributes(order_params)
+        else
+            @order.assign_attributes(order_params.except(:number_persons))
+        end
+
+        @order.confirmed = true
+
+        if @order.service.meal.start_time.today? # Verify that the service is today since we don't accept preorders
+            unless @order.service.remaining_seats?(@order.number_persons || 1)
+                flash[:error] = "Il ne reste plus de place dans la plage horaire choisie"
+                redirect_to order_booking_path
+            end
+
+            if @order.save
+                session.delete(:order_id)
+                flash[:success] = "Votre commande à été validée"
+                redirect_to order_success_path
+            end
+        else
+            redirect_to order_not_available_path
+        end
+        flash[:error] = "Une erreur c'est produite lors de la validation de votre commande"
+        redirect_to order_booking_path
+    end
+
     def success
+    end
+
+    def not_available
+        flash.now[:error] = "Aucune commande n'est possible en dehors des jours d'ouverture"
+        render "not_available", status: 403
     end
 
     private
@@ -86,5 +115,9 @@ class OrdersController < ApplicationController
 
     def formula_params
         params.require(:formula).permit(:starter, :dish, :dessert, :baking, :roasting)
+    end
+
+    def order_params
+        params.require(:order).permit(:service_id, :number_persons)
     end
 end

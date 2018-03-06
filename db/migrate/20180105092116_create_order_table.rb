@@ -5,7 +5,7 @@ class CreateOrderTable < ActiveRecord::Migration[5.1]
             t.string :name
             t.boolean :confirmed
             t.boolean :newsletter
-            t.integer :number_persons
+            t.integer :number_persons, default: 1
         end
     end
 end
