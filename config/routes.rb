@@ -6,7 +6,10 @@ Rails.application.routes.draw do
         get 'orders' => 'orders#index'
         get 'dishes' => 'dishes#index'
         get 'dishes/new' => 'dishes#new'
-        post 'dishes/new' => 'dishes#new'
+        get 'dishes/:id' => 'dishes#edit'
+        post 'dishes' => 'dishes#create'
+        put 'dishes/:id' => 'dishes#update'
+        delete 'dishes/:id' => 'dishes#destroy'
     end
 
     root 'application#home'
