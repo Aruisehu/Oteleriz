@@ -15,9 +15,12 @@ $ rails db:seed
 ## Versions
 
 Ruby 2.4.2
-Rails 5.1.4
+Rails 5.1.5
 PostgreSQL 10.1
 rbenv 1.1.1
 
 Other API and versions can be found in the Gemfile and the Gemfile.lock
 
+## Other
+
+liaison entre 2 commandes (par nom ?)
