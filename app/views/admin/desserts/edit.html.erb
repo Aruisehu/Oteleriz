@@ -1,0 +1,31 @@
+<section>
+    <div class="row">
+        <div class="col-12">
+            <h1>Ajouter un Plat:</h1>
+
+            <%= form_for :dessert, :url => admin_desserts_path, :action => 'put' do |form| %>
+
+                <p>
+                    <%= form.label :name_translations %><br>
+                        <%= form.text_field :name_translations %>
+                </p>
+                <p>
+                    <%= form.label :description_translations %><br>
+                        <%= form.text_field :description_translations %>
+                </p>
+                <p>
+                    <%= form.label :price %><br>
+                        <%= form.text_field :price %>
+                </p>
+                <p>
+                    <%= form.label :img_url %><br>
+                        <%= form.text_field :img_url %>
+                </p>
+
+                <p>
+                    <%= form.submit %>
+                </p>
+                <% end %>
+        </div>
+    </div>
+</section>

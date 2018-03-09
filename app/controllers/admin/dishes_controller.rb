@@ -7,28 +7,24 @@ class Admin::DishesController < Admin::BaseController
     def index
         @dishes = Dish.all 
     end
-    
-    def show
-        @dishes = Dish.find(params[:id]) 
-    end
 
     def create
         @dish = Dish.new(dish_params)
         if @dish.save
-            redirect_to admin_dishes_path(@dish)
+            redirect_to admin_dishes_path
         else
             redirect_to admin_dishes_path
         end
     end
 
     def edit
-        @dishes = Dish.find(params[:id]) 
+        @dish = Dish.find(params[:id]) 
     end
 
     def update
         @dish.assign_attributes(dish_params)
         if @dish.save
-            redirect_to admin_dishes_path(@dish)
+            redirect_to admin_dishes_path
         else
             redirect_to edit_admin_dishes_path
         end
