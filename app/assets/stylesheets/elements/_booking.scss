@@ -54,6 +54,16 @@
         outline: none;
         padding: .25em .5em;
     }
+
+    input[type="text"] {
+        background: rgba($gray0, .5);
+        margin-bottom: 1em;
+        color: $text;
+        border-radius: .25em;
+        border: none;
+        padding: .25em .5em;
+        box-shadow: inset 0 .15em .25em rgba($shadow, .25);
+    }
 }
 
 .booking-form-item {

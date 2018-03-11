@@ -5,4 +5,10 @@ class Order < ApplicationRecord
     def confirmed?
         self.confirmed
     end
+
+    def service?
+        !self.service.blank?
+    end
+
+    validates :name, uniqueness: { scope: :service_id }, if: :service?
 end

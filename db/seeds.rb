@@ -179,8 +179,8 @@ Dessert.create(
 Dessert.create(
     name_en: "Carotte cake, agrumes et petits pois",
     name_fr: "Carotte cake, agrumes et petits pois",
-    description_en: "",
-    description_fr: "",
+    description_en: "Mariage de la carotte douce avec l'acidité des agrumes et la fraîcheur des petits pois",
+    description_fr: "Mariage de la carotte douce avec l'acidité des agrumes et la fraîcheur des petits pois",
     price: 10.00,
     img_url: "/pics/carrot.jpg"
 )

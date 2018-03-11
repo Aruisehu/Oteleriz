@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root 'application#home'
 
   resources :orders, only: [:update, :index, :edit, :destroy]
-  get 'validate_order/:id' => 'orders#validate', as: "validate_order"
+  get 'order/:id/booking' => 'orders#booking', as: "order_booking"
+  patch 'order/:id/booking' => 'orders#validate_booking'
   get 'order/success' => 'orders#success', as: "order_success"
+  get 'order/not_available' => 'orders#not_available', as: "order_not_available"
   get 'add_menu(/:id)' => 'orders#add_menu', as: "add_menu_to_order"
 
   get ':page' => "static_pages#show", as: "static_page"

@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
     def booking
         meal = Meal.where("DATE(start_time) = ?", Date.today)
         unless meal.empty?
-            @services = meal.first.services
+            @services = meal.first.services.opened # fetch all services from todays meal
         else
             redirect_to order_not_available_path
         end
@@ -78,10 +78,10 @@ class OrdersController < ApplicationController
                 redirect_to order_booking_path
             end
 
-            if @order.save
-                session.delete(:order_id)
+            if @order.save # If the order can be saved
+                session.delete(:order_id) # we close it to further edits
                 flash[:success] = "Votre commande à été validée"
-                redirect_to order_success_path
+                redirect_to order_success_path # and redirect user to the success page
             end
         else
             redirect_to order_not_available_path
@@ -118,6 +118,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-        params.require(:order).permit(:service_id, :number_persons)
+        params.require(:order).permit(:service_id, :name, :number_persons)
     end
 end

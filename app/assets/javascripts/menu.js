@@ -4,7 +4,7 @@ Menu = {
         Menu.switch = Menu.root.find("#menu-switch")
         Menu.cartSwitch = Menu.root.find("#display-cart")
 
-        Menu.root.find("a").click(function() {
+        Menu.root.find("a").not(".no-close-menu").click(function() {
             Menu.switch.prop("checked", false);
             Menu.cartSwitch.prop("checked", false);
             $("html").removeClass("stop-scroll");

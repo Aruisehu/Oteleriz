@@ -8,3 +8,9 @@ $('#formula-id-<%= @formula.id %>').remove();
 var count = $('.cart-display .count');
 var number = parseInt(count.text(), 10);
 count.text(--number);
+
+// Remove validate order button if no formula anymore
+if (number <= 0)
+{
+    $('#validate_order').remove();
+}
