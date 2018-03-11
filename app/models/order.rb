@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
     belongs_to :service, optional: true
+    belongs_to :group, optional: true
     has_many :formulas
 
     def confirmed?

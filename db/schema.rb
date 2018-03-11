@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306151940) do
+ActiveRecord::Schema.define(version: 20180310225508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,9 @@ ActiveRecord::Schema.define(version: 20180306151940) do
     t.index ["starter_id"], name: "index_formulas_on_starter_id"
   end
 
+  create_table "groups", force: :cascade do |t|
+  end
+
   create_table "marinades", force: :cascade do |t|
     t.jsonb "name_translations"
     t.jsonb "description_translations"
@@ -82,6 +85,8 @@ ActiveRecord::Schema.define(version: 20180306151940) do
     t.boolean "newsletter"
     t.integer "number_persons"
     t.bigint "service_id"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_orders_on_group_id"
     t.index ["service_id"], name: "index_orders_on_service_id"
   end
 

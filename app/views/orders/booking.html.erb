@@ -1,7 +1,7 @@
 <section class="-darker">
     <div class="row align -center">
         <%= form_tag order_booking_path, method: :patch do %>
-            <h2 class="title -alt">Valider votre commande</h2>
+            <h2 class="title -alt">Validez votre commande</h2>
             <div class="col-12 booking">
                 <h3 class="subtitle">Quel nom voulez-vous donner à votre commande ?</h3>
                 <div class="booking-form-item">
@@ -29,6 +29,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 booking">
+                <label for="group_name"> Vous souhaitez rejoindre un ami? Entrez son nom de commande: </label>
+                <input id="group_name" type="text" name="group_name" />
             </div>
             <div class="col-12 booking">
                 <h3 class="subtitle">À quelle heure voulez-vous manger ?</h3>
