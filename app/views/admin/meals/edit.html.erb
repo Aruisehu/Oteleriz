@@ -1,0 +1,24 @@
+<section>
+    <div class="row">
+        <div class="col-12">
+            <h1>Ajouter un Plat:</h1>
+
+            <%= form_for :meal, :url => admin_meals_path, :action => 'put' do |form| %>
+
+                <p>
+                    <%= form.label :start_time %><br>
+                        <%= form.text_field :start_time %>
+                </p>
+                <p>
+                    <%= form.label :end_time %><br>
+                        <%= form.text_field :end_time %>
+                </p>
+
+
+                <p>
+                    <%= form.submit %>
+                </p>
+                <% end %>
+        </div>
+    </div>
+</section>

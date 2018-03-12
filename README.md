@@ -1,24 +1,26 @@
-# README
+# Oteleriz / CookMeUp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install database
 
-Things you may want to cover:
+```bash
+$ rails db:create && rails db:migrate
+```
 
-* Ruby version
+Seeds the database
 
-* System dependencies
+```bash
+$ rails db:seed
+```
 
-* Configuration
+## Versions
 
-* Database creation
+Ruby 2.4.2
+Rails 5.1.5
+PostgreSQL 10.1
+rbenv 1.1.1
 
-* Database initialization
+Other API and versions can be found in the Gemfile and the Gemfile.lock
 
-* How to run the test suite
+## Other
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+liaison entre 2 commandes (par nom ?)

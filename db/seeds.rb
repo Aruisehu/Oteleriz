@@ -300,3 +300,8 @@ Service.create(
     seats: 12
 )
 =end
+
+User.create(
+    email: "cookmeupstartup@gmail.com",
+    password: "SupinfoCookMeUp2018"
+)

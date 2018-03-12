@@ -1,0 +1,38 @@
+<section>
+    <div class="row">
+
+        <div class="col-12">
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Nombre personnes</th>
+                    <th>Service</th>
+                    <th>Action</th>
+                </tr>
+
+                <% @orders.each do |order| %>
+                    <tr>
+                        <td>
+                            <%= order.email %>
+                        </td>
+                        <td>
+                            <%= order.name%>
+                        </td>
+                        <td>
+                            <%= order.number_persons %>
+                        </td>
+                        <td>
+                            <%= order.service_id %>
+                        </td>
+                        <td>
+
+                            <a href="/admin/orders/<%= order.id %>">Voir commande</a>
+                            <a href="/admin/orders/<%= order.id %>" data-method="delete" rel="nofollow">delete</a>
+                        </td>
+                    </tr>
+                    <% end %>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<section>
+    <div class="row">
+        <div class="col-12">
+            <h1>Plats :</h1>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Choisir cuisson</th>
+                    <th>Prix</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+
+                <% @dishes.each do |dish| %>
+                    <tr>
+                        <td>
+                            <%= dish.name_translations['fr'] %>
+                        </td>
+                        <td>
+                            <%= dish.description_translations['fr'] %>
+                        </td>
+                        <td>
+                            <%= dish.ask_roasting %>
+                        </td>
+                        <td>
+                            <%= dish.price %>
+                        </td>
+                        <td>
+                            <img src="<%= dish.img_url %>" alt="">
+                        </td>
+                        <td>
+
+                            <a href="/admin/dishes/<%= dish.id %>">Edit</a>
+                            <a href="/admin/dishes/<%= dish.id %>" data-method="delete" rel="nofollow">delete</a>
+                        </td>
+                    </tr>
+                    <% end %>
+            </table>
+            <br>
+            <a href="/admin/dishes/new">Ajouter un plat</a>
+
+        </div>
+    </div>
+</section>

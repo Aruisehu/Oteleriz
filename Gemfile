@@ -41,6 +41,9 @@ gem "font-awesome-rails"
 # Reset CSS
 gem 'normalize-rails'
 
+# User management
+gem 'devise'
+
 # gzip on heroku
 gem 'heroku-deflater', :group => :production
 
