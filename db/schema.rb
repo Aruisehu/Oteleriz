@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20180310225508) do
     t.string "name"
     t.boolean "confirmed"
     t.boolean "newsletter"
-    t.integer "number_persons"
+    t.integer "number_persons", default: 1
     t.bigint "service_id"
     t.bigint "group_id"
     t.index ["group_id"], name: "index_orders_on_group_id"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20180310225508) do
     t.datetime "updated_at", null: false
     t.bigint "meal_id"
     t.boolean "ended", default: false
-    t.integer "seats"
+    t.integer "seats", default: 0
     t.index ["meal_id"], name: "index_services_on_meal_id"
   end
 

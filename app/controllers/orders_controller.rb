@@ -25,10 +25,11 @@ class OrdersController < ApplicationController
     def post_access
         if params[:access] == Global.access_token
             session[:access] = true
-            flash[:error] = "Code d'accès incorrect"
+            flash[:success] = "Votre session de commande à été activée"
             redirect_to orders_path
         else
             session[:access] = nil
+            flash[:error] = "Code d'accès incorrect"
             redirect_to order_access_path
         end
     end
@@ -87,18 +88,19 @@ class OrdersController < ApplicationController
             @order.assign_attributes(order_params.except(:number_persons))
         end
 
-
         if @order.service.meal.start_time.today? # Verify that the service is today since we don't accept preorders
             unless @order.service.remaining_seats?(@order.number_persons || 1)
                 flash[:error] = "Il ne reste plus de place dans la plage horaire choisie"
                 redirect_to order_booking_path
+                return
             end
 
-            if params[:group_name]
+            if !params[:group_name].empty?
                 paired = Order.where(name: params[:group_name], service: @order.service).first
                 if paired.blank?
                     flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée"
                     redirect_to order_booking_path
+                    return
                 end
                 @order.group = paired.group
             elsif @order.group.blank?
@@ -110,12 +112,15 @@ class OrdersController < ApplicationController
                 session.delete(:order_id) # we close it to further edits
                 flash[:success] = "Votre commande à été validée"
                 redirect_to order_success_path # and redirect user to the success page
+                return
             end
         else
             redirect_to order_not_available_path
+            return
         end
         flash[:error] = "Une erreur c'est produite lors de la validation de votre commande"
         redirect_to order_booking_path
+        return
     end
 
     def success

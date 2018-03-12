@@ -3,21 +3,25 @@
         <%= form_tag order_booking_path, method: :patch do %>
             <h2 class="title -alt">Validez votre commande</h2>
             <div class="col-12 booking">
-                <h3 class="subtitle">Quel nom voulez-vous donner à votre commande ?</h3>
                 <div class="booking-form-item">
+                    <h5 class="subtitle">Quel nom voulez-vous donner à votre commande ?</h5>
                     <input type="text" class="" placeholder="Votre nom" name="order[name]">
                     <p class="text -tiny">Utilisez ce nom pour récupérer votre commande</p>
                     <br />
                 </div>
             </div>
             <div class="col-12 booking">
-                <h3 class="subtitle">Commandez-vous seul ou en groupe ?</h3>
                 <div class="booking-form-item">
+                    <h5 class="subtitle">Commandez-vous seul ou en groupe ?</h5>
                     <input id="service_seul" type="radio" name="grouped?" class="hidden" checked>
                     <label for="service_seul">Seul</label>
-                    <input id="service_groupe" type="radio" name="grouped?" class="hidden">
                     <label for="service_groupe">Groupe</label>
-                    <div id="group">
+                    <div class="option" id="seul">
+                        <p class="subtitle">Vous souhaitez rejoindre un ami ? Entrez son nom de commande:</p>
+                        <input id="group_name" type="text" name="group_name" placeholder="" />
+                    </div>
+                    <input id="service_groupe" type="radio" name="grouped?" class="hidden">
+                    <div class="option" id="group">
                         <p class="subtitle">Combien de personnes mangent avec vous ?</p>
                         <div class="select">
                             <select id="monselect" name="order[number_persons]">
@@ -31,12 +35,10 @@
                 </div>
             </div>
             <div class="col-12 booking">
-                <label for="group_name"> Vous souhaitez rejoindre un ami? Entrez son nom de commande: </label>
-                <input id="group_name" type="text" name="group_name" />
             </div>
             <div class="col-12 booking">
-                <h3 class="subtitle">À quelle heure voulez-vous manger ?</h3>
                 <div class="booking-form-item">
+                    <h5 class="subtitle">À quelle heure voulez-vous manger ?</h5>
                     <% @services.each do |s| %>
                         <input  id="service_<%= s.id %>" value="<%= s.id %>" type="radio" name="order[service_id]" class="hidden">
                         <label for="service_<%= s.id %>"><%= s.start_time.strftime("%H:%M") %></label>

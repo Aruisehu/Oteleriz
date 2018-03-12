@@ -275,19 +275,28 @@ meal_13_mars_2018 = Meal.create(
 )
 
 Service.create(
-    start_time: DateTime.new(2018,3,13,11,30),
-    end_time: DateTime.new(2018,3,13,13,00),
-    meal: meal_13_mars_2018
+    start_time: DateTime.new(2018,3,13,18,00),
+    end_time: DateTime.new(2018,3,13,19,00),
+    meal: meal_13_mars_2018,
+    seats: 20
+)
+=begin
+meal_today = Meal.create(
+    start_time: Date.today,
+    end_time: Date.tomorrow
 )
 
 Service.create(
-    start_time: DateTime.new(2018,3,13,13,00),
-    end_time: DateTime.new(2018,3,13,14,30),
-    meal: meal_13_mars_2018
+    start_time: Date.today,
+    end_time: Date.today + 11.hours,
+    meal: meal_today,
+    seats: 12
 )
 
 Service.create(
-    start_time: DateTime.new(2018,3,13,14,30),
-    end_time: DateTime.new(2018,3,13,16,00),
-    meal: meal_13_mars_2018
+    start_time: Date.today + 12.hours,
+    end_time: Date.today + 23.hours,
+    meal: meal_today,
+    seats: 12
 )
+=end
