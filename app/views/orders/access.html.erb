@@ -1,0 +1,12 @@
+<section class="-m-no-pad">
+    <div class="row">
+        <h2> Pour accéder à la fonctionnalité Click&Sit, vous devez entrer le code d'accès qui vous a été fourni </h2>
+        <p> Si aucune clé ne vous a été transmise et que vous souhaitez vivre l'expérience
+        Cook Me Up, retrouvez nous à notre stand sur le salon Egast</p>
+        <%= form_tag order_access_path, method: :post do %>
+            <h3> Code d'accès </h3>
+            <input type="text" name="access" placeholder="Code d'accès"/>
+            <button type="submit" class="btn -big">Commandez</button>
+        <% end %>
+    </div>
+</section>

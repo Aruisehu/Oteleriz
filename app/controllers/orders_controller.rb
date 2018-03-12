@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+
+    before_action :access_click_and_sit, only: [:update, :destroy, :add_menu, :booking, :validate_booking, :success]
+
     def index
         @dishes = Dish.all
         @desserts = Dessert.all
@@ -14,6 +17,20 @@ class OrdersController < ApplicationController
         @course_sddw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: true, has_wine: true)
 
         @title = "Notre Carte"
+    end
+
+    def access
+    end
+
+    def post_access
+        if params[:access] == Global.access_token
+            session[:access] = true
+            flash[:error] = "Code d'accès incorrect"
+            redirect_to orders_path
+        else
+            session[:access] = nil
+            redirect_to order_access_path
+        end
     end
 
     def update
@@ -130,5 +147,11 @@ class OrdersController < ApplicationController
 
     def order_params
         params.require(:order).permit(:service_id, :name, :number_persons)
+    end
+
+    def access_click_and_sit
+        unless session[:access]
+            redirect_to order_access_path and return
+        end
     end
 end
