@@ -9,15 +9,18 @@
 
 <% content_for :main_action do %>
     <%= link_to orders_path, class: "btn" do %>
-        Click & Sit <%= fa_icon "shopping-bag" %>
+        Carte <%= fa_icon "book" %>
     <% end %>
 <% end %>
 <section class="head" id="home">
     <div class="row">
         <%= image_tag "logo-white.png" %>
         <h5 class="title">1 produit, 3 cuissons, 1000 saveurs</h5>
-        <a class="btn -white" href="<%= orders_path %>">Click & Sit <%= fa_icon "shopping-basket" %></a>
+        <a class="btn -white" href="<%= orders_path %>">Carte <%= fa_icon "book" %></a>
         <a class="btn -white -alt" href="#concept">En Savoir Plus <%= fa_icon "info" %></a>
+        <hr>
+        <a class="btn -white" href="<%= order_access_path %>">Click & Sit *<%= fa_icon "shopping-basket" %></a>
+        <p>*Accès restreint</p>
     </div>
 </section>
 <section class="-border-bottom">

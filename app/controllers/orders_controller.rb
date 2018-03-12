@@ -17,9 +17,19 @@ class OrdersController < ApplicationController
         @course_sddw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: true, has_wine: true)
 
         @title = "Notre Carte"
+
+        if session[:access]
+            render "index"
+        else
+            render "carte"
+        end
     end
 
     def access
+        if session[:access]
+            flash[:success] = "Votre session est déjà activée, rendez-vous sur la carte pour faire votre commande"
+            redirect_to orders_path
+        end
     end
 
     def post_access
