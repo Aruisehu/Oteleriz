@@ -15,12 +15,13 @@
                     <h5 class="subtitle">Commandez-vous seul ou en groupe ?</h5>
                     <input id="service_seul" type="radio" name="grouped?" class="hidden" checked>
                     <label for="service_seul">Seul</label>
+                    <input id="service_groupe" type="radio" name="grouped?" class="hidden">
                     <label for="service_groupe">Groupe</label>
                     <div class="option" id="seul">
                         <p class="subtitle">Vous souhaitez rejoindre un ami ? Entrez son nom de commande:</p>
                         <input id="group_name" type="text" name="group_name" placeholder="" />
+                        <p class="text -tiny pink">Votre ami doit déjà avoir validé sa commande</p>
                     </div>
-                    <input id="service_groupe" type="radio" name="grouped?" class="hidden">
                     <div class="option" id="group">
                         <p class="subtitle">Combien de personnes mangent avec vous ?</p>
                         <div class="select">
@@ -46,7 +47,7 @@
                 </div>
             </div>
             <div class="col-12 booking">
-                <%= button_tag type: :submit, class: "btn -big" do %>
+                <%= button_tag type: :submit, class: "btn -big", data: {confirm: "Vous ne pourrez plus modifier votre commande aprés cette étape, êtes-vous sûr de vouloir continuer ?"} do %>
                     Valider ma commande <%= fa_icon "check" %>
                 <% end %>
             </div>

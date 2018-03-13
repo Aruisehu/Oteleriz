@@ -8,10 +8,9 @@ Rails.configuration.after_initialize do
         scheduler.every '5m' do
             services = Service.opened
             services.each do |s|
-                if (s.start_time - DateTime.now).to_f * 24 * 60 > 10
-                    s.ended = true
-                    s.save
-                end
+            if (s.start_time - 10.minutes).past?
+                s.ended = true
+                s.save
             end
         end
     end

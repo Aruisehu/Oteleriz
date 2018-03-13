@@ -34,7 +34,7 @@
 </div>
 <footer>
     <h6 class="title -compact">Total: <span class="total price">1212,12€</span></h6>
-    <%= link_to order_booking_path(@order), class: "btn", id: "validate_order", data: {confirm: "Vous ne pourrez plus modifier votre commande aprés cette étape, êtes-vous sûr de vouloir continuer ?"} do %>
+    <%= link_to order_booking_path(@order), class: "btn", id: "validate_order" do %>
         Valider la commande <%= fa_icon "check" %>
     <% end %>
 </footer>
