@@ -28,6 +28,9 @@
                 <%= link_to add_menu_to_order_path(@course_sdw), class: "btn-subtle" do %>
                     Ajouter
                 <% end %>
+                <%= link_to add_menu_to_order_path(@course_sdw, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                    <%= fa_icon "random" %>
+                <% end %>
             </div>
             <div class="formula">
                 <h5 class="title">Entrée & Plat</h5>
@@ -35,6 +38,9 @@
                 <!--<span class="price"><%= number_to_currency(@course_sd.price, locale: :fr) %></span>-->
                 <%= link_to add_menu_to_order_path(@course_sd), class: "btn-subtle" do %>
                     Ajouter
+                <% end %>
+                <%= link_to add_menu_to_order_path(@course_sd, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                    <%= fa_icon "random" %>
                 <% end %>
             </div>
         </div>
@@ -46,6 +52,9 @@
                 <%= link_to add_menu_to_order_path(@course_ddw), class: "btn-subtle" do %>
                     Ajouter
                 <% end %>
+                <%= link_to add_menu_to_order_path(@course_ddw, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                    <%= fa_icon "random" %>
+                <% end %>
             </div>
             <div class="formula">
                 <h5 class="title">Plat & Dessert</h5>
@@ -53,6 +62,9 @@
                 <!--<span class="price"><%= number_to_currency(@course_dd.price, locale: :fr) %></span>-->
                 <%= link_to add_menu_to_order_path(@course_dd), class: "btn-subtle" do %>
                     Ajouter
+                <% end %>
+                <%= link_to add_menu_to_order_path(@course_dd, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                    <%= fa_icon "random" %>
                 <% end %>
             </div>
         </div>
@@ -64,6 +76,9 @@
                 <%= link_to add_menu_to_order_path(@course_sddw), class: "btn-subtle" do %>
                     Ajouter
                 <% end %>
+                <%= link_to add_menu_to_order_path(@course_sddw, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                    <%= fa_icon "random" %>
+                <% end %>
             </div>
             <div class="formula">
                 <h5 class="title">Entrée, Plat & Dessert</h5>
@@ -71,6 +86,9 @@
                 <!--<span class="price"><%= number_to_currency(@course_sdd.price, locale: :fr) %></span>-->
                 <%= link_to add_menu_to_order_path(@course_sdd), class: "btn-subtle" do %>
                     Ajouter
+                <% end %>
+                <%= link_to add_menu_to_order_path(@course_sdd, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                    <%= fa_icon "random" %>
                 <% end %>
             </div>
         </div>
