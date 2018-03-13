@@ -12,6 +12,7 @@ class Order < ApplicationRecord
     end
 
     validates :name, uniqueness: { scope: :service_id }, if: :service?
+    validates :name, presence: true, if: :service?
 
     def summary
         self.formulas.map do |f|
