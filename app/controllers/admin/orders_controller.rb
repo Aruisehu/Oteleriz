@@ -1,7 +1,7 @@
 class Admin::OrdersController < Admin::BaseController
     before_action :set_order, only: [:show, :edit, :update, :show, :destroy]
     def index
-        @orders = Order.includes(:service).where(confirmed: true)
+        @orders = Order.eager_load(:group, :service).joins(:service).where(confirmed: true).where("services.end_time <= ?", DateTime.tomorrow).order("services.start_time")
     end
 
     def show
