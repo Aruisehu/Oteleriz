@@ -1,7 +1,10 @@
 class Admin::OrdersController < Admin::BaseController
-    before_action :set_order, only: [:edit, :update, :show, :destroy]
+    before_action :set_order, only: [:show, :edit, :update, :show, :destroy]
     def index
-        @orders = Order.where(confirmed: true) 
+        @orders = Order.includes(:service).where(confirmed: true)
+    end
+
+    def show
     end
 
     def create
@@ -14,7 +17,7 @@ class Admin::OrdersController < Admin::BaseController
     end
 
     def edit
-        @orders = Order.find(params[:id]) 
+        @orders = Order.find(params[:id])
     end
 
     def update

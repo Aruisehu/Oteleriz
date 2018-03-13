@@ -1,0 +1,45 @@
+<section>
+    <div class="row">
+        <div class="col-9">
+            <h4 class="title">Récapitulatif</h4>
+            <%= cell(:cart, @order).(:show_admin) %>
+        </div>
+        <div class="col-3">
+            <h4 class="title">Informations</h4>
+            <div class="details">
+                <div class="item">
+                    <h6>Nom de commande</h6>
+                    <p><%= @order.name %></p>
+                </div>
+                <% if @order.group.orders.count > 1 %>
+                    <div class="item">
+                        <h6>Commande groupée avec</h6>
+                        <% @order.group.orders.each do |o| %>
+                            <ul>
+                                <p>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="voir" class="float f -r "><%= fa_icon "eye" %></a></p>
+                            </ul>
+                        <% end %>
+                    </div>
+                <% end %>
+                <div class="item">
+                    <h6>Nombre de personnes</h6>
+                    <p><%= @order.number_persons %>
+                </div>
+                <div class="item">
+                    <h6>Service</h6>
+                    <%= @order.service.start_time.strftime("%H:%M") %> - <%= @order.service.end_time.strftime("%H:%M") %>
+                </div>
+                <div class="item">
+                    <h6>Coût total</h6>
+                    <p class="price">00,00 €</p>
+                </div>
+                <div class="item">
+                    <h6>Actions</h6>
+                    <%= link_to admin_order_path(@order), method: :delete, class: "btn-subtle -alt", data: { confirm: "Etes-vous sûr de vouloir supprimer la commande ?" } do %>
+                        Supprimer <%= fa_icon "trash" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

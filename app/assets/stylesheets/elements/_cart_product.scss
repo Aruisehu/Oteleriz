@@ -34,7 +34,7 @@ $img-width: 6em;
     .content {
         padding: .5em .5em;
         float: left;
-        width: calc(100% - $img-width});
+        width: calc(100% - #{$img-width});
     }
 
     .item {

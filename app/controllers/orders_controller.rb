@@ -92,7 +92,7 @@ class OrdersController < ApplicationController
     end
 
     def validate_booking
-        if params[:grouped?]
+        if params[:grouped?] == true
             @order.assign_attributes(order_params)
         else
             @order.assign_attributes(order_params.except(:number_persons))
@@ -105,10 +105,10 @@ class OrdersController < ApplicationController
                 return
             end
 
-            if !params[:group_name].empty? && !params[:grouped?] # If the customer specified a group name and didn't select a group order
+            if !params[:group_name].empty? && params[:grouped?] != true # If the customer specified a group name and didn't select a group order
                 paired = Order.where(name: params[:group_name], service: @order.service).first
                 if paired.blank?
-                    flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée"
+                    flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée ou à choisie une heure différente"
                     redirect_to order_booking_path
                     return
                 end

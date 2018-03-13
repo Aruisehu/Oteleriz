@@ -12,6 +12,11 @@ class CartCell < Cell::ViewModel
         end
     end
 
+    def show_admin
+        @order = model
+        render
+    end
+
     def display
         render
     end

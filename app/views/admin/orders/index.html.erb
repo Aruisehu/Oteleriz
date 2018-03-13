@@ -2,36 +2,44 @@
     <div class="row">
 
         <div class="col-12">
-            <table>
+            <table class="zone">
                 <tr>
-                    <th>Email</th>
-                    <th>Name</th>
-                    <th>Nombre personnes</th>
-                    <th>Service</th>
+                    <!--<th>Email</th>-->
+                    <th>Nom de commande</th>
+                    <th>Nombre de personnes</th>
+                    <th>Service (début - fin)</th>
                     <th>Action</th>
                 </tr>
 
                 <% @orders.each do |order| %>
                     <tr>
-                        <td>
+                        <!--<td>
                             <%= order.email %>
-                        </td>
+                        </td> -->
                         <td>
-                            <%= order.name%>
+                            <h6 class="title -compact"><%= order.name %></h6>
+                            <% if order.group.orders.count > 1 %>
+                                <div class="text -tiny">
+                                    Commande groupée avec:
+                                    <% order.group.orders.each do |o| %>
+                                        <ul>
+                                            <div>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="voir" class="float -r"><%= fa_icon "eye" %></a></div>
+                                        </ul>
+                                    <% end %>
+                                </div>
+                            <% end %>
                         </td>
                         <td>
                             <%= order.number_persons %>
                         </td>
                         <td>
-                            <%= order.service_id %>
+                            <%= order.service.start_time.strftime("%H:%M") %> - <%= order.service.end_time.strftime("%H:%M") %>
                         </td>
                         <td>
-
-                            <a href="/admin/orders/<%= order.id %>">Voir commande</a>
-                            <a href="/admin/orders/<%= order.id %>" data-method="delete" rel="nofollow">delete</a>
+                            <a href="/admin/orders/<%= order.id %>" class="btn-subtle">Voir commande <%= fa_icon "eye" %></a>
                         </td>
                     </tr>
-                    <% end %>
+                <% end %>
             </table>
         </div>
     </div>

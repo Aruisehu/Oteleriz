@@ -1,0 +1,16 @@
+<div class="cart">
+    <% @order.formulas.each_with_index do |f, i| %>
+        <div id="formula-id-<%= f.id %>"class="formula -tiny">
+            <% f.get_products.each do |k, v| %>
+                <div class="cart-product <%= k %>">
+                    <%= cell(:cart, v, formula: f).(k) %>
+                </div>
+            <% end %>
+            <div class="action-bar">
+                <span class="price">
+                    00,00€
+                </span>
+            </div>
+        </div>
+    <% end %>
+</div>
