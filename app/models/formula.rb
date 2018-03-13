@@ -7,15 +7,15 @@ class Formula < ApplicationRecord
     belongs_to :baking, optional: true
 
     def starter?
-        self.formula_template.starter?
+        self.formula_template&.starter? || not(self.starter.blank?)
     end
 
     def dish?
-        self.formula_template.dish?
+        self.formula_template&.dish? || not(self.dish.blank?)
     end
 
     def dessert?
-        self.formula_template.dessert?
+        self.formula_template&.dessert? || not(self.dessert.blank?)
     end
 
     def get_price
@@ -66,5 +66,25 @@ class Formula < ApplicationRecord
 
     def need_roasting?
         self.dish&.ask_roasting
+    end
+
+    def summary
+        hash = {}
+        if self.starter?
+            hash[starter.name] = 1
+        end
+
+        if self.dish?
+            if dish.ask_roasting
+                hash[dish.name + " " + baking.name + " " + I18n.t(roasting)] = 1
+            else
+                hash[dish.name + " " + baking.name] = 1
+            end
+        end
+
+        if self.dessert?
+            hash[dessert.name] = 1
+        end
+        return hash
     end
 end

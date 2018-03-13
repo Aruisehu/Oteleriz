@@ -12,4 +12,14 @@ class Order < ApplicationRecord
     end
 
     validates :name, uniqueness: { scope: :service_id }, if: :service?
+
+    def summary
+        self.formulas.map do |f|
+            f.summary
+        end.reduce do |h, el|
+            h.merge(el) do |k, old_v, new_v|
+                old_v + new_v
+            end
+        end
+    end
 end
