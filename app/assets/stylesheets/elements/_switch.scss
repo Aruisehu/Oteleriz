@@ -1,23 +1,7 @@
-/*
-
-    <input id="switch" class="switch" type="checkbox">
-    <div class="hide">
-        <!-- content -->
-    </div>
-
-    <label for="switch">Click here to toggle<label>
-    <!-- custom label style impossible for toggled state with css only-->
-    or
-
-    <input id="switch" class="switch" type="checkbox">
-    <label for="switch">Click here to toggle<label>
-    <!-- custom label style possible in toggled state -->
-    <div class="hide">
-        <!-- content -->
-    </div>
-
-*/
-
 .switch {
     display: none;
+
+    &:checked + * {
+        display: block;
+    }
 }

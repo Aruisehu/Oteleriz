@@ -71,20 +71,25 @@ class Formula < ApplicationRecord
     def summary
         hash = {}
         if self.starter?
-            hash[starter.name] = 1
+            hash[sanitize_name(starter.name)] = 1
         end
 
         if self.dish?
             if dish.ask_roasting
-                hash[dish.name + " " + baking.name + " " + I18n.t(roasting)] = 1
+                hash[sanitize_name(dish.name + " " + baking.name + " " + I18n.t(roasting))] = 1
             else
-                hash[dish.name + " " + baking.name] = 1
+                hash[sanitize_name(dish.name + " " + baking.name)] = 1
             end
         end
 
         if self.dessert?
-            hash[dessert.name] = 1
+            hash[sanitize_name(dessert.name)] = 1
         end
         return hash
+    end
+
+    private
+    def sanitize_name(name)
+        name.downcase.capitalize
     end
 end

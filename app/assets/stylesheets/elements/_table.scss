@@ -16,6 +16,7 @@ table {
 
     tr {
         border-bottom: 1px solid $gray0;
+        border-top: 1px solid $gray0;
     }
 
     th:first-child {
@@ -27,5 +28,12 @@ table {
         background: rgba($gray0, .5);
         border-left: 1px solid $gray0;
         border-right: 1px solid $gray0;
+    }
+
+    td.full {
+        width: 100%;
+        padding: 0;
+        background: rgba($gray0, .5);
+        box-shadow: inset 0 1em 1em -1em rgba($shadow, .25);
     }
 }

@@ -1,0 +1,22 @@
+.fixed-list {
+    li {
+        @extend %clearfix;
+        border-top: 1px solid $gray1;
+        display: block;
+        margin-top: .5em;
+        padding-top: .5em;
+
+        .key, .value {
+            display: inline-block;
+            float: left;
+        }
+
+        .key {
+            width: 66.666%;
+        }
+
+        .value {
+            width: 33.333%;
+        }
+    }
+}
