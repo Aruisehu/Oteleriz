@@ -268,22 +268,22 @@ FormulaTemplate.create(
     has_wine: true,
     price: 45.00
 )
-
+=begin
 meal_13_mars_2018 = Meal.create(
     start_time: DateTime.new(2018,3,13,11,30),
-    end_time: DateTime.new(2018,3,13,15,00)
+    end_time: DateTime.new(2018,3,20,15,00)
 )
 
 Service.create(
     start_time: DateTime.new(2018,3,13,18,00),
-    end_time: DateTime.new(2018,3,13,19,00),
+    end_time: DateTime.new(2018,3,20,15,00),
     meal: meal_13_mars_2018,
     seats: 20
 )
-=begin
+=end
 meal_today = Meal.create(
     start_time: Date.today,
-    end_time: Date.tomorrow
+    end_time: Date.today + 24.hours
 )
 
 Service.create(
@@ -299,7 +299,6 @@ Service.create(
     meal: meal_today,
     seats: 12
 )
-=end
 
 User.create(
     email: "cookmeupstartup@gmail.com",

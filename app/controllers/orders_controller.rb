@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     def post_access
         if params[:access] == Global.access_token
             session[:access] = true
-            flash[:success] = "Votre session de commande à été activée"
+            flash[:success] = "Votre session de commande a été activée"
             redirect_to orders_path
         else
             session[:access] = nil
@@ -92,7 +92,7 @@ class OrdersController < ApplicationController
     end
 
     def validate_booking
-        if params[:grouped?] == true
+        if params[:grouped?] == "true"
             @order.assign_attributes(order_params)
         else
             @order.assign_attributes(order_params.except(:number_persons))
@@ -108,7 +108,7 @@ class OrdersController < ApplicationController
             if !params[:group_name].empty? && params[:grouped?] != true # If the customer specified a group name and didn't select a group order
                 paired = Order.where(name: params[:group_name], service: @order.service).first
                 if paired.blank?
-                    flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée ou à choisie une heure différente"
+                    flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée ou a choisi une heure différente"
                     redirect_to order_booking_path
                     return
                 end
@@ -120,7 +120,7 @@ class OrdersController < ApplicationController
             @order.confirmed = true
             if @order.save # If the order can be saved
                 session.delete(:order_id) # we close it to further edits
-                flash[:success] = "Votre commande à été validée"
+                flash[:success] = "Votre commande a été validée"
                 redirect_to order_success_path # and redirect user to the success page
                 return
             end
@@ -128,7 +128,7 @@ class OrdersController < ApplicationController
             redirect_to order_not_available_path
             return
         end
-        flash[:error] = "Une erreur c'est produite lors de la validation de votre commande"
+        flash[:error] = "Une erreur s'est produite lors de la validation de votre commande"
         redirect_to order_booking_path
         return
     end

@@ -1,5 +1,5 @@
 class Admin::OrdersController < Admin::BaseController
-    before_action :set_order, only: [:show, :edit, :update, :show, :destroy]
+    before_action :set_order, only: [:show, :edit, :update, :destroy]
     def index
         @orders = Order.eager_load(:group, :service).joins(:service).where(confirmed: true).where("services.end_time <= ?", DateTime.tomorrow).order("services.start_time")
     end
@@ -17,7 +17,6 @@ class Admin::OrdersController < Admin::BaseController
     end
 
     def edit
-        @orders = Order.find(params[:id])
     end
 
     def update
