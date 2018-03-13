@@ -33,7 +33,7 @@ class Formula < ApplicationRecord
     end
 
     def get_products
-        return {starter: self.starter, dish: self.dish, dessert: self.dessert}.compact
+        return {starter: self.starter, dish: self.dish, dessert: self.dessert, wine: self.formula_template.wine}.compact
     end
 
     def destroy_from_order

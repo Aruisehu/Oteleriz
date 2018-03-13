@@ -1,11 +1,51 @@
 <% content_for :main_nav do %>
-    <h3 class="title">Click & Sit</h3>
+    <h3 class="title">Notre carte:</h3>
+    <%= link_to "Formules", "#course" %>
     <%= link_to "Entrées", "#starter" %>
     <%= link_to "Plats", "#main" %>
     <%= link_to "Desserts", "#dessert" %>
-    <%= link_to "Formules", "#course" %>
     <%= link_to "Click & Sit", "#click-sit" %>
 <% end %>
+<section class="-darker">
+    <div class="row align -center -m-no-pad">
+        <a id="course" class="anchor"></a>
+        <h3 class="title">Formules</h3>
+        <div class="formula-container">
+            <div class="formula -wine">
+                <h5 class="title"><%= fa_icon "glass" %> Entrée, Plat & Vin</h5>
+                <p>Deux verres de <strong>vin</strong>*</p>
+            </div>
+            <div class="formula">
+                <h5 class="title">Entrée & Plat</h5>
+                <p>Créez votre plat et choisissez une de nos entrées.</p>
+            </div>
+        </div>
+        <div class="formula-container">
+            <div class="formula -wine">
+                <h5 class="title"><%= fa_icon "glass" %> Plat, Dessert & Vin</h5>
+                <p>Deux verres de <strong>vin</strong>*</p>
+            </div>
+            <div class="formula">
+                <h5 class="title">Plat & Dessert</h5>
+                <p>Créez votre plat et choisissez un de nos desserts.</p>
+            </div>
+        </div>
+        <div class="formula-container">
+            <div class="formula -wine">
+                <h5 class="title"><%= fa_icon "glass" %> Entrée, Plat & Dessert & Vin</h5>
+                <p>Deux verres de <strong>vin</strong> et un <strong>cocktail</strong>*</p>
+            </div>
+            <div class="formula">
+                <h5 class="title">Entrée, Plat & Dessert</h5>
+                <p>Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row align -center">
+        <br/>
+        <h5 class="wine">* Notre sommelier vous conseillera sur place ses meilleurs vins pour accompagner vos choix</h5>
+    </div>
+</section>
 <section>
     <div class="row">
         <a id="starter" class="anchor"></a>
@@ -102,46 +142,6 @@
     </div>
 </section>
 <section class="-darker">
-    <div class="row align -center -m-no-pad">
-        <a id="course" class="anchor"></a>
-        <h3 class="title">Formules</h3>
-        <div class="formula-container">
-            <div class="formula">
-                <h5 class="title">Entrée & Plat</h5>
-                <p>Créez votre plat et choisissez une de nos entrées.</p>
-            </div>
-            <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
-                <p>Deux verres de <strong>vin</strong></p>
-            </div>
-        </div>
-        <div class="formula-container">
-            <div class="formula">
-                <h5 class="title">Plat & Dessert</h5>
-                <p>Créez votre plat et choisissez un de nos desserts.</p>
-            </div>
-            <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
-                <p>Deux verres de <strong>vin</strong></p>
-            </div>
-        </div>
-        <div class="formula-container">
-            <div class="formula">
-                <h5 class="title">Entrée, Plat & Dessert</h5>
-                <p>Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts.</p>
-            </div>
-            <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> Variation Vin*</h5>
-                <p>Deux verres de <strong>vin</strong> et un <strong>cocktail</strong></p>
-            </div>
-        </div>
-    </div>
-    <div class="row align -center">
-        <br/>
-        <h5 class="wine">* Notre sommelier vous conseillera sur place ses meilleurs vins pour accompagner vos choix</h5>
-    </div>
-</section>
-<section>
     <div class="row align -center">
         <a id="click-sit" class="anchor"></a>
         <h3 class="title">Click & Sit</h3>
