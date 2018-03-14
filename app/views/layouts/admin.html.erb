@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <%= render "layouts/head" %>
+
+        <%= render "layouts/nav_admin" %>
+        <div class="page">
+            <%= render "layouts/flash" %>
+            <%= yield %>
+        </div>
+        <%= render "layouts/footer" %>
+
+        <%= render "layouts/cookie_disclaimer" %>
+    </body>
+</html>

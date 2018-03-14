@@ -20,7 +20,7 @@
                             <%= dessert.description_fr %>
                         </td>
                         <td>
-                            <%= dessert.price %>
+                            <%= number_to_currency(dessert.price, locale: :fr) %>
                         </td>
                         <td>
                             <img src="<%= dessert.img_url %>" alt="">

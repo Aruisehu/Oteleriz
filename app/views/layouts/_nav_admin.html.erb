@@ -1,0 +1,25 @@
+<nav id="main-menu">
+    <div class="row">
+        <div class="menu">
+            <input class="switch" id="menu-switch" type="checkbox">
+            <label class="toggle" for="menu-switch"><%= fa_icon "bars" %></label>
+            <a id="logo" href="<%= admin_root_path %>">
+                <%= image_tag "logo128.png" %>
+                <h1><%= site_name %></h1>
+            </a>
+            <div id="submenu">
+
+                <%= link_to "Commande", admin_orders_path %>
+                <%= link_to "Plats", admin_dishes_path %>
+                <%= link_to "Desserts", admin_desserts_path %>
+                <%= link_to "Entrées", admin_starters_path %>
+                <%= link_to "Service", admin_meals_path %>
+                <%= link_to "Plage horaire", admin_root_path %>
+
+            </div>
+        </div>
+        <div class="action">
+            <%= yield(:main_action) %>
+        </div>
+    </div>
+</nav>
