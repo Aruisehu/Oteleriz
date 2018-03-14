@@ -1,0 +1,19 @@
+<section>
+    <div class="row align -center">
+        <h2 class="title -alt">Paiement</h2>
+        <div class="col-8 -centered">
+            <%= form_for :checkout, :url => '/order/checkout' do |form| %>
+                <div id="payment-form"></div>
+                <input type="submit" value="Pay $10">
+            <% end %>
+
+            <script src="https://js.braintreegateway.com/js/braintree-2.20.0.min.js"></script>
+            <script>
+                var clientToken = "<%= @client_token %>";
+                braintree.setup(clientToken, "dropin", {
+                    container: "payment-form"
+                });
+            </script>            
+        </div>
+    </div>
+</section>

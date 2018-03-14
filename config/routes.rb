@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
     resources :orders, only: [:update, :index, :edit, :destroy]
     get 'order/:id/booking' => 'orders#booking', as: "order_booking"
+    get 'order/payments' => 'orders#payments', as: "order_payments"
+    post 'order/checkout' => 'orders#checkout', as: "order_checkout"
     patch 'order/:id/booking' => 'orders#validate_booking'
     get 'order/success' => 'orders#success', as: "order_success"
     get 'order/not_available' => 'orders#not_available', as: "order_not_available"

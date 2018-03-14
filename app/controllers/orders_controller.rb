@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
+    require "rubygems"
+    require "braintree"
 
     before_action :access_click_and_sit, only: [:update, :destroy, :add_menu, :booking, :validate_booking, :success]
-
+    before_action :set_gateway, only:[:checkout, :payments]
     def index
         @dishes = Dish.all
         @desserts = Dessert.all
@@ -91,6 +93,32 @@ class OrdersController < ApplicationController
         end
     end
 
+    def payments
+        @client_token = @gateway.client_token.generate
+    end
+
+    def checkout
+        result = @gateway.transaction.sale(
+            :amount => "10.00",
+            :descriptor => {
+                :name => "CookMeUp",
+                :phone => "06XXXXXXXX",
+                :url => "cookmeup.restaurant"
+            },
+            :options => {
+              :submit_for_settlement => true
+            }
+          )
+        if result.success?
+            session.delete(:order_id) # we close it to further edits
+            flash[:success] = "Votre commande a été validée"
+            redirect_to order_success_path # and redirect user to the success page
+            return
+        else
+            return 'fail'
+        end
+    end
+
     def validate_booking
         if params[:grouped?] == "true"
             @order.assign_attributes(order_params)
@@ -118,10 +146,8 @@ class OrdersController < ApplicationController
             end
 
             @order.confirmed = true
-            if @order.save # If the order can be saved
-                session.delete(:order_id) # we close it to further edits
-                flash[:success] = "Votre commande a été validée"
-                redirect_to order_success_path # and redirect user to the success page
+            if @order.confirmed# If the order can be saved
+                redirect_to order_payments_path # and redirect user to the paiement page
                 return
             end
         else
@@ -142,6 +168,15 @@ class OrdersController < ApplicationController
     end
 
     private
+    def set_gateway
+        @gateway = Braintree::Gateway.new(
+            :environment => :sandbox,
+            :merchant_id => "qsjt25nd8vkjn4sx",
+            :public_key => "9whvkngbntgdrqhw",
+            :private_key => "43ce00b171fd2120fe6adc455ee0415b",
+          )
+    end
+
     def add_formula
         if @formula.save
             @order.formulas << @formula

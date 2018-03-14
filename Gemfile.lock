@@ -43,8 +43,10 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    braintree (2.84.0)
+      builder (>= 2.0.0)
     builder (3.2.3)
-    bullet (5.7.3)
+    bullet (5.7.5)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11.0)
     byebug (10.0.0)
@@ -66,7 +68,7 @@ GEM
     cells-rails (0.0.8)
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
-    childprocess (0.8.0)
+    childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
@@ -82,7 +84,7 @@ GEM
       warden (~> 1.2.3)
     erbse (0.1.2)
       temple
-    erubi (1.7.0)
+    erubi (1.7.1)
     et-orbi (1.0.9)
       tzinfo
     execjs (2.7.0)
@@ -93,7 +95,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.8.7)
       i18n (>= 0.7)
-    ffi (1.9.22)
+    ffi (1.9.23)
     flamegraph (0.9.5)
     font-awesome-rails (4.7.0.3)
       railties (>= 3.2, < 5.2)
@@ -151,11 +153,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
-    puma (3.11.2)
+    puma (3.11.3)
     rack (2.0.4)
     rack-mini-profiler (0.10.7)
       rack (>= 1.2.0)
-    rack-test (0.8.2)
+    rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rails (5.1.5)
       actioncable (= 5.1.5)
@@ -181,7 +183,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     responders (2.4.0)
@@ -202,7 +204,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    selenium-webdriver (3.9.0)
+    selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     spring (2.0.2)
@@ -225,7 +227,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
-    uglifier (4.1.6)
+    uglifier (4.1.7)
       execjs (>= 0.3.0, < 3)
     uniform_notifier (1.11.0)
     warden (1.2.7)
@@ -245,6 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  braintree
   bullet
   byebug
   capybara (~> 2.13)
