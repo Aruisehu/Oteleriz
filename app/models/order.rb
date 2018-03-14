@@ -21,7 +21,7 @@ class Order < ApplicationRecord
 
     validates :name, uniqueness: { scope: :service_id, message: "Ce nom de commande a déjà été pris" }, if: :service?
     validates :name, presence: { message: "Le nom de commande ne peut pas être vide"}, if: :service?
-    validates_with OrderValidator
+    validates_with OrderValidator, if: :service?
 
     def summary
         self.formulas.map do |f|
