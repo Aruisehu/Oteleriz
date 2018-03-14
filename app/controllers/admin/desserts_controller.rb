@@ -1,15 +1,15 @@
 class Admin::DessertsController < Admin::BaseController
     before_action :set_dessert, only: [:edit, :update, :show, :destroy]
     def new
-        @dessert = Dish.new
+        @dessert = Dessert.new
     end
 
     def index
-        @desserts = Dish.all 
+        @desserts = Dessert.all 
     end
 
     def create
-        @dessert = Dish.new(dessert_params)
+        @dessert = Dessert.new(dessert_params)
         if @dessert.save
             redirect_to admin_desserts_path
         else
@@ -18,7 +18,7 @@ class Admin::DessertsController < Admin::BaseController
     end
 
     def edit
-        @dessert = Dish.find(params[:id]) 
+        @dessert = Dessert.find(params[:id]) 
     end
 
     def update
@@ -38,10 +38,10 @@ class Admin::DessertsController < Admin::BaseController
     private
 
     def set_dessert
-        @dessert = Dish.find(params[:id])
+        @dessert = Dessert.find(params[:id])
     end
 
     def dessert_params
-      params.require(:dessert).permit(:name_translations, :description_translations, :ask_roasting, :price, :img_url)
+      params.require(:dessert).permit(:name_en, :name_fr, :description_fr, :description_en, :price, :img_url)
     end
 end

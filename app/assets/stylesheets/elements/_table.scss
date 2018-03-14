@@ -2,34 +2,30 @@ table {
     border-collapse: collapse;
     font-size: 112.5%;
     max-width: 100%;
-
-    th, td {
+    th,
+    td {
         min-width: 10em;
         padding: 1em;
         width: 25%;
     }
-
     th {
         letter-spacing: 0.125em;
         text-transform: uppercase;
     }
-
     tr {
         border-bottom: 1px solid $gray0;
         border-top: 1px solid $gray0;
     }
-
     th:first-child {
         min-width: auto;
         text-align: right;
     }
-
-    th:nth-child(even), td:nth-child(even) {
+    th:nth-child(even),
+    td:nth-child(even) {
         background: rgba($gray0, .5);
         border-left: 1px solid $gray0;
         border-right: 1px solid $gray0;
     }
-
     td.full {
         width: 100%;
         padding: 0;

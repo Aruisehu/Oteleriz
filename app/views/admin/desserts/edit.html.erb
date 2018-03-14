@@ -3,19 +3,27 @@
         <div class="col-12">
             <h1>Ajouter un Plat:</h1>
 
-            <%= form_for :dessert, :url => admin_desserts_path, :action => 'put' do |form| %>
+            <%= form_for :dessert, :url => admin_dessert_path(@dessert), method: 'put' do |form| %>
+                <p>
+                    <%= form.label :name_fr %><br>
+                        <%= form.text_field :name_fr %>
+                </p>
+                <p>
+                    <%= form.label :name_en %><br>
+                        <%= form.text_field :name_en %>
+                </p>
+                <p>
+                    <%= form.label :description_fr %><br>
+                        <%= form.text_field :description_fr %>
+                </p>
+                <p>
+                    <%= form.label :description_en %><br>
+                        <%= form.text_field :description_en %>
+                </p>
 
                 <p>
-                    <%= form.label :name_translations %><br>
-                        <%= form.text_field :name_translations %>
-                </p>
-                <p>
-                    <%= form.label :description_translations %><br>
-                        <%= form.text_field :description_translations %>
-                </p>
-                <p>
                     <%= form.label :price %><br>
-                        <%= form.text_field :price %>
+                        <%= form.number_field :price, step: 0.01 %>
                 </p>
                 <p>
                     <%= form.label :img_url %><br>
@@ -28,4 +36,3 @@
                 <% end %>
         </div>
     </div>
-</section>

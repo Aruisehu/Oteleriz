@@ -42,6 +42,6 @@ class Admin::MealsController < Admin::BaseController
     end
 
     def meal_params
-      params.require(:meal).permit(:name_translations, :description_translations, :ask_roasting, :price, :img_url)
+      params.require(:meal).permit(:name_en, :name_fr, :description_fr, :description_en, :price, :img_url)
     end
 end

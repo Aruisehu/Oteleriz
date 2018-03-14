@@ -3,23 +3,23 @@
         <div class="col-12">
             <h1>Ajouter un Plat:</h1>
 
-            <%= form_for :dish, :url => admin_dishes_path, :action => 'put' do |form| %>
+            <%= form_for :dish, :url => admin_dish_path(@dish), :action => 'put' do |form| %>
 
                 <p>
-                    <%= form.label :name_translations_fr %><br>
-                        <%= form.text_field :name_translations_fr, :value => @dish.name_translations["fr"]%>
+                    <%= form.label :name_fr %><br>
+                        <%= form.text_field :name_fr %>
                 </p>
                 <p>
-                    <%= form.label :name_translations_en %><br>
-                        <%= form.text_field :name_translations_en, :value => @dish.name_translations["en"]%>
+                    <%= form.label :name_en %><br>
+                        <%= form.text_field :name_en %>
                 </p>
                 <p>
-                    <%= form.label :description_translations_fr %><br>
-                        <%= form.text_field :description_translations_fr, :value => @dish.description_translations["fr"] %>
+                    <%= form.label :description_fr %><br>
+                        <%= form.text_field :description_fr %>
                 </p>
                 <p>
-                    <%= form.label :description_translations_en %><br>
-                        <%= form.text_field :description_translations_en, :value => @dish.description_translations["en"] %>
+                    <%= form.label :description_en %><br>
+                        <%= form.text_field :description_en %>
                 </p>
                 <p>
                     <%= form.label :ask_roasting %><br>
@@ -27,7 +27,7 @@
                 </p>
                 <p>
                     <%= form.label :price %><br>
-                        <%= form.text_field :price %>
+                        <%= form.number_field :price, step: 0.01 %>
                 </p>
                 <p>
                     <%= form.label :img_url %><br>
