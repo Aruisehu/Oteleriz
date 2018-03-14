@@ -98,6 +98,12 @@ class OrdersController < ApplicationController
             @order.assign_attributes(order_params.except(:number_persons))
         end
 
+        unless @order.service
+            flash[:error] = "Merci de sélectionner un horaire d'arrivée"
+            redirect_to order_booking_path
+            return
+        end
+
         if @order.service.meal.start_time.today? # Verify that the service is today since we don't accept preorders
             unless @order.service.remaining_seats?(@order.number_persons || 1)
                 flash[:error] = "Il ne reste plus de place dans la plage horaire choisie"
@@ -161,7 +167,7 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-        params.require(:order).permit(:service_id, :name, :number_persons)
+        params.require(:order).permit(:service_id, :name, :number_persons, :email)
     end
 
     def access_click_and_sit

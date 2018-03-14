@@ -1,3 +1,11 @@
+class OrderValidator < ActiveModel::Validator
+    def validate(record)
+        if record.formulas.count < record.number_persons
+            record.errors[:base] << "Trop de personnes pour cette commande"
+        end
+    end
+end
+
 class Order < ApplicationRecord
     belongs_to :service, optional: true
     belongs_to :group, optional: true
@@ -13,6 +21,7 @@ class Order < ApplicationRecord
 
     validates :name, uniqueness: { scope: :service_id, message: "Ce nom de commande a déjà été pris" }, if: :service?
     validates :name, presence: { message: "Le nom de commande ne peut pas être vide"}, if: :service?
+    validates_with OrderValidator
 
     def summary
         self.formulas.map do |f|
