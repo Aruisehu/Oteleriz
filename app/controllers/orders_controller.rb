@@ -105,7 +105,7 @@ class OrdersController < ApplicationController
                 return
             end
 
-            if !params[:group_name].empty? && params[:grouped?] != true # If the customer specified a group name and didn't select a group order
+            if !params[:group_name].empty? && params[:grouped?] != "true" # If the customer specified a group name and didn't select a group order
                 paired = Order.where(name: params[:group_name], service: @order.service).first
                 if paired.blank?
                     flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée ou a choisi une heure différente"
@@ -128,7 +128,7 @@ class OrdersController < ApplicationController
             redirect_to order_not_available_path
             return
         end
-        flash[:error] = "Une erreur s'est produite lors de la validation de votre commande"
+        flash[:error] = @order.errors.messages.map do |k, v| v end.flatten.join("\n")
         redirect_to order_booking_path
         return
     end
@@ -149,10 +149,10 @@ class OrdersController < ApplicationController
             if @order.save
                 flash[:success] = "Produit ajouté au panier"
             else
-                flash[:error] = "Une erreur c'est produite"
+                flash[:error] = "Une erreur s'est produite"
             end
         else
-            flash[:error] = "Une erreur c'est produite"
+            flash[:error] = "Une erreur s'est produite"
         end
     end
 
