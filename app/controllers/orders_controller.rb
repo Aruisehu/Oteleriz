@@ -110,12 +110,15 @@ class OrdersController < ApplicationController
             }
           )
         if result.success?
-            session.delete(:order_id) # we close it to further edits
+            @order.save
+            session.delete(:order_id)
             flash[:success] = "Votre commande a été validée"
-            redirect_to order_success_path # and redirect user to the success page
+            redirect_to order_success_path
             return
         else
-            return 'fail'
+            flash[:error] = "Une erreur est survenue lors du paiement"
+            redirect_to order_payments_path
+            return
         end
     end
 
