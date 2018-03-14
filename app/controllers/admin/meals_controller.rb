@@ -8,6 +8,10 @@ class Admin::MealsController < Admin::BaseController
         @meals = Meal.all 
     end
 
+    def show
+        @services = Service.where(meal: @meal)
+    end
+
     def create
         @meal = Meal.new(meal_params)
         if @meal.save

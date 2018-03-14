@@ -3,7 +3,7 @@
         <div class="col-12">
             <h1>Ajouter un Plat:</h1>
 
-            <%= form_for :dish, :url => admin_dish_path(@dish), :action => 'put' do |form| %>
+            <%= form_for :dish, :url => admin_dish_path(@dish), method: 'put' do |form| %>
 
                 <p>
                     <%= form.label :name_fr %><br>
