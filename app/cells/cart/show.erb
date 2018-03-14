@@ -15,7 +15,7 @@
                 <!--<span class="price">
                     00,00€
                 </span>-->
-                <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: "Êtes-vous sûr?"}, title:"Suprimer ce produit du panier", class: "btn-subtle -alt -icon no-close-menu", remote: true do %>
+                <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: "Êtes-vous sûr de vouloir supprimer ce produit de votre panier?"}, title:"Suprimer ce produit du panier", class: "btn-subtle -alt -icon no-close-menu", remote: true do %>
                     Supprimer <%= fa_icon "trash" %>
                 <% end %>
                 <label for="formula-<%= i %>" class="deploy btn-subtle float -r" href="">Détails <%= fa_icon "angle-up" %></label>

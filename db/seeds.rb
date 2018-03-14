@@ -220,6 +220,18 @@ FormulaTemplate.create(
 )
 
 FormulaTemplate.create(
+    name_en: "Starter and Dish with 2 Glass of Wine Formula",
+    name_fr: "Formule Entrée + Plat avec 2 Verres de Vin",
+    has_starter: true,
+    has_dish: true,
+    has_dessert: false,
+    has_wine: true,
+    wine_en: "2 Verres de Vin",
+    wine_fr: "2 Verres de Vin",
+    price: 35.00
+)
+
+FormulaTemplate.create(
     name_en: "Dish and Dessert Formula",
     name_fr: "Formule Plat + Dessert",
     has_starter: false,
@@ -230,22 +242,14 @@ FormulaTemplate.create(
 )
 
 FormulaTemplate.create(
-    name_en: "Starter and Dish with 2 Glass of Wine Formula",
-    name_fr: "Formule Entrée + Plat avec 2 Verres de Vin",
-    has_starter: true,
-    has_dish: true,
-    has_dessert: false,
-    has_wine: true,
-    price: 35.00
-)
-
-FormulaTemplate.create(
     name_en: "Dish and Dessert with 2 Glass of Wine Formula",
     name_fr: "Formule Plat + Dessert avec 2 Verres de Vin",
     has_starter: false,
     has_dish: true,
     has_dessert: true,
     has_wine: true,
+    wine_en: "2 Verres de Vin",
+    wine_fr: "2 Verres de Vin",
     price: 35.00
 )
 
@@ -261,11 +265,13 @@ FormulaTemplate.create(
 
 FormulaTemplate.create(
     name_en: "Starter, Dish and Dessert with 2 Glass of Wine and 1 Cocktail Formula",
-    name_fr: "Formule Entrée + Plat + Dessert avec 2 Verres de Vin et 1 Cocktail",
+    name_fr: "Formule Entrée + Plat + Dessert avec 2 Verres de Vin et 1 Apéritif",
     has_starter: true,
     has_dish: true,
     has_dessert: true,
     has_wine: true,
+    wine_en: "2 Verres de Vin et 1 Apéritif",
+    wine_fr: "2 Verres de Vin et 1 Apéritif",
     price: 45.00
 )
 =begin

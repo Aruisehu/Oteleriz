@@ -8,7 +8,9 @@ class OrdersController < ApplicationController
         @starters = Starter.all
         @bakings = Baking.includes(:marinades).all
         @marinades = Marinade.all
+        @course_starter = FormulaTemplate.find_by(has_starter: true, has_dish: false, has_dessert: false, has_wine: false)
         @course_d = FormulaTemplate.find_by(has_starter: false, has_dish: true, has_dessert: false, has_wine: false)
+        @course_dessert = FormulaTemplate.find_by(has_starter: false , has_dish: false, has_dessert: true, has_wine: false)
         @course_sd = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: false, has_wine: false)
         @course_sdw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: false, has_wine: true)
         @course_dd = FormulaTemplate.find_by(has_starter: false, has_dish: true, has_dessert: true, has_wine: false)
@@ -56,6 +58,7 @@ class OrdersController < ApplicationController
             }.compact
         )
 
+        set_template
         add_formula
 
         redirect_to orders_path
@@ -148,8 +151,12 @@ class OrdersController < ApplicationController
     end
 
     private
+    def set_template
+        @formula.formula_template = FormulaTemplate.find(params[:id_template])
+    end
+
     def add_formula
-        if @formula.save
+        if @formula.valid_template? && @formula.save
             @order.formulas << @formula
 
             if @order.save
