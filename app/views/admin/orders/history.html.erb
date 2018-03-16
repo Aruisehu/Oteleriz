@@ -1,0 +1,72 @@
+<section>
+    <div class="row">
+
+        <div class="col-12">
+            <table class="zone">
+                <tr>
+                    <!--<th>Email</th>-->
+                    <th>Nom de commande</th>
+                    <th>Nombre de personnes</th>
+                    <th>Service (début - fin)</th>
+                    <th>Action</th>
+                </tr>
+
+                <% @orders.each do |order| %>
+                    <tr>
+                        <!--<td>
+                            <%= order.email %>
+                        </td> -->
+                        <td>
+                            <h5 class="title -compact"><%= order.name %></h5>
+                            <% if order.group.orders.count > 1 %>
+                                <div class="text -tiny">
+                                    Commande groupée avec:
+                                    <% order.group.orders.each do |o| %>
+                                        <ul>
+                                            <div>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="voir" class="float -r"><%= fa_icon "eye" %></a></div>
+                                        </ul>
+                                    <% end %>
+                                </div>
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= order.number_persons %>
+                        </td>
+                        <td>
+                            <%= order.service.start_time.strftime("%H:%M") %> - <%= order.service.end_time.strftime("%H:%M") %>
+                        </td>
+                        <td>
+                            <a href="/admin/orders/<%= order.id %>" class="btn-subtle">Voir commande <%= fa_icon "eye" %></a><br /><br />
+                            <label class="btn-subtle" for="order_<%= order.id %>">Détails <%= fa_icon "plus" %></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="full">
+                            <input type="checkbox" name="order" class="hidden switch" id="order_<%= order.id %>" />
+                            <div class="col-12 hidden">
+                                <div class="col-9">
+                                    <h6 class="title -compact">Produits de la commande</h6>
+                                    <ul class="fixed-list">
+                                        <li><span class="key"><strong>Produit</strong></span><span class="value"><strong>Quantité</strong></span></li>
+                                        <% order.summary.each do |k, v| %>
+                                            <li><span class="key"><%= k %></span><span class="value"><%= v %></span></li>
+                                        <% end %>
+                                    </ul>
+                                </div>
+                                <div class="col-3">
+                                    <h6 class="title -compact">Actions</h6><br/>
+                                    <a href="#" class="btn-subtle" title="Fonction non terminée">Voir l'Utilisateur <%= fa_icon "user" %></a>
+                                    <br/>
+                                    <br/>
+                                    <%= link_to admin_order_path(order), method: :delete, class: "btn-subtle -alt", data: { confirm: "Etes-vous sûr de vouloir supprimer la commande ?" } do %>
+                                        Supprimer <%= fa_icon "trash" %>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+</section>
