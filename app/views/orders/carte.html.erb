@@ -50,7 +50,7 @@
     <div class="row">
         <a id="starter" class="anchor"></a>
         <h3 class="title align -center">Entrées</h3>
-        <%= cell(:product, presentation: true, collection: @starters) %>
+        <%= cell(:product, presentation: true, id_template: @course_starter, collection: @starters) %>
     </div>
 </section>
 <section class="-darker">
@@ -138,7 +138,7 @@
     <div class="row">
         <a id="dessert" class="anchor"></a>
         <h3 class="title align -center">Desserts</h3>
-        <%= cell(:product, presentation: true, collection: @desserts) %>
+        <%= cell(:product, presentation: true, id_template: @course_dessert, collection: @desserts) %>
     </div>
 </section>
 <section class="-darker">

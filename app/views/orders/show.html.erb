@@ -1,0 +1,53 @@
+<section>
+    <div class="row">
+
+        <h3 class="title align -center">Ma Commande</h3>
+        <div class="col-3 details">
+            <div class="item">
+                <h6>Nom de commande</h6>
+                <%= @order.name.gsub(/.{#{@order.name.length < 4 ? @order.name.length : @order.name.length - 4}}$/, '****') %>
+            </div>
+            <div class="item">
+                <h6>Email lié</h6>
+                <%= @order.email.gsub(/.{0,4}@/, '****@') %>
+            </div>
+            <div class="item">
+                <h6>Commande pour</h6>
+                <p><%= @order.service.start_time.strftime("%H:%M - %d/%m/%Y") %></p>
+            </div>
+            <% if @order.number_persons > 1 %>
+                <div class="item">
+                    <h6>Nombre de personnes</h6>
+                    <%= @order.number_persons %>
+                </div>
+            <% else %>
+                <div class="item">
+                    <h6>Nombre de personnes</h6>
+                    <p>Commande seule</p>
+                </div>
+            <% end %>
+            <% if @order.group.orders.count > 1 %>
+                <div class="item">
+                    <h6>Commande groupée</h6>
+                    <% @order.group.orders.each do |o| %>
+                        <ul>
+                            <p><%= o.name %></p>
+                        </ul>
+                    <% end %>
+                </div>
+            <% end %>
+            <hr>
+            <div class="item">
+                <h6>En cas de problème, contactez-nous</h6>
+                <br/>
+                <a class="btn-subtle" target="_blank" href="mailto:cookmeupstartup@gmail.com">Envoyer un mail <%= fa_icon "at" %></a>
+                <br/>
+                <br/>
+                <a class="btn-subtle" target="_blank" href="https://www.facebook.com/StartUpcookmeup/">Contactez nous sur <%= fa_icon "facebook" %></a>
+            </div>
+        </div>
+        <div class="col-9">
+            <%= cell(:cart, @order).(:show_admin) %>
+        </div>
+    </div>
+</section>

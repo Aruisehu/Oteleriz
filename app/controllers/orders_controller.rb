@@ -27,6 +27,10 @@ class OrdersController < ApplicationController
         end
     end
 
+    def show
+        @order = Order.find(params[:id])
+    end
+
     def access
         if session[:access]
             flash[:success] = "Votre session est activée, vous pouvez constituer votre commande"
