@@ -92,7 +92,7 @@ class OrdersController < ApplicationController
     def booking
         meal = Meal.where("DATE(start_time) = ?", Date.today)
         unless meal.empty?
-            @services = meal.first.services.opened # fetch all services from today meal
+            @services = meal.first.services.includes(:orders).opened # fetch all services from today meal
         else
             redirect_to order_not_available_path
         end

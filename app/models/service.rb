@@ -5,7 +5,7 @@ class Service < ApplicationRecord
     scope :opened, -> { where(ended: false) }
 
     def remaining_seats?(number_persons)
-        reserved_persons = self.get_taken_seats
+        reserved_persons = get_taken_seats
 
         return self.seats >= reserved_persons + number_persons
     end
