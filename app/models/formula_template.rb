@@ -1,6 +1,7 @@
 class FormulaTemplate < ApplicationRecord
     has_one :formula
     translates :name
+    translates :wine
 
     def starter?
         self.has_starter && !self.has_dish && !self.has_dessert
@@ -34,4 +35,7 @@ class FormulaTemplate < ApplicationRecord
         FormulaTemplate.all.select do |f| !f.hide? end
     end
 
+    def get_filter
+        return {dish: has_dish?, starter: has_starter?, dessert: has_dessert?}.select {|k, v| v }
+    end
 end

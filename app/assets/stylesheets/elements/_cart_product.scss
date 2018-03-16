@@ -5,6 +5,14 @@ $img-width: 6em;
 
     border-bottom: 1px solid $gray0;
 
+    &.wine {
+        background: rgba($wine, .05);
+
+        .title {
+            color: $wine;
+        }
+    }
+
     .image {
         float: left;
         width: $img-width;
@@ -14,6 +22,7 @@ $img-width: 6em;
         .img {
             max-width: $img-width;
             float: left;
+            width: 100%;
         }
 
         .icon {
@@ -28,6 +37,13 @@ $img-width: 6em;
                 top: -.1em;
                 background-size: 75%;
             }
+        }
+
+        .fa {
+            width: 100%;
+            text-align: center;
+            padding: 1.2em 0;
+            background: rgba($wine, .25);
         }
     }
 

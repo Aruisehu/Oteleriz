@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310225508) do
+ActiveRecord::Schema.define(version: 20180314094724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180310225508) do
     t.decimal "price", precision: 9, scale: 2
     t.jsonb "name_translations"
     t.boolean "has_wine"
+    t.jsonb "wine_translations"
   end
 
   create_table "formulas", force: :cascade do |t|

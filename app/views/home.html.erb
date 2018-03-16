@@ -1,12 +1,3 @@
-<% content_for :main_nav do %>
-    <%= link_to "Histoire", "#history" %>
-    <%= link_to "Concept", "#concept" %>
-    <%= link_to "Carte", "#menu" %>
-    <%= link_to "Participez", "#participate" %>
-    <%= link_to "Équipe", "#team" %>
-    <%= link_to "Partenaires", "#partners" %>
-<% end %>
-
 <% content_for :main_action do %>
     <%= link_to orders_path, class: "btn" do %>
         Carte <%= fa_icon "book" %>

@@ -8,6 +8,11 @@
                     <input type="text" class="" placeholder="Votre nom" name="order[name]">
                     <p class="text -tiny">Utilisez ce nom pour récupérer votre commande</p>
                     <br />
+
+                    <h5 class="subtitle"> Entrez votre adresse email: </h5>
+                    <input type="email" class="" placeholder="Votre adresse" name="order[email]">
+                    <p class="text -tiny">Vous recevrez un confirmation de votre commande et un récapitulatif</p>
+                    <br />
                 </div>
             </div>
             <div class="col-12 booking">
@@ -40,9 +45,9 @@
             <div class="col-12 booking">
                 <div class="booking-form-item">
                     <h5 class="subtitle">À quelle heure voulez-vous manger ?</h5>
-                    <% @services.each do |s| %>
-                        <input  id="service_<%= s.id %>" value="<%= s.id %>" type="radio" name="order[service_id]" class="hidden">
-                        <label for="service_<%= s.id %>"><%= s.start_time.strftime("%H:%M") %></label>
+                    <% @services.each_with_index do |s, i| %>
+                        <input  id="service_<%= s.id %>" value="<%= s.id %>" <%= i == 0 ? "checked" : "" %> type="radio" name="order[service_id]" class="hidden">
+                        <label for="service_<%= s.id %>"><%= s.start_time.strftime("%H:%M") %><span>(<%= s.get_remaining_seats %> place(s))</span></label>
                     <% end %>
                 </div>
             </div>

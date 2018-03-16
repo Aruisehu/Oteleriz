@@ -38,4 +38,8 @@ class CartCell < Cell::ViewModel
     def dessert
         render
     end
+
+    def wine
+        render
+    end
 end
