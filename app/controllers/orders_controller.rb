@@ -107,6 +107,14 @@ class OrdersController < ApplicationController
 
         unless @order.service
             flash[:error] = "Merci de sélectionner un horaire d'arrivée"
+        end
+
+        # unless @order.email
+        if @order.email.blank?
+            flash[:error] = "Merci de renseigner votre adresse mail"
+        end
+
+        unless flash[:error].blank?
             redirect_to order_booking_path
             return
         end

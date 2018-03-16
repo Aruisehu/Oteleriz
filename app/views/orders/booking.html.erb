@@ -6,10 +6,12 @@
                 <div class="booking-form-item">
                     <h5 class="subtitle">Quel nom voulez-vous donner à votre commande ?</h5>
                     <input type="text" class="" placeholder="Votre nom" name="order[name]">
-                    <p class="text -tiny">Utilisez ce nom pour récupérer votre commande</p>
+                    <p class="text -tiny">
+                        Utilisez ce nom lors de votre arrivée au restaurant.<br/>
+                        Vous pourrez le communiquer avec vos amis pour qu'ils vous rejoignent à table.
+                    </p>
                     <br />
-
-                    <h5 class="subtitle"> Entrez votre adresse email: </h5>
+                    <h5 class="subtitle"> Entrez votre adresse email:</span></h5>
                     <input type="email" class="" placeholder="Votre adresse" name="order[email]">
                     <p class="text -tiny">Vous recevrez un confirmation de votre commande et un récapitulatif</p>
                     <br />
@@ -24,8 +26,8 @@
                     <label for="service_groupe">Groupe</label>
                     <div class="option" id="seul">
                         <p class="subtitle">Vous souhaitez rejoindre un ami ? Entrez son nom de commande:</p>
-                        <input id="group_name" type="text" name="group_name" placeholder="" />
-                        <p class="text -tiny pink">Votre ami doit déjà avoir validé sa commande</p>
+                        <input id="group_name" type="text" name="group_name" placeholder="Commande de votre ami" />
+                        <p class="text -tiny">Votre ami doit déjà avoir validé sa commande</p>
                     </div>
                     <div class="option" id="group">
                         <p class="subtitle">Combien de personnes mangent avec vous ?</p>
@@ -37,6 +39,7 @@
                             </select>
                              <%= fa_icon "angle-down" %>
                         </div>
+                        <p class="text -tiny">Vérifiez q'il y à assez de place pour l'heure choisie</p>
                     </div>
                 </div>
             </div>

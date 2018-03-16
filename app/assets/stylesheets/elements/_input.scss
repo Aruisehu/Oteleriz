@@ -1,10 +1,42 @@
 input[type="text"], input[type="email"] {
     background: rgba($gray0, .5);
-    margin-bottom: 1em;
-    color: $text;
     border-radius: .25em;
     border: none;
-    padding: .25em .5em;
     box-shadow: inset 0 .15em .25em rgba($shadow, .25);
+    color: $text;
     line-height: 2.3em;
+    margin-bottom: 1em;
+    padding: .15em .5em;
+}
+
+.select {
+    background: rgba($gray0, .5);
+    border-radius: .25em;
+    box-shadow: inset 0 .15em .25em rgba($shadow, .25);
+    display: inline-block;
+    margin-bottom: 1em;
+    position: relative;
+    transition: box-shadow 170ms ease-in-out;
+
+    .fa {
+        pointer-events: none;
+        position: absolute;
+        right: .5em;
+        top: .35em;
+        margin: .25em 0;
+    }
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    color: $text;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 9em;
+    outline: none;
+    padding: .5em 1em !important;
 }

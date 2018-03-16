@@ -27,39 +27,6 @@
         box-shadow: 0 0 0 2px $accent2;
         color: $white;
     }
-
-    .select {
-        display: inline-block;
-        background: $gray0;
-        border-radius: .25em;
-        transition: box-shadow 170ms ease-in-out;
-        position: relative;
-
-        .fa {
-            pointer-events: none;
-            position: absolute;
-            right: .5em;
-            top: .35em;
-        }
-    }
-
-    .select:hover {
-        box-shadow: 0 0 0 2px $accent2;
-    }
-
-    select {
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-        background: none;
-        border: none;
-        color: $text;
-        cursor: pointer;
-        font-weight: bold;
-        min-width: 9em;
-        outline: none;
-        padding: .25em .5em;
-    }
 }
 
 .booking-form-item {
