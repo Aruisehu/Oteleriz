@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         sessions: 'admin/sessions'
     }
 
-    resources :orders, only: [:update, :index, :edit, :destroy]
+    resources :orders, only: [:show, :index, :update, :edit, :destroy]
     get 'order/:id/booking' => 'orders#booking', as: "order_booking"
     patch 'order/:id/booking' => 'orders#validate_booking'
     get 'order/success' => 'orders#success', as: "order_success"
