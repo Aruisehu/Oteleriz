@@ -9,10 +9,14 @@
         margin: 0 0.25em 0.5em;
         padding: 0.25em .5em;
         transition: all 170ms ease-in-out;
-        width: 6em;
+        width: 9em;
 
         &:hover {
             box-shadow: 0 0 0 2px $accent2;
+        }
+
+        span {
+            display: block;
         }
     }
 
