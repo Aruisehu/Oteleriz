@@ -4,6 +4,7 @@ Rails.application.routes.draw do
         root 'base#home'
         get 'dishes/new' => 'dishes#new'
         get 'dishes/:id' => 'dishes#edit'
+        get 'history' => 'orders#history'
         resources :dishes, :orders, :starters, :meals, :desserts
     end
 

@@ -4,6 +4,10 @@ class Admin::OrdersController < Admin::BaseController
         @orders = Order.eager_load(:group, :service).joins(:service).where(confirmed: true).where("services.end_time <= ?", DateTime.tomorrow).order("services.start_time")
     end
 
+    def history
+        @orders = Order.eager_load(:group, :service).joins(:service).where(confirmed: true).order("services.start_time")
+    end
+
     def show
     end
 
