@@ -274,6 +274,7 @@ FormulaTemplate.create(
     wine_fr: "2 Verres de Vin et 1 Apéritif",
     price: 45.00
 )
+
 =begin
 meal_13_mars_2018 = Meal.create(
     start_time: DateTime.new(2018,3,13,11,30),
@@ -286,7 +287,7 @@ Service.create(
     meal: meal_13_mars_2018,
     seats: 20
 )
-=end
+
 meal_today = Meal.create(
     start_time: Date.today,
     end_time: Date.today + 24.hours
@@ -305,6 +306,7 @@ Service.create(
     meal: meal_today,
     seats: 12
 )
+=end
 
 User.create(
     email: "cookmeupstartup@gmail.com",
