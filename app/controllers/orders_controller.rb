@@ -141,6 +141,7 @@ class OrdersController < ApplicationController
             @order.confirmed = true
             if @order.save # If the order can be saved
                 session.delete(:order_id) # we close it to further edits
+                OrdersMailer.confirm(@order)
                 flash[:success] = "Votre commande a été validée"
                 redirect_to order_success_path # and redirect user to the success page
                 return
