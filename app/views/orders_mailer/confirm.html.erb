@@ -1,1 +1,20 @@
-<p> Test corpse </p>
+<h1>Confirmation de votre commande "<%= @order.name %>"</h1>
+<p>Bonjour, votre commande pour le <%= Date.today %> à <%= @order.service.start_time.strftime("%H:%M") %> a bien été prise en compte</p>
+<p>Vous pouvez venir manger à l'heure choisie dans notre restaurant au salon Égast à l'adresse suivante:</p>
+<br/>
+
+<p>
+    Salon Egast Wacken<br/>
+    Hall 8, Emplacement RO1 <br/>
+    67000 Strasbourg<br/>
+    France
+</p>
+
+<p>Vous pouvez voir le récapitulatif de votre commande en suivant ce lien:</p>
+<a style="" href="<%= order_url(id: @order, host: 'https://www.cookmeup.restaurant/') %>") %>">Voir ma commande</a>
+<br/>
+<hr>
+<br/>
+<p>Si un problème survient, vous pouvez nous contacter par mail à l'adresse: <a href="mailto:cookmeupstartup@gmail.com">cookmeupstartup@gmail.com</a> ou sur facebook: <a href="https://www.facebook.com/StartUpcookmeup/">https://www.facebook.com/StartUpcookmeup/</a></p>
+<hr>
+<p>Vous avez reçu ce mail suite à la validation de votre commande sur <a href="https://www.cookmeup.restaurant">https://www.cookmeup.restaurant</a>
