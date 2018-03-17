@@ -3,17 +3,16 @@
         <div class="col-12">
             <h1>Ajouter un Plat:</h1>
 
-            <%= form_for :meal, :url => admin_meal_path(@meal), method: 'put' do |form| %>
+            <%= form_for :service, :url => '/admin/services' do |form| %>
 
                 <p>
                     <%= form.label :start_time %><br>
-                        <%= form.datetime_select :start_time %>
+                    <%= form.datetime_select :start_time, start_year: Time.current.year, default: 3.days.from_now %>
                 </p>
                 <p>
                     <%= form.label :end_time %><br>
-                        <%= form.datetime_select :end_time %>
+                    <%= form.datetime_select :end_time, start_year: Time.current.year, default: 3.days.from_now %>
                 </p>
-
 
                 <p>
                     <%= form.submit %>

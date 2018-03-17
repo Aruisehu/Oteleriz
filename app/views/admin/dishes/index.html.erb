@@ -15,23 +15,23 @@
                 <% @dishes.each do |dish| %>
                     <tr>
                         <td>
-                            <%= dish.name_translations['fr'] %>
+                            <%= dish.name_fr %>
                         </td>
                         <td>
-                            <%= dish.description_translations['fr'] %>
+                            <%= dish.description_fr %>
                         </td>
                         <td>
                             <%= dish.ask_roasting %>
                         </td>
                         <td>
-                            <%= dish.price %>
+                            <%= number_to_currency(dish.price, locale: :fr) %>
                         </td>
                         <td>
                             <img src="<%= dish.img_url %>" alt="">
                         </td>
                         <td>
 
-                            <a href="/admin/dishes/<%= dish.id %>">Edit</a>
+                            <a href="/admin/dishes/<%= dish.id %>/edit">Edit</a>
                             <a href="/admin/dishes/<%= dish.id %>" data-method="delete" rel="nofollow">delete</a>
                         </td>
                     </tr>

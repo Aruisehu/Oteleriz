@@ -42,6 +42,6 @@ class Admin::StartersController < Admin::BaseController
     end
 
     def starter_params
-      params.require(:starter).permit(:name_translations, :description_translations, :ask_roasting, :price, :img_url)
+      params.require(:starter).permit(:name_en, :name_fr, :description_fr, :description_en, :price, :img_url)
     end
 end

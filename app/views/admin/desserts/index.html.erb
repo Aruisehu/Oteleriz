@@ -14,20 +14,20 @@
                 <% @desserts.each do |dessert| %>
                     <tr>
                         <td>
-                            <%= dessert.name_translations['fr'] %>
+                            <%= dessert.name_fr %>
                         </td>
                         <td>
-                            <%= dessert.description_translations['fr'] %>
+                            <%= dessert.description_fr %>
                         </td>
                         <td>
-                            <%= dessert.price %>
+                            <%= number_to_currency(dessert.price, locale: :fr) %>
                         </td>
                         <td>
                             <img src="<%= dessert.img_url %>" alt="">
                         </td>
                         <td>
-                            <a href="/admin/dessertes/<%= dessert.id %>">Edit</a>
-                            <a href="/admin/dessertes/<%= dessert.id %>" data-method="delete" rel="nofollow">delete</a>
+                            <a href="/admin/desserts/<%= dessert.id %>/edit">Edit</a>
+                            <a href="/admin/desserts/<%= dessert.id %>" data-method="delete" rel="nofollow">delete</a>
                         </td>
                     </tr>
                     <% end %>

@@ -8,6 +8,10 @@ class Admin::MealsController < Admin::BaseController
         @meals = Meal.all 
     end
 
+    def show
+        @services = Service.where(meal: @meal)
+    end
+
     def create
         @meal = Meal.new(meal_params)
         if @meal.save
@@ -42,6 +46,6 @@ class Admin::MealsController < Admin::BaseController
     end
 
     def meal_params
-      params.require(:meal).permit(:name_translations, :description_translations, :ask_roasting, :price, :img_url)
+      params.require(:meal).permit(:end_time, :start_time)
     end
 end

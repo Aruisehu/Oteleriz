@@ -42,6 +42,6 @@ class Admin::DishesController < Admin::BaseController
     end
 
     def dish_params
-      params.require(:dish).permit(:name_translations, :description_translations, :ask_roasting, :price, :img_url)
+      params.require(:dish).permit(:name_en, :name_fr, :description_fr, :description_en, :ask_roasting, :price, :img_url)
     end
 end
