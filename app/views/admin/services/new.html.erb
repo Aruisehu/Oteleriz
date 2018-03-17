@@ -20,7 +20,9 @@
                     <%= form.hidden_field :meal_id, value: @meal.id %>
 
                 <p>
-                    <%= form.submit %>
+                    <%= form.button class: "btn" do %>
+                        Créer <%= fa_icon "plus" %>
+                    <% end %>
                 </p>
                 <% end %>
         </div>
