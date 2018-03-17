@@ -97,6 +97,10 @@ class Formula < ApplicationRecord
         if self.dessert?
             hash[sanitize_name(dessert.name)] = 1
         end
+
+        if self.formula_template&.has_wine
+            hash[sanitize_name(self.formula_template.wine)] = 1
+        end
         return hash
     end
 
