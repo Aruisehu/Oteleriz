@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20180314094724) do
     t.string "name"
     t.boolean "confirmed"
     t.boolean "newsletter"
-    t.integer "number_persons"
+    t.integer "number_persons", default: 1
     t.bigint "service_id"
     t.bigint "group_id"
     t.index ["group_id"], name: "index_orders_on_group_id"
