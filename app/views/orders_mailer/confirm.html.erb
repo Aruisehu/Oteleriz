@@ -1,15 +1,14 @@
-<%= image_url "logo128.png", host: "https://www.cookmeup.restaurant" %><br/>
+<a href="https://www.cookmeup.restaurant"><img src="<%= image_url "logo128.png", host: "https://www.cookmeup.restaurant" %>" alt="Logo de Cook Me Up" title="logo"></a><br/>
 <h2 style="color: #eb1f4f;">Confirmation de votre commande "<%= @order.name %>"</h2>
-<p>Bonjour, votre commande pour le <strong><%= Date.today.strftime("%e %B Y") %></strong> à <strong><%= @order.service.start_time.strftime("%H\h%M") %></strong> a bien été prise en compte</p>
-<p>Vous pouvez venir manger à l'heure choisie dans notre restaurant au <strong>salon Égast</strong> à l'adresse suivante:</p>
+<p>Bonjour, votre commande pour aujourd'hui à <strong><%= @order.service.start_time.strftime("%H\h%M") %></strong> a bien été prise en compte</p>
+<p>Vous pouvez venir manger à l'heure choisie, dans notre restaurant au <strong>salon Égast</strong>, à l'adresse suivante:</p>
 <p>
     <strong>Salon Egast Wacken</strong><br/>
     Hall 8, Emplacement RO1 <br/>
     67000 Strasbourg<br/>
     France
 </p>
-
-<p>Vous pouvez voir le récapitulatif de votre commande en suivant ce lien: <a style="border-radius: .25em; padding: 0.5em; color: #FFFFFF; display: inline-block; background: #eb1f4f; font-weight: bold; text-transfrom: uppercase;" href="<%= order_url(id: @order, host: 'https://www.cookmeup.restaurant') %>">Voir ma commande</a></p>
+<p>Vous pouvez voir le récapitulatif de votre commande en suivant ce lien: <a style="border-radius: .25em; padding: 0.5em; text-decoration: none; color: #FFFFFF; display: inline-block; background: #eb1f4f; font-weight: bold; text-transfrom: uppercase;" href="<%= order_url(id: @order, host: 'https://www.cookmeup.restaurant') %>">Voir ma commande</a></p>
 <hr>
 <p>Si un problème survient, vous pouvez nous contacter par mail à l'adresse: <a style="color: #eb1f4f;" href="mailto:cookmeupstartup@gmail.com">cookmeupstartup@gmail.com</a> ou sur facebook: <a style="color: #eb1f4f;" href="https://www.facebook.com/StartUpcookmeup/">https://www.facebook.com/StartUpcookmeup/</a></p>
 <hr>
