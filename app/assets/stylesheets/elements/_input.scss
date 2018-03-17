@@ -25,6 +25,20 @@ input[type="text"], input[type="email"] {
         top: .35em;
         margin: .25em 0;
     }
+
+    &.-multiple {
+        select {
+            -moz-appearance: menulist;
+            -webkit-appearance: menulist;
+            appearance: menulist;
+            box-shadow: 10px 0  0 -9px $gray1;
+            text-align: center;
+        }
+
+        select:last-child {
+            box-shadow: none;
+        }
+    }
 }
 
 select {

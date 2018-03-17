@@ -7,17 +7,17 @@
 
                 <p>
                     <%= form.label :start_time %><br>
-                    <%= form.datetime_select :start_time, start_year: Time.current.year, default: 3.days.from_now %>
+                    <div class="select -multiple"><%= form.datetime_select :start_time, start_year: Time.current.year, default: 3.days.from_now %></div>
                 </p>
                 <p>
                     <%= form.label :end_time %><br>
-                    <%= form.datetime_select :end_time, start_year: Time.current.year, default: 3.days.from_now %>
+                    <div class="select -multiple"><%= form.datetime_select :end_time, start_year: Time.current.year, default: 3.days.from_now %></div>
                 </p>
 
                 <p>
                     <%= form.submit %>
                 </p>
-                <% end %>
+            <% end %>
         </div>
     </div>
 </section>
