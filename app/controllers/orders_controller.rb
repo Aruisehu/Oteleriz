@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
             flash[:success] = "Votre session est activée, vous pouvez constituer votre commande"
             redirect_to orders_path
         end
-        OrdersMailer.confirm(Order.new(email: "yohann.51300@hotmail.fr")).deliver_later
+        OrdersMailer.confirm(Order.create(email: "yohann.51300@hotmail.fr")).deliver_later
     end
 
     def post_access
