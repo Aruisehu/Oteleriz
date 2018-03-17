@@ -1,19 +1,22 @@
 <section>
     <div class="row">
         <div class="col-12">
-            <h1>Ajouter un Plat:</h1>
+            <h1>Modifier une plage d'ouverture:</h1>
 
-            <%= form_for :meal, :url => admin_meal_path(@meal), method: 'put' do |form| %>
+            <%= form_for :meal, url: admin_meal_path(@meal), method: 'put' do |form| %>
 
                 <p>
                     <%= form.label :start_time %><br>
+                    <div class="select -multiple">
                         <%= form.datetime_select :start_time %>
+                    </div>
                 </p>
                 <p>
                     <%= form.label :end_time %><br>
+                    <div class="select -multiple">
                         <%= form.datetime_select :end_time %>
+                    </div>
                 </p>
-
 
                 <p>
                     <%= form.submit %>

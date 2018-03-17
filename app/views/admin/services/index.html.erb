@@ -1,7 +1,7 @@
 <section>
     <div class="row">
 
-        <div class="col-12">
+        <div class="col-12 zone">
             <table>
                 <tr>
                     <th>Début</th>
@@ -18,8 +18,8 @@
                             <%= service.end_time.strftime("%A %d %B %H:%M") %>
                         </td>
                         <td>
-                            <a href="/admin/services/<%= service.id %>/edit">Changer les horaires</a>
-                            <a href="/admin/services/<%= service.id %>" data-method="delete" rel="nofollow">delete</a>
+                            <a href="/admin/services/<%= service.id %>/edit" class="btn-subtle">Changer les horaires</a>
+                            <a href="/admin/services/<%= service.id %>" data-method="delete" rel="nofollow" class="btn-subtle"><%= fa_icon "trash" %> Supprimer</a>
                         </td>
                     </tr>
                 <% end %>

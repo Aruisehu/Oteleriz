@@ -7,13 +7,16 @@
 
                 <p>
                     <%= form.label :start_time %><br>
+                    <div class="select -multiple">
                         <%= form.datetime_select :start_time %>
+                    </div>
                 </p>
                 <p>
                     <%= form.label :end_time %><br>
+                    <div class="select -multiple">
                         <%= form.datetime_select :end_time %>
+                    </div>
                 </p>
-
 
                 <p>
                     <%= form.submit %>

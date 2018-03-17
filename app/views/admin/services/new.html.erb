@@ -1,18 +1,23 @@
 <section>
     <div class="row">
         <div class="col-12">
-            <h1>Ajouter un Plat:</h1>
+            <h1>Ajouter un Service:</h1>
 
             <%= form_for :service, :url => '/admin/services' do |form| %>
 
                 <p>
                     <%= form.label :start_time %><br>
-                    <%= form.datetime_select :start_time, start_year: Time.current.year, default: 3.days.from_now %>
+                    <div class="select -multiple">
+                        <%= form.datetime_select :start_time, start_year: Time.current.year, default: @meal.start_time %>
+                    </div>
                 </p>
                 <p>
                     <%= form.label :end_time %><br>
-                    <%= form.datetime_select :end_time, start_year: Time.current.year, default: 3.days.from_now %>
+                    <div class="select -multiple">
+                        <%= form.datetime_select :end_time, start_year: Time.current.year, default: @meal.end_time %>
+                    </div>
                 </p>
+                    <%= form.hidden_field :meal_id, value: @meal.id %>
 
                 <p>
                     <%= form.submit %>

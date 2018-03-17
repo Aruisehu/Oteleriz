@@ -1,28 +1,29 @@
 <section>
-        <div class="row">
-            <div class="col-12">
-                <table>
+    <div class="row">
+        <div class="col-12 zone">
+            <table>
+                <tr>
+                    <th>Début</th>
+                    <th>Fin</th>
+                    <th>Action</th>
+                </tr>
+
+                <% @services.each do |service| %>
                     <tr>
-                        <th>Début</th>
-                        <th>Fin</th>
-                        <th>Action</th>
+                        <td>
+                            <%= service.start_time.strftime("%A %d %B %H:%M") %>
+                        </td>
+                        <td>
+                            <%= service.end_time.strftime("%A %d %B %H:%M") %>
+                        </td>
+                        <td>
+                            <a href="/admin/services/<%= service.id %>/edit" class="btn-subtle">Changer les horaires</a>
+                            <a href="/admin/services/<%= service.id %>" data-method="delete" rel="nofollow" class="btn-subtle"><%= fa_icon "trash" %> Supprimer</a>
+                        </td>
                     </tr>
-    
-                    <% @services.each do |service| %>
-                        <tr>
-                            <td>
-                                <%= service.start_time.strftime("%A %d %B %H:%M") %>
-                            </td>
-                            <td>
-                                <%= service.end_time.strftime("%A %d %B %H:%M") %>
-                            </td>
-                            <td>
-                                <a href="/admin/services/<%= service.id %>/edit">Changer les horaires</a>
-                                <a href="/admin/services/<%= service.id %>" data-method="delete" rel="nofollow">delete</a>
-                            </td>
-                        </tr>
-                    <% end %>
-                </table>
+                <% end %>
+            </table>
         </div>
-        </div>
-    </section>
+        <a href="<%= new_admin_meal_service_path(@meal) %>" class="btn"><%= fa_icon "plus" %> Ajouter un service</a> <br>
+    </div>
+</section>

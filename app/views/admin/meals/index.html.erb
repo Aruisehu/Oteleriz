@@ -1,7 +1,7 @@
 <section>
     <div class="row">
 
-        <div class="col-12">
+        <div class="col-12 zone">
             <table>
                 <tr>
                     <th>Début</th>
@@ -19,13 +19,14 @@
                         </td>
                         <td>
 
-                            <a href="/admin/meals/<%= meal.id %>/edit">Changer les horaires</a>
-                            <a href="/admin/meals/<%= meal.id %>">Voir les services</a>
-                            <a href="/admin/meals/<%= meal.id %>" data-method="delete" rel="nofollow">delete</a>
+                            <a href="/admin/meals/<%= meal.id %>/edit" class="btn-subtle">Changer les horaires</a> <br>
+                            <a href="/admin/meals/<%= meal.id %>" class="btn-subtle">Voir les services</a> <br>
+                            <a href="/admin/meals/<%= meal.id %>" data-method="delete" class="btn-subtle" rel="nofollow"><%= fa_icon "trash" %> Supprimer</a> <br>
                         </td>
                     </tr>
                 <% end %>
             </table>
         </div>
+        <a href="<%= new_admin_meal_path %>" class="btn"><%= fa_icon "plus" %> Ajouter une plage d'ouverture</a> <br>
     </div>
 </section>
