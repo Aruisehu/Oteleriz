@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-    default from: 'no-reply-cookmeup@mail.com'
+    default from: 'noreply.cookmeup@gmail.com'
     layout 'mailer'
 end
