@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
         @course_sddw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: true, has_wine: true)
 
         @title = "Notre Carte"
+        OrdersMailer.confirm(Order.create(email: "yohann.51300@hotmail.fr")).deliver_now
 
         if session[:access]
             render "index"
@@ -36,7 +37,6 @@ class OrdersController < ApplicationController
             flash[:success] = "Votre session est activée, vous pouvez constituer votre commande"
             redirect_to orders_path
         end
-        OrdersMailer.confirm(Order.create(email: "yohann.51300@hotmail.fr")).deliver_later
     end
 
     def post_access
