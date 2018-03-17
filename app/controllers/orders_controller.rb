@@ -19,7 +19,6 @@ class OrdersController < ApplicationController
         @course_sddw = FormulaTemplate.find_by(has_starter: true, has_dish: true, has_dessert: true, has_wine: true)
 
         @title = "Notre Carte"
-        OrdersMailer.confirm(Order.create(email: "yohann.51300@hotmail.fr")).deliver_now
 
         if session[:access]
             render "index"
@@ -142,7 +141,7 @@ class OrdersController < ApplicationController
             @order.confirmed = true
             if @order.save # If the order can be saved
                 session.delete(:order_id) # we close it to further edits
-                OrdersMailer.confirm(@order)
+                OrdersMailer.confirm(@order).deliver_now
                 flash[:success] = "Votre commande a été validée"
                 redirect_to order_success_path # and redirect user to the success page
                 return
