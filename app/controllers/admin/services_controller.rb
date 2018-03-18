@@ -43,6 +43,6 @@ class Admin::ServicesController < Admin::BaseController
     end
 
     def service_params
-      params.require(:service).permit(:end_time, :start_time, :meal_id)
+      params.require(:service).permit(:end_time, :start_time, :meal_id, :seats)
     end
 end

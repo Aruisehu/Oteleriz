@@ -1,7 +1,7 @@
 <section>
     <div class="row">
         <div class="col-12">
-            <h1>Ajouter un Plat:</h1>
+            <h1>Modifier un service:</h1>
 
             <%= form_for :service, :url => admin_service_path(@service), method: 'put' do |form| %>
 
@@ -16,6 +16,10 @@
                     <div class="select -multiple">
                         <%= form.datetime_select :end_time %>
                     </div>
+                </p>
+                <p>
+                    <%= form.label :seats %><br>
+                    <%= form.number_field :seats %>
                 </p>
 
                 <p>

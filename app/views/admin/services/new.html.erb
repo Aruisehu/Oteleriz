@@ -17,6 +17,11 @@
                         <%= form.datetime_select :end_time, start_year: Time.current.year, default: @meal.end_time %>
                     </div>
                 </p>
+                <p>
+                    <%= form.label :seats %><br>
+                    <%= form.number_field :seats %>
+                </p>
+
                     <%= form.hidden_field :meal_id, value: @meal.id %>
 
                 <p>
