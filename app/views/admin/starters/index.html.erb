@@ -1,38 +1,41 @@
 <section>
     <div class="row">
-
         <div class="col-12">
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Prix</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
+            <div class="zone">
+                <div class="scroll-x -auto">
+                    <table>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Prix</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
 
-                <% @starters.each do |starter| %>
-                    <tr>
-                        <td>
-                            <%= starter.name_translations['fr'] %>
-                        </td>
-                        <td>
-                            <%= starter.description_translations['fr'] %>
-                        </td>
-                        <td>
-                            <%= starter.price %>
-                        </td>
-                        <td>
-                            <img src="<%= starter.img_url %>" alt="">
-                        </td>
-                        <td>
+                        <% @starters.each do |starter| %>
+                            <tr>
+                                <td>
+                                    <%= starter.name_translations['fr'] %>
+                                </td>
+                                <td>
+                                    <%= starter.description_translations['fr'] %>
+                                </td>
+                                <td>
+                                    <%= starter.price %>
+                                </td>
+                                <td>
+                                    <img src="<%= starter.img_url %>" alt="">
+                                </td>
+                                <td>
 
-                            <a href="/admin/starters/<%= starter.id %>">Voir commande</a>
-                            <a href="/admin/starters/<%= starter.id %>" data-method="delete" rel="nofollow">delete</a>
-                        </td>
-                    </tr>
-                    <% end %>
-            </table>
+                                    <a href="/admin/starters/<%= starter.id %>">Voir commande</a>
+                                    <a href="/admin/starters/<%= starter.id %>" data-method="delete" rel="nofollow">delete</a>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </section>
