@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
     before_action :access_click_and_sit, only: [:update, :destroy, :add_menu, :booking, :validate_booking, :success]
+    before_action :close_services, only: [:booking, :validate_booking]
 
     def index
         @dishes = Dish.all
@@ -193,6 +194,16 @@ class OrdersController < ApplicationController
     def access_click_and_sit
         unless session[:access]
             redirect_to order_access_path and return
+        end
+    end
+
+    def close_services
+        services = Service.opened
+        services.each do |s|
+            if (s.start_time - 10.minutes).past?
+                s.ended = true
+                s.save
+            end
         end
     end
 end

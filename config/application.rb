@@ -16,6 +16,5 @@ module Oteleriz
         # -- all .rb files in that directory are automatically loaded.
         config.time_zone = "Europe/Paris"
         config.active_record.default_timezone = :local
-        config.active_job.queue_adapter = :sucker_punch
     end
 end
