@@ -13,8 +13,13 @@ Rails.application.routes.draw do
     root 'application#home'
 
     devise_for :users, controllers: {
-        sessions: 'admin/sessions'
+        sessions: "users/sessions",
+        confirmations: "users/confirmations",
+        registrations: "users/registrations",
+        passwords: "users/passwords",
+        omniauth_callbacks: 'users/omniauth_callbacks'
     }
+
 
     resources :orders, only: [:show, :index, :update, :edit, :destroy]
     get 'order/:id/booking' => 'orders#booking', as: "order_booking"

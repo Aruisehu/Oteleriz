@@ -43,6 +43,7 @@ gem 'normalize-rails'
 
 # User management
 gem 'devise'
+gem 'omniauth'
 
 # gzip on heroku
 gem 'heroku-deflater', :group => :production
