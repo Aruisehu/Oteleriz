@@ -18,6 +18,18 @@ class Formula < ApplicationRecord
         self.formula_template&.dessert? || not(self.dessert.blank?)
     end
 
+    def has_starter?
+        self.formula&.starter? || not(self.starter.blank?)
+    end
+
+    def has_dish?
+        self.formula&.dish? || not(self.dish.blank?)
+    end
+
+    def has_dessert?
+        self.formula&.dessert? || not(self.dessert.blank?)
+    end
+
     def get_price
         if self.dessert?
             return self.dessert.price
