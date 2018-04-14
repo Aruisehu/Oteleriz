@@ -1,5 +1,6 @@
 class CartCell < Cell::ViewModel
     include FontAwesome::Rails::IconHelper
+    include ActionView::Helpers::NumberHelper
     property :order
 
     def show

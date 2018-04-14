@@ -12,13 +12,13 @@
                 </div>
             <% end %>
             <div class="action-bar">
-                <!--<span class="price">
-                    00,00€
-                </span>-->
                 <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: "Êtes-vous sûr de vouloir supprimer ce produit de votre panier?"}, title:"Suprimer ce produit du panier", class: "btn-subtle -alt -icon no-close-menu", remote: true do %>
                     Supprimer <%= fa_icon "trash" %>
                 <% end %>
                 <label for="formula-<%= i %>" class="deploy btn-subtle float -r" href="">Détails <%= fa_icon "angle-up" %></label>
+                <span class="price">
+                    <%= number_to_currency(f.get_price, locale: :fr) %>
+                </span>
             </div>
         </div>
     <% end %>
@@ -32,8 +32,8 @@
     </div>
 </div>
 <footer>
-    <!--<h6 class="title -compact">Total: <span class="total price">1212,12€</span></h6>-->
+    <h6 class="title -compact">Total: <span class="total price"><%= number_to_currency(@order.get_price, locale: :fr) %></span></h6>
     <%= link_to order_booking_path(@order), class: "btn", id: "validate_order" do %>
-        Valider la commande <%= fa_icon "check" %>
+        Valider<%= fa_icon "check" %>
     <% end %>
 </footer>

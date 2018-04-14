@@ -21,16 +21,16 @@ Order = {
     },
 
     getDessertName: function() {
-        return Order.root.find('.dessert input:checked + label').text().trim();
+        return Order.root.find('.dessert input:checked + label h6').text().trim();
     },
 
     getBakingName: function() {
-        Order.baking = Order.root.find('.dish .baking input:checked + label').text().trim();
+        Order.baking = Order.root.find('.dish .baking input:checked + label h6').text().trim();
         return Order.baking;
     },
 
     getRoastingName: function() {
-        Order.roasting = Order.root.find('.dish .roasting input:checked + label').text().trim();
+        Order.roasting = Order.root.find('.dish .roasting input:checked + label h6').text().trim();
         if (Order.hasRoasting)
         {
             return Order.roasting;
@@ -42,12 +42,12 @@ Order = {
     },
 
     getDishName: function() {
-        Order.dish = Order.root.find('.dish .base input:checked + label').text().trim();
+        Order.dish = Order.root.find('.dish .base input:checked + label h6').text().trim();
         return Order.dish;
     },
 
     getStarterName: function() {
-        return Order.root.find('.starter input:checked + label').text().trim();
+        return Order.root.find('.starter input:checked + label h6').text().trim();
     },
 
     setDessertName: function() {

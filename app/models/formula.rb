@@ -37,11 +37,7 @@ class Formula < ApplicationRecord
     end
 
     def destroy_from_order
-        total_price = 1000.00
-        price = 12
-
-        # total_price = self.order.price = self.order.price - self.price
-        total_price = total_price - price
+        total_price = self.order.get_price - self.get_price
 
         self.destroy
         return total_price

@@ -19,6 +19,10 @@ class Order < ApplicationRecord
         !self.service.blank?
     end
 
+    def get_price
+        return self.formulas.inject(0){|sum,e| sum + e.get_price }
+    end
+
     validates :name, uniqueness: { scope: :service_id, message: "Ce nom de commande a déjà été pris" }, if: :service?
     validates :name, presence: { message: "Le nom de commande ne peut pas être vide"}, if: :service?
     validates_with OrderValidator, if: :service?

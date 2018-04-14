@@ -122,7 +122,7 @@
                 <% @dishes.each do |d| %>
                     <div class="col-4 align -center">
                         <i class="icon"><%= inline_svg d.name_en.downcase + ".svg" %></i>
-                        <h6 class="title -compact"><%= d.name %></h6>
+                        <h6 class="title -compact"><%= d.name %> <span class="price"><%= number_to_currency(d.price, locale: :fr) %></span></h6>
                     </div>
                 <% end %>
             </div>
