@@ -31,7 +31,7 @@
                 </div>
                 <div class="item">
                     <h6>Coût total</h6>
-                    <p class="price">00,00 €</p>
+                    <p class="price"><%= number_to_currency(@order.get_price, locale: :fr) %></p>
                 </div>
                 <div class="item">
                     <h6>Actions</h6>
