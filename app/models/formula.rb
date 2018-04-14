@@ -19,15 +19,15 @@ class Formula < ApplicationRecord
     end
 
     def has_starter?
-        self.formula&.starter? || not(self.starter.blank?)
+        not(self.starter.blank?)
     end
 
     def has_dish?
-        self.formula&.dish? || not(self.dish.blank?)
+        not(self.dish.blank?)
     end
 
     def has_dessert?
-        self.formula&.dessert? || not(self.dessert.blank?)
+        not(self.dessert.blank?)
     end
 
     def get_price
