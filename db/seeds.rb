@@ -310,5 +310,6 @@ Service.create(
 
 User.create(
     email: "cookmeupstartup@gmail.com",
-    password: "SupinfoCookMeUp2018"
+    password: "SupinfoCookMeUp2018",
+    role: "admin"
 )

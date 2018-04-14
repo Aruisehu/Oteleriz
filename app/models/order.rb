@@ -20,7 +20,7 @@ class Order < ApplicationRecord
     end
 
     def get_price
-        return self.formulas.inject(0){|sum,e| sum + e.get_price }
+        return self.formulas.inject(0){|sum,e| sum + e.get_total }
     end
 
     validates :name, uniqueness: { scope: :service_id, message: "Ce nom de commande a déjà été pris" }, if: :service?

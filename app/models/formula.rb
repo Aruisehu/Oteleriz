@@ -32,6 +32,26 @@ class Formula < ApplicationRecord
         self.formula_template.price
     end
 
+    def get_total
+        total = 0
+
+        if self.has_dessert?
+            total += self.dessert.price
+        end
+        if self.has_dish?
+            total += self.dish.price
+        end
+        if self.has_starter?
+            total += self.starter.price
+        end
+
+        if total == 0
+            return self.formula_template.price
+        else
+            return total
+        end
+    end
+
     def get_products
         return {starter: self.starter, dish: self.dish, dessert: self.dessert, wine: self.formula_template.wine}.compact
     end

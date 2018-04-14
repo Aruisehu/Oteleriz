@@ -17,7 +17,7 @@
                 <% end %>
                 <label for="formula-<%= i %>" class="deploy btn-subtle float -r" href="">Détails <%= fa_icon "angle-up" %></label>
                 <span class="price">
-                    <%= number_to_currency(f.get_price, locale: :fr) %>
+                    <%= number_to_currency(f.get_total, locale: :fr) %>
                 </span>
             </div>
         </div>
