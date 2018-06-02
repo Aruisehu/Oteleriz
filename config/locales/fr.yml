@@ -1,34 +1,114 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 fr:
+  name: "Cook Me Up"
+  app_name: "Click & Sit"
+  slogan: "1 produit, 3 cuissons, 1000 saveurs"
+  page:
+    home: "Accueil"
+    history: "Histoire"
+    concept: "Concept"
+    menu: "Carte"
+    support: "Participez"
+    team: "Équipe"
+    partner: "Partenaires"
+    legal: "Mentions Légales"
+  home:
+    history:
+      title: "Notre Histoire"
+      p1_html: "Ayant pu découvrir &#171; L’Avenue des Gourmets &#187; en 2016, &#171; L’Eater National &#187; en 2014 ou encore &#171; Le S &#187; en 2012 pour les plus anciens élèves du lycée hôtelier Alexandre Dumas, avons eu pour la plupart, l’envie de nous lancer à notre tour."
+      p2_html: "Nous sommes 19 étudiants de 2ème année BTS en Hôtellerie-Restauration et avons la chance de créer notre propre Start’Up. Après avoir élu les différents membres de chaque poste, nous nous sommes attelés à la définition de notre concept. C’est ce qui caractérise notre entreprise, qui nous différencie sur le salon Egast, salon regroupant tous les professionnels de l’Hôtellerie-Restauration.
+      Nous sommes fiers de vous présenter &#171; Cook Me Up &#187;, notre restaurant éphémère."
+      p3_html: "Grâce à &#171; Entreprendre Pour Apprendre &#187;, nous bénéficions de conseils et d’un accompagnement tout au long de notre aventure, en plus de leur soutien.<br/>
+      Le lycée hôtelier Alexandre Dumas nous soutien également dans notre démarche en nous permettant d’utiliser ses locaux pour nos regroupements : réunions, essais en cuisine notamment, tout en gardant notre indépendance et une identité bien distincte de celle du lycée. En effet, chacun des étudiants participe à ce projet de manière bénévole et en parallèle des études.<br/>"
+      p4_html: "Cette aventure nous permet de participer à la création d’une entreprise et tout ce que cela englobe : gestion du personnel, choix des fournisseurs, définition d’un concept, maîtrise des coûts… mais également un enrichissement personnel et professionnel. De plus, l’aspect caritatif est l’un des points important de l’aboutissement de notre projet : tous nos bénéfices seront reversés à diverses associations caritatives de la région."
+      p5_html: "Un projet unique et enrichissant qui, nous l’espérons, vous donnera envie de nous suivre."
+    concept:
+      title: "Le Concept"
+      subtitle: "&#171; 1 Produit, 3 Cuissons, 1000 Saveurs &#187;, telle est notre ligne de conduite."
+      p1_html: "Vous proposer 1000 saveurs à l’aide d’un seul produit, grâce à différents modes de cuissons."
+      p2_html: "Vous pourrez choisir :<ul class=\"styled-list\"><li>Votre produit : le boeuf, la gambas ou la volaille</li><li>Votre cuisson : au wok, en papillote ou au Fusio Eberhardt Frères.</li></ul>"
+      p3_html: "Nous vous donnons le pouvoir de choisir votre produit de base, mais également la façon de le cuire. Grâce à ce concept, nous créons une expérience culinaire ainsi qu’une expérience personnalisée pour le client."
+      p4_html: "En ce qui concerne les desserts, une association 1 fruit/1 légume sera proposée, afin de rester dans l’idée du mono-produit et des différentes saveurs qu’il peut apporter."
+      p5_html: "Sur le salon, vous pourrez également retrouver notre stand de vente à emporter avec diverses préparations chaudes et froides qu’elles soient sucrées ou salées, mais également notre bar à jus frais préparés par nos soins."
+    menu:
+      title: "Notre carte"
+      subtitle: "Découvrez notre carte en attendant le salon Egast"
+    support:
+      title: "Prenez part à l'aventure"
+      left:
+        title: "rendez-vous sur kisskissbankbank"
+        p1_html: "Vous aussi souhaitez nous soutenir dans notre projet ? Sachez que c’est possible."
+        p2_html: "Etant étudiants, notre projet est né de l’initiative et de la motivation de chacun des 19 d’entre nous. Afin de financer tous les besoins que sous-entend la création d’une entreprise, nous avons des partenaires qui nous épaulent en nous prêtant gracieusement leur matériel pour nous permettre de vous accueillir durant le salon."
+        p3_html: "Mais ce n’est pas tout, nous avons besoin de vous. Grâce à notre page de collecte <strong>KissKissBankBank</strong>, vous avez la possibilité de nous soutenir financièrement. Vos dons nous permettront de financer l'achat non seulement d'une partie du mobilier du restaurant, mais également les matières premières nécessaires à notre équipe de cuisine et les boissons de notre restaurant."
+        p4_html: "Bien sûr, vos dons vous rapporteront toujours quelque chose. En effet, il est nécessaire de vous dire que ceux-ci sont déductibles d’impôts, et qu’ils vous permettent d’obtenir des contreparties avantageuses chez <strong>&#171; Cook Me Up &#187;</strong> lors du salon ! Nous tenons également à rappeler que l’ensemble des bénéfices perçus par notre Start’Up sera entièrement reversé à diverses associations de la région."
+        p5_html: "On se donne rendez-vous sur :"
+      right:
+        title: "Suivez nous sur notre page facebook"
+    team:
+      title: "Nos equipes"
+      team1:
+        title: "Cuisine"
+        p1_html: "Ravir les papilles de leurs convives, c’est la mission que s’est donnée l’équipe de cuisine de Cook Me Up. Leur ligne de conduite ? Vous proposer 1000 saveurs, à l’aide d’un seul produit."
+        p2_html: "De gauche à droite, rencontrez : notre Chef de cuisine, Malo ; son Second, Nicolas ainsi que Morgane, Mylène et Axelle."
+      team2:
+        title: "Restaurant"
+        p1_html: "Laissez place à l’équipe du restaurant !<br/> Faites la rencontre de Clément notre directeur restaurant au centre, entouré de son adjointe Marie et Cassandre."
+        p2_html: "Leur objectif ?<br/> Vous proposer une ambiance des plus chaleureuses pour votre expérience dans notre restaurant."
+      team3:
+        title: "Bar"
+        p1_html: "Pour la première fois, deux élèves de la Mention Complémentaire Bar du lycée Alexandre Dumas rejoignent l’équipe pour le salon Egast. Faites la rencontre de Mathilde et d’Antoine."
+        p2_html: "Leur mission ? Vous proposer des cocktails qui sauront vous surprendre tout au long de votre repas. En apéritif, pour le plat ou encore le dessert, vous pourrez découvrir leurs diverses créations qui sauront vous enchanter."
+        p3_html: "Surtout, ne ratez pas l’occasion de goûter au &#171; Spritz Me Up &#187;, le cocktail signature de notre restaurant éphémère !"
+      team4:
+        title: "Snack"
+        p1_html: "Une pause de midi trop juste pour s’installer dans notre restaurant ? Un petit creux qui s’installe pour le goûter ? Notre équipe du snack a ce qu’il vous faut."
+        p2_html: "Voici Amalia notre responsable à gauche et sa collègue Bénédicte. En effet, elles ont en stock divers plats proposés dans notre restaurant que vous pourrez emporter, ainsi que des Quick Cakes : de petits gâteaux sucrés avec une même base, mais libre à vous de les garnir selon votre convenance. Nous vous donnons rendez-vous pendant le salon afin de découvrir les diverses possibilités !"
+      team5:
+        title: "Ressources Humaines"
+        p1_html: "Fin janvier, la campagne de recrutement &#171; Cook Me Up &#187; est enfin lancée ! La journée Cadr’hotel ayant lieu au lycée Alexandre Dumas en ce mercredi 31 janvier permet à différentes entreprises de venir se présenter aux élèves, et d’offrir aux plus motivés, des perspectives de carrière."
+        p2_html: "Une occasion pour notre restaurant éphémère de se faire connaitre auprès des élèves et de leur proposer de rejoindre notre équipe aussi bien en salle, en cuisine, qu’à notre stand de vente à emporter. Albane, notre Directrice des Ressources Humaines à droite et Maïlys son adjointe, responsables du recrutement, étaient présentes sur notre stand dans le hall du lycée afin d’accueillir et répondre à toutes les  questions."
+        p3_html: "Leur passage dans les classes au sein du lycée afin de présenter notre projet et de mobiliser les étudiants a également été effectué, ce qui nous a permis d’atteindre un nombre suffisant de personnel, nous permettant de vous offrir un moment unique dans notre restaurant."
+      team6:
+        title: "Finance"
+        p1_html: "Crowdfunding, budget, coûts… ces notions n’ont plus aucun secret pour eux. Ils sont en charge de la gestion de notre compte en banque, de la vente de nos actions entre autres, mais également de la création de notre site de financement collaboratif!"
+        p2_html: "Faites la rencontre d’Armand, notre directeur financier à gauche, et son adjoint Florian."
+      team7:
+        title: "Direction Générale"
+        p1_html: "Laissez-nous vous présenter les piliers de notre Start’Up. Il s’agit bien évidemment de la direction générale !"
+        p2_html: "Faites la rencontre de Martin à gauche, et son adjoint Derry. C'est ensemble qu'ils ont décidé de se lancer dans l’aventure, afin de fédérer et représenter l’équipe de &#171; Cook Me Up &#187;. C’est tout naturellement qu’ils ont accepté leurs différentes missions. Animer les réunions, rencontrer les fournisseurs, négocier les contrats…ce rôle leur colle à la peau !"
+      team8:
+        title: "Informatique"
+        p1_html: "Voici de gauche à droite, Gaëtan, Bastien, Yohann et Sébastien. Etudiants de l’école SUPINFO, école de l’informatique et du numérique d’Illkirch, c’est au mois de décembre que ces quatre étudiants ont rejoints notre équipe."
+        p2_html: "Leur mission ? apporter une touche innovante et numérique à la création d’un restaurant éphémère en développant une application internet."
+        p3_html: "Regrouper deux mondes aussi différents que sont le numérique et la restauration est un défi que nous avons souhaité relever avec leur collaboration, ce qui donne souvent lieu à des échanges intéressants… En effet, il est tout aussi compliqué pour notre équipe de parler d’hébergements internet et autres notions numériques que pour eux d’aborder les différentes techniques de cuisine…"
+      team9:
+        title: "Pâtisserie"
+        p1_html: "Cette année encore, les élèves de la mention complémentaire en pâtisserie du lycée A.Dumas seront de la partie ! Accompagnés de leurs professeurs Monsieur Moulard ainsi que Monsieur Dos Santos, c’est ensemble qu’ils ont décidé de rejoindre Cook Me Up."
+        p2_html: "L’association 1 fruit - 1 légume est leur ligne de conduite, et ils vous ont d’ores & déjà concocté des desserts surprenants que nous avons hâte de vous faire découvrir… Nous pouvons déjà vous informer qu’un mille feuilles poivron-banane saura ravir vos papilles… Mais ce n’est pas tout ! Vous pourrez goûter à leurs Quick Cakes, de petits gâteaux avec une base de biscuit personnalisable selon vos envies. A retrouver au niveau de notre point de vente à emporter !"
+        p3_html: "Venez rencontrer l’équipe de pâtisserie ainsi que leurs créations !"
+      team10:
+        title: "Marketing"
+        p1_html: "Depuis le début de l’aventure, elles vous voient sans être vues… Traquant le moindre j’aime, la moindre notification… Il est temps de vous présenter la dernière équipe, et pas des moindres !"
+        p2_html: "Faites place à l’équipe commerciale & marketing ! A droite, Clémentine, accompagnée de ses deux adjointes, Camille et Lucile."
+        p3_html: "Dossier de presse, contact des journalistes, photos, page Facebook…c’est ensemble qu’elles ont pour mission de faire vivre notre Start’Up au travers des réseaux sociaux et autres supports de communication. Elles espèrent vous retranscrire au mieux le fil de notre aventure à l’aide de leurs différents posts, essayant d’y introduire un peu d’humour (enfin, elles essaient), et vous permettre de prendre part au projet."
+    partner:
+      title: "Nos Partenaires"
+  footer:
+    follow_html: "Suivez nous sur notre <a href=\"https://www.facebook.com/StartUpcookmeup/\" target=\"_blank\">page Facebook</a> ou sur <a href=\"https://www.instagram.com/cookmeup_/\">Instagram</a>"
+    about:
+      title: "A propos"
+      address_html: "<p><strong>Cook Me Up</strong> est un <strong>restaurant</strong> qui est présent à l'adresse suivante :</p>
+      <p>Uzvaras bulvāris 2/4,<br/>Zemgales priekšpilsēta,<br/>Rīga, LV-1048,<br/>Lettonie</p>
+      <p>Soutenez-nous sur <strong>KissKissBankBank</strong></p>"
+    nav:
+      title: "Navigation"
+  buttons:
+    more: "Plus"
+    more_full: "En savoir plus"
+    app: "Click & Sit *"
+    tooltip: "Accès restreint"
+    menu: "Carte"
+    formula: "Formules"
+    support: "Nous soutenir"
+    support_full: "Soutenir notre projet"
   rare: "Saignant"
   well_done: "À point"

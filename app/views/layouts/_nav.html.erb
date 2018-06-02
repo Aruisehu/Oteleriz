@@ -11,14 +11,15 @@
                 <% if content_for?(:main_nav) %>
                     <%= yield(:main_nav) %>
                 <% else %>
-                    <%= link_to "Histoire", root_path + "#history" %>
-                    <%= link_to "Concept", root_path + "#concept" %>
-                    <%= link_to "Carte", root_path + "#menu" %>
-                    <%= link_to "Participez", root_path + "#participate" %>
-                    <%= link_to "Équipe", root_path + "#team" %>
-                    <%= link_to "Partenaires", root_path + "#partners" %>
-                    <%= link_to "Click & Sit", order_access_path %>
+                    <%= link_to I18n.t("page.history"), root_path + "#history" %>
+                    <%= link_to I18n.t("page.concept"), root_path + "#concept" %>
+                    <%= link_to I18n.t("page.menu"), root_path + "#menu" %>
+                    <%= link_to I18n.t("page.support"), root_path + "#participate" %>
+                    <%= link_to I18n.t("page.team"), root_path + "#team" %>
+                    <%= link_to I18n.t("page.partner"), root_path + "#partners" %>
+                    <%= link_to I18n.t("app_name"), order_access_path %>
                 <% end %>
+                <%= render "layouts/lang_switcher" %>
             </div>
         </div>
         <div class="action">

@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
             session[:locale] = params[:locale]
         end
 
-        I18n.locale = session[:locale] || I18n.default_locale || :en
+        I18n.locale = session[:locale] || :en
     end
 
     protected

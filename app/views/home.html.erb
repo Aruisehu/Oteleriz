@@ -1,43 +1,41 @@
 <% content_for :main_action do %>
     <%= link_to orders_path, class: "btn" do %>
-        Carte <%= fa_icon "book" %>
+        <%= I18n.t("page.menu") %> <%= fa_icon "book" %>
     <% end %>
 <% end %>
 <section class="head" id="home">
     <div class="row">
         <%= image_tag "logo-white.png" %>
-        <h5 class="title">1 produit, 3 cuissons, 1000 saveurs</h5>
-        <a class="btn -white" href="<%= orders_path %>">Carte <%= fa_icon "book" %></a>
-        <a class="btn -white -alt" href="#concept">En Savoir Plus <%= fa_icon "info" %></a>
+        <h5 class="title"><%= I18n.t("slogan") %></h5>
+        <a class="btn -white" href="<%= orders_path %>"><%= I18n.t("page.menu") %> <%= fa_icon "book" %></a>
+        <a class="btn -white -alt" href="#concept"><%= I18n.t("buttons.more_full") %> <%= fa_icon "info" %></a>
         <hr>
-        <a class="btn -white" href="<%= order_access_path %>">Click & Sit *<%= fa_icon "shopping-basket" %></a>
-        <p>*Accès restreint</p>
+        <a class="btn -white" href="<%= order_access_path %>"><%= I18n.t("app_name") %> *<%= fa_icon "shopping-basket" %></a>
+        <p>*<%= I18n.t("buttons.tooltip") %></p>
     </div>
 </section>
 <section class="-border-bottom">
     <a id="history" class="anchor"></a>
     <div class="row">
         <div class="col-8 -centered text -padded">
-            <h2 class="title align -center">Notre Histoire</h2>
+            <h2 class="title align -center"><%= I18n.t("home.history.title") %></h2>
             <p>
-                Ayant pu découvrir &#171; L’Avenue des Gourmets &#187; en 2016, &#171; L’Eater National &#187; en 2014 ou encore &#171; Le S &#187; en 2012 pour les plus anciens élèves du lycée hôtelier Alexandre Dumas, avons eu pour la plupart, l’envie de nous lancer à notre tour.
+                <%= raw(I18n.t("home.history.p1_html")) %>
             </p>
             <p>
-                Nous sommes 19 étudiants de 2ème année BTS en Hôtellerie-Restauration et avons la chance de créer notre propre Start’Up. Après avoir élu les différents membres de chaque poste, nous nous sommes attelés à la définition de notre concept. C’est ce qui caractérise notre entreprise, qui nous différencie sur le salon Egast, salon regroupant tous les professionnels de l’Hôtellerie-Restauration.
-                Nous sommes fiers de vous présenter &#171; Cook Me Up &#187;, notre restaurant éphémère.
+                <%= raw(I18n.t("home.history.p2_html")) %>
             </p>
             <div class="img">
                 <%= image_tag "team.jpg" %>
             </div>
             <p>
-                Grâce à &#171; Entreprendre Pour Apprendre &#187;, nous bénéficions de conseils et d’un accompagnement tout au long de notre aventure, en plus de leur soutien.<br/>
-                Le lycée hôtelier Alexandre Dumas nous soutien également dans notre démarche en nous permettant d’utiliser ses locaux pour nos regroupements : réunions, essais en cuisine notamment, tout en gardant notre indépendance et une identité bien distincte de celle du lycée. En effet, chacun des étudiants participe à ce projet de manière bénévole et en parallèle des études.<br/>
+                <%= raw(I18n.t("home.history.p3_html")) %>
             </p>
             <p>
-                Cette aventure nous permet de participer à la création d’une entreprise et tout ce que cela englobe : gestion du personnel, choix des fournisseurs, définition d’un concept, maîtrise des coûts… mais également un enrichissement personnel et professionnel. De plus, l’aspect caritatif est l’un des points important de l’aboutissement de notre projet : tous nos bénéfices seront reversés à diverses associations caritatives de la région.
+                <%= raw(I18n.t("home.history.p4_html")) %>
             </p>
             <p>
-                Un projet unique et enrichissant qui, nous l’espérons, vous donnera envie de nous suivre.
+                <%= raw(I18n.t("home.history.p5_html")) %>
             </p>
         </div>
     </div>
@@ -60,33 +58,28 @@
             <div class="img"><%= image_tag "logo.png" %></div>
         </div>
         <div class="col-9 -big-gutter">
-            <h2 class="title">Le Concept</h2>
+            <h2 class="title"><%= raw(I18n.t("home.concept.title")) %></h2>
             <h4 class="subtitle -img">
-                &#171; 1 Produit, 3 Cuissons, 1000 Saveurs &#187;, telle est notre ligne de conduite.
+                <%= raw(I18n.t("home.concept.subtitle")) %>
             </h4>
             <p>
-                Vous proposer 1000 saveurs à l’aide d’un seul produit, grâce à différents modes de cuissons.
+                <%= raw(I18n.t("home.concept.p1_html")) %>
             </p>
             <br/>
             <p>
-                Vous pourrez choisir :
-                <ul class="styled-list">
-                    <li>Votre produit : le boeuf, la gambas ou la volaille</li>
-                    <li>Votre cuisson : au wok, en papillote ou au Fusio Eberhardt Frères.</li>
-                </ul>
+                <%= raw(I18n.t("home.concept.p2_html")) %>
             </p>
             <br/>
             <p>
-                Nous vous donnons le pouvoir de choisir votre produit de base, mais également la façon de le cuire.
-                Grâce à ce concept, nous créons une expérience culinaire ainsi qu’une expérience personnalisée pour le client.
+                <%= raw(I18n.t("home.concept.p3_html")) %>
             </p>
             <br/>
             <p>
-                En ce qui concerne les desserts, une association 1 fruit/1 légume sera proposée, afin de rester dans l’idée du mono-produit et des différentes saveurs qu’il peut apporter.
+                <%= raw(I18n.t("home.concept.p4_html")) %>
             </p>
             <br/>
             <p>
-                Sur le salon, vous pourrez également retrouver notre stand de vente à emporter avec diverses préparations chaudes et froides qu’elles soient sucrées ou salées, mais également notre bar à jus frais préparés par nos soins.
+                <%= raw(I18n.t("home.concept.p5_html")) %>
             </p>
         </div>
     </div>
@@ -94,52 +87,51 @@
 <section class="-border-bottom">
     <a id="menu" class="anchor"></a>
     <div class="row">
-        <h2 class="title align -center">Notre Carte</h2>
-        <h3 class="subtitle align -center">Découvrez notre carte en attendant le salon Égast</h3>
+        <h2 class="title align -center"><%= raw(I18n.t("home.menu.title")) %></h2>
+        <h3 class="subtitle align -center"><%= raw(I18n.t("home.menu.subtitle")) %></h3>
         <div class="faded-zone">
             <%= cell(:product, collection: @starters, presentation: true).(:tiny) %>
         </div>
         <div class="align -center">
-            <a class="btn" href="<%= orders_path %>">notre carte<%= fa_icon "book" %></a>
-            <a class="btn -alt" href="<%= orders_path %>#course">nos formules<%= fa_icon "edit" %></a>
+            <a class="btn" href="<%= orders_path %>"><%= raw(I18n.t("buttons.menu")) %><%= fa_icon "book" %></a>
+            <a class="btn -alt" href="<%= orders_path %>#course"><%= raw(I18n.t("buttons.formula")) %><%= fa_icon "edit" %></a>
         </div>
     </div>
 </section>
 <section class="-border-bottom">
     <a id="participate" class="anchor"></a>
     <div class="row">
-        <h2 class="title align -center">Prenez part à l'aventure</h2>
+        <h2 class="title align -center"><%= raw(I18n.t("home.support.title")) %></h2>
         <div class="col-6">
             <div class="text text-icon">
                 <%= fa_icon "heart" %>
-                <h3 class="title -compact">rendez-vous sur kisskissbankbank</h3>
-
+                <h3 class="title -compact"><%= raw(I18n.t("home.support.left.title")) %></h3>
                 <p>
-                    Vous aussi souhaitez nous soutenir dans notre projet ? Sachez que c’est possible.
+                    <%= raw(I18n.t("home.support.left.p1_html")) %>
                 </p>
                 <p>
-                    Etant étudiants, notre projet est né de l’initiative et de la motivation de chacun des 19 d’entre nous. Afin de financer tous les besoins que sous-entend la création d’une entreprise, nous avons des partenaires qui nous épaulent en nous prêtant gracieusement leur matériel pour nous permettre de vous accueillir durant le salon.
+                    <%= raw(I18n.t("home.support.left.p2_html")) %>
                 </p>
                 <p>
-                    Mais ce n’est pas tout, nous avons besoin de vous.
-                    Grâce à notre page de collecte <strong>KissKissBankBank</strong>, vous avez la possibilité de nous soutenir financièrement. Vos dons nous permettront de financer l'achat non seulement d'une partie du mobilier du restaurant, mais également les matières premières nécessaires à notre équipe de cuisine et les boissons de notre restaurant.
+                    <%= raw(I18n.t("home.support.left.p3_html")) %>
                 </p>
                 <p>
-                    Bien sûr, vos dons vous rapporteront toujours quelque chose. En effet, il est nécessaire de vous dire que ceux-ci sont déductibles d’impôts, et qu’ils vous permettent d’obtenir des contreparties avantageuses chez <strong>&#171; Cook Me Up &#187;</strong> lors du salon !
-                    Nous tenons également à rappeler que l’ensemble des bénéfices perçus par notre Start’Up sera entièrement reversé à diverses associations de la région.
+                    <%= raw(I18n.t("home.support.left.p4_html")) %>
                 </p>
                 <p>
-                    On se donne rendez-vous sur:
+                    <%= raw(I18n.t("home.support.left.p5_html")) %>
                 </p>
                 <%= inline_svg "kkbb.svg" %>
                 <p></p>
-                <a class="btn" href="https://www.kisskissbankbank.com/cook-me-up-un-restaurant-ephemere-cree-par-des-etudiants-et-bien-plus">Nous soutenir <%= fa_icon "child" %></a>
+                <a class="btn" href="https://www.kisskissbankbank.com/cook-me-up-un-restaurant-ephemere-cree-par-des-etudiants-et-bien-plus">
+                    <%= raw(I18n.t("buttons.support")) %> <%= fa_icon "child" %>
+                </a>
             </div>
         </div>
         <div class="col-6">
             <div class="text-icon">
                 <%= fa_icon "facebook" %>
-                <h3 class="title -compact">Suivez nous sur notre page facebook</h3>
+                <h3 class="title -compact"><%= raw(I18n.t("home.support.right.title")) %></h3>
                 <div class="align -m-center">
                     <div class="fb-page" data-href="https://www.facebook.com/StartUpcookmeup/" data-tabs="timeline" data-small-header="false" data-width="500" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/StartUpcookmeup/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StartUpcookmeup/">Cook Me Up</a></blockquote></div>
                 </div>
@@ -151,18 +143,17 @@
     <a id="team" class="anchor"></a>
     <div class="row">
         <div class="col-10 -centered">
-            <h2 class="title align -center">Nos Équipes</h2>
+            <h2 class="title align -center"><%= raw(I18n.t("home.team.title")) %></h2>
             <div class="col-12">
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "cutlery" %>
-                        <h3 class="title -compact">Cuisine</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team1.title")) %></h3>
                         <p>
-                            Ravir les papilles de leurs convives, c’est la mission que s’est donnée l’équipe de cuisine de Cook Me Up.
-                            Leur ligne de conduite ? Vous proposer 1000 saveurs, à l’aide d’un seul produit.
+                            <%= raw(I18n.t("home.team.team1.p1_html")) %>
                         </p>
                         <p>
-                            De gauche à droite, rencontrez : notre Chef de cuisine, Malo ; son Second, Nicolas ainsi que Morgane, Mylène et Axelle.
+                            <%= raw(I18n.t("home.team.team1.p2_html")) %>
                         </p>
                     </div>
                 </div>
@@ -176,14 +167,12 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "briefcase" %>
-                        <h3 class="title -compact">Restaurant</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team2.title")) %></h3>
                         <p>
-                            Laissez place à l’équipe du restaurant !<br/>
-                            Faites la rencontre de Clément notre directeur restaurant au centre, entouré de son adjointe Marie et Cassandre.
+                            <%= raw(I18n.t("home.team.team2.p1_html")) %>
                         </p>
                         <p>
-                            Leur objectif ?<br/>
-                            Vous proposer une ambiance des plus chaleureuses pour votre expérience dans notre restaurant.
+                            <%= raw(I18n.t("home.team.team2.p2_html")) %>
                         </p>
                     </div>
                 </div>
@@ -197,18 +186,15 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "glass" %>
-                        <h3 class="title -compact">Bar</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team3.title")) %></h3>
                         <p>
-                            Pour la première fois, deux élèves de la Mention Complémentaire Bar du lycée Alexandre Dumas rejoignent l’équipe pour le salon Egast.
-
-                            Faites la rencontre de Mathilde et d’Antoine.
+                            <%= raw(I18n.t("home.team.team3.p1_html")) %>
                         </p>
                         <p>
-                            Leur mission ? Vous proposer des cocktails qui sauront vous surprendre tout au long de votre repas.
-                            En apéritif, pour le plat ou encore le dessert, vous pourrez découvrir leurs diverses créations qui sauront vous enchanter.
+                            <%= raw(I18n.t("home.team.team3.p2_html")) %>
                         </p>
                         <p>
-                            Surtout, ne ratez pas l’occasion de goûter au &#171; Spritz Me Up &#187;, le cocktail signature de notre restaurant éphémère !
+                            <%= raw(I18n.t("home.team.team3.p3_html")) %>
                         </p>
                     </div>
                 </div>
@@ -222,14 +208,12 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "coffee" %>
-                        <h3 class="title -compact">Snack</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team4.title")) %></h3>
                         <p>
-                            Une pause de midi trop juste pour s’installer dans notre restaurant ? Un petit creux qui s’installe pour le goûter ?
-                            Notre équipe du snack a ce qu’il vous faut.
+                            <%= raw(I18n.t("home.team.team4.p1_html")) %>
                         </p>
                         <p>
-                            Voici Amalia notre responsable à gauche et sa collègue Bénédicte.
-                            En effet, elles ont en stock divers plats proposés dans notre restaurant que vous pourrez emporter, ainsi que des Quick Cakes : de petits gâteaux sucrés avec une même base, mais libre à vous de les garnir selon votre convenance. Nous vous donnons rendez-vous pendant le salon afin de découvrir les diverses possibilités !
+                            <%= raw(I18n.t("home.team.team4.p2_html")) %>
                         </p>
                     </div>
                 </div>
@@ -243,17 +227,15 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "address-card" %>
-                        <h3 class="title -compact">Ressources Humaines</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team5.title")) %></h3>
                         <p>
-                            Fin janvier, la campagne de recrutement &#171; Cook Me Up &#187; est enfin lancée !
-                            La journée Cadr’hotel ayant lieu au lycée Alexandre Dumas en ce mercredi 31 janvier permet à différentes entreprises de venir se présenter aux élèves, et d’offrir aux plus motivés, des perspectives de carrière.
+                            <%= raw(I18n.t("home.team.team5.p1_html")) %>
                         </p>
                         <p>
-                            Une occasion pour notre restaurant éphémère de se faire connaitre auprès des élèves et de leur proposer de rejoindre notre équipe aussi bien en salle, en cuisine, qu’à notre stand de vente à emporter.
-                            Albane, notre Directrice des Ressources Humaines à droite et Maïlys son adjointe, responsables du recrutement, étaient présentes sur notre stand dans le hall du lycée afin d’accueillir et répondre à toutes les  questions.
+                            <%= raw(I18n.t("home.team.team5.p2_html")) %>
                         </p>
                         <p>
-                            Leur passage dans les classes au sein du lycée afin de présenter notre projet et de mobiliser les étudiants a également été effectué, ce qui nous a permis d’atteindre un nombre suffisant de personnel, nous permettant de vous offrir un moment unique dans notre restaurant.
+                            <%= raw(I18n.t("home.team.team5.p3_html")) %>
                         </p>
                     </div>
                 </div>
@@ -267,13 +249,12 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "area-chart" %>
-                        <h3 class="title -compact">Finance</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team6.title")) %></h3>
                         <p>
-                            Crowdfunding, budget, coûts… ces notions n’ont plus aucun secret pour eux.
-                            Ils sont en charge de la gestion de notre compte en banque, de la vente de nos actions entre autres, mais également de la création de notre site de financement collaboratif!
+                            <%= raw(I18n.t("home.team.team6.p1_html")) %>
                         </p>
                         <p>
-                            Faites la rencontre d’Armand, notre directeur financier à gauche, et son adjoint Florian.
+                            <%= raw(I18n.t("home.team.team6.p2_html")) %>
                         </p>
                     </div>
                 </div>
@@ -287,14 +268,12 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "clipboard" %>
-                        <h3 class="title -compact">Direction Générale</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team7.title")) %></h3>
                         <p>
-                            Laissez-nous vous présenter les piliers de notre Start’Up.
-                            Il s’agit bien évidemment de la direction générale !
+                            <%= raw(I18n.t("home.team.team7.p1_html")) %>
                         </p>
                         <p>
-                            Faites la rencontre de Martin à gauche, et son adjoint Derry.
-                            C'est ensemble qu'ils ont décidé de se lancer dans l’aventure, afin de fédérer et représenter l’équipe de &#171; Cook Me Up &#187;. C’est tout naturellement qu’ils ont accepté leurs différentes missions. Animer les réunions, rencontrer les fournisseurs, négocier les contrats…ce rôle leur colle à la peau !
+                            <%= raw(I18n.t("home.team.team7.p2_html")) %>
                         </p>
                     </div>
                 </div>
@@ -309,15 +288,15 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "desktop" %>
-                        <h3 class="title -compact">Informatique</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team8.title")) %></h3>
                         <p>
-                            Voici de gauche à droite, Gaëtan, Bastien, Yohann et Sébastien. Etudiants de l’école SUPINFO, école de l’informatique et du numérique d’Illkirch, c’est au mois de décembre que ces quatre étudiants ont rejoints notre équipe.
+                            <%= raw(I18n.t("home.team.team8.p1_html")) %>
                         </p>
                         <p>
-                            Leur mission ? apporter une touche innovante et numérique à la création d’un restaurant éphémère en développant une application internet.
+                            <%= raw(I18n.t("home.team.team8.p2_html")) %>
                         </p>
                         <p>
-                            Regrouper deux mondes aussi différents que sont le numérique et la restauration est un défi que nous avons souhaité relever avec leur collaboration, ce qui donne souvent lieu à des échanges intéressants… En effet, il est tout aussi compliqué pour notre équipe de parler d’hébergements internet et autres notions numériques que pour eux d’aborder les différentes techniques de cuisine…
+                            <%= raw(I18n.t("home.team.team8.p3_html")) %>
                         </p>
                     </div>
                 </div>
@@ -332,18 +311,15 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "spoon" %>
-                        <h3 class="title -compact">Pâtisserie</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team9.title")) %></h3>
                         <p>
-                            Cette année encore, les élèves de la mention complémentaire en pâtisserie du lycée A.Dumas seront de la partie !
-                            Accompagnés de leurs professeurs Monsieur Moulard ainsi que Monsieur Dos Santos, c’est ensemble qu’ils ont décidé de rejoindre Cook Me Up.
+                            <%= raw(I18n.t("home.team.team9.p1_html")) %>
                         </p>
                         <p>
-                            L’association 1 fruit - 1 légume est leur ligne de conduite, et ils vous ont d’ores & déjà concocté des desserts surprenants que nous avons hâte de vous faire découvrir… Nous pouvons déjà vous informer qu’un mille feuilles poivron-banane saura ravir vos papilles…
-                            Mais ce n’est pas tout ! Vous pourrez goûter à leurs Quick Cakes, de petits gâteaux avec une base de biscuit personnalisable selon vos envies.
-                            A retrouver au niveau de notre point de vente à emporter !
+                            <%= raw(I18n.t("home.team.team9.p2_html")) %>
                         </p>
                         <p>
-                            Venez rencontrer l’équipe de pâtisserie ainsi que leurs créations !
+                            <%= raw(I18n.t("home.team.team9.p3_html")) %>
                         </p>
                     </div>
                 </div>
@@ -358,19 +334,15 @@
                 <div class="col-6">
                     <div class="text-icon text -tiny">
                         <%= fa_icon "rocket" %>
-                        <h3 class="title -compact">Marketing</h3>
+                        <h3 class="title -compact"><%= raw(I18n.t("home.team.team10.title")) %></h3>
                         <p>
-                            Depuis le début de l’aventure, elles vous voient sans être vues…
-                            Traquant le moindre j’aime, la moindre notification…
-                            Il est temps de vous présenter la dernière équipe, et pas des moindres !
+                            <%= raw(I18n.t("home.team.team10.p1_html")) %>
                         </p>
                         <p>
-                            Faites place à l’équipe commerciale & marketing !
-                            A droite, Clémentine, accompagnée de ses deux adjointes, Camille et Lucile.
+                            <%= raw(I18n.t("home.team.team10.p2_html")) %>
                         </p>
                         <p>
-                            Dossier de presse, contact des journalistes, photos, page Facebook…c’est ensemble qu’elles ont pour mission de faire vivre notre Start’Up au travers des réseaux sociaux et autres supports de communication.
-                            Elles espèrent vous retranscrire au mieux le fil de notre aventure à l’aide de leurs différents posts, essayant d’y introduire un peu d’humour (enfin, elles essaient), et vous permettre de prendre part au projet.
+                            <%= raw(I18n.t("home.team.team10.p3_html")) %>
                         </p>
                     </div>
                 </div>
@@ -386,7 +358,7 @@
 <section class="-darker">
     <a id="partners" class="anchor"></a>
     <div class="row align -center">
-        <h2 class="title">Nos Partenaires</h2>
+        <h2 class="title"></h2>
         <div class="partners">
             <a class="partner" target="_blank" href="https://www.eberhardt-pro.fr/">
                 <%= image_tag "eberhardt.png" %>

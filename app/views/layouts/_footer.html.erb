@@ -4,7 +4,7 @@
             <div id="social" class="col-12 align -center">
                 <a href="https://www.facebook.com/StartUpcookmeup/" target="_blank"><%= fa_icon "facebook" %></a>
                 <a href="https://www.instagram.com/cookmeup_/" target="_blank"><%= fa_icon "instagram" %></a>
-                <p>Suivez nous sur notre <a href="https://www.facebook.com/StartUpcookmeup/" target="_blank">page Facebook</a> ou sur <a href="https://www.instagram.com/cookmeup_/">Instagram</a></p>
+                <p><%= raw I18n.t("footer.follow_html") %></p>
             </div>
             <div class="col-3 align -m-center">
                 <div class="img">
@@ -12,28 +12,28 @@
                 </div>
             </div>
             <div class="col-5 text">
-                <h4>A propos</h4>
-                <p><strong>Cook Me Up</strong> est un <strong>restaurant</strong> qui est présent à l'adresse suivante: <br/>
-                <strong>Bred - Banque Populaire <br/> 18 Quai de la Rapée , 75012 Paris</strong>.</p>
-                <p>Soutenez-nous sur <strong>KissKissBankBank</strong></p>
-                <a href="https://www.kisskissbankbank.com/cook-me-up-un-restaurant-ephemere-cree-par-des-etudiants-et-bien-plus" class="btn">Soutenir notre projet<%= fa_icon "child" %></a>
+                <h4><%= raw I18n.t("footer.about.title") %></h4>
+                <%= raw I18n.t("footer.about.address_html") %>
+                <a href="https://www.kisskissbankbank.com/cook-me-up-un-restaurant-ephemere-cree-par-des-etudiants-et-bien-plus" class="btn"><%= I18n.t("buttons.support_full") %><%= fa_icon "child" %></a>
             </div>
             <div class="col-4">
-                <h4>Navigation</h4>
+                <h4><%= raw I18n.t("footer.nav.title") %></h4>
                 <nav class="col-12 -sp">
-                    <%= link_to "Accueil", root_path %>
-                    <%= link_to "La Carte", orders_path %>
-                    <a href="/#team">L'Équipe</a>
-                    <a href="mentions">Mentions Légales & Cookies</a>
+                    <%= link_to I18n.t("page.home"), root_path %>
+                    <%= link_to I18n.t("page.menu"), orders_path %>
+                    <a href="/#team"><%= I18n.t("page.team") %></a>
+                    <a href="mentions"><%= I18n.t("page.legal") %></a>
                 </nav>
             </div>
             <div class="col-12">
                 <hr>
                 <p>
                     © COOK ME UP
-                    <span class="float -r">
-                        Pour votre santé, évitez de manger entre les repas • <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a>
-                    </span>
+                    <% if I18n.locale == :fr %>
+                        <span class="float -r">
+                            Pour votre santé, évitez de manger entre les repas • <a href="http://www.mangerbouger.fr">www.mangerbouger.fr</a>
+                        </span>
+                    <% end %>
                 </p>
             </div>
         </div>

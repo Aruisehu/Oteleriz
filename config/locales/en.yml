@@ -1,35 +1,113 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
-
-fr:
-  rare: "Rare"
-  well_done: "Well Done"
+en:
+  name: "Cook Me Up"
+  app_name: "Click & Sit"
+  slogan: "1 product, 3 cookings, 1000 flavors"
+  page:
+    home: "Home"
+    history: "Our story"
+    concept: "Concept"
+    menu: "Menu"
+    support: "Support Us"
+    team: "Team"
+    partner: "Partners"
+    app_name: "Click & Sit"
+    legal: "Legal notice"
+  home:
+    history:
+      title: "Our story"
+      p1_html: "After having discovered &#171; L’Avenue des Gourmets &#187; in 2016,&#171; Eater National &#187; in 2014 and&#171; Le S &#187; in 2012 for the older of us, we wanted to create our own project of entrepreneurship."
+      p2_html: "We are 19 students in Hospitality & Catering industry and we have the chance to create our own Start'Up. After having elected the different members in each department, we began to define our concept. This is what characterizes our company, which differentiated us on the Egast exhibition, professional event gathering all the professionals of the Hotel and Catering industry. We are proud to present you &#171; Cook Me Up &#187;, our pop’up restaurant."
+      p3_html: "Thanks to &#171; Entreprendre Pour Apprendre &#187;, we get advices and support throughout our adventure. Our school also supports us in our approach by allowing us to use its premises for our daily operations : meetings, cooking tests in particular, while keeping our independence and an identity quite distinct from that of the high school. In fact, each student participates in this project on a voluntary basis and in parallel with studies"
+      p4_html: "This adventure allows us to participate in the creation of a company and all it includes: personnel management, choice of suppliers, definition of a concept, cost control ... but also a personal and professional enrichment. In addition, the charity aspect is an important point of the outcome of our project: all our profits will be given to various charities in the region."
+      p5_html: "A unique and rewarding project that we hope will make you want to follow us."
+    concept:
+      title: "The Concept"
+      subtitle: "&#171; 1 Product, 3 Cooking, 1000 Flavors &#187; is our course of action"
+      p1_html: "We offer you to discover 1000 flavors through a single product, thanks to different cooking method"
+      p2_html: "You can choose:<ul class=\"styled-list\"><li>Your product: beef, prawns or poultry</li><li>Your cooking: wok, papillote or Fusio Eberhardt Brothers.</li></ul>"
+      p3_html: "We give you the opportunity to choose your base product, but also the way to cook it. Thanks to this concept, we create a culinary experience as well as a personalized experience for the custome"
+      p4_html: "About the desserts, we decided to associate to two base products: a fruit and a vegetable. Another opportunity to discover new flavors for the customers"
+      p5_html: "On the exhibition, you can also find our take-away stand with various hot and cold preparations, but also our fresh juice bar prepared by us."
+    menu:
+      title: "Our Menu"
+      subtitle: "Discover our menu before the Égast exhibition"
+    support:
+      title: "TAKE PART IN THE ADVENTURE"
+      left:
+        title: "GO ON KISSKISSBANKBANK"
+        p1_html: "You like our project and you want to support it? Know that it is possible"
+        p2_html: "Being students, our project is born of the initiative and the motivation of each one of the 19 of us. In order to finance all the needs required for the creation of a company, we have partners who support us by graciously giving us their equipment to allow us to welcome you during Egast."
+        p3_html: "But that's not all, we need you. Thanks to our <strong>KissKissBankBank</strong>, you have the opportunity to support us financially. Your donations will allow us to finance the purchase not only of some of the restaurant furniture, but also the raw materials needed by our kitchen team and the drinks of our restaurant."
+        p4_html: "Of course, your gifts will always bring you something. Indeed, it is necessary to tell you that these are tax deductible, and that they allow you to obtain advantage at &#171; Cook Me Up &#187; during Egast ! We also wish to remind you that all the benefits received by our Start'Up will be entirely donated to various associations in the region."
+        p5_html: "Follow the link above to support us:"
+      right:
+        title: "FOLLOW US ON FACEBOOK"
+    team:
+      title: "Our teams"
+      team1:
+        title: "Kitchen"
+        p1_html: "Delight all your taste buds, this is the objective of Cook Me Up kitchen team ! Their guideline ? Propose you 1000 flavors around 1 product."
+        p2_html: " From left to right : our chef Malo and his second Nicolas but also Morgane, Mylène & Axelle"
+      team2:
+        title: "Restaurant"
+        p1_html: "Here it is the restaurant team. Let’s meet Clément, our restaurant manager at the center, surrounded by his assistants Marie & Cassandre."
+        p2_html: ""
+      team3:
+        title: "Bar"
+        p1_html: "For the first time in the creation of a restaurant by students of our school, two students from the Bar training course will join our team. Please meet Mathilde & Antoine. Their goal ? Propose you original cocktails for your visit at Cook Me Up. During the aperitif or even for the desert, you’ll discover different creations"
+        p2_html: "Especially, don’t miss the opportunity to taste at &#171; Spritz Me Up &#187;, Cook Me Up’s signature cocktail !"
+        p3_html: ""
+      team4:
+        title: "Snack"
+        p1_html: "A lunch break too short to settle in our restaurant? Need something sweet for your break? Our snack team has what you need."
+        p2_html: "Here is Amalia our manager on the left and his colleague Bénédicte. Indeed, they have in stock various dishes proposed in our restaurant that you can take away, as well as &#171; Quick Cakes &#187; : sweet cakes with the same base, but you are free to garnish them according to your convenience. We will meet you during the show to discover the various possibilities!"
+      team5:
+        title: "Human Ressources"
+        p1_html: "At the end of January, Cook Me Up recruitment campaign is finally launched! The Cadr'hotel day taking place at the Alexandre Dumas High School on Wednesday, January 31, allows different companies to come to introduce themselves to the students, and to offer to the most motivated, career prospects."
+        p2_html: "An opportunity for our pop’up restaurant to gain visibility and offer to the student to join our team. Albane, our Human Resources manager on the right, and Maïlys, her assistant, were introducing the project in the school hall to welcome and answer all questions"
+        p3_html: "They also visited the classes in the school to present our project and mobilize the students. It allowed us to reach a sufficient number of staff, allowing us to offer you a unique moment in our restauran"
+      team6:
+        title: "Finance"
+        p1_html: "Crowdfunding, budget, cost… these words have no more secret for them. They are in charge of the account, the bills, the sales, and the creation of our crowdfunding website !"
+        p2_html: "Please meet Armand, our Finance manager on the left, and on the right his assistant Florian."
+      team7:
+        title: "General Management"
+        p1_html: "Ladies & Gentlemen we present to you the General Managers, the key pillars of the Start’Up."
+        p2_html: "On the left there is Martin the CEO and Derry the General Manager. Is it together that they have decided to start the project, they represent and bring together all the team of Cook Me Up. They have accepted and assume these responsibilities. They hosted the meetings, met the suppliers, negotiate the contracts and they are for sure fit for the job !"
+      team8:
+        title: "IT Department"
+        p1_html: "Here is from left to right, Gaëtan, Bastien, Yohann and Sébastien, four students from SupInfo, the institute of information technology and computer science of Illkirch. LastDecember, they joined our team."
+        p2_html: "Their objective ? Bring an &#171; innovative and digital &#187; touch to Cook Me Up with the development of the application Click & Sit. "
+        p3_html: "Gather two different world : digital and catering was a challenge that we wanted to take up. That was not easy every day : its as hardest for us to speak about codage as them to speak about recipes and means of cookings…"
+      team9:
+        title: "Pastry"
+        p1_html: "This year, students from the Pastry training of the Lycée Alexandre Dumas joined our team. Guided with their teacher, Chef Moulard and Chef Dos Santos, all the students of the course imagined the guideline of our desert : the pairing 1 vegetable with 1 fruit. We can tell you that a millefeuille banana-red pepper will be on the menu"
+        p2_html: "Moreover, for our Snack place, they created the concept of &#171; Quick-Cake &#187; : small sweet cake with the same base, a cake, that you’ll personnalise with different toppings ! Come meet our pastry team and their creations during Ega"
+        p3_html: ""
+      team10:
+        title: "Marketing"
+        p1_html: "Since the beginning of the adventure, they see you without being seen… Looking for each &#171; like &#187;…It’s time to present you the last department of Cook Me Up : Marketing & Communication."
+        p2_html: "On the right there is Clémentine, manager of the department and her assistants Camille & Lucile. Their mission ? Make alive Cook Me Up through social network and other communication supports. They hope you’ll feel our adventure thanks to the different Facebook’s post, trying to introduce a touch of humour (they try…) in order to make you live our project"
+        p3_html: ""
+    partner:
+      title: "Our Partners"
+  footer:
+    follow_html: "Suivez nous sur notre <a href=\"https://www.facebook.com/StartUpcookmeup/\" target=\"_blank\">page Facebook</a> ou sur <a href=\"https://www.instagram.com/cookmeup_/\">Instagram</a>"
+    about:
+      title: "About us"
+      address_html: "<p><strong>Cook Me Up</strong> is a <strong>restaurant</strong> established at the following address: </p>
+      <p>Uzvaras bulvāris 2/4,<br/>Zemgales priekšpilsēta,<br/>Rīga, LV-1048,<br/>Lettonie</p>
+      <p>Soutenez-us on <strong>KissKissBankBank</strong></p>"
+    nav:
+      title: "Navigation"
+  buttons:
+    more: "More"
+    more_full: "More about us"
+    app: "Click & Sit *"
+    tooltip: "Restricted access"
+    menu: "Menu"
+    formula: "Formulas"
+    support: "Support us"
+    support_full: "Support our project"
+  rare: "Saignant"
+  well_done: "À point"
