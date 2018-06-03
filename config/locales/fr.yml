@@ -110,5 +110,8 @@ fr:
     formula: "Formules"
     support: "Nous soutenir"
     support_full: "Soutenir notre projet"
+  cookies:
+      disclaimer_html: "Notre site utilise des cookies pour fonctionner correctement. Plus dans <a href=\"/mentions#cookies\">notre politique de confidentialité</a>."
+      close: "Accepter"
   rare: "Saignant"
   well_done: "À point"

@@ -92,7 +92,7 @@ en:
     partner:
       title: "Our Partners"
   footer:
-    follow_html: "Suivez nous sur notre <a href=\"https://www.facebook.com/StartUpcookmeup/\" target=\"_blank\">page Facebook</a> ou sur <a href=\"https://www.instagram.com/cookmeup_/\">Instagram</a>"
+    follow_html: "Follow us on our <a href=\"https://www.facebook.com/StartUpcookmeup/\" target=\"_blank\">Facebook page</a> or on <a href=\"https://www.instagram.com/cookmeup_/\">Instagram</a>"
     about:
       title: "About us"
       address_html: "<p><strong>Cook Me Up</strong> is a <strong>restaurant</strong> established at the following address: </p>
@@ -100,6 +100,9 @@ en:
       <p>Support-us on <strong>KissKissBankBank</strong></p>"
     nav:
       title: "Navigation"
+    cookies:
+      disclaimer_html: "Our website ue cookies in order to work as expected. More in out <a href=\"/mentions#cookies\">confidentiality policy</a>."
+      close: "Accept"
   buttons:
     more: "More"
     more_full: "More about us"
