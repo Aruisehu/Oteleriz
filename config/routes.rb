@@ -10,6 +10,11 @@ Rails.application.routes.draw do
         end
     end
 
+    namespace :api do
+        get '/questions/last_meal' => 'questions#last_meal'
+        resources :questions, only: [:create]
+    end
+
     root 'application#home'
 
     devise_for :users, controllers: {
