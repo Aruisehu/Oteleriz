@@ -21,6 +21,6 @@ class Api::QuestionsController < ApplicationController
     end
 
     def create
-        render status: :ok
+        render json: {}, status: :ok
     end
 end
