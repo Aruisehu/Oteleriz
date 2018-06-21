@@ -13,31 +13,31 @@
         <div class="formula-container">
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_wine.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish_wine.desc_html") %>*</p>
+                <p><%= raw I18n.t("menu.formula.starter_dish_wine.desc_html") %>*</p>
             </div>
             <div class="formula">
                 <h5 class="title"><%= I18n.t("menu.formula.starter_dish.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish.desc_html") %></p>
+                <p><%= raw I18n.t("menu.formula.starter_dish.desc_html") %></p>
             </div>
         </div>
         <div class="formula-container">
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.dish_dessert_wine.title") %></h5>
-                <p><%= I18n.t("menu.formula.dish_dessert_wine.desc_html") %>*</p>
+                <p><%= raw I18n.t("menu.formula.dish_dessert_wine.desc_html") %>*</p>
             </div>
             <div class="formula">
                 <h5 class="title"><%= I18n.t("menu.formula.dish_dessert.title") %></h5>
-                <p><%= I18n.t("menu.formula.dish_dessert.desc_html") %></p>
+                <p><%= raw I18n.t("menu.formula.dish_dessert.desc_html") %></p>
             </div>
         </div>
         <div class="formula-container">
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_dessert_wine.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
+                <p><%= raw I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
             </div>
             <div class="formula">
                 <h5 class="title"><%= I18n.t("menu.formula.starter_dish_dessert.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish_dessert.desc_html") %></p>
+                <p><%= raw I18n.t("menu.formula.starter_dish_dessert.desc_html") %></p>
             </div>
         </div>
     </div>
@@ -145,12 +145,12 @@
     <div class="row align -center">
         <a id="click-sit" class="anchor"></a>
         <h3 class="title"><%= I18n.t("menu.app_access.title") %></h3>
-        <p class="subtitle"><%= I18n.t("menu.app_access.subtitle_html") %></p>
+        <p class="subtitle"><%= raw I18n.t("menu.app_access.subtitle_html") %></p>
         <p><%= I18n.t("menu.app_access.help") %></p>
         <br/>
         <br/>
         <a class="btn" href="<%= order_access_path %>"><%= I18n.t("menu.app_access.title") %> <%= fa_icon "shopping-basket" %></a>
         <strong><%= I18n.t("menu.app_access.restrict") %></strong>
-        <%= I18n.t("menu.app_access.address_html") %>
+        <%= raw I18n.t("menu.app_access.address_html") %>
     </div>
 </section>

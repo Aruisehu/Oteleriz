@@ -12,7 +12,7 @@
 
 <section>
     <div class="row align -center">
-        <p class="subtitle"><%= I18n.t("menu.app.subtitle_html") %></p>
+        <p class="subtitle"><%= raw I18n.t("menu.app.subtitle_html") %></p>
         <p><%= I18n.t("menu.app.help") %></p>
     </div>
 </section>
@@ -23,7 +23,7 @@
         <div class="formula-container">
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_wine.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish_wine.desc_html") %>*</p>
+                <p><%= raw I18n.t("menu.formula.starter_dish_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_sdw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sdw), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
@@ -34,7 +34,7 @@
             </div>
             <div class="formula">
                 <h5 class="title"><%= I18n.t("menu.formula.starter_dish.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish.desc_html") %></p>
+                <p><%= raw I18n.t("menu.formula.starter_dish.desc_html") %></p>
                 <span class="price"><%= number_to_currency(@course_sd.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sd), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
@@ -47,7 +47,7 @@
         <div class="formula-container">
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.dish_dessert_wine.title") %></h5>
-                <p><%= I18n.t("menu.formula.dish_dessert_wine.desc_html") %>*</p>
+                <p><%= raw I18n.t("menu.formula.dish_dessert_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_ddw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_ddw), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
@@ -58,7 +58,7 @@
             </div>
             <div class="formula">
                 <h5 class="title"><%= I18n.t("menu.formula.dish_dessert.title") %></h5>
-                <p><%= I18n.t("menu.formula.dish_dessert.desc_html") %></p>
+                <p><%= raw I18n.t("menu.formula.dish_dessert.desc_html") %></p>
                 <span class="price"><%= number_to_currency(@course_dd.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_dd), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
@@ -71,7 +71,7 @@
         <div class="formula-container">
             <div class="formula -wine">
                 <h5 class="title"><%= fa_icon "glass" %> <%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_dessert_wine.title") %></h5>
-                <p><%= I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
+                <p><%= raw I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_sddw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sddw), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
@@ -82,7 +82,7 @@
             </div>
             <div class="formula">
                 <h5 class="title"><%= I18n.t("menu.formula.starter_dish_dessert.title") %>t</h5>
-                <p><%= I18n.t("menu.formula.starter_dish_dessert.desc_html") %></p>
+                <p><%= raw I18n.t("menu.formula.starter_dish_dessert.desc_html") %></p>
                 <span class="price"><%= number_to_currency(@course_sdd.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sdd), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
