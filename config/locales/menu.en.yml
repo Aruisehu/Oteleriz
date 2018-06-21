@@ -1,0 +1,60 @@
+en:
+  menu:
+    nav:
+      title: "Our menu"
+      formula: "Formulas"
+      starter: "Starters"
+      dish: "Dishes"
+      dessert: "Desserts"
+      app: "Click & Sit"
+    app:
+      subtitle_html: "<strong>Click & Sit</strong> let you eat your dishes prepared before you arrive, letting you save time."
+      help: "Order for a group or specify an order name from your friends to eat together"
+    formula:
+      title: "Formulas"
+      button: "Add"
+      starter_dish_wine:
+        title: "Starter, Dish & Wine"
+        desc_html: "Deux verres de <strong>vin</strong>"
+        desc_html: "Two glasses of <strong>wine</strong>"
+      starter_dish:
+        title: "Starter & Dish"
+        desc_html: "Design your dish and choose one of our starters."
+      dish_dessert_wine:
+        title: "Dish, Dessert & Wine"
+        desc_html: "Two glasses of <strong>wine</strong>"
+      dish_dessert:
+        title: "Dish & Dessert"
+        desc_html: "Créez votre plat et choisissez un de nos desserts."
+        desc_html: "Design your dish and choose one of our desserts."
+      starter_dish_dessert_wine:
+        title: "Entrée, Plat, Dessert & Vin"
+        title: "Starter, Dish, Dessert & Wine"
+        desc_html: "Two glasses of <strong>wine</strong> and an <strong>aperitif</strong>"
+      starter_dish_dessert:
+        title: "Starter, Dish & Dessert"
+        desc_html: "Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts."
+        desc_html: "Design your dish and choose one of our starters and one of our desserts."
+      wine_help: "Our sommelier will suggest you one of his best wine to complement your choices"
+    starter:
+      title: "Starter"
+    dish:
+      title: "Dishes"
+      subtitle: "Créer votre plat, à votre goût, en choisissant vos aliments."
+      subtitle: "Design your dish, according to your tastes."
+      base: "Base"
+      cooking: "Cooking methods"
+      ingredient: "Toppings"
+      ingredient_singular: "Topping"
+      random: "Surprise me"
+      add: "Design my dish"
+    marinade:
+      title: "Marinades"
+    dessert:
+      title: "Desserts"
+    app_access:
+      title: "Click & Sit"
+      subtitle_html: "<strong>Click & Sit</strong> let you eat your dishes prepared before you arrive, letting you save time."
+      help: "Order for a group or specify an order name from your friends to eat together"
+      restrict: "Restricted Access"
+      address_html: "<p>If no access code were given to you and you still wish to experience <strong>Cook Me Up</strong>,<br/>find us at the following address: <br/><strong>Slokas iela 1,<br/>Zemgales priekšpilsēta,<br/>Rīga,<br/>LV-1048,<br/>Lettonie</strong></p>"

@@ -1,9 +1,9 @@
 <% content_for :main_nav do %>
-    <h3 class="title">Click & Sit:</h3>
-    <%= link_to "Formules", "#course" %>
-    <%= link_to "Entrées", "#starter" %>
-    <%= link_to "Plats", "#main" %>
-    <%= link_to "Desserts", "#dessert" %>
+    <h3 class="title"><%= I18n.t("menu.nav.app") %></h3>
+    <%= link_to I18n.t("menu.nav.formula"), "#course" %>
+    <%= link_to I18n.t("menu.nav.starter"), "#starter" %>
+    <%= link_to I18n.t("menu.nav.dish"), "#main" %>
+    <%= link_to I18n.t("menu.nav.dessert"), "#dessert" %>
 <% end %>
 
 <% content_for :main_action do %>
@@ -12,82 +12,82 @@
 
 <section>
     <div class="row align -center">
-        <p class="subtitle"><strong>Click & Sit</strong> vous permet de commander et venir déguster vos plats préparés à l'avance.</p>
-        <p>Commandez pour un groupe ou spécifiez le nom de commande de vos amis pour manger ensemble</p>
+        <p class="subtitle"><%= I18n.t("menu.app.subtitle_html") %></p>
+        <p><%= I18n.t("menu.app.help") %></p>
     </div>
 </section>
 <section class="-darker">
     <div class="row align -center -m-no-pad">
         <a id="course" class="anchor"></a>
-        <h3 class="title">Formules</h3>
+        <h3 class="title"><%= I18n.t("menu.formula.title") %></h3>
         <div class="formula-container">
             <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> Entrée, Plat & Vin</h5>
-                <p>Deux verres de <strong>vin</strong>*</p>
+                <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_wine.title") %></h5>
+                <p><%= I18n.t("menu.formula.starter_dish_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_sdw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sdw), class: "btn-subtle" do %>
-                    Ajouter
+                    <%= I18n.t("menu.formula.button") %>
                 <% end %>
-                <%= link_to add_menu_to_order_path(@course_sdw, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                <%= link_to add_menu_to_order_path(@course_sdw, random: true), title: I18n.t("menu.dish.random"), class: "btn-subtle -icon -alt" do %>
                     <%= fa_icon "random" %>
                 <% end %>
             </div>
             <div class="formula">
-                <h5 class="title">Entrée & Plat</h5>
-                <p>Créez votre plat et choisissez une de nos entrées.</p>
+                <h5 class="title"><%= I18n.t("menu.formula.starter_dish.title") %></h5>
+                <p><%= I18n.t("menu.formula.starter_dish.desc_html") %></p>
                 <span class="price"><%= number_to_currency(@course_sd.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sd), class: "btn-subtle" do %>
-                    Ajouter
+                    <%= I18n.t("menu.formula.button") %>
                 <% end %>
-                <%= link_to add_menu_to_order_path(@course_sd, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                <%= link_to add_menu_to_order_path(@course_sd, random: true), title: I18n.t("menu.dish.random"), class: "btn-subtle -icon -alt" do %>
                     <%= fa_icon "random" %>
                 <% end %>
             </div>
         </div>
         <div class="formula-container">
             <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> Plat, Dessert & Vin</h5>
-                <p>Deux verres de <strong>vin</strong>*</p>
+                <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.dish_dessert_wine.title") %></h5>
+                <p><%= I18n.t("menu.formula.dish_dessert_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_ddw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_ddw), class: "btn-subtle" do %>
-                    Ajouter
+                    <%= I18n.t("menu.formula.button") %>
                 <% end %>
-                <%= link_to add_menu_to_order_path(@course_ddw, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                <%= link_to add_menu_to_order_path(@course_ddw, random: true), title: I18n.t("menu.dish.random"), class: "btn-subtle -icon -alt" do %>
                     <%= fa_icon "random" %>
                 <% end %>
             </div>
             <div class="formula">
-                <h5 class="title">Plat & Dessert</h5>
-                <p>Créez votre plat et choisissez un de nos desserts.</p>
+                <h5 class="title"><%= I18n.t("menu.formula.dish_dessert.title") %></h5>
+                <p><%= I18n.t("menu.formula.dish_dessert.desc_html") %></p>
                 <span class="price"><%= number_to_currency(@course_dd.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_dd), class: "btn-subtle" do %>
-                    Ajouter
+                    <%= I18n.t("menu.formula.button") %>
                 <% end %>
-                <%= link_to add_menu_to_order_path(@course_dd, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                <%= link_to add_menu_to_order_path(@course_dd, random: true), title: I18n.t("menu.dish.random"), class: "btn-subtle -icon -alt" do %>
                     <%= fa_icon "random" %>
                 <% end %>
             </div>
         </div>
         <div class="formula-container">
             <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> Entrée, Plat, Dessert & Vin</h5>
-                <p>Deux verres de <strong>vin</strong> et un <strong>cocktail</strong>*</p>
+                <h5 class="title"><%= fa_icon "glass" %> <%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_dessert_wine.title") %></h5>
+                <p><%= I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_sddw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sddw), class: "btn-subtle" do %>
-                    Ajouter
+                    <%= I18n.t("menu.formula.button") %>
                 <% end %>
-                <%= link_to add_menu_to_order_path(@course_sddw, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                <%= link_to add_menu_to_order_path(@course_sddw, random: true), title: I18n.t("menu.dish.random"), class: "btn-subtle -icon -alt" do %>
                     <%= fa_icon "random" %>
                 <% end %>
             </div>
             <div class="formula">
-                <h5 class="title">Entrée, Plat & Dessert</h5>
-                <p>Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts.</p>
+                <h5 class="title"><%= I18n.t("menu.formula.starter_dish_dessert.title") %>t</h5>
+                <p><%= I18n.t("menu.formula.starter_dish_dessert.desc_html") %></p>
                 <span class="price"><%= number_to_currency(@course_sdd.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sdd), class: "btn-subtle" do %>
-                    Ajouter
+                    <%= I18n.t("menu.formula.button") %>
                 <% end %>
-                <%= link_to add_menu_to_order_path(@course_sdd, random: true), title: "Suprenez-moi", class: "btn-subtle -icon -alt" do %>
+                <%= link_to add_menu_to_order_path(@course_sdd, random: true), title: I18n.t("menu.dish.random"), class: "btn-subtle -icon -alt" do %>
                     <%= fa_icon "random" %>
                 <% end %>
             </div>
@@ -95,29 +95,29 @@
     </div>
     <div class="row align -center">
         <br/>
-        <h5 class="wine">* Notre sommelier vous conseillera sur place ses meilleurs vins pour accompagner vos choix</h5>
+        <h5 class="wine">* <%= I18n.t("menu.formula.wine_help") %></h5>
     </div>
 </section>
 <section>
     <div class="row">
         <a id="starter" class="anchor"></a>
-        <h3 class="title align -center">Entrées</h3>
+        <h3 class="title align -center"><%= I18n.t("menu.starter.title") %></h3>
         <%= cell(:product, collection: @starters, id_template: @course_starter) %>
     </div>
 </section>
 <section class="-darker">
     <div class="row align -center">
         <a id="main" class="anchor"></a>
-        <h3 class="title">Plats</h3>
-        <h4 class="subtitle">Créer votre plat, à votre goût, en choisissant vos aliments.</h4>
+        <h3 class="title"><%= I18n.t("menu.dish.title") %></h3>
+        <h4 class="subtitle"><%= I18n.t("menu.dish.subtitle") %></h4>
         <div class="col-12 align -center">
-            <a class="btn" href="<%= add_menu_to_order_path(@course_d) %>">Créer mon plat <%= fa_icon "plus" %></a>
-            <a class="btn -alt" href="<%= add_menu_to_order_path(@course_d, random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
+            <a class="btn" href="<%= add_menu_to_order_path(@course_d) %>"><%= I18n.t("menu.dish.add") %> <%= fa_icon "plus" %></a>
+            <a class="btn -alt" href="<%= add_menu_to_order_path(@course_d, random: true) %>"><%= I18n.t("menu.dish.random") %> <%= fa_icon "random" %></a>
         </div>
         <div class="col-12">
             <div class="zone">
                 <header>
-                    <h5 class="title align -center">Base</h5>
+                    <h5 class="title align -center"><%= I18n.t("menu.dish.base") %></h5>
                 </header>
                 <% @dishes.each do |d| %>
                     <div class="col-4 align -center">
@@ -128,7 +128,7 @@
             </div>
             <div class="zone">
                 <header>
-                    <h5 class="title align -center">Méthodes de cuisson</h5>
+                    <h5 class="title align -center"><%= I18n.t("menu.dish.cooking") %></h5>
                 </header>
                 <% @bakings.each do |b| %>
                     <div class="col-4 align -center">
@@ -139,7 +139,7 @@
             </div>
             <div class="zone">
                 <header>
-                    <h5 class="title align -center">Garnitures</h5>
+                    <h5 class="title align -center"><%= I18n.t("menu.dish.ingredient") %></h5>
                 </header>
                 <div class="scroll-x -auto">
                     <table>
@@ -151,7 +151,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Garniture</th>
+                                <th><%= I18n.t("menu.dish.ingredient_singular") %></th>
                                 <% @bakings.each do |b| %>
                                     <td><%= b.ingredient %></td>
                                 <% end %>
@@ -162,7 +162,7 @@
             </div>
             <div class="zone">
                 <header>
-                    <h5 class="title align -center">Marinades</h5>
+                    <h5 class="title align -center"><%= I18n.t("menu.marinade.title") %></h5>
                 </header>
                 <div class="scroll-x -auto">
                     <table>
@@ -188,8 +188,8 @@
                 </div>
             </div>
             <div class="col-12 align -center">
-                <a class="btn" href="<%= add_menu_to_order_path(@course_d) %>">Créer mon plat <%= fa_icon "plus" %></a>
-                <a class="btn -alt" href="<%= add_menu_to_order_path(@course_d, random: true) %>">Surprenez-moi <%= fa_icon "random" %></a>
+                <a class="btn" href="<%= add_menu_to_order_path(@course_d) %>"><%= I18n.t("menu.dish.add") %> <%= fa_icon "plus" %></a>
+                <a class="btn -alt" href="<%= add_menu_to_order_path(@course_d, random: true) %>"><%= I18n.t("menu.dish.random") %> <%= fa_icon "random" %></a>
             </div>
         </div>
     </div>
@@ -197,7 +197,7 @@
 <section>
     <div class="row">
         <a id="dessert" class="anchor"></a>
-        <h3 class="title align -center">Desserts</h3>
+        <h3 class="title align -center"><%= I18n.t("menu.dessert.title") %></h3>
         <%= cell(:product, collection: @desserts, id_template: @course_dessert) %>
     </div>
 </section>

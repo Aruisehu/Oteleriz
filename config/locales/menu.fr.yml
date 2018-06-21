@@ -1,0 +1,55 @@
+fr:
+  menu:
+    nav:
+      title: "Notre carte"
+      formula: "Formules"
+      starter: "Entrées"
+      dish: "Plats"
+      dessert: "Desserts"
+      app: "Click & Sit"
+    app:
+      subtitle_html: "<strong>Click & Sit</strong> vous permet de commander et venir déguster vos plats préparés à l'avance."
+      help: "Commandez pour un groupe ou spécifiez le nom de commande de vos amis pour manger ensemble"
+    formula:
+      title: "Formules"
+      button: "Ajouter"
+      starter_dish_wine:
+        title: "Entrée, Plat & Vin"
+        desc_html: "Deux verres de <strong>vin</strong>"
+      starter_dish:
+        title: "Entrée & Plat"
+        desc_html: "Créez votre plat et choisissez une de nos entrées."
+      dish_dessert_wine:
+        title: "Plat, Dessert & Vin"
+        desc_html: "Deux verres de <strong>vin</strong>"
+      dish_dessert:
+        title: "Plat & Dessert"
+        desc_html: "Créez votre plat et choisissez un de nos desserts."
+      starter_dish_dessert_wine:
+        title: "Entrée, Plat, Dessert & Vin"
+        desc_html: "Deux verres de <strong>vin</strong> et un <strong>apéritif</strong>"
+      starter_dish_dessert:
+        title: "Entrée, Plat & Dessert"
+        desc_html: "Créez votre plat et choisissez une de nos entrées ainsi qu'un des desserts."
+      wine_help: "Notre sommelier vous conseillera sur place ses meilleurs vins pour accompagner vos choix"
+    starter:
+      title: "Entrées"
+    dish:
+      title: "Plats"
+      subtitle: "Créer votre plat, à votre goût, en choisissant vos aliments."
+      base: "Base"
+      cooking: "Méthodes de cuisson"
+      ingredient: "Garnitures"
+      ingredient_singular: "Garniture"
+      random: "Surprenez-moi"
+      add: "Créer mon plat"
+    marinade:
+      title: "Marinades"
+    dessert:
+      title: "Desserts"
+    app_access:
+      title: "Click & Sit"
+      subtitle_html: "<strong>Click & Sit</strong> vous permet de commander et venir déguster vos plats préparés à l'avance."
+      help: "Commandez pour un groupe ou spécifiez le nom de commande de vos amis pour manger ensemble"
+      restrict: "Accès restreint"
+      address_html: "<p>Si aucun code ne vous a été transmis et que vous souhaitez vivre l'expérience <strong>Cook Me Up</strong>,<br/>retrouvez nous à l'adresse suivante: <br/><strong>Bred - Banque Populaire <br/>18 Quai de la Rapée , 75012 Paris</strong></p>"
