@@ -1,45 +1,44 @@
 <section class="-darker">
     <div class="row align -center">
         <%= form_tag order_booking_path, method: :patch do %>
-            <h2 class="title -alt">Validez votre commande</h2>
+            <h2 class="title -alt"><%= I18n.t("booking.title") %></h2>
             <div class="col-12 booking">
                 <div class="booking-form-item">
-                    <h5 class="subtitle">Quel nom voulez-vous donner à votre commande ?</h5>
-                    <input type="text" class="" placeholder="Votre nom" name="order[name]">
+                    <h5 class="subtitle"><%= I18n.t("booking.order_name") %></h5>
+                    <input type="text" class="" placeholder="<%= I18n.t("booking.name_placeholder") %>" name="order[name]">
                     <p class="text -tiny">
-                        Utilisez ce nom lors de votre arrivée au restaurant.<br/>
-                        Vous pourrez le communiquer avec vos amis pour qu'ils vous rejoignent à table.
+                        <%= raw(I18n.t("booking.name_description_html")) %>
                     </p>
                     <br />
-                    <h5 class="subtitle"> Entrez votre adresse email:</span></h5>
-                    <input type="email" class="" placeholder="Votre adresse" name="order[email]"><!-- pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"> -->
-                    <p class="text -tiny">Vous recevrez un confirmation de votre commande et un récapitulatif</p>
+                    <h5 class="subtitle"> <%= I18n.t("booking.email_entry") %></span></h5>
+                    <input type="email" class="" placeholder="<%= I18n.t("booking.email_placeholder") %>" name="order[email]"><!-- pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"> -->
+                    <p class="text -tiny"><%= I18n.t("booking.confirmation") %></p>
                     <br />
                 </div>
             </div>
             <div class="col-12 booking">
                 <div class="booking-form-item">
-                    <h5 class="subtitle">Commandez-vous seul ou en groupe ?</h5>
+                    <h5 class="subtitle"><%= I18n.t("booking.grouped?") %></h5>
                     <input id="service_seul" type="radio" name="grouped?" class="hidden" value="false" checked>
-                    <label for="service_seul">Seul</label>
+                    <label for="service_seul"><%= I18n.t("booking.alone") %></label>
                     <input id="service_groupe" type="radio" name="grouped?" class="hidden" value="true">
-                    <label for="service_groupe">Groupe</label>
+                    <label for="service_groupe"><%= I18n.t("booking.group") %></label>
                     <div class="option" id="seul">
-                        <p class="subtitle">Vous souhaitez rejoindre un ami ? Entrez son nom de commande:</p>
-                        <input id="group_name" type="text" name="group_name" placeholder="Commande de votre ami" />
-                        <p class="text -tiny">Votre ami doit déjà avoir validé sa commande</p>
+                        <p class="subtitle"><%= I18n.t("booking.order_join") %></p>
+                        <input id="group_name" type="text" name="group_name" placeholder="<%= I18n.t("booking.group_placeholder") %>" />
+                        <p class="text -tiny"><%= I18n.t("booking.order_join_warn") %></p>
                     </div>
                     <div class="option" id="group">
-                        <p class="subtitle">Combien de personnes mangent avec vous ?</p>
+                        <p class="subtitle"><%= I18n.t("booking.group_people") %></p>
                         <div class="select">
                             <select id="monselect" name="order[number_persons]">
                                 <% (2..10).each do |i| %>
-                                    <option value="<%= i %>"><%= i %> personnes</option>
+                                    <option value="<%= i %>"><%= i %> <%= I18n.t("booking.persons") %></option>
                                 <% end %>
                             </select>
                              <%= fa_icon "angle-down" %>
                         </div>
-                        <p class="text -tiny">Vérifiez qu'il y à assez de place pour l'heure choisie</p>
+                        <p class="text -tiny"><%= I18n.t("booking.seats_warn") %></p>
                     </div>
                 </div>
             </div>
@@ -47,16 +46,16 @@
             </div>
             <div class="col-12 booking">
                 <div class="booking-form-item">
-                    <h5 class="subtitle">À quelle heure voulez-vous manger ?</h5>
+                    <h5 class="subtitle"><%= I18n.t("booking.service_choice") %></h5>
                     <% @services.each_with_index do |s, i| %>
                         <input  id="service_<%= s.id %>" value="<%= s.id %>" <%= i == 0 ? "checked" : "" %> type="radio" name="order[service_id]" class="hidden">
-                        <label for="service_<%= s.id %>"><%= s.start_time.strftime("%H:%M") %><span>(<%= s.get_remaining_seats %> place(s))</span></label>
+                        <label for="service_<%= s.id %>"><%= s.start_time.strftime("%H:%M") %><span>(<%= s.get_remaining_seats %> <%= I18n.t("booking.seats") %>)</span></label>
                     <% end %>
                 </div>
             </div>
             <div class="col-12 booking">
-                <%= button_tag type: :submit, class: "btn -big", data: {confirm: "Vous ne pourrez plus modifier votre commande aprés cette étape, êtes-vous sûr de vouloir continuer ?"} do %>
-                    Valider ma commande <%= fa_icon "check" %>
+                <%= button_tag type: :submit, class: "btn -big", data: {confirm:  I18n.t("booking.confirm_order") } do %>
+                    <%= I18n.t("booking.validate_order") %> <%= fa_icon "check" %>
                 <% end %>
             </div>
         <% end %>

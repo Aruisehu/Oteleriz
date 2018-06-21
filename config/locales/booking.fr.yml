@@ -1,0 +1,23 @@
+fr:
+    booking:
+        title: "Validez votre commande"
+        order_name: "Quel nom voulez-vous donner à votre commande ?"
+        name_placeholder: "Votre Nom"
+        name_description_html: "Utilisez ce nom lors de votre arrivée au restaurant.<br/> Vous pourrez le communiquer avec vos amis pour qu'ils vous rejoignent à table."
+        email_entry: " Entrez votre adresse email:"
+        email_placeholder: "Votre adresse"
+        confirmation: "Vous recevrez une confirmation de votre commande et un récapitulatif"
+        grouped?: "Commandez-vous seul ou en groupe ?"
+        alone: "Seul"
+        group: "Groupe"
+        order_join: "Vous souhaitez rejoindre un ami ? Entrez son nom de commande:"
+        group_placeholder: "Commande de votre ami"
+        order_join_warn: "Votre ami doit déjà avoir validé sa commande"
+        group_people: "Combien de personnes mangent avec vous ?"
+        persons: "personnes"
+        seats_warn: "Vérifiez qu'il y a assez de place pour l'heure choisie"
+        service_choice: "À quelle heure voulez-vous manger ?"
+        seats: "place(s)"
+        confirm_order: "Vous ne pourrez plus modifier votre commande après cette étape, êtes-vous sûr de vouloir continuer ?"
+        validate_order: "Valider ma commande"
+
