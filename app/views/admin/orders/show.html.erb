@@ -1,42 +1,42 @@
 <section>
     <div class="row">
         <div class="col-9">
-            <h4 class="title">Récapitulatif</h4>
+            <h4 class="title"><%= I18n.t("admin.orders.resume") %></h4>
             <%= cell(:cart, @order).(:show_admin) %>
         </div>
         <div class="col-3">
-            <h4 class="title">Informations</h4>
+            <h4 class="title"><%= I18n.t("admin.orders.infos") %></h4>
             <div class="details">
                 <div class="item">
-                    <h6>Nom de commande</h6>
+                    <h6><%= I18n.t("admin.orders.order_name") %></h6>
                     <p><%= @order.name %></p>
                 </div>
                 <% if @order.group.orders.count > 1 %>
                     <div class="item">
-                        <h6>Commande groupée avec</h6>
+                        <h6><%= I18n.t("admin.orders.grouped") %></h6>
                         <% @order.group.orders.each do |o| %>
                             <ul>
-                                <p>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="voir" class="float f -r "><%= fa_icon "eye" %></a></p>
+                                <p>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="<%= I18n.t("admin.see") %>" class="float f -r "><%= fa_icon "eye" %></a></p>
                             </ul>
                         <% end %>
                     </div>
                 <% end %>
                 <div class="item">
-                    <h6>Nombre de personnes</h6>
+                    <h6><%= I18n.t("admin.orders.person_number") %></h6>
                     <p><%= @order.number_persons %>
                 </div>
                 <div class="item">
-                    <h6>Service</h6>
+                    <h6><%= I18n.t("admin.orders.service") %></h6>
                     <%= @order.service.start_time.strftime("%H:%M") %> - <%= @order.service.end_time.strftime("%H:%M") %>
                 </div>
                 <div class="item">
-                    <h6>Coût total</h6>
+                    <h6><%= I18n.t("admin.orders.total_price") %></h6>
                     <p class="price"><%= number_to_currency(@order.get_price, locale: :fr) %></p>
                 </div>
                 <div class="item">
-                    <h6>Actions</h6>
-                    <%= link_to admin_order_path(@order), method: :delete, class: "btn-subtle -alt", data: { confirm: "Etes-vous sûr de vouloir supprimer la commande ?" } do %>
-                        Supprimer <%= fa_icon "trash" %>
+                    <h6><%= I18n.t("admin.orders.actions") %></h6>
+                    <%= link_to admin_order_path(@order), method: :delete, class: "btn-subtle -alt", data: { confirm: I18n.t("admin.confirmation") } do %>
+                        <%= I18n.t("admin.delete") %> <%= fa_icon "trash" %>
                     <% end %>
                 </div>
             </div>

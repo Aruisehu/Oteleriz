@@ -8,11 +8,11 @@
                 <h1><%= site_name %></h1>
             </a>
             <div id="submenu">
-                <%= link_to "Commande", admin_orders_path %>
-                <%= link_to "Plats", admin_dishes_path %>
-                <%= link_to "Desserts", admin_desserts_path %>
-                <%= link_to "Entrées", admin_starters_path %>
-                <%= link_to "Plage d'ouverture", admin_meals_path %>
+                <%= link_to I18n.t("admin.order"), admin_orders_path %>
+                <%= link_to I18n.t("admin.dish"), admin_dishes_path %>
+                <%= link_to I18n.t("admin.dessert"), admin_desserts_path %>
+                <%= link_to I18n.t("admin.starter"), admin_starters_path %>
+                <%= link_to I18n.t("admin.meal"), admin_meals_path %>
                 <%= render "layouts/lang_switcher" %>
             </div>
         </div>

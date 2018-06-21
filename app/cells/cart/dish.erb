@@ -1,28 +1,28 @@
 <div class="image">
     <div class="icon <%= model.name_en.downcase %>"></div>
-    <h6 class="subtle align -center">Plat</h6>
+    <h6 class="subtle align -center"><%= I18n.t("admin.dish") %></h6>
 </div>
 <div class="content">
     <h5 class="title -compact"><%= model.name %></h5>
     <div class="details">
         <div class="item cooking">
-            <h6>Mode de cuisson</h6>
+            <h6><%= I18n.t("admin.baking_mode") %></h6>
             <p><%= @cooking.name %></p>
         </div>
         <% if @roasting %>
             <div class="item roasting">
                 <p></p>
-                <h6>Cuisson</h6>
+                <h6><%= I18n.t("admin.baking") %></h6>
                 <p><%= I18n.t @roasting %></p>
             </div>
         <% end %>
         <div class="item garniture">
-            <h6>Garnitures</h6>
+            <h6><%= I18n.t("admin.garnish") %></h6>
             <p><%= @cooking.ingredient %></p>
         </div>
         <% if @marinade %>
             <div class="item marinade">
-                <h6>Marinade</h6>
+                <h6><%= I18n.t("admin.marinade") %></h6>
                 <p><%= @marinade.description %></p>
             </div>
         <% end %>

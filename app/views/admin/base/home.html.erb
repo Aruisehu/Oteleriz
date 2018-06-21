@@ -1,13 +1,13 @@
 <section>
     <div class="row">
-        <h2>Administration</h2>
+        <h2><%= I18n.t("admin.home.title") %></h2>
         <ul class="fixed-list col-6">
-            <li><span class="key"><a href="/admin/orders">Commandes du jour</a></span></li>
-            <li><span class="key"><a href="/admin/meals">Plages d'ouvertures</a></span></li>
-            <li><span class="key"><a href="/admin/dishes">Les plats</a></span>( fonction en test )</li>
-            <li><span class="key"><a href="/admin/starters">Les entrées</a></span>( fonction en test )</li>
-            <li><span class="key"><a href="/admin/desserts">Les desserts</a></span>( fonction en test )</li>
-            <li><span class="key"><a href="/admin/history">Historique</a></span>( fonction en test )</li>
+            <li><span class="key"><a href="/admin/orders"><%= I18n.t("admin.home.order") %></a></span></li>
+            <li><span class="key"><a href="/admin/meals"><%= I18n.t("admin.home.meal") %></a></span></li>
+            <li><span class="key"><a href="/admin/dishes"><%= I18n.t("admin.home.dish") %></a></span><%= I18n.t("admin.home.test") %></li>
+            <li><span class="key"><a href="/admin/starters"><%= I18n.t("admin.home.starter") %></a></span><%= I18n.t("admin.home.test") %></li>
+            <li><span class="key"><a href="/admin/desserts"><%= I18n.t("admin.home.dessert") %></a></span><%= I18n.t("admin.home.test") %></li>
+            <li><span class="key"><a href="/admin/history"><%= I18n.t("admin.home.history") %></a></span><%= I18n.t("admin.home.test") %></li>
         </ul>
     </div>
 </section>

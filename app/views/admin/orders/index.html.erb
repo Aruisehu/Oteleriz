@@ -1,6 +1,6 @@
 <% content_for :main_action do %>
     <%= link_to admin_orders_path, class: "btn" do %>
-        Rafraîchir <%= fa_icon "tint" %>
+        <%= I18n.t("admin.orders.refresh") %>  <%= fa_icon "tint" %>
     <% end %>
 <% end %>
 
@@ -12,10 +12,10 @@
                     <table>
                         <tr>
                             <!--<th>Email</th>-->
-                            <th>Nom de commande</th>
-                            <th>Nombre de personnes</th>
-                            <th>Service (début - fin)</th>
-                            <th>Action</th>
+                            <th><%= I18n.t("admin.orders.order_name") %></th>
+                            <th><%= I18n.t("admin.orders.person_number") %></th>
+                            <th><%= I18n.t("admin.orders.service") %></th>
+                            <th><%= I18n.t("admin.orders.actions") %></th>
                         </tr>
 
                         <% @orders.each do |order| %>
@@ -27,10 +27,10 @@
                                     <h5 class="title -compact"><%= order.name %></h5>
                                     <% if order.group.orders.count > 1 %>
                                         <div class="text -tiny">
-                                            Commande groupée avec:
+                                            <%= I18n.t("admin.orders.grouped") %>
                                             <% order.group.orders.each do |o| %>
                                                 <ul>
-                                                    <div>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="voir" class="float -r"><%= fa_icon "eye" %></a></div>
+                                                    <div>- <%= o.name %> <a href="<%= admin_order_path(o) %>" title="<%= I18n.t("admin.see") %>" class="float -r"><%= fa_icon "eye" %></a></div>
                                                 </ul>
                                             <% end %>
                                         </div>
@@ -43,8 +43,8 @@
                                     <%= order.service.start_time.strftime("%H:%M") %> - <%= order.service.end_time.strftime("%H:%M") %>
                                 </td>
                                 <td>
-                                    <a href="/admin/orders/<%= order.id %>" class="btn-subtle">Voir commande <%= fa_icon "eye" %></a><br /><br />
-                                    <label class="btn-subtle" for="order_<%= order.id %>">Détails <%= fa_icon "plus" %></label>
+                                    <a href="/admin/orders/<%= order.id %>" class="btn-subtle"><%= I18n.t("admin.orders.see_order") %> <%= fa_icon "eye" %></a><br /><br />
+                                    <label class="btn-subtle" for="order_<%= order.id %>"><%= I18n.t("admin.details") %> <%= fa_icon "plus" %></label>
                                 </td>
                             </tr>
                             <tr>
@@ -52,21 +52,21 @@
                                     <input type="checkbox" name="order" class="hidden switch" id="order_<%= order.id %>" />
                                     <div class="col-12 hidden">
                                         <div class="col-9">
-                                            <h6 class="title -compact">Produits de la commande</h6>
+                                            <h6 class="title -compact"><%= I18n.t("admin.orders.order_products") %></h6>
                                             <ul class="fixed-list">
-                                                <li><span class="key"><strong>Produit</strong></span><span class="value"><strong>Quantité</strong></span></li>
+                                                <li><span class="key"><strong><%= I18n.t("admin.orders.product") %></strong></span><span class="value"><strong><%= I18n.t("admin.orders.quantity") %></strong></span></li>
                                                 <% order.summary.each do |k, v| %>
                                                     <li><span class="key"><%= k %></span><span class="value"><%= v %></span></li>
                                                 <% end %>
                                             </ul>
                                         </div>
                                         <div class="col-3">
-                                            <h6 class="title -compact">Actions</h6><br/>
-                                            <a href="#" class="btn-subtle" title="Fonction non terminée">Voir l'Utilisateur <%= fa_icon "user" %></a>
+                                            <h6 class="title -compact"><%= I18n.t("admin.orders.actions") %></h6><br/>
+                                            <a href="#" class="btn-subtle" title="<%= I18n.t("admin.orders.not_finished") %>"><%= I18n.t("admin.orders.see_user") %> <%= fa_icon "user" %></a>
                                             <br/>
                                             <br/>
-                                            <%= link_to admin_order_path(order), method: :delete, class: "btn-subtle -alt", data: { confirm: "Etes-vous sûr de vouloir supprimer la commande ?" } do %>
-                                                Supprimer <%= fa_icon "trash" %>
+                                            <%= link_to admin_order_path(order), method: :delete, class: "btn-subtle -alt", data: { confirm: I18n.t("admin.confirmation")} do %>
+                                                <%= I18n.t("admin.delete") %>  <%= fa_icon "trash" %>
                                             <% end %>
                                         </div>
                                     </div>
