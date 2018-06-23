@@ -1,13 +1,13 @@
 <% content_for :main_nav do %>
     <% if @formula_template.has_starter? || @formula_template.has_dessert? %>
-        <h3 class="title">Ajouter une formule</h3>
+        <h3 class="title"><%= I18n.t("menu.cart.add_formula") %></h3>
     <% else %>
-        <h3 class="title">Ajouter un plat</h3>
+        <h3 class="title"><%= I18n.t("menu.cart.add_dish") %></h3>
     <% end %>
 <% end %>
 
 <% content_for :main_action do %>
-    <button name="button" type="submit" form="add_formula" class="btn">Ajouter au panier <i class="fa fa-plus"></i></button>
+    <button name="button" type="submit" form="add_formula" class="btn"><%= I18n.t("menu.cart.add") %><i class="fa fa-plus"></i></button>
 <% end %>
 
 <section class="-m-no-pad">
