@@ -20,4 +20,9 @@ fr:
         seats: "place(s)"
         confirm_order: "Vous ne pourrez plus modifier votre commande après cette étape, êtes-vous sûr de vouloir continuer ?"
         validate_order: "Valider ma commande"
-
+    success:
+        order_validate: "Votre commande a été validée"
+        subtitle: "Venez manger sur place à l'heure choisie"
+        address: "Adresse"
+        map: "Carte"
+        email_confirmation: "Un mail de confirmation vous a été envoyé, pensez à vérifier votre boite mail"

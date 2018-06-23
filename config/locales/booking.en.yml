@@ -20,3 +20,10 @@ en:
         seats: "seat(s)"
         confirm_order: "You won't be able to modify your order after this step. Are you sure you want to continue?"
         validate_order: "Validate your order"
+    success:
+        order_validate: "Your order has been validated"
+        subtitle: "Come at our restaurant to eat at the chosen hour"
+        address: "Address"
+        map: "Map"
+        email_confirmation: "An email to confirm your order has been sent to you, please check your mailbox"
+

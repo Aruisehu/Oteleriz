@@ -1,19 +1,18 @@
 <section class="-darker -m-no-pad">
     <div class="row">
         <div class="col-8 -centered text">
-            <h2 class="subtitle">Pour accéder à <strong>Click&Sit</strong>, vous devez entrer un code d'accès</h2>
-            <p>Si aucun code ne vous a été transmis et que vous souhaitez vivre l'expérience
-            Cook Me Up, retrouvez nous à notre stand sur le salon Egast</p>
+            <h2 class="subtitle"><%= raw I18n.t("orders.access.title_html") %></h2>
+            <p><%= I18n.t("orders.access.join_us") %></p>
             <%= form_tag order_access_path, class: "zone", method: :post do %>
                 <div class="col-12 align -center">
-                    <h3 class="subtitle">Saisir votre code d'accès </h3>
-                    <input type="text" name="access" placeholder="Code d'accès"/>
-                    <button type="submit" class="btn">Valider <%= fa_icon "check" %></button>
+                    <h3 class="subtitle"><%= I18n.t("orders.access.entry_code") %></h3>
+                    <input type="text" name="access" placeholder="<%= I18n.t("orders.access.entry_placeholder") %>"/>
+                    <button type="submit" class="btn"><%= I18n.t("orders.access.validate") %> <%= fa_icon "check" %></button>
                 </div>
             <% end %>
-            <p class="float -l">Découvrez notre carte en attendant le salon (18 au 21 mars) :</p>
+            <p class="float -l"><%= I18n.t("orders.access.discover") %></p>
             <%= link_to orders_path, class: "btn-subtle float -r" do %>
-                Carte <%= fa_icon "book" %>
+                <%= I18n.t("orders.access.menu") %> <%= fa_icon "book" %>
             <% end %>
         </div>
     </div>

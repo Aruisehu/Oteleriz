@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
 
     def access
         if session[:access]
-            flash[:success] = "Votre session est activée, vous pouvez constituer votre commande"
+            flash[:success] = I18n.t("orders.success.session")
             redirect_to orders_path
         end
     end
@@ -42,11 +42,11 @@ class OrdersController < ApplicationController
     def post_access
         if params[:access] == Global.access_token
             session[:access] = true
-            flash[:success] = "Votre session de commande a été activée"
+            flash[:success] = I18n.t("orders.success.session2")
             redirect_to orders_path
         else
             session[:access] = nil
-            flash[:error] = "Code d'accès incorrect"
+            flash[:error] = I18n.t("orders.error.post_access")
             redirect_to order_access_path
         end
     end
@@ -107,12 +107,12 @@ class OrdersController < ApplicationController
         end
 
         unless @order.service
-            flash[:error] = "Merci de sélectionner un horaire d'arrivée"
+            flash[:error] = I18n.t("orders.error.no_hour")
         end
 
         # unless @order.email
         if @order.email.blank?
-            flash[:error] = "Merci de renseigner votre adresse mail"
+            flash[:error] = I18n.t("orders.error.no_email")
         end
 
         unless flash[:error].blank?
@@ -122,7 +122,7 @@ class OrdersController < ApplicationController
 
         if @order.service.meal.start_time.today? # Verify that the service is today since we don't accept preorders
             unless @order.service.remaining_seats?(@order.number_persons || 1)
-                flash[:error] = "Il ne reste plus de place dans la plage horaire choisie"
+                flash[:error] = I18n.t("orders.error.no_seats")
                 redirect_to order_booking_path
                 return
             end
@@ -130,7 +130,7 @@ class OrdersController < ApplicationController
             if !params[:group_name].empty? && params[:grouped?] != "true" # If the customer specified a group name and didn't select a group order
                 paired = Order.where(name: params[:group_name], service: @order.service).first
                 if paired.blank?
-                    flash[:error] = "La personne que vous souhaitez rejoindre n'a pas été trouvée ou a choisi une heure différente"
+                    flash[:error] = I18n.t("orders.error.person_not_found")
                     redirect_to order_booking_path
                     return
                 end
@@ -143,7 +143,7 @@ class OrdersController < ApplicationController
             if @order.save # If the order can be saved
                 session.delete(:order_id) # we close it to further edits
                 OrdersMailer.confirm(@order).deliver_now
-                flash[:success] = "Votre commande a été validée"
+                flash[:success] = I18n.t("orders.success.order_confirmed")
                 redirect_to order_success_path # and redirect user to the success page
                 return
             end
@@ -160,7 +160,7 @@ class OrdersController < ApplicationController
     end
 
     def not_available
-        flash.now[:error] = "Aucune commande n'est possible en dehors des jours d'ouverture"
+        flash.now[:error] = I18n.t("orders.error.no_order")
         render "not_available", status: 403
     end
 
@@ -174,12 +174,12 @@ class OrdersController < ApplicationController
             @order.formulas << @formula
 
             if @order.save
-                flash[:success] = "Produit ajouté au panier"
+                flash[:success] = I18n.t("orders.success.product_added")
             else
-                flash[:error] = "Une erreur s'est produite"
+                flash[:error] = I18n.t("orders.error.standard")
             end
         else
-            flash[:error] = "Une erreur s'est produite"
+            flash[:error] = I18n.t("orders.error.standard")
         end
     end
 

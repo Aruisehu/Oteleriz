@@ -1,5 +1,5 @@
 <label for="display-cart" class="cart-display">
-    <%= fa_icon "shopping-bag" %> Panier <span class="count"><%= model.formulas.count %></span>
+    <%= fa_icon "shopping-bag" %> <%= I18n.t("menu.cart.title") %><span class="count"><%= model.formulas.count %></span>
 </label>
 <input id="display-cart" type="checkbox" class="switch">
 <div class="cart-container">

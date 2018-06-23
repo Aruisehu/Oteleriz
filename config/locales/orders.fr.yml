@@ -1,0 +1,23 @@
+fr:
+    orders:
+        access:
+            title_html: "Pour accéder à <strong>Click&Sit</strong>, vous devez entrer un code d'accès"
+            join_us: "Si aucun code ne vous a été transmis et que vous souhaitez vivre l'expérience Cook Me Up, retrouvez nous à notre stand sur le salon Egast"
+            entry_code: "Saisir votre code d'accès"
+            entry_placeholder: "Code d'accès"
+            validate: "Valider"
+            discover: "Découvrez notre carte en attendant le salon (18 au 21 mars) :"
+            menu: "Carte"
+        success:
+            session: "Votre session est activée, vous pouvez constituer votre commande"
+            session2: "Votre session de commande a été activée"
+            order_confirmed: "Votre commande a été validée"
+            product_added: "Produit ajouté au panier"
+        error:
+            post_access: "Code d'accès incorrect"
+            no_hour: "Merci de sélectionner un horaire d'arrivée"
+            no_email: "Merci de renseigner votre adresse mail"
+            no_seats: "Il ne reste plus de place dans la plage horaire choisie"
+            person_not_found: "La personne que vous souhaitez rejoindre n'a pas été trouvée ou a choisi une heure différente"
+            no_order:  "Aucune commande n'est possible en dehors des jours d'ouverture"
+            standard:  "Une erreur s'est produite"

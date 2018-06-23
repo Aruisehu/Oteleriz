@@ -1,0 +1,23 @@
+en:
+    orders:
+        access:
+            title_html: "To access our <strong>Click&Sit</strong>, you have to enter an access code"
+            join_us: "If you haven't receive any code and you still want to live the Cook Me Up experience, come find us at our stand in the Egast show"
+            entry_code: "Enter your access code"
+            entry_placeholder: "Access code"
+            validate: "Validate"
+            discover: "Discover our meny while waiting the opening (March 18 - 21) :"
+            menu: "Menu"
+        success:
+            session: "Your session is active, you can now order what you want"
+            session2: "Your session is now active"
+            order_confirmed: "Your order has been validated"
+            product_added: "Product added to cart"
+        error:
+            post_access: "Incorrect access code"
+            no_hour: "Please choose when you'll come"
+            no_email: "Please fill the email field"
+            no_seats: "There's no more seats available for this hour"
+            person_not_found: "The person you want to join has not been found or has chosen a different hour"
+            no_order:  "No order are allowed when the restaurant doesn't open"
+            standard:  "An error occured"

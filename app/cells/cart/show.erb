@@ -1,5 +1,5 @@
 <header>
-    <h6 class="title -compact">Mon Panier</h6>
+    <h6 class="title -compact"><%= I18n.t("menu.cart.my_cart") %> </h6>
     <label class="btn-subtle -alt -icon" for="display-cart"><%= fa_icon "close" %></label>
 </header>
 <div class="cart">
@@ -12,10 +12,10 @@
                 </div>
             <% end %>
             <div class="action-bar">
-                <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: "Êtes-vous sûr de vouloir supprimer ce produit de votre panier?"}, title:"Suprimer ce produit du panier", class: "btn-subtle -alt -icon no-close-menu", remote: true do %>
-                    Supprimer <%= fa_icon "trash" %>
+                <%= link_to order_path(@order, formula: f), method: :delete, data: {confirm: I18n.t("menu.cart.confirm")}, title: I18n.t("menu.cart.confirm_title"), class: "btn-subtle -alt -icon no-close-menu", remote: true do %>
+                    <%= I18n.t("menu.cart.delete") %> <%= fa_icon "trash" %>
                 <% end %>
-                <label for="formula-<%= i %>" class="deploy btn-subtle float -r" href="">Détails <%= fa_icon "angle-up" %></label>
+                <label for="formula-<%= i %>" class="deploy btn-subtle float -r" href=""><%= I18n.t("menu.cart.details") %> <%= fa_icon "angle-up" %></label>
                 <span class="price">
                     <%= number_to_currency(f.get_total, locale: :fr) %>
                 </span>
@@ -24,16 +24,16 @@
     <% end %>
     <div class="col-12 align -center">
         <%= link_to add_menu_to_order_path(), class: "btn-subtle" do %>
-            Ajouter un plat
+            <%= I18n.t("menu.cart.add_dish") %>
         <% end %>
         <%= link_to orders_path() + "#course", class: "btn-subtle" do %>
-            Ajouter une formule
+            <%= I18n.t("menu.cart.add_formula") %>
         <% end %>
     </div>
 </div>
 <footer>
-    <h6 class="title -compact">Total: <span class="total price"><%= number_to_currency(@order.get_price, locale: :fr) %></span></h6>
+    <h6 class="title -compact"><%= I18n.t("menu.cart.total") %>  <span class="total price"><%= number_to_currency(@order.get_price, locale: :fr) %></span></h6>
     <%= link_to order_booking_path(@order), class: "btn", id: "validate_order" do %>
-        Valider<%= fa_icon "check" %>
+        <%= I18n.t("menu.cart.validate") %> <%= fa_icon "check" %>
     <% end %>
 </footer>

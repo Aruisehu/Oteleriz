@@ -1,5 +1,17 @@
 fr:
   menu:
+    cart:
+      title: "Panier"
+      empty: "Aucun élément dans votre panier pour l'instant"
+      add_dish: "Ajouter un plat"
+      add_formula: "Ajouter une formule"
+      confirm: "Êtes vous sur de supprimer ce produit de votre panier?"
+      delete: "Supprimer"
+      confirm_title: "Supprimer ce produit de votre panier"
+      details: "Détails"
+      validate: "Valider"
+      total: "Total: "
+      my_cart: "Mon Panier"
     nav:
       title: "Notre carte"
       formula: "Formules"

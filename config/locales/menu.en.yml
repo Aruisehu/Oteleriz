@@ -1,5 +1,17 @@
 en:
   menu:
+    cart:
+      title: "Cart"
+      empty: "No products in your order for now"
+      add_dish: "Add a dish"
+      add_formula: "Add a formula"
+      confirm: "Are you sure to delete this product from your cart?"
+      delete: "Delete"
+      confirm_title: "Delete this product from your cart"
+      details: "Details"
+      validate: "Validate"
+      total: "Total: "
+      my_cart: "My cart"
     nav:
       title: "Our menu"
       formula: "Formulas"

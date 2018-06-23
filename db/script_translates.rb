@@ -16,22 +16,22 @@ gambas.save()
 tuna = Starter.find_by(name_fr: "Tataki de thon")
 tuna.name_en = "Tuna Tataki"
 tuna.description_en = "Served with a seaweed salad, apple and lemon confit"
-tuna.save() 
+tuna.save()
 
 duck = Starter.find_by(name_fr: "Tarte fine de canard")
 duck.name_en = "Tarte fine de canard"
 duck.description_en = "Gésiers, magret fumé & foie gras de canard, mashed vegetables and pickles"
-duck.save() 
+duck.save()
 
 thai = Starter.find_by(name_fr: "Bouillon Thaï")
 thai.name_en = "Hot Thaï Borth"
 thai.description_en = "Hot Thaï Borth with dices of salmon"
-thai.save() 
+thai.save()
 
 poke = Starter.find_by(name_fr: "Poke Bowl")
 poke.name_en = "Poke Bowl"
 poke.description_en = "Poke Bowl vegan"
-poke.save() 
+poke.save()
 
 
 # Cooking methods
