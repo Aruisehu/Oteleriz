@@ -35,28 +35,34 @@ class Api::QuestionsController < ApplicationController
         fusio = Baking.with_name_translation("Fusio Eberhardt Frères", :fr)
 
         m1 = Marinade.where(baking: papi, dish: beef).first
+        m1.description_en = "Marinade of saté sauce and paprika"
         m1.name_en = "Marinade of saté sauce and paprika"
-        m1.save
+        m1.save!
 
         m2 = Marinade.where(baking: papi, dish: poultry).first
+        m2.description_en = "Marinade of coconut milk and curry"
         m2.name_en = "Marinade of coconut milk and curry"
-        m2.save
+        m2.save!
 
         m3 = Marinade.where(baking: papi, dish: gambas).first
+        m3.description_en = "Marinade of ginger and lime juice"
         m3.name_en = "Marinade of ginger and lime juice"
-        m3.save
+        m3.save!
 
         m4 = Marinade.where(baking: fusio, dish: beef).first
+        m4.description_en = "Marinade of olive oil, garlic and thyme"
         m4.name_en = "Marinade of olive oil, garlic and thyme"
-        m4.save
+        m4.save!
 
         m5 = Marinade.where(baking: fusio, dish: poultry).first
+        m5.description_en = "Marinade of olive oil and lime juice"
         m5.name_en = "Marinade of olive oil and lime juice"
-        m5.save
+        m5.save!
 
         m6 = Marinade.where(baking: fusio, dish: gambas).first
+        m6.description_en = "Marinade of olive oil and Martini Rosso"
         m6.name_en = "Marinade of olive oil and Martini Rosso"
-        m6.save
+        m6.save!
 
         render json: {}
     end
