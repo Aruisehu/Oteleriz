@@ -26,3 +26,6 @@ fr:
         address: "Adresse"
         map: "Carte"
         email_confirmation: "Un mail de confirmation vous a été envoyé, pensez à vérifier votre boite mail"
+    error:
+        not_available: "Votre commande ne peut pas être validée"
+        not_open: "Aucune commande ne peut être effectuée en dehors des jours d'ouverture, merci de votre compréhension"
