@@ -5,9 +5,9 @@
                 <div class="scroll-x -auto">
                     <table>
                         <tr>
-                            <th>Début</th>
-                            <th>Fin</th>
-                            <th>Action</th>
+                            <th><%= I18n.t("admin.meals.begin") %></th>
+                            <th><%= I18n.t("admin.meals.end") %></th>
+                            <th><%= I18n.t("admin.action") %></th>
                         </tr>
 
                         <% @services.each do |service| %>
@@ -19,8 +19,8 @@
                                     <%= service.end_time.strftime("%A %d %B %H:%M") %>
                                 </td>
                                 <td>
-                                    <a href="/admin/services/<%= service.id %>/edit" class="btn-subtle">Changer les horaires</a>
-                                    <a href="/admin/services/<%= service.id %>" data-method="delete" rel="nofollow" class="btn-subtle"><%= fa_icon "trash" %> Supprimer</a>
+                                    <a href="/admin/services/<%= service.id %>/edit" class="btn-subtle"><%= I18n.t("admin.meals.change_time") %></a>
+                                    <a href="/admin/services/<%= service.id %>" data-method="delete" rel="nofollow" class="btn-subtle"><%= fa_icon "trash" %><%= I18n.t("admin.delete") %></a>
                                 </td>
                             </tr>
                         <% end %>

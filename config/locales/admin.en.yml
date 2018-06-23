@@ -1,6 +1,6 @@
 en:
     admin:
-        order: "Orders"
+        order: "Order"
         dish: "Dish"
         dessert: "Dessert"
         starter: "Starter"
@@ -8,12 +8,15 @@ en:
         delete: "Delete"
         details: "Details"
         confirmation: "Are you sure?"
-        see: "see"
+        see: "See"
         baking: "Baking"
         baking_mode: "Baking mode"
         garnish: "Garnish"
         marinade: "Marinade"
         wine: "Wine"
+        action: "Action"
+        save: "Save"
+        create: "Create"
         home:
             title: "Administration"
             order: "Day's orders"
@@ -39,6 +42,14 @@ en:
             resume: "Resume"
             infos: "Informations"
             total_price: "Total price"
-
-
+        meals:
+            add: "Add an opening time"
+            edit: "Edit an opening time"
+            begin: "Beginning"
+            end: "End"
+            see_services: "See the services"
+            change_time: "Change the time"
+        service:
+            add: "Add a service"
+            edit: "Edit a service"
 

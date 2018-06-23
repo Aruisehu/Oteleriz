@@ -1,7 +1,7 @@
 <section>
     <div class="row">
         <div class="col-12">
-            <h1>Modifier un service:</h1>
+            <h1><%= I18n.t("admin.service.edit") %></h1>
 
             <%= form_for :service, :url => admin_service_path(@service), method: 'put' do |form| %>
 
@@ -24,7 +24,7 @@
 
                 <p>
                     <%= form.button class: "btn" do %>
-                        Enregistrer <%= fa_icon "save" %>
+                        <%= I18n.t("admin.save") %> <%= fa_icon "save" %>
                     <% end %>
                 </p>
                 <% end %>

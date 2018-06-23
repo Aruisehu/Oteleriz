@@ -14,6 +14,9 @@ fr:
         garnish: "Garniture"
         marinade: "Marinade"
         wine: "Vin"
+        action: "Action"
+        save: "Enregistrer"
+        create: "Créer"
         home:
             title: "Administration"
             order: "Commandes du jour"
@@ -39,3 +42,14 @@ fr:
             resume: "Récapitulatif"
             infos: "Informations"
             total_price: "Coût total"
+        meals:
+            add: "Ajouter une plage d'ouverture"
+            edit: "Modifier une plage d'ouverture"
+            begin: "Début"
+            end: "Fin"
+            see_services: "Voir les services"
+            change_time: "Changer les horaires"
+        service:
+            add: "Ajouter un service"
+            edit: "Modifier un service"
+

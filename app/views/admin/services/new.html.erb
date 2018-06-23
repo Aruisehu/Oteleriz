@@ -1,7 +1,7 @@
 <section>
     <div class="row">
         <div class="col-12">
-            <h1>Ajouter un Service:</h1>
+            <h1><%= I18n.t("admin.service.add") %></h1>
 
             <%= form_for :service, :url => '/admin/services' do |form| %>
 
@@ -26,7 +26,7 @@
 
                 <p>
                     <%= form.button class: "btn" do %>
-                        Créer <%= fa_icon "plus" %>
+                        <%= I18n.t("admin.create") %> <%= fa_icon "plus" %>
                     <% end %>
                 </p>
                 <% end %>

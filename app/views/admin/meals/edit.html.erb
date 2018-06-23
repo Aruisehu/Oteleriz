@@ -1,7 +1,7 @@
 <section>
     <div class="row">
         <div class="col-12">
-            <h1>Modifier une plage d'ouverture:</h1>
+            <h1><%= I18n.t("admin.meals.edit") %></h1>
 
             <%= form_for :meal, url: admin_meal_path(@meal), method: 'put' do |form| %>
 
@@ -20,7 +20,7 @@
 
                 <p>
                     <%= form.button class: "btn" do %>
-                        Enregistrer <%= fa_icon "save" %>
+                        <%= I18n.t("admin.save") %> <%= fa_icon "save" %>
                     <% end %>
                 </p>
                 <% end %>

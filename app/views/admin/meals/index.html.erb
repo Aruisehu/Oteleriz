@@ -5,9 +5,9 @@
                 <div class="scroll-x -auto">
                     <table>
                         <tr>
-                            <th>Début</th>
-                            <th>Fin</th>
-                            <th>Action</th>
+                            <th><%= I18n.t("admin.meals.begin") %></th>
+                            <th><%= I18n.t("admin.meals.end") %></th>
+                            <th><%= I18n.t("admin.action") %></th>
                         </tr>
 
                         <% @meals.each do |meal| %>
@@ -20,9 +20,9 @@
                                 </td>
                                 <td>
 
-                                    <a href="/admin/meals/<%= meal.id %>/edit" class="btn-subtle">Changer les horaires</a> <br>
-                                    <a href="/admin/meals/<%= meal.id %>" class="btn-subtle">Voir les services</a> <br>
-                                    <a href="/admin/meals/<%= meal.id %>" data-method="delete" class="btn-subtle" rel="nofollow"><%= fa_icon "trash" %> Supprimer</a> <br>
+                                    <a href="/admin/meals/<%= meal.id %>/edit" class="btn-subtle"><%= I18n.t("admin.meals.change_time") %></a> <br>
+                                    <a href="/admin/meals/<%= meal.id %>" class="btn-subtle"><%= I18n.t("admin.meals.see_services") %></a> <br>
+                                    <a href="/admin/meals/<%= meal.id %>" data-method="delete" class="btn-subtle" rel="nofollow"><%= fa_icon "trash" %><%= I18n.t("admin.delete") %></a> <br>
                                 </td>
                             </tr>
                         <% end %>
@@ -30,6 +30,6 @@
                 </div>
             </div>
         </div>
-        <a href="<%= new_admin_meal_path %>" class="btn"><%= fa_icon "plus" %> Ajouter une plage d'ouverture</a> <br>
+        <a href="<%= new_admin_meal_path %>" class="btn"><%= fa_icon "plus" %><%= I18n.t("admin.meals.add") %></a> <br>
     </div>
 </section>
