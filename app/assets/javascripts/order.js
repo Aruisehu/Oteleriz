@@ -79,7 +79,7 @@ Order = {
     },
 
     checkRoasting: function() {
-        if (Order.dish.toLowerCase() == "boeuf") {
+        if (Order.dish.toLowerCase() == "boeuf" || Order.dish.toLowerCase() == "beef") {
             return true
         }
         return false
