@@ -17,12 +17,12 @@
             </div>
             <% if @order.number_persons > 1 %>
                 <div class="item">
-                    <h6><%= I18n.t("orders.show.person_number") %></h6>
+                    <h6><%= I18n.t("orders.show.persons_number") %></h6>
                     <%= @order.number_persons %>
                 </div>
             <% else %>
                 <div class="item">
-                    <h6><%= I18n.t("orders.show.person_number") %></h6>
+                    <h6><%= I18n.t("orders.show.persons_number") %></h6>
                     <p><%= I18n.t("orders.show.alone_order") %></p>
                 </div>
             <% end %>
