@@ -46,8 +46,6 @@ class Api::QuestionsController < ApplicationController
         m3.name_en = "Marinade of ginger and lime juice"
         m3.save
 
-        binding.pry
-
         m4 = Marinade.where(baking: fusio, dish: beef).first
         m4.name_en = "Marinade of olive oil, garlic and thyme"
         m4.save
