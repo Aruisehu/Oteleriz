@@ -32,7 +32,7 @@ class Api::QuestionsController < ApplicationController
 
         # Cooking methods
         papi = Baking.with_name_translation("Papillote", :fr)
-        fusio = Baking.with_name_translation("Fusio", :fr)
+        fusio = Baking.with_name_translation("Fusio Eberhardt Frères", :fr)
 
         m1 = Marinade.where(baking: papi, dish: beef).first
         m1.name_en = "Marinade of saté sauce and paprika"
@@ -45,6 +45,8 @@ class Api::QuestionsController < ApplicationController
         m3 = Marinade.where(baking: papi, dish: gambas).first
         m3.name_en = "Marinade of ginger and lime juice"
         m3.save
+
+        binding.pry
 
         m4 = Marinade.where(baking: fusio, dish: beef).first
         m4.name_en = "Marinade of olive oil, garlic and thyme"
