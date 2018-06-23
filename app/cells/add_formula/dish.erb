@@ -1,7 +1,7 @@
 <div class="add-formula dish">
     <header>
-        <h5 class="title -compact -faint">Plat:</h5>
-        <h5 class="choice">Boeuf fusio bien cuit</h5>
+        <h5 class="title -compact -faint"><%= I18n.t("menu.dish.title") %>:</h5>
+        <h5 class="choice"></h5>
     </header>
     <div class="col-12 -sp">
         <div class="item base">
@@ -17,7 +17,7 @@
             <% end %>
         </div>
         <div class="item baking">
-            <h6 class="title -compact -faint">Mode de Cuisson</h6>
+            <h6 class="title -compact -faint"><%= I18n.t("menu.dish.cooking") %></h6>
             <% @bakings.each do |b| %>
                 <%= @f.radio_button :baking, b.id, :checked => (b == @baking) %>
                 <label for="formula_baking_<%= b.id %>">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="item roasting">
-            <h6 class="title -compact -faint">Cuisson</h6>
+            <h6 class="title -compact -faint"><%= I18n.t("menu.dish.roasting") %></h6>
             <% @roastings.each do |r| %>
                 <%= @f.radio_button :roasting, r, :checked => (r == @roasting) %>
                 <label for="formula_roasting_<%= r %>">
@@ -45,7 +45,7 @@
         </div>
         <div class="item">
             <div class="col-6">
-                <h6 class="title -compact -faint">Marinade</h6>
+                <h6 class="title -compact -faint"><%= I18n.t("menu.marinade.title") %></h6>
                 <% @bakings.each do |b| %>
                     <% unless b.marinades.blank? %>
                         <% @dishes.each do |d| %>
@@ -53,13 +53,13 @@
                         <% end %>
                     <% else %>
                         <% @dishes.each do |d| %>
-                            <p class="marinade hidden" data-baking="<%= b.name.downcase %>" data-dish="<%= d.name.downcase %>">La cuisson au wok n'est pas compatible avec les marinades</p>
+                            <p class="marinade hidden" data-baking="<%= b.name.downcase %>" data-dish="<%= d.name.downcase %>"><%= I18n.t("menu.wok.error") %></p>
                         <% end %>
                     <% end %>
                 <% end %>
             </div>
             <div class="col-6">
-                <h6 class="title -compact -faint">Garnitures</h6>
+                <h6 class="title -compact -faint"><%= I18n.t("menu.dish.ingredient") %></h6>
                 <% @bakings.each do |b| %>
                     <p class="ingredient hidden" data-baking="<%= b.name.downcase %>"><%= b.ingredient %></p>
                 <% end %>

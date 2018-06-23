@@ -1,10 +1,10 @@
 <div class="add-formula buttons">
     <div class="item">
         <%= @f.button class: "btn float -r" do %>
-            ajouter <%= fa_icon "plus" %>
+            <%= I18n.t("menu.formula.button") %> <%= fa_icon "plus" %>
         <% end %>
         <%= link_to orders_path, class: "btn -alt" do %>
-            retour <%= fa_icon "chevron-left" %>
+            <%= I18n.t("menu.formula.return") %> <%= fa_icon "chevron-left" %>
         <% end %>
     </div>
 </div>

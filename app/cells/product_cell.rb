@@ -1,6 +1,7 @@
 class ProductCell < Cell::ViewModel
     include FontAwesome::Rails::IconHelper
     include ActionView::Helpers::NumberHelper
+    include ActionView::Helpers::TranslationHelper
 
     def show
         render

@@ -25,6 +25,7 @@ en:
     formula:
       title: "Formulas"
       button: "Add"
+      return: "Return"
       starter_dish_wine:
         title: "Starter, Dish & Wine"
         desc_html: "Deux verres de <strong>vin</strong>"
@@ -56,6 +57,7 @@ en:
       subtitle: "Design your dish, according to your tastes."
       base: "Base"
       cooking: "Cooking methods"
+      roasting: "Roasting"
       ingredient: "Toppings"
       ingredient_singular: "Topping"
       random: "Surprise me"
@@ -70,3 +72,7 @@ en:
       help: "Order for a group or specify an order name from your friends to eat together"
       restrict: "Restricted Access"
       address_html: "<p>If no access code were given to you and you still wish to experience <strong>Cook Me Up</strong>,<br/>find us at the following address: <br/><strong>Slokas iela 1,<br/>Zemgales priekšpilsēta,<br/>Rīga,<br/>LV-1048,<br/>Lettonie</strong></p>"
+    wok:
+      error: "Marinades arn't available along with Wok coking."
+    wine:
+      title: "Wine"

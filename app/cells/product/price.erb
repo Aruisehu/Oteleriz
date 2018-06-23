@@ -2,7 +2,7 @@
     <span class="price"><%= number_to_currency(model.price, locale: :fr) %></span>
     <%= form_for @formula, url: order_path(id: session[:order_id], id_template: options[:id_template]), method: :patch do |f| %>
         <%= f.button name: "formula[#{model.class.name.downcase}]", value: model.id, class: "btn -alt" do %>
-            Ajouter <%= fa_icon "plus" %>
+            <%= I18n.t("menu.formula.button") %> <%= fa_icon "plus" %>
         <% end %>
     <% end %>
 </div>

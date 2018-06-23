@@ -25,6 +25,7 @@ fr:
     formula:
       title: "Formules"
       button: "Ajouter"
+      return: "Retour"
       starter_dish_wine:
         title: "Entrée, Plat & Vin"
         desc_html: "Deux verres de <strong>vin</strong>"
@@ -51,6 +52,7 @@ fr:
       subtitle: "Créer votre plat, à votre goût, en choisissant vos aliments."
       base: "Base"
       cooking: "Méthodes de cuisson"
+      roasting: "Cuisson"
       ingredient: "Garnitures"
       ingredient_singular: "Garniture"
       random: "Surprenez-moi"
@@ -65,3 +67,7 @@ fr:
       help: "Commandez pour un groupe ou spécifiez le nom de commande de vos amis pour manger ensemble"
       restrict: "Accès restreint"
       address_html: "<p>Si aucun code ne vous a été transmis et que vous souhaitez vivre l'expérience <strong>Cook Me Up</strong>,<br/>retrouvez nous à l'adresse suivante: <br/><strong>Bred - Banque Populaire <br/>18 Quai de la Rapée , 75012 Paris</strong></p>"
+    wok:
+      error: "La cuisson au wok n'est pas compatible avec les marinades."
+    wine:
+      title: "Variation vin"

@@ -1,6 +1,7 @@
 class AddFormulaCell < Cell::ViewModel
     include FontAwesome::Rails::IconHelper
     include ActionView::Helpers::FormHelper
+    include ActionView::Helpers::TranslationHelper
 
     def show
         @formula = Formula.new
