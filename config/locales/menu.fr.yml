@@ -3,6 +3,7 @@ fr:
     cart:
       title: "Panier"
       empty: "Aucun élément dans votre panier pour l'instant"
+      add: "Ajouter au panier"
       add_dish: "Ajouter un plat"
       add_formula: "Ajouter une formule"
       confirm: "Êtes vous sur de supprimer ce produit de votre panier?"
