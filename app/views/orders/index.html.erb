@@ -70,8 +70,8 @@
         </div>
         <div class="formula-container">
             <div class="formula -wine">
-                <h5 class="title"><%= fa_icon "glass" %> <%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_dessert_wine.title") %></h5>
-                <p><%= raw I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
+                <h5 class="title"><%= fa_icon "glass" %> <%= I18n.t("menu.formula.starter_dish_dessert_wine.title") %></h5>
+                <p><%= I18n.t("menu.formula.starter_dish_dessert_wine.desc_html") %>*</p>
                 <span class="price"><%= number_to_currency(@course_sddw.price, locale: :fr) %></span>
                 <%= link_to add_menu_to_order_path(@course_sddw), class: "btn-subtle" do %>
                     <%= I18n.t("menu.formula.button") %>
