@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
     namespace :api do
         get '/questions/last_meal' => 'questions#last_meal'
+        get '/questions/updatedb' => 'questions#updatedb'
         resources :questions, only: [:create]
     end
 
