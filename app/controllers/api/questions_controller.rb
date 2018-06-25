@@ -7,7 +7,7 @@ class Api::QuestionsController < ApplicationController
         @order = Order.where(email: params[:email])
             .includes(:service, formulas: [:dish, :starter, :dessert, :formula_template])
             .order("services.start_time desc")
-            .first
+            .last
         if @order.blank?
             render json: {}, status: :not_found
         else
