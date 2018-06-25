@@ -32,3 +32,10 @@ en:
             contact: "If you have trouble, contact us"
             send_mail: "Send an email"
             contact_fb: "Contact us on "
+        validated:
+            title: "Your order has been validated"
+            subtitle: "Come enjoy your meal at the booked time, we look forward to welcome you."
+            address_html: "<p>Uzvaras bulvāris 2/4,<br>Zemgales priekšpilsēta,<br>Rīga, LV-1048,<br>Lettonie</p>"
+            address: "Address"
+            map: "Map"
+            mail: "A confirmation mail has been send to you, plase check your inbox."

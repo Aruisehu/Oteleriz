@@ -1,19 +1,17 @@
 <section>
     <div class="row align -center">
-        <h2 class="title -alt">Votre commande a été validée</h2>
-        <h3 class="subtitle">Venez manger sur place à l'heure choisie</h3>
+        <h2 class="title -alt"><%= I18n.t("orders.validated.title") %></h2>
+        <h3 class="subtitle"><%= I18n.t("orders.validated.subtitle") %></h3>
         <div class="col-8 -centered">
             <div class="col-4">
-                <h4 class="subtitle">Adresse</h4>
-                <p>
-                    Slokas iela 1,<br/> Zemgales priekšpilsēta,<br/> Rīga, LV-1048,<br/> Lettonie
-                </p>
+                <h4 class="subtitle"><%= I18n.t("orders.validated.address") %></h4>
+                <%= I18n.t("orders.validated.address_html") %>
             </div>
             <div class="col-8">
-                <h4 class="subtitle">Carte</h4>
+                <h4 class="subtitle"><%= I18n.t("orders.validated.map") %></h4>
                 <iframe class="google-mapframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8705.713492183828!2d24.0815464!3d56.9414617!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8bcf56beebf7535!2sBellevue+Park+Hotel+Riga!5e0!3m2!1sfr!2sfr!4v1529761633650" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
-        <p> Un mail de confirmation vous a été envoyé, pensez à vérifier votre boite mail </p>
+        <p><%= I18n.t("orders.validated.mail") %></p>
     </div>
 </section>
