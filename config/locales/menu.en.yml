@@ -72,7 +72,7 @@ en:
       subtitle_html: "<strong>Click & Sit</strong> let you eat your dishes prepared before you arrive, letting you save time."
       help: "Order for a group or specify an order name from your friends to eat together"
       restrict: "Restricted Access"
-      address_html: "<p>If no access code were given to you and you still wish to experience <strong>Cook Me Up</strong>,<br/>find us at the following address: <br/><strong>Slokas iela 1,<br/>Zemgales priekšpilsēta,<br/>Rīga,<br/>LV-1048,<br/>Lettonie</strong></p>"
+      address_html: "<p>If no access code were given to you and you still wish to experience <strong>Cook Me Up</strong>,<br/>find us at the following address: <br/><strong>Slokas iela 1,<br/>Zemgales priekšpilsēta,<br/>Rīga,<br/>LV-1048,<br/>Latvia</strong></p>"
     wok:
       error: "Marinades arn't available along with Wok coking."
     wine:
