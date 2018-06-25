@@ -26,4 +26,6 @@ en:
         address: "Address"
         map: "Map"
         email_confirmation: "An email to confirm your order has been sent to you, please check your mailbox"
-
+    error:
+        not_available: "Your order can't be validated."
+        not_open: "No order can be validated outside of our opening time, thanks for your understanding"
