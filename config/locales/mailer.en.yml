@@ -1,6 +1,7 @@
 en:
     mailer:
         order:
+            subject: "Cook Me Up: Order's confirmation "
             title: "Order's confirmation "
             par_1: "Hello, your order for today at "
             par_1bis: " has been successfully considered"

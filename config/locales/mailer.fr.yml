@@ -1,6 +1,7 @@
 fr:
     mailer:
         order:
+            subject: "Cook Me Up: Confirmation de commande pour "
             title: "Confirmation de votre commande "
             par_1: "Bonjour, votre commande pour aujourd'hui à "
             par_1bis: " a bien été prise en compte"
